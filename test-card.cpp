@@ -3,6 +3,7 @@
 */
 #include <gtest/gtest.h>
 #include "card.h"
+#include "spell_card.h"
 #include "enums.h"
 
 /**
@@ -49,7 +50,35 @@ TEST(CardTest, SettersFunctionality) {
 }
 
 /**
- * @brief Google Test entry point
+ * @test Проверка базового функционала Spell_Card
+ * @group SpellTests
+ */
+TEST(SpellCardTest, ConstructorAndElementAccess) {
+    // Arrange
+    const std::string name = "Firestorm";
+    const Element elem = Element::Fire;
+    
+    // Act
+    Spell_Card spell(name, "AOE damage", Rarity::Rare, 6, elem);
+    
+    // Assert
+    EXPECT_EQ(spell.get_name(), name);
+    EXPECT_EQ(spell.get_element(), elem);
+}
+
+/**
+ * @test Тест модификатора элемента
+ * @group SpellTests
+ */
+TEST(SpellCardTest, ElementModification) {
+    Spell_Card spell("Aqua", "Healing", Rarity::Common, 3, Element::Water);
+    
+    spell.set_element(Element::Air);
+    EXPECT_EQ(spell.get_element(), Element::Air);
+}
+
+/**
+ * @brief Точка входа для всех тестов
  */
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);

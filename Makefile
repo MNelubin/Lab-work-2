@@ -18,9 +18,9 @@ LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
 
 DEPS=$(wildcard *.h)
 
-OBJ = card.o
+OBJ = card.o spell_card.o
 
-TEST_OBJ = test-card.o test-spell_card.o
+TEST_OBJ = test-card.o
 
 .PHONY: default
 
