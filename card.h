@@ -5,6 +5,7 @@
 #define CARD_CLASS
 
 #include <string>
+/// @file enums.h
 #include "enums.h"
 
 /**

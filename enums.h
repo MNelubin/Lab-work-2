@@ -5,6 +5,7 @@
 #define ENUMS_H
 
 /**
+ * @enum Rarity
  * @brief Defines card rarity classifications
  * 
  * Determines drop probability and crafting cost.
@@ -18,6 +19,7 @@ enum class Rarity {
 };
 
 /**
+ * @enum Element
  * @brief Elemental affinity types
  * 
  * Defines card's magical alignment
@@ -31,6 +33,7 @@ enum class Element {
 };
 
 /**
+ * @enum Tribe
  * @brief Geographic faction classifications
  * 
  * Determines faction alliances.
