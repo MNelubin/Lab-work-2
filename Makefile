@@ -20,7 +20,7 @@ DEPS=$(wildcard *.h)
 
 OBJ = card.o
 
-TEST_OBJ = test-card.o
+TEST_OBJ = test-card.o test-spell_card.o
 
 .PHONY: default
 
