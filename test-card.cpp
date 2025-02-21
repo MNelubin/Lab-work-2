@@ -6,79 +6,99 @@
 #include "spell_card.h"
 #include "enums.h"
 
+// ==================== Card Class Tests ====================
+
 /**
- * @brief Test suite for Card class functionality
- * 
- * Covers constructor initialization and mutator methods validation.
+ * @test Verify base Card class constructor and getters
+ * @group CoreFunctionality
  */
-TEST(CardTest, ConstructorInitialization) {
+TEST(CardBasicTest, ConstructorAndGetters) {
     // Arrange
-    const std::string expected_name = "Fireball";
-    const int expected_mana = 5;
-    const Rarity expected_rarity = Rarity::Epic;
+    const std::string name = "Fireball";
+    const std::string desc = "Deals 5 damage";
+    const Rarity rarity = Rarity::Epic;
+    const int mana = 5;
     
     // Act
-    Card card(expected_name, "Deals damage", expected_rarity, expected_mana);
+    Card card(name, desc, rarity, mana);
     
     // Assert
-    EXPECT_EQ(card.get_name(), expected_name);
-    EXPECT_EQ(card.get_mana_cost(), expected_mana);
-    EXPECT_EQ(card.get_rarity(), expected_rarity);
+    EXPECT_EQ(card.get_name(), name);
+    EXPECT_EQ(card.get_description(), desc);
+    EXPECT_EQ(card.get_rarity(), rarity);
+    EXPECT_EQ(card.get_mana_cost(), mana);
 }
 
 /**
- * @brief Tests mutator methods behavior
- * 
- * Verifies proper state changes after setters execution.
+ * @test Testing getters and setters
+ * @group CardTests
  */
-TEST(CardTest, SettersFunctionality) {
+TEST(CardBasicTest, SettersValidation) {
     // Arrange
     Card card("", "", Rarity::Common, 0);
-    const std::string new_name = "Ice Bolt";
-    const int new_mana = 3;
-    const Rarity new_rarity = Rarity::Rare;
     
-    // Act
-    card.set_name(new_name);
-    card.set_mana_cost(new_mana);
-    card.set_rarity(new_rarity);
+    // Act & Assert: Name
+    card.set_name("Ice Lance");
+    EXPECT_EQ(card.get_name(), "Ice Lance");
     
-    // Assert
-    EXPECT_EQ(card.get_name(), new_name);
-    EXPECT_EQ(card.get_mana_cost(), new_mana);
-    EXPECT_EQ(card.get_rarity(), new_rarity);
+    // Act & Assert: Description
+    card.set_description("Freezes target");
+    EXPECT_EQ(card.get_description(), "Freezes target");
+    
+    // Act & Assert: Mana
+    card.set_mana_cost(3);
+    EXPECT_EQ(card.get_mana_cost(), 3);
+    
+    // Act & Assert: Rarity
+    card.set_rarity(Rarity::Rare);
+    EXPECT_EQ(card.get_rarity(), Rarity::Rare);
 }
 
+// ==================== Spell_Card Class Tests ====================
+
 /**
- * @test Проверка базового функционала Spell_Card
- * @group SpellTests
+ * @test Spell_Card elemental functionality verification
+ * @group SpellFeatures
  */
-TEST(SpellCardTest, ConstructorAndElementAccess) {
+TEST(SpellCardTest, InheritanceAndElementHandling) {
     // Arrange
-    const std::string name = "Firestorm";
-    const Element elem = Element::Fire;
+    Spell_Card spell("Frost Nova", "Freeze enemies", 
+                    Rarity::Uncommon, 4, Element::Water);
     
-    // Act
-    Spell_Card spell(name, "AOE damage", Rarity::Rare, 6, elem);
+    // Act & Assert: Base conditions check
+    EXPECT_EQ(spell.get_name(), "Frost Nova");
+    EXPECT_EQ(spell.get_mana_cost(), 4);
     
-    // Assert
-    EXPECT_EQ(spell.get_name(), name);
-    EXPECT_EQ(spell.get_element(), elem);
+    // Act & Assert: Element check
+    EXPECT_EQ(spell.get_element(), Element::Water);
+    
+    // Act: Element change
+    spell.set_element(Element::Ice);
+    
+    // Assert: check changes
+    EXPECT_EQ(spell.get_element(), Element::Ice);
 }
 
 /**
- * @test Тест модификатора элемента
+ * @test Boundary values for mana
  * @group SpellTests
  */
-TEST(SpellCardTest, ElementModification) {
-    Spell_Card spell("Aqua", "Healing", Rarity::Common, 3, Element::Water);
+TEST(SpellCardTest, ManaBoundaryCases) {
+    // Arrange & Act: Min Value
+    Spell_Card spell1("Spark", "Minor shock", 
+                     Rarity::Common, 0, Element::Air);
+    EXPECT_EQ(spell1.get_mana_cost(), 0);
     
-    spell.set_element(Element::Air);
-    EXPECT_EQ(spell.get_element(), Element::Air);
+    // Arrange & Act: Max value
+    Spell_Card spell2("Armageddon", "Global destruction", 
+                     Rarity::Legendary, 10, Element::Fire);
+    EXPECT_EQ(spell2.get_mana_cost(), 10);
 }
 
+// ==================== Test Runner ====================
+
 /**
- * @brief Точка входа для всех тестов
+ * @brief Test entry point
  */
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
