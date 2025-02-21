@@ -15,6 +15,10 @@ Lab-work 2 - Card game
 
 make  - for compiling main.cpp 
 
+make test - for compiling test-card_app.cpp
+
 ## Run
 
-./lgo - for running main()
+./card_app - for running main()
+
+/test-card_app - for running test-card_app()
