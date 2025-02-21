@@ -1,0 +1,66 @@
+Card <: БазовыйОбъект
+• Поля:
+  - Название (Card_Name)
+  - Описание (description)
+  - Редкость (rarity)
+  - Стоимость маны (Mana_cost)
+• Методы:
+  - Get/Set для управления параметрами
+Spell_Card <: Card
+• Поля:
+  - Элемент(Element)
+• Методы:
+  - Get/Set для управления параметрами
+Attack_Spell_Card <: Spell_Card
+• Поля:
+  - Урон (Base_DMG)
+• Методы:
+  - Get/Set для управления параметрами
+Heal_Spell_Card <: Spell_Card
+• Поля:
+  - Коэффициент эффективности (Efficiency_deg)
+  - Лечение (Base_Heal)
+• Методы:
+  - Get/Set для управления параметрами
+Buff_Spell_Card <: Spell_Card
+• Поля:
+  - Множитель (Multiplier)
+• Методы:
+  - Get/Set для управления параметрами
+Defence_Spell_Card <: Spell_Card
+• Поля:
+  - броня (Base_DEF)
+• Методы:
+  - Get/Set для управления параметрами
+Beast_Card <: Card
+• Поля:
+  - урон (Base_DMG)
+  - племя (Tribe)
+• Методы:
+  - Get/Set для управления параметрами
+Creature_Card <: Card
+• Поля:
+  - урон (Base_DMG)
+  - множитель доп урона от оружия (Weapon_multiplier)
+• Методы:
+  - Get/Set для управления параметрами
+Weapon_Card <: Card
+• Поля:
+  - доп. урон (DMG_up)
+• Методы:
+  - Get/Set для управления параметрами
+Artifact_Card <: Card
+• Поля:
+  - Множитель (Multiplier)
+• Методы:
+  - Get/Set для управления параметрами
+Shield_Card <: Card
+• Поля:
+  - количество использования (Usage)
+• Методы:
+  - Get/Set для управления параметрами
+Buff_Card <: Card
+• Поля:
+  - Множитель (Buff_amount)
+• Методы:
+  - Get/Set для управления параметрами
