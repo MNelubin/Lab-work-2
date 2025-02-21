@@ -73,10 +73,10 @@ TEST(SpellCardTest, InheritanceAndElementHandling) {
     EXPECT_EQ(spell.get_element(), Element::Water);
     
     // Act: Element change
-    spell.set_element(Element::Ice);
+    spell.set_element(Element::Fire);
     
     // Assert: check changes
-    EXPECT_EQ(spell.get_element(), Element::Ice);
+    EXPECT_EQ(spell.get_element(), Element::Fire);
 }
 
 /**
@@ -91,7 +91,7 @@ TEST(SpellCardTest, ManaBoundaryCases) {
     
     // Arrange & Act: Max value
     Spell_Card spell2("Armageddon", "Global destruction", 
-                     Rarity::Legendary, 10, Element::Fire);
+                     Rarity::Epic, 10, Element::Fire);
     EXPECT_EQ(spell2.get_mana_cost(), 10);
 }
 
