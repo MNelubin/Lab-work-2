@@ -21,4 +21,4 @@ make test - for compiling test-card_app.cpp
 
 ./card_app - for running main()
 
-/test-card_app - for running test-card_app()
+./test-card_app - for running test-card_app()
