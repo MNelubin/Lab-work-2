@@ -118,7 +118,7 @@ TEST(AttackSpellTest, DamageManagement) {
  */
 TEST(AttackSpellTest, InvalidDamageThrows) {
     EXPECT_THROW(
-        Attack_Spell_Card("Invalid", "Test", Rarity::Free, 0, Element::Arcane, -1),
+        Attack_Spell_Card("Invalid", "Test", Rarity::Common, 0, Element::Fire, -1),
         std::invalid_argument
     );
 }
