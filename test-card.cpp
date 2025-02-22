@@ -5,6 +5,7 @@
 #include "card.h"
 #include "spell_card.h"
 #include "enums.h"
+#include "attack_spell_card.h"
 
 // ==================== Card Class Tests ====================
 
@@ -93,6 +94,33 @@ TEST(SpellCardTest, ManaBoundaryCases) {
     Spell_Card spell2("Armageddon", "Global destruction", 
                      Rarity::Epic, 10, Element::Fire);
     EXPECT_EQ(spell2.get_mana_cost(), 10);
+}
+
+// ==================== Attack_Spell_Card Class Tests ====================
+
+/**
+ * @test Attack spell damage validation
+ * @group CombatMechanics
+ */
+TEST(AttackSpellTest, DamageManagement) {
+    Attack_Spell_Card spell("Fire Blast", "Instant damage", 
+                           Rarity::Common, 2, Element::Fire, 3);
+    
+    EXPECT_EQ(spell.get_base_damage(), 3);
+    
+    spell.set_base_damage(5);
+    ASSERT_EQ(spell.get_base_damage(), 5);
+}
+
+/**
+ * @test Invalid damage initialization
+ * @group ErrorHandling
+ */
+TEST(AttackSpellTest, InvalidDamageThrows) {
+    EXPECT_THROW(
+        Attack_Spell_Card("Invalid", "Test", Rarity::Free, 0, Element::Arcane, -1),
+        std::invalid_argument
+    );
 }
 
 // ==================== Test Runner ====================
