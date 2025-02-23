@@ -1,0 +1,90 @@
+@startuml
+
+
+'#############################################
+' Main components
+'#############################################
+
+component "Card System" as cards {
+    [Card Manager] as card_mgr
+}
+
+component "Player System" as players {
+    [Player Manager] as player_mgr
+    [AI Module] as ai_mod
+    [Hand Controller] as hand_ctrl
+}
+
+component "Character System" as chars {
+    [Character Progression] as char_prog
+    [Ability Manager] as ability_mgr
+}
+
+component "Battle Mechanics" as battle {
+    [Damage Calculator] as dmg_calc
+    [Healing System] as heal_sys
+    [Buff Controller] as buff_ctrl
+}
+
+component "Validation" as valid {
+    [Mana Validator] as mana_val
+    [Damage Validator] as dmg_val
+}
+
+component "Data Persistence" as persist {
+    [Save/Load Manager] as save_mgr
+    [Stats Recorder] as stats_rec
+}
+
+component "Testing" as test {
+    [Unit Tests] as unit_tests
+    [Integration Tests] as int_tests
+}
+
+'#############################################
+' Component links
+'#############################################
+
+cards --> players : Provides card data
+players --> battle : Uses in combat
+chars --> players : Manages characters
+battle --> valid : Requires validation
+test --> cards : Verifies card logic
+test --> players : Tests player actions
+persist --> players : Saves player progress
+ai_mod --> cards : Accesses card info
+hand_ctrl --> card_mgr : Manages cards
+dmg_calc --> dmg_val : Validates damage
+heal_sys --> mana_val : Checks mana
+
+'#############################################
+' Explanations
+'#############################################
+
+note top of cards
+  Includes all card classes:
+- Card, Spell_Card, Attack_Spell_Card
+  - Beast_Card, Weapon_Card, etc.
+end note
+
+note right of players
+  Player Management:
+- Human_Player_Player
+- AI_Player
+  - Interaction with the hand
+end note
+
+note left of chars
+  The character system:
+  - Character, Healer_Character
+  - Tank_Character, Knight_Character
+  - Levelling up (lvl_up)
+end note
+
+note bottom of battle
+  Combat Mechanics:
+- Damage/Healing calculation
+  - Application of buffs
+  - Interaction of cards and characters
+end note
+@enduml
