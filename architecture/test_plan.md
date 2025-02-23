@@ -15,7 +15,7 @@
 - **OS**: Ubuntu 22.04 LTS
 - **Compiler**: GCC 11+
 - **CI**: Existing system with preinstalled:
-``yaml
+```yaml
 - name: Setup environment
       run: |
         sudo apt-get update
@@ -65,7 +65,7 @@ TEST(AITest, BestCardSelection) {
     AI_Player ai(hand);
     ASSERT_EQ(ai.count_best(), 0); // Selecting the first card
 }
-``
+```
 
 ###3.4 Saving Progress
 **File format:**
