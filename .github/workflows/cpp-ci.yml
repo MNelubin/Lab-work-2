@@ -22,7 +22,7 @@ jobs:
 
     - name: Execute tests
       run: |
-        ./tests/test-card
+        ./test-card_app
 
     - name: Build release
       run: |
