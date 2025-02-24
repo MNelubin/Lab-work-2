@@ -8,6 +8,7 @@ var annotated_dup =
     [ "Card", "classCard.html", "classCard" ],
     [ "Creature_Card", "classCreature__Card.html", "classCreature__Card" ],
     [ "Defence_Spell_Card", "classDefence__Spell__Card.html", "classDefence__Spell__Card" ],
+    [ "Hand", "classHand.html", "classHand" ],
     [ "Heal_Spell_Card", "classHeal__Spell__Card.html", "classHeal__Spell__Card" ],
     [ "Shield_Card", "classShield__Card.html", "classShield__Card" ],
     [ "Spell_Card", "classSpell__Card.html", "classSpell__Card" ],

@@ -1,64 +1,69 @@
+# Configuration
 PROJECT = card_app
-
 LIBPROJECT = $(PROJECT).a
-
 TESTPROJECT = test-$(PROJECT)
 
-CXX = g++
-
-A = ar
-
-AFLAGS = rsv
-
-CCXFLAGS = -I. -std=c++17 -Wall -g -fPIC -Werror -Wpedantic -Wall -Iinclude
-
-LDXXFLAGS = $(CCXFLAGS) -L. -l:$(LIBPROJECT)
-
-LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
-
+# Directories
+SRC_DIR = src
+TEST_DIR = tests
 INC_DIR = include
 
-DEPS=$(wildcard $(INC_DIR)/*.h)
+# Tools
+CXX = g++
+A = ar
+AFLAGS = crs
 
-SRC_DIR = src
+# Flags
+CXXFLAGS = -I. -std=c++17 -Wall -g -fPIC -Werror -Wpedantic -Iinclude
+LDXXFLAGS = $(CXXFLAGS) -lpthread
+LDGTESTFLAGS = $(CXXFLAGS) -lgtest -lgtest_main -lpthread
 
+# Source Files
 SRC = $(wildcard $(SRC_DIR)/*.cpp) \
       $(wildcard $(SRC_DIR)/cards/*.cpp) \
       $(wildcard $(SRC_DIR)/player/*.cpp)
 
-OBJ = $(SRC:.cpp=.o)
+# Split sources: Application (main.cpp) and Library (others)
+APP_SRC = $(SRC_DIR)/main.cpp
+LIB_SRC = $(filter-out $(APP_SRC), $(SRC))
+LIB_OBJ = $(LIB_SRC:.cpp=.o)
+APP_OBJ = $(APP_SRC:.cpp=.o)
 
-#OBJ = card.o spell_card.o attack_spell_card.o heal_spell_card.o buff_spell_card.o defence_spell_card.o beast_card.o creature_card.o weapon_card.o artifact_card.o shield_card.o buff_card.o hand.o
+TEST_SRC = $(TEST_DIR)/test-card.cpp
+TEST_OBJ = $(TEST_SRC:.cpp=.o)
 
-TEST_DIR = tests
+# Dependencies
+DEPS = $(wildcard $(INC_DIR)/*.h)
 
-TEST_OBJ = tests/test-card.o
-
-.PHONY: default
-
-default: all
-
-%.o: %.cpp $(DEPS)
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
-
-$(LIBPROJECT): $(OBJ)
-	$(A) $(AFLAGS) $@ $^
-
-$(PROJECT): src/main.o $(LIBPROJECT)
-	$(CXX) -o $@ src/main.o $(LDXXFLAGS)
-
-$(TESTPROJECT): $(LIBPROJECT) $(TEST_OBJ)
-	$(CXX) -o tests/test-card $(TEST_OBJ) $(filter-out src/main.o, $(OBJ)) $(LDGTESTFLAGS)
-
-test: $(TESTPROJECT)
+# Targets
+.PHONY: all test check clean cleanall
 
 all: $(PROJECT)
 
-.PHONY: clean
+# Build application
+$(PROJECT): $(APP_OBJ) $(LIBPROJECT)
+	$(CXX) -o $@ $(APP_OBJ) $(LIBPROJECT) $(LDXXFLAGS)
 
+
+# Build static library
+$(LIBPROJECT): $(LIB_OBJ)
+	$(A) $(AFLAGS) $@ $^
+
+# Build test
+$(TESTPROJECT): $(TEST_OBJ) $(LIBPROJECT)
+	$(CXX) -o $@ $(TEST_OBJ) $(LIBPROJECT) $(LDGTESTFLAGS)
+
+# Run tests
+test: $(TESTPROJECT)
+	@./$(TESTPROJECT)
+
+# Compile C++ files
+%.o: %.cpp $(DEPS)
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+# Clean rules
 clean:
-	rm -f $(OBJ)
+	rm -f $(APP_OBJ) $(LIB_OBJ) $(TEST_OBJ)
 
 cleanall: clean
 	rm -f $(PROJECT) $(LIBPROJECT) $(TESTPROJECT)
-

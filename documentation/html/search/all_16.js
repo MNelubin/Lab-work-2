@@ -23,13 +23,14 @@ var searchData=
   ['shield_5fcard_20',['Shield_Card',['../classShield__Card.html',1,'Shield_Card'],['../classShield__Card.html#a7c19f0e4eb8af2f53d127d3f146d0254',1,'Shield_Card::Shield_Card()']]],
   ['shield_5fcard_2ecpp_21',['shield_card.cpp',['../shield__card_8cpp.html',1,'']]],
   ['shield_5fcard_2eh_22',['shield_card.h',['../shield__card_8h.html',1,'']]],
-  ['south_23',['South',['../enums_8h.html#af831c68e3c232459dad13935143716ffa263d7b2cf53802c9ed127b718c0bf9fd',1,'enums.h']]],
-  ['spell_5fcard_24',['Spell_Card',['../classSpell__Card.html',1,'Spell_Card'],['../classSpell__Card.html#a410e68985095603e4e6d2d5946ba3cca',1,'Spell_Card::Spell_Card()']]],
-  ['spell_5fcard_2ecpp_25',['spell_card.cpp',['../spell__card_8cpp.html',1,'']]],
-  ['spell_5fcard_2eh_26',['spell_card.h',['../spell__card_8h.html',1,'']]],
-  ['success_20criteria_27',['5. Success criteria',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md23',1,'']]],
-  ['system_28',['3.3 The AI System',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md20',1,'']]],
-  ['system_29',['system',['../md__2home_2debil_2Lab-work-2_2architecture_2General__architecture.html',1,'General description of the system'],['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md8',1,'The AI system']]],
-  ['system_20requirements_30',['Complete Core System Requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html',1,'']]],
-  ['system_20requirements_31',['Brief system requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html',1,'']]]
+  ['sort_5fby_5fmana_23',['sort_by_mana',['../classHand.html#ac5494271768be40a87efd694557812a1',1,'Hand']]],
+  ['south_24',['South',['../enums_8h.html#af831c68e3c232459dad13935143716ffa263d7b2cf53802c9ed127b718c0bf9fd',1,'enums.h']]],
+  ['spell_5fcard_25',['Spell_Card',['../classSpell__Card.html',1,'Spell_Card'],['../classSpell__Card.html#a410e68985095603e4e6d2d5946ba3cca',1,'Spell_Card::Spell_Card()']]],
+  ['spell_5fcard_2ecpp_26',['spell_card.cpp',['../spell__card_8cpp.html',1,'']]],
+  ['spell_5fcard_2eh_27',['spell_card.h',['../spell__card_8h.html',1,'']]],
+  ['success_20criteria_28',['5. Success criteria',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md23',1,'']]],
+  ['system_29',['3.3 The AI System',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md20',1,'']]],
+  ['system_30',['system',['../md__2home_2debil_2Lab-work-2_2architecture_2General__architecture.html',1,'General description of the system'],['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md8',1,'The AI system']]],
+  ['system_20requirements_31',['Complete Core System Requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html',1,'']]],
+  ['system_20requirements_32',['Brief system requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html',1,'']]]
 ];

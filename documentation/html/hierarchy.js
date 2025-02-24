@@ -13,5 +13,6 @@ var hierarchy =
         [ "Heal_Spell_Card", "classHeal__Spell__Card.html", null ]
       ] ],
       [ "Weapon_Card", "classWeapon__Card.html", null ]
-    ] ]
+    ] ],
+    [ "Hand", "classHand.html", null ]
 ];

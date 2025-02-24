@@ -1,19 +1,20 @@
-\doxysection{/home/debil/\+Lab-\/work-\/2/test-\/card.cpp File Reference}
-\hypertarget{test-card_8cpp}{}\label{test-card_8cpp}\index{/home/debil/Lab-\/work-\/2/test-\/card.cpp@{/home/debil/Lab-\/work-\/2/test-\/card.cpp}}
+\doxysection{/home/debil/\+Lab-\/work-\/2/tests/test-\/card.cpp File Reference}
+\hypertarget{test-card_8cpp}{}\label{test-card_8cpp}\index{/home/debil/Lab-\/work-\/2/tests/test-\/card.cpp@{/home/debil/Lab-\/work-\/2/tests/test-\/card.cpp}}
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
-{\ttfamily \#include "{}card.\+h"{}}\newline
-{\ttfamily \#include "{}spell\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}enums.\+h"{}}\newline
-{\ttfamily \#include "{}attack\+\_\+spell\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}heal\+\_\+spell\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}buff\+\_\+spell\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}defence\+\_\+spell\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}beast\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}creature\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}weapon\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}artifact\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}shield\+\_\+card.\+h"{}}\newline
-{\ttfamily \#include "{}buff\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/enums.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/attack\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/heal\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/buff\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/defence\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/beast\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/creature\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/weapon\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/artifact\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/shield\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/buff\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/hand.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,6 +66,22 @@
 \item 
 \mbox{\hyperlink{test-card_8cpp_a7ffdd3e2250b58cec5c180c4448fb60d}{TEST}} (Buff\+Card\+Test, Invalid\+Values\+Throw)
 \item 
+\mbox{\hyperlink{test-card_8cpp_a96e784951ccc206088ae43b8e3ee9651}{TEST}} (Hand\+Test, Constructor\+And\+Getters)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a89d3aaec15240ee81d08639f89514fb4}{TEST}} (Hand\+Test, Add\+And\+Remove\+Card)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a38485445595840528dd26021427b0b7b}{TEST}} (Hand\+Test, Invalid\+Index\+Handling)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a41e1fc71691f6692e380f9915c18fed4}{TEST}} (Hand\+Test, Get\+Card)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a8c372e74c59871edfeb09451893a3516}{TEST}} (Hand\+Test, Sort\+By\+Mana)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a7c6b2cccb7b616fc5148a7f44a199b85}{TEST}} (Hand\+Test, Generate\+Standard\+Hands)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a542fcab62cf6779d389b10b55ac29e1a}{TEST}} (Hand\+Test, Get\+Unique\+Card\+Types)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a3d7fa7660bfdb4217f3bfed40bdecf86}{TEST}} (Hand\+Test, Get\+Cards\+By\+Type)
+\item 
 int \mbox{\hyperlink{test-card_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
 \begin{DoxyCompactList}\small\item\em Test entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -82,145 +99,193 @@ Test entry point.
 
 \Hypertarget{test-card_8cpp_ade27b93068abd2cfcaac4a93a40bcb66}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_ade27b93068abd2cfcaac4a93a40bcb66} 
 TEST (\begin{DoxyParamCaption}\item[{Artifact\+Card\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a49c788b99883edd63bb345dace40535f}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a49c788b99883edd63bb345dace40535f} 
 TEST (\begin{DoxyParamCaption}\item[{Artifact\+Card\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a8cd2d182df39ce141fa84259f8cb46c8}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a8cd2d182df39ce141fa84259f8cb46c8} 
 TEST (\begin{DoxyParamCaption}\item[{Attack\+Spell\+Test}]{}{, }\item[{Damage\+Management}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_aba0011ba7054595b83c46b7f89d33a59}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_aba0011ba7054595b83c46b7f89d33a59} 
 TEST (\begin{DoxyParamCaption}\item[{Attack\+Spell\+Test}]{}{, }\item[{Invalid\+Damage\+Throws}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a77bc7e90eef6e7a2e20be55b24509a07}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a77bc7e90eef6e7a2e20be55b24509a07} 
 TEST (\begin{DoxyParamCaption}\item[{Beast\+Card\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a23b7e61df8661000f4cf1f1eac46c43c}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a23b7e61df8661000f4cf1f1eac46c43c} 
 TEST (\begin{DoxyParamCaption}\item[{Beast\+Card\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_aa31e734d3341e0f63b7f0841953b995d}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_aa31e734d3341e0f63b7f0841953b995d} 
 TEST (\begin{DoxyParamCaption}\item[{Buff\+Card\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a7ffdd3e2250b58cec5c180c4448fb60d}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a7ffdd3e2250b58cec5c180c4448fb60d} 
 TEST (\begin{DoxyParamCaption}\item[{Buff\+Card\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_aa66cea39df0f293647de992c8d59f27f}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [9/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [9/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_aa66cea39df0f293647de992c8d59f27f} 
 TEST (\begin{DoxyParamCaption}\item[{Buff\+Spell\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a2cbba9da21fe6e15a816b54fff94c61d}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [10/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [10/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a2cbba9da21fe6e15a816b54fff94c61d} 
 TEST (\begin{DoxyParamCaption}\item[{Buff\+Spell\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [11/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [11/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a} 
 TEST (\begin{DoxyParamCaption}\item[{Card\+Basic\+Test}]{}{, }\item[{Constructor\+And\+Getters}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a880e202bb1b4b19e41edd12692dd282f}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [12/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [12/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a880e202bb1b4b19e41edd12692dd282f} 
 TEST (\begin{DoxyParamCaption}\item[{Card\+Basic\+Test}]{}{, }\item[{Setters\+Validation}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_ae905fa85cc055c591ceef027dd913a30}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [13/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [13/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_ae905fa85cc055c591ceef027dd913a30} 
 TEST (\begin{DoxyParamCaption}\item[{Creature\+Card\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a8b42ebcb86252f04fd98141831726355}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [14/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [14/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a8b42ebcb86252f04fd98141831726355} 
 TEST (\begin{DoxyParamCaption}\item[{Creature\+Card\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a7a9890a10533463be93564696b27153a}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [15/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [15/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a7a9890a10533463be93564696b27153a} 
 TEST (\begin{DoxyParamCaption}\item[{Defence\+Spell\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a8f62fdf971f3b1842babe546be8d4772}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [16/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [16/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a8f62fdf971f3b1842babe546be8d4772} 
 TEST (\begin{DoxyParamCaption}\item[{Defence\+Spell\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
+\Hypertarget{test-card_8cpp_a89d3aaec15240ee81d08639f89514fb4}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [17/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a89d3aaec15240ee81d08639f89514fb4} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Add\+And\+Remove\+Card}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a96e784951ccc206088ae43b8e3ee9651}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [18/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a96e784951ccc206088ae43b8e3ee9651} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Constructor\+And\+Getters}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a7c6b2cccb7b616fc5148a7f44a199b85}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [19/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a7c6b2cccb7b616fc5148a7f44a199b85} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Generate\+Standard\+Hands}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a41e1fc71691f6692e380f9915c18fed4}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [20/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a41e1fc71691f6692e380f9915c18fed4} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Get\+Card}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a3d7fa7660bfdb4217f3bfed40bdecf86}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [21/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a3d7fa7660bfdb4217f3bfed40bdecf86} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Get\+Cards\+By\+Type}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a542fcab62cf6779d389b10b55ac29e1a}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [22/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a542fcab62cf6779d389b10b55ac29e1a} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Get\+Unique\+Card\+Types}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a38485445595840528dd26021427b0b7b}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [23/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a38485445595840528dd26021427b0b7b} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Invalid\+Index\+Handling}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test-card_8cpp_a8c372e74c59871edfeb09451893a3516}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [24/32]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a8c372e74c59871edfeb09451893a3516} 
+TEST (\begin{DoxyParamCaption}\item[{Hand\+Test}]{}{, }\item[{Sort\+By\+Mana}]{}{}\end{DoxyParamCaption})}
+
 \Hypertarget{test-card_8cpp_ada7df4f6372d85348d6c37672dd832f6}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [17/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [25/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_ada7df4f6372d85348d6c37672dd832f6} 
 TEST (\begin{DoxyParamCaption}\item[{Heal\+Spell\+Test}]{}{, }\item[{Heal\+Management}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a5cbe95ada2c0e1ab3fa2c2d8cd749f02}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [18/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [26/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a5cbe95ada2c0e1ab3fa2c2d8cd749f02} 
 TEST (\begin{DoxyParamCaption}\item[{Heal\+Spell\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a25dba2cd453e8fec723d5af9d35e1f0b}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [19/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [27/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a25dba2cd453e8fec723d5af9d35e1f0b} 
 TEST (\begin{DoxyParamCaption}\item[{Shield\+Card\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a5cccbeb6d23cb744c3e4ecd91940a1aa}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [20/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [28/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a5cccbeb6d23cb744c3e4ecd91940a1aa} 
 TEST (\begin{DoxyParamCaption}\item[{Shield\+Card\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_ae975df4617bfe3142fbf1bbaf2b7060a}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [21/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [29/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_ae975df4617bfe3142fbf1bbaf2b7060a} 
 TEST (\begin{DoxyParamCaption}\item[{Spell\+Card\+Test}]{}{, }\item[{Inheritance\+And\+Element\+Handling}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a92a2c114f065ab3055be1d27920b91f1}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [22/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [30/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a92a2c114f065ab3055be1d27920b91f1} 
 TEST (\begin{DoxyParamCaption}\item[{Spell\+Card\+Test}]{}{, }\item[{Mana\+Boundary\+Cases}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a716972f867176710ace3e1c0df9fb7e3}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [23/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [31/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a716972f867176710ace3e1c0df9fb7e3} 
 TEST (\begin{DoxyParamCaption}\item[{Weapon\+Card\+Test}]{}{, }\item[{Basic\+Functionality}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{test-card_8cpp_a1a7c72023c480d9731f5b5eb7be7e970}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
 \index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [24/24]}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [32/32]}}
 {\footnotesize\ttfamily \label{test-card_8cpp_a1a7c72023c480d9731f5b5eb7be7e970} 
 TEST (\begin{DoxyParamCaption}\item[{Weapon\+Card\+Test}]{}{, }\item[{Invalid\+Values\+Throw}]{}{}\end{DoxyParamCaption})}
 

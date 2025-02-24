@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Card game: /home/debil/Lab-work-2/test-card.cpp File Reference</title>
+<title>Card game: /home/debil/Lab-work-2/tests/test-card.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,19 +108,20 @@ $(function(){initNavTree('test-card_8cpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="card_8h_source.html">card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="spell__card_8h_source.html">spell_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="enums_8h_source.html">enums.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="attack__spell__card_8h_source.html">attack_spell_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="heal__spell__card_8h_source.html">heal_spell_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="buff__spell__card_8h_source.html">buff_spell_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="defence__spell__card_8h_source.html">defence_spell_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="beast__card_8h_source.html">beast_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="creature__card_8h_source.html">creature_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="weapon__card_8h_source.html">weapon_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="artifact__card_8h_source.html">artifact_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="shield__card_8h_source.html">shield_card.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="buff__card_8h_source.html">buff_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="card_8h_source.html">../include/cards/card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spell__card_8h_source.html">../include/cards/spell_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="enums_8h_source.html">../include/cards/enums.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="attack__spell__card_8h_source.html">../include/cards/attack_spell_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="heal__spell__card_8h_source.html">../include/cards/heal_spell_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buff__spell__card_8h_source.html">../include/cards/buff_spell_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="defence__spell__card_8h_source.html">../include/cards/defence_spell_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="beast__card_8h_source.html">../include/cards/beast_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="creature__card_8h_source.html">../include/cards/creature_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="weapon__card_8h_source.html">../include/cards/weapon_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="artifact__card_8h_source.html">../include/cards/artifact_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shield__card_8h_source.html">../include/cards/shield_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buff__card_8h_source.html">../include/cards/buff_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hand_8h_source.html">../include/player/hand.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -172,6 +173,22 @@ Functions</h2></td></tr>
 <tr class="separator:aa31e734d3341e0f63b7f0841953b995d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ffdd3e2250b58cec5c180c4448fb60d" id="r_a7ffdd3e2250b58cec5c180c4448fb60d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ffdd3e2250b58cec5c180c4448fb60d">TEST</a> (BuffCardTest, InvalidValuesThrow)</td></tr>
 <tr class="separator:a7ffdd3e2250b58cec5c180c4448fb60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96e784951ccc206088ae43b8e3ee9651" id="r_a96e784951ccc206088ae43b8e3ee9651"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96e784951ccc206088ae43b8e3ee9651">TEST</a> (HandTest, ConstructorAndGetters)</td></tr>
+<tr class="separator:a96e784951ccc206088ae43b8e3ee9651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d3aaec15240ee81d08639f89514fb4" id="r_a89d3aaec15240ee81d08639f89514fb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d3aaec15240ee81d08639f89514fb4">TEST</a> (HandTest, AddAndRemoveCard)</td></tr>
+<tr class="separator:a89d3aaec15240ee81d08639f89514fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38485445595840528dd26021427b0b7b" id="r_a38485445595840528dd26021427b0b7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38485445595840528dd26021427b0b7b">TEST</a> (HandTest, InvalidIndexHandling)</td></tr>
+<tr class="separator:a38485445595840528dd26021427b0b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e1fc71691f6692e380f9915c18fed4" id="r_a41e1fc71691f6692e380f9915c18fed4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41e1fc71691f6692e380f9915c18fed4">TEST</a> (HandTest, GetCard)</td></tr>
+<tr class="separator:a41e1fc71691f6692e380f9915c18fed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c372e74c59871edfeb09451893a3516" id="r_a8c372e74c59871edfeb09451893a3516"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c372e74c59871edfeb09451893a3516">TEST</a> (HandTest, SortByMana)</td></tr>
+<tr class="separator:a8c372e74c59871edfeb09451893a3516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6b2cccb7b616fc5148a7f44a199b85" id="r_a7c6b2cccb7b616fc5148a7f44a199b85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c6b2cccb7b616fc5148a7f44a199b85">TEST</a> (HandTest, GenerateStandardHands)</td></tr>
+<tr class="separator:a7c6b2cccb7b616fc5148a7f44a199b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542fcab62cf6779d389b10b55ac29e1a" id="r_a542fcab62cf6779d389b10b55ac29e1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a542fcab62cf6779d389b10b55ac29e1a">TEST</a> (HandTest, GetUniqueCardTypes)</td></tr>
+<tr class="separator:a542fcab62cf6779d389b10b55ac29e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7fa7660bfdb4217f3bfed40bdecf86" id="r_a3d7fa7660bfdb4217f3bfed40bdecf86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d7fa7660bfdb4217f3bfed40bdecf86">TEST</a> (HandTest, GetCardsByType)</td></tr>
+<tr class="separator:a3d7fa7660bfdb4217f3bfed40bdecf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test entry point.  <br /></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,7 +218,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="ade27b93068abd2cfcaac4a93a40bcb66" name="ade27b93068abd2cfcaac4a93a40bcb66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade27b93068abd2cfcaac4a93a40bcb66">&#9670;&#160;</a></span>TEST() <span class="overload">[1/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ade27b93068abd2cfcaac4a93a40bcb66">&#9670;&#160;</a></span>TEST() <span class="overload">[1/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +239,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a49c788b99883edd63bb345dace40535f" name="a49c788b99883edd63bb345dace40535f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49c788b99883edd63bb345dace40535f">&#9670;&#160;</a></span>TEST() <span class="overload">[2/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c788b99883edd63bb345dace40535f">&#9670;&#160;</a></span>TEST() <span class="overload">[2/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +260,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a8cd2d182df39ce141fa84259f8cb46c8" name="a8cd2d182df39ce141fa84259f8cb46c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cd2d182df39ce141fa84259f8cb46c8">&#9670;&#160;</a></span>TEST() <span class="overload">[3/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd2d182df39ce141fa84259f8cb46c8">&#9670;&#160;</a></span>TEST() <span class="overload">[3/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +281,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="aba0011ba7054595b83c46b7f89d33a59" name="aba0011ba7054595b83c46b7f89d33a59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba0011ba7054595b83c46b7f89d33a59">&#9670;&#160;</a></span>TEST() <span class="overload">[4/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0011ba7054595b83c46b7f89d33a59">&#9670;&#160;</a></span>TEST() <span class="overload">[4/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +302,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a77bc7e90eef6e7a2e20be55b24509a07" name="a77bc7e90eef6e7a2e20be55b24509a07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77bc7e90eef6e7a2e20be55b24509a07">&#9670;&#160;</a></span>TEST() <span class="overload">[5/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a77bc7e90eef6e7a2e20be55b24509a07">&#9670;&#160;</a></span>TEST() <span class="overload">[5/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +323,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a23b7e61df8661000f4cf1f1eac46c43c" name="a23b7e61df8661000f4cf1f1eac46c43c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23b7e61df8661000f4cf1f1eac46c43c">&#9670;&#160;</a></span>TEST() <span class="overload">[6/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b7e61df8661000f4cf1f1eac46c43c">&#9670;&#160;</a></span>TEST() <span class="overload">[6/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +344,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa31e734d3341e0f63b7f0841953b995d" name="aa31e734d3341e0f63b7f0841953b995d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa31e734d3341e0f63b7f0841953b995d">&#9670;&#160;</a></span>TEST() <span class="overload">[7/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31e734d3341e0f63b7f0841953b995d">&#9670;&#160;</a></span>TEST() <span class="overload">[7/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,7 +365,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a7ffdd3e2250b58cec5c180c4448fb60d" name="a7ffdd3e2250b58cec5c180c4448fb60d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ffdd3e2250b58cec5c180c4448fb60d">&#9670;&#160;</a></span>TEST() <span class="overload">[8/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ffdd3e2250b58cec5c180c4448fb60d">&#9670;&#160;</a></span>TEST() <span class="overload">[8/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,7 +386,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa66cea39df0f293647de992c8d59f27f" name="aa66cea39df0f293647de992c8d59f27f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa66cea39df0f293647de992c8d59f27f">&#9670;&#160;</a></span>TEST() <span class="overload">[9/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66cea39df0f293647de992c8d59f27f">&#9670;&#160;</a></span>TEST() <span class="overload">[9/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,7 +407,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a2cbba9da21fe6e15a816b54fff94c61d" name="a2cbba9da21fe6e15a816b54fff94c61d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cbba9da21fe6e15a816b54fff94c61d">&#9670;&#160;</a></span>TEST() <span class="overload">[10/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbba9da21fe6e15a816b54fff94c61d">&#9670;&#160;</a></span>TEST() <span class="overload">[10/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +428,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="afeb6d4047a9b58aca40a22b0e710266a" name="afeb6d4047a9b58aca40a22b0e710266a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeb6d4047a9b58aca40a22b0e710266a">&#9670;&#160;</a></span>TEST() <span class="overload">[11/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afeb6d4047a9b58aca40a22b0e710266a">&#9670;&#160;</a></span>TEST() <span class="overload">[11/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +449,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a880e202bb1b4b19e41edd12692dd282f" name="a880e202bb1b4b19e41edd12692dd282f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a880e202bb1b4b19e41edd12692dd282f">&#9670;&#160;</a></span>TEST() <span class="overload">[12/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a880e202bb1b4b19e41edd12692dd282f">&#9670;&#160;</a></span>TEST() <span class="overload">[12/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -453,7 +470,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae905fa85cc055c591ceef027dd913a30" name="ae905fa85cc055c591ceef027dd913a30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae905fa85cc055c591ceef027dd913a30">&#9670;&#160;</a></span>TEST() <span class="overload">[13/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae905fa85cc055c591ceef027dd913a30">&#9670;&#160;</a></span>TEST() <span class="overload">[13/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,7 +491,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a8b42ebcb86252f04fd98141831726355" name="a8b42ebcb86252f04fd98141831726355"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b42ebcb86252f04fd98141831726355">&#9670;&#160;</a></span>TEST() <span class="overload">[14/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b42ebcb86252f04fd98141831726355">&#9670;&#160;</a></span>TEST() <span class="overload">[14/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +512,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a7a9890a10533463be93564696b27153a" name="a7a9890a10533463be93564696b27153a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a9890a10533463be93564696b27153a">&#9670;&#160;</a></span>TEST() <span class="overload">[15/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9890a10533463be93564696b27153a">&#9670;&#160;</a></span>TEST() <span class="overload">[15/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -516,7 +533,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a8f62fdf971f3b1842babe546be8d4772" name="a8f62fdf971f3b1842babe546be8d4772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f62fdf971f3b1842babe546be8d4772">&#9670;&#160;</a></span>TEST() <span class="overload">[16/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f62fdf971f3b1842babe546be8d4772">&#9670;&#160;</a></span>TEST() <span class="overload">[16/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,8 +553,176 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a89d3aaec15240ee81d08639f89514fb4" name="a89d3aaec15240ee81d08639f89514fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d3aaec15240ee81d08639f89514fb4">&#9670;&#160;</a></span>TEST() <span class="overload">[17/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddAndRemoveCard</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96e784951ccc206088ae43b8e3ee9651" name="a96e784951ccc206088ae43b8e3ee9651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96e784951ccc206088ae43b8e3ee9651">&#9670;&#160;</a></span>TEST() <span class="overload">[18/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ConstructorAndGetters</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c6b2cccb7b616fc5148a7f44a199b85" name="a7c6b2cccb7b616fc5148a7f44a199b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6b2cccb7b616fc5148a7f44a199b85">&#9670;&#160;</a></span>TEST() <span class="overload">[19/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GenerateStandardHands</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41e1fc71691f6692e380f9915c18fed4" name="a41e1fc71691f6692e380f9915c18fed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e1fc71691f6692e380f9915c18fed4">&#9670;&#160;</a></span>TEST() <span class="overload">[20/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GetCard</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d7fa7660bfdb4217f3bfed40bdecf86" name="a3d7fa7660bfdb4217f3bfed40bdecf86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7fa7660bfdb4217f3bfed40bdecf86">&#9670;&#160;</a></span>TEST() <span class="overload">[21/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GetCardsByType</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a542fcab62cf6779d389b10b55ac29e1a" name="a542fcab62cf6779d389b10b55ac29e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a542fcab62cf6779d389b10b55ac29e1a">&#9670;&#160;</a></span>TEST() <span class="overload">[22/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GetUniqueCardTypes</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38485445595840528dd26021427b0b7b" name="a38485445595840528dd26021427b0b7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38485445595840528dd26021427b0b7b">&#9670;&#160;</a></span>TEST() <span class="overload">[23/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InvalidIndexHandling</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c372e74c59871edfeb09451893a3516" name="a8c372e74c59871edfeb09451893a3516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c372e74c59871edfeb09451893a3516">&#9670;&#160;</a></span>TEST() <span class="overload">[24/32]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">HandTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SortByMana</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ada7df4f6372d85348d6c37672dd832f6" name="ada7df4f6372d85348d6c37672dd832f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada7df4f6372d85348d6c37672dd832f6">&#9670;&#160;</a></span>TEST() <span class="overload">[17/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ada7df4f6372d85348d6c37672dd832f6">&#9670;&#160;</a></span>TEST() <span class="overload">[25/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -558,7 +743,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a5cbe95ada2c0e1ab3fa2c2d8cd749f02" name="a5cbe95ada2c0e1ab3fa2c2d8cd749f02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cbe95ada2c0e1ab3fa2c2d8cd749f02">&#9670;&#160;</a></span>TEST() <span class="overload">[18/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbe95ada2c0e1ab3fa2c2d8cd749f02">&#9670;&#160;</a></span>TEST() <span class="overload">[26/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -579,7 +764,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a25dba2cd453e8fec723d5af9d35e1f0b" name="a25dba2cd453e8fec723d5af9d35e1f0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25dba2cd453e8fec723d5af9d35e1f0b">&#9670;&#160;</a></span>TEST() <span class="overload">[19/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a25dba2cd453e8fec723d5af9d35e1f0b">&#9670;&#160;</a></span>TEST() <span class="overload">[27/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -600,7 +785,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a5cccbeb6d23cb744c3e4ecd91940a1aa" name="a5cccbeb6d23cb744c3e4ecd91940a1aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cccbeb6d23cb744c3e4ecd91940a1aa">&#9670;&#160;</a></span>TEST() <span class="overload">[20/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cccbeb6d23cb744c3e4ecd91940a1aa">&#9670;&#160;</a></span>TEST() <span class="overload">[28/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -621,7 +806,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae975df4617bfe3142fbf1bbaf2b7060a" name="ae975df4617bfe3142fbf1bbaf2b7060a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae975df4617bfe3142fbf1bbaf2b7060a">&#9670;&#160;</a></span>TEST() <span class="overload">[21/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae975df4617bfe3142fbf1bbaf2b7060a">&#9670;&#160;</a></span>TEST() <span class="overload">[29/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -642,7 +827,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a92a2c114f065ab3055be1d27920b91f1" name="a92a2c114f065ab3055be1d27920b91f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92a2c114f065ab3055be1d27920b91f1">&#9670;&#160;</a></span>TEST() <span class="overload">[22/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a92a2c114f065ab3055be1d27920b91f1">&#9670;&#160;</a></span>TEST() <span class="overload">[30/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -663,7 +848,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a716972f867176710ace3e1c0df9fb7e3" name="a716972f867176710ace3e1c0df9fb7e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a716972f867176710ace3e1c0df9fb7e3">&#9670;&#160;</a></span>TEST() <span class="overload">[23/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a716972f867176710ace3e1c0df9fb7e3">&#9670;&#160;</a></span>TEST() <span class="overload">[31/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -684,7 +869,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a1a7c72023c480d9731f5b5eb7be7e970" name="a1a7c72023c480d9731f5b5eb7be7e970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a7c72023c480d9731f5b5eb7be7e970">&#9670;&#160;</a></span>TEST() <span class="overload">[24/24]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7c72023c480d9731f5b5eb7be7e970">&#9670;&#160;</a></span>TEST() <span class="overload">[32/32]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +894,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_0e20fe1ab5364e5588bc147ecaa037f0.html">Lab-work-2</a></li><li class="navelem"><a class="el" href="test-card_8cpp.html">test-card.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_0e20fe1ab5364e5588bc147ecaa037f0.html">Lab-work-2</a></li><li class="navelem"><a class="el" href="dir_5e84548313bd11b4b83a16e1d3371bc6.html">tests</a></li><li class="navelem"><a class="el" href="test-card_8cpp.html">test-card.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
