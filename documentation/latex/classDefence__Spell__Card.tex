@@ -1,0 +1,158 @@
+\doxysection{Defence\+\_\+\+Spell\+\_\+\+Card Class Reference}
+\hypertarget{classDefence__Spell__Card}{}\label{classDefence__Spell__Card}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+
+
+Specialized spell for defense.  
+
+
+
+
+{\ttfamily \#include $<$defence\+\_\+spell\+\_\+card.\+h$>$}
+
+Inheritance diagram for Defence\+\_\+\+Spell\+\_\+\+Card\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDefence__Spell__Card}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDefence__Spell__Card_a00062fd04adc07974a1b7fff9ab57c2d}{Defence\+\_\+\+Spell\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} elem, int base\+\_\+def)
+\begin{DoxyCompactList}\small\item\em Construct a new Defence Spell \doxylink{classCard}{Card} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDefence__Spell__Card_ad4141d423a55ca4a0373bdf662cc1ed1}{get\+\_\+base\+\_\+def}} () const
+\begin{DoxyCompactList}\small\item\em Get base defense value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDefence__Spell__Card_ae387a8ce1f62c698907c97e0848f5ca1}{set\+\_\+base\+\_\+def}} (int new\+\_\+def)
+\begin{DoxyCompactList}\small\item\em Update base defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSpell__Card}{Spell\+\_\+\+Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpell__Card_a410e68985095603e4e6d2d5946ba3cca}{Spell\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \mbox{\hyperlink{classSpell__Card_a66aca7764f7ee1f25d6ac9c6f92e60fe}{element}})
+\begin{DoxyCompactList}\small\item\em Construct a new Spell \doxylink{classCard}{Card} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSpell__Card_a54fcb4f872bb6bc22e324d241ebfdd1b}{\texorpdfstring{$\sim$}{\string~}\+Spell\+\_\+\+Card}} ()=default
+\item 
+\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \mbox{\hyperlink{classSpell__Card_a789c3ea0ce07363a9c1a878d49e9b50e}{get\+\_\+element}} () const
+\begin{DoxyCompactList}\small\item\em Get the element type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpell__Card_a6835e1758f2b40ef22191f8ccc222dcd}{set\+\_\+element}} (\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} new\+\_\+element)
+\begin{DoxyCompactList}\small\item\em Change elemental affinity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCard}{Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCard_a4445adcdb4e04fae03789796345e402f}{Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classCard}{Card} object with specified parameters. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCard_a24d9140b69cd7fcc6b4787350fdeb5e9}{\texorpdfstring{$\sim$}{\string~}\+Card}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic deletion. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCard_a39c0e62ffe4979b8d8142b416043ff26}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current card name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCard_ac02cf2194bc6fda38b2ec9567e965c7f}{set\+\_\+name}} (const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Updates card\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCard_a5519eb130702a7e04ce06834353d9aa2}{get\+\_\+description}} () const
+\begin{DoxyCompactList}\small\item\em Gets current effect description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCard_a7df878df1ad6073334c8f7332ad5cdd0}{set\+\_\+description}} (const std\+::string \&new\+\_\+desc)
+\begin{DoxyCompactList}\small\item\em Modifies card\textquotesingle{}s effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a7dc04f8244d247431df9894755c8f4bf}{get\+\_\+rarity}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current rarity classification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCard_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\+\_\+rarity}} (\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} new\+\_\+rarity)
+\begin{DoxyCompactList}\small\item\em Changes card\textquotesingle{}s rarity category. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCard_a8fedebb4917ed6efdabd817f389d7b9a}{get\+\_\+mana\+\_\+cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets current mana cost value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCard_a6ec8620c325a26bec6d230ac30875bfc}{set\+\_\+mana\+\_\+cost}} (int new\+\_\+cost)
+\begin{DoxyCompactList}\small\item\em Updates mana cost requirement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classSpell__Card}{Spell\+\_\+\+Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \mbox{\hyperlink{classSpell__Card_a66aca7764f7ee1f25d6ac9c6f92e60fe}{element}}
+\begin{DoxyCompactList}\small\item\em Magical element type from enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCard}{Card}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}
+\begin{DoxyCompactList}\small\item\em Display name of the card. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}
+\begin{DoxyCompactList}\small\item\em Flavor text and effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}
+\begin{DoxyCompactList}\small\item\em \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}
+\begin{DoxyCompactList}\small\item\em Required mana to play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized spell for defense. 
+
+Inherits from \doxylink{classSpell__Card}{Spell\+\_\+\+Card} and adds defense mechanics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDefence__Spell__Card_a00062fd04adc07974a1b7fff9ab57c2d}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{Defence\_Spell\_Card()}{Defence\_Spell\_Card()}}
+{\footnotesize\ttfamily \label{classDefence__Spell__Card_a00062fd04adc07974a1b7fff9ab57c2d} 
+Defence\+\_\+\+Spell\+\_\+\+Card\+::\+Defence\+\_\+\+Spell\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{, }\item[{\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}}]{elem}{, }\item[{int}]{base\+\_\+def}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Defence Spell \doxylink{classCard}{Card} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Initial display name for the card \\
+\hline
+{\em description} & Initial effect description text \\
+\hline
+{\em rarity} & Starting rarity classification \\
+\hline
+{\em mana\+\_\+cost} & Base mana cost required to play \\
+\hline
+{\em elem} & Associated element \\
+\hline
+{\em base\+\_\+def} & Base defense value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDefence__Spell__Card_ad4141d423a55ca4a0373bdf662cc1ed1}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!get\_base\_def@{get\_base\_def}}
+\index{get\_base\_def@{get\_base\_def}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_base\_def()}{get\_base\_def()}}
+{\footnotesize\ttfamily \label{classDefence__Spell__Card_ad4141d423a55ca4a0373bdf662cc1ed1} 
+int Defence\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+base\+\_\+def (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get base defense value. 
+
+\begin{DoxyReturn}{Returns}
+Current base defense 
+\end{DoxyReturn}
+\Hypertarget{classDefence__Spell__Card_ae387a8ce1f62c698907c97e0848f5ca1}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!set\_base\_def@{set\_base\_def}}
+\index{set\_base\_def@{set\_base\_def}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{set\_base\_def()}{set\_base\_def()}}
+{\footnotesize\ttfamily \label{classDefence__Spell__Card_ae387a8ce1f62c698907c97e0848f5ca1} 
+void Defence\+\_\+\+Spell\+\_\+\+Card\+::set\+\_\+base\+\_\+def (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+def}{}\end{DoxyParamCaption})}
+
+
+
+Update base defense value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+def} & Must be positive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+def \texorpdfstring{$>$}{>} 0 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if base\+\_\+def \texorpdfstring{$<$}{<}= 0 \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPostcond}{Postcondition}
+new\+\_\+def == \doxylink{classDefence__Spell__Card_ad4141d423a55ca4a0373bdf662cc1ed1}{get\+\_\+base\+\_\+def()} 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/debil/\+Lab-\/work-\/2/\mbox{\hyperlink{defence__spell__card_8h}{defence\+\_\+spell\+\_\+card.\+h}}\item 
+/home/debil/\+Lab-\/work-\/2/\mbox{\hyperlink{defence__spell__card_8cpp}{defence\+\_\+spell\+\_\+card.\+cpp}}\end{DoxyCompactItemize}

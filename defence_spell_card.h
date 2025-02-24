@@ -11,7 +11,7 @@
  * 
  * Inherits from Spell_Card and adds defense mechanics.
  */
-class DefenceSpellCard : public Spell_Card {
+class Defence_Spell_Card : public Spell_Card {
 private:
     int base_def; ///< Base defense value
 
@@ -26,7 +26,7 @@ public:
      * @param elem Associated element
      * @param base_def Base defense value
      */
-    DefenceSpellCard(const std::string& name, const std::string& description,
+    Defence_Spell_Card(const std::string& name, const std::string& description,
                     Rarity rarity, int mana_cost, Element elem, 
                     int base_def);
 

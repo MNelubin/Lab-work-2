@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heal_5fspell_5fcard_0',['Heal_Spell_Card',['../classHeal__Spell__Card.html',1,'']]]
+  ['card_0',['Card',['../classCard.html',1,'']]]
 ];

@@ -4,7 +4,7 @@
 #include "defence_spell_card.h"
 #include <stdexcept>
 
-DefenceSpellCard::DefenceSpellCard(const std::string& name, const std::string& description,
+Defence_Spell_Card::Defence_Spell_Card(const std::string& name, const std::string& description,
                                   Rarity rarity, int mana_cost, Element elem,
                                   int base_def)
     : Spell_Card(name, description, rarity, mana_cost, elem),
@@ -15,11 +15,11 @@ DefenceSpellCard::DefenceSpellCard(const std::string& name, const std::string& d
     }
 }
 
-int DefenceSpellCard::get_base_def() const {
+int Defence_Spell_Card::get_base_def() const {
     return base_def;
 }
 
-void DefenceSpellCard::set_base_def(int new_def) {
+void Defence_Spell_Card::set_base_def(int new_def) {
     if (new_def <= 0) {
         throw std::invalid_argument("Base defense must be positive");
     }

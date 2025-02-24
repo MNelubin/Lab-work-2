@@ -4,7 +4,7 @@
 #include "buff_spell_card.h"
 #include <stdexcept>
 
-BuffSpellCard::BuffSpellCard(const std::string& name, const std::string& description,
+Buff_Spell_Card::Buff_Spell_Card(const std::string& name, const std::string& description,
                             Rarity rarity, int mana_cost, Element elem,
                             float multiplier)
     : Spell_Card(name, description, rarity, mana_cost, elem),
@@ -15,11 +15,11 @@ BuffSpellCard::BuffSpellCard(const std::string& name, const std::string& descrip
     }
 }
 
-float BuffSpellCard::get_multiplier() const {
+float Buff_Spell_Card::get_multiplier() const {
     return multiplier;
 }
 
-void BuffSpellCard::set_multiplier(float new_multiplier) {
+void Buff_Spell_Card::set_multiplier(float new_multiplier) {
     if (new_multiplier <= 0) {
         throw std::invalid_argument("Multiplier must be positive");
     }

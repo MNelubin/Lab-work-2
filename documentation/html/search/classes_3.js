@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spell_5fcard_0',['Spell_Card',['../classSpell__Card.html',1,'']]]
+  ['defence_5fspell_5fcard_0',['Defence_Spell_Card',['../classDefence__Spell__Card.html',1,'']]]
 ];

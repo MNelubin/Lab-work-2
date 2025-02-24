@@ -11,7 +11,7 @@
  * 
  * Inherits from Spell_Card and adds a multiplier mechanic.
  */
-class BuffSpellCard : public Spell_Card {
+class Buff_Spell_Card : public Spell_Card {
 private:
     float multiplier; ///< Multiplier value for the buff
 
@@ -26,7 +26,7 @@ public:
      * @param elem Associated element
      * @param multiplier Buff multiplier value
      */
-    BuffSpellCard(const std::string& name, const std::string& description,
+    Buff_Spell_Card(const std::string& name, const std::string& description,
                  Rarity rarity, int mana_cost, Element elem, 
                  float multiplier);
 
