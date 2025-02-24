@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['of_20tests_0',['1. Types of tests',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md13',1,'']]],
-  ['of_20the_20system_1',['General description of the system',['../md__2home_2debil_2Lab-work-2_2architecture_2General__architecture.html',1,'']]]
+  ['name_0',['name',['../classCard.html#a1f5013054990456125c82d805744062f',1,'Card']]],
+  ['north_1',['North',['../enums_8h.html#af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4',1,'enums.h']]]
 ];

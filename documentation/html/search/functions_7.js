@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7ecard_0',['~Card',['../classCard.html#a24d9140b69cd7fcc6b4787350fdeb5e9',1,'Card']]],
-  ['_7espell_5fcard_1',['~Spell_Card',['../classSpell__Card.html#a54fcb4f872bb6bc22e324d241ebfdd1b',1,'Spell_Card']]]
+  ['test_0',['TEST',['../test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a',1,'TEST(CardBasicTest, ConstructorAndGetters):&#160;test-card.cpp'],['../test-card_8cpp.html#a880e202bb1b4b19e41edd12692dd282f',1,'TEST(CardBasicTest, SettersValidation):&#160;test-card.cpp'],['../test-card_8cpp.html#ae975df4617bfe3142fbf1bbaf2b7060a',1,'TEST(SpellCardTest, InheritanceAndElementHandling):&#160;test-card.cpp'],['../test-card_8cpp.html#a92a2c114f065ab3055be1d27920b91f1',1,'TEST(SpellCardTest, ManaBoundaryCases):&#160;test-card.cpp'],['../test-card_8cpp.html#a8cd2d182df39ce141fa84259f8cb46c8',1,'TEST(AttackSpellTest, DamageManagement):&#160;test-card.cpp'],['../test-card_8cpp.html#aba0011ba7054595b83c46b7f89d33a59',1,'TEST(AttackSpellTest, InvalidDamageThrows):&#160;test-card.cpp'],['../test-card_8cpp.html#ada7df4f6372d85348d6c37672dd832f6',1,'TEST(HealSpellTest, HealManagement):&#160;test-card.cpp'],['../test-card_8cpp.html#a5cbe95ada2c0e1ab3fa2c2d8cd749f02',1,'TEST(HealSpellTest, InvalidValuesThrow):&#160;test-card.cpp']]]
 ];

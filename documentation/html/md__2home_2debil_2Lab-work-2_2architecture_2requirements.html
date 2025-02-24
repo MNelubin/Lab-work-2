@@ -142,11 +142,12 @@ Characters and abilities</h1>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Combat mechanics</h1>
 <p><b>Calculation formulas:</b></p>
-<div class="fragment"><div class="line"># Armor</div>
-<div class="line">-adjusted damage efficie_dmg = max(0, (base_dmg * dmg_MLTPL) - total_armor)</div>
-<div class="line"> </div>
-<div class="line"># Treatment when using the card</div>
-<div class="line">heal_value = base_heal * heal_MLTPL * efficiency</div>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Armor</h1>
+<div class="fragment"><div class="line">-adjusted damage efficie_dmg = max(0, (base_dmg * dmg_MLTPL) - total_armor)</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+Treatment when using the card</h1>
+<div class="fragment"><div class="line">heal_value = base_heal * heal_MLTPL * efficiency</div>
 </div><!-- fragment --><p><b>Validation of actions:</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (mana &lt; mana_cost){</div>
 <div class="line">    raise NotEnoughManaError(f<span class="stringliteral">&quot;Need {card_cost}, have {mana}&quot;</span>)</div>
 <div class="line">}</div>
@@ -158,22 +159,22 @@ Combat mechanics</h1>
 <div class="line"><span class="keywordflow">if</span> (!was_armored){</div>
 <div class="line">    <span class="keywordflow">throw</span> AbilityLockedError(<span class="stringliteral">&quot;Armor already used&quot;</span>)</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
-The AI system</h1>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+The AI system</h2>
 <p><b><a class="el" href="classCard.html" title="Base class representing a game card.">Card</a> selection algorithm:</b></p><ol type="1">
 <li>Filter by available mana</li>
 <li>Sort by descending damage</li>
 <li>Choosing the top 1 card</li>
 <li>If the damage is equal, the priority of the cards is first</li>
 </ol>
-<p><b>Selection example:</b> `` Cards in your hand:</p><ul>
-<li>Fireball (cost=3, dmg=5)</li>
-<li>Heal (cost=2, heal=3)</li>
-<li>Shield (cost=1, armor=2)</li>
-</ul>
-<p>AI Selection: Fireball (max. damage) ``</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
-Saving progress (temporarily for json example)</h1>
+<p><b>Selection example:</b> </p><div class="fragment"><div class="line">Cards in your hand: </div>
+<div class="line">- Fireball (cost=3, dmg=5)</div>
+<div class="line">- Heal (cost=2, heal=3)</div>
+<div class="line">- Shield (cost=1, armor=2)</div>
+<div class="line"> </div>
+<div class="line">AI Selection: Fireball (max. damage)</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Saving progress (temporarily for json example)</h2>
 <p><b>Saved data:</b></p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  &quot;player_name&quot;: &quot;Vova&quot;,</div>
@@ -188,8 +189,8 @@ Saving progress (temporarily for json example)</h1>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
-Test scenarios</h1>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+Test scenarios</h2>
 <p><b>Mandatory checks:</b></p><ol type="1">
 <li>Creating a map with mana=10 → success</li>
 <li>Creating a map with dmg=0 → error</li>
@@ -202,7 +203,7 @@ Test scenarios</h1>
 <div class="line">    tank.Shielding(); <span class="comment">// OK</span></div>
 <div class="line">    ASSERT_THROW(tank.Shielding(), AbilityLimitReached);</div>
 <div class="line">}</div>
-<div class="ttc" id="atest-card_8cpp_html_afeb6d4047a9b58aca40a22b0e710266a"><div class="ttname"><a href="test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a></div><div class="ttdeci">TEST(CardBasicTest, ConstructorAndGetters)</div><div class="ttdef"><b>Definition</b> test-card.cpp:16</div></div>
+<div class="ttc" id="atest-card_8cpp_html_afeb6d4047a9b58aca40a22b0e710266a"><div class="ttname"><a href="test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a></div><div class="ttdeci">TEST(CardBasicTest, ConstructorAndGetters)</div><div class="ttdef"><b>Definition</b> test-card.cpp:17</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

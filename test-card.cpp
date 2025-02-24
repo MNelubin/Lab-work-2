@@ -12,7 +12,7 @@
 
 /**
  * @test Verify base Card class constructor and getters
- * @group Getters/Setters/Initializations
+ * @addtogroup GCI
  */
 TEST(CardBasicTest, ConstructorAndGetters) {
     // Arrange
@@ -32,8 +32,8 @@ TEST(CardBasicTest, ConstructorAndGetters) {
 }
 
 /**
- * @test Testing getters and setters
- * @group Getters/Setters/Initializations
+ * @test Testing getters and setters of Card class
+ * @addtogroup GCI
  */
 TEST(CardBasicTest, SettersValidation) {
     // Arrange
@@ -60,7 +60,7 @@ TEST(CardBasicTest, SettersValidation) {
 
 /**
  * @test Spell_Card elemental functionality verification
- * @group Getters/Setters/Initializations
+ * @addtogroup GCI
  */
 TEST(SpellCardTest, InheritanceAndElementHandling) {
     // Arrange
@@ -82,8 +82,8 @@ TEST(SpellCardTest, InheritanceAndElementHandling) {
 }
 
 /**
- * @test Boundary values for mana
- * @group SpellTests
+ * @test Boundary values for Spell_Card mana
+ * @addtogroup GCI
  */
 TEST(SpellCardTest, ManaBoundaryCases) {
     // Arrange & Act: Min Value
@@ -100,8 +100,8 @@ TEST(SpellCardTest, ManaBoundaryCases) {
 // ==================== Attack_Spell_Card Class Tests ====================
 
 /**
- * @test Attack spell damage validation
- * @group Getters/Setters/Initializations
+ * @test Attack_Spell_Card damage validation
+ * @addtogroup GCI
  */
 TEST(AttackSpellTest, DamageManagement) {
     Attack_Spell_Card spell("Fire Blast", "Instant damage", 
@@ -114,8 +114,8 @@ TEST(AttackSpellTest, DamageManagement) {
 }
 
 /**
- * @test Invalid damage initialization
- * @group ErrorHandling
+ * @test Invalid damage initialization for Attack_Spell_Card
+ * @addtogroup ErrorHandling
  */
 TEST(AttackSpellTest, InvalidDamageThrows) {
     EXPECT_THROW(
@@ -128,8 +128,8 @@ TEST(AttackSpellTest, InvalidDamageThrows) {
 // ==================== Heal_Spell_Card Class Tests ====================
 
 /**
- * @test Heal value management
- * @group Getters/Setters/Initializations
+ * @test Heal_Spell_Card value management
+ * @addtogroup GCI
  */
 TEST(HealSpellTest, HealManagement) {
     Heal_Spell_Card spell("Healing Wave", "Restore health", 
@@ -148,8 +148,8 @@ TEST(HealSpellTest, HealManagement) {
 }
 
 /**
- * @test Invalid heal/efficiency values
- * @group ErrorHandling
+ * @test Invalid heal/efficiency values for Heal_Spell_Card
+ * @addtogroup ErrorHandling
  */
 TEST(HealSpellTest, InvalidValuesThrow) {
     // Test invalid constructor arguments

@@ -30,28 +30,32 @@ var NAVTREE =
       [ "Basic map parameters", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md3", null ],
       [ "Characters and abilities", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md4", null ],
       [ "Combat mechanics", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md5", null ],
-      [ "The AI system", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md6", null ],
-      [ "Saving progress (temporarily for json example)", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md7", null ],
-      [ "Test scenarios", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md8", null ]
+      [ "Armor", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md6", null ],
+      [ "Treatment when using the card", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md7", [
+        [ "The AI system", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md8", null ],
+        [ "Saving progress (temporarily for json example)", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md9", null ],
+        [ "Test scenarios", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md10", null ]
+      ] ]
     ] ],
     [ "Brief system requirements", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html", [
-      [ "Functional requirements", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md10", null ],
-      [ "Usage Scenarios", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md11", null ]
+      [ "Functional requirements", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md12", null ],
+      [ "Usage Scenarios", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md13", null ]
     ] ],
     [ "Core Test Plan", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html", [
-      [ "Types of tests", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md13", null ],
-      [ "Tools and environment", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md14", null ],
-      [ "Critical components", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md15", [
-        [ "3.1 Card Validation", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md16", null ],
-        [ "3.2 Combat Mechanics", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md17", null ],
-        [ "3.3 The AI System", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md18", null ],
-        [ "3.4 Saving Progress", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md19", null ]
+      [ "Types of tests", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md15", null ],
+      [ "Tools and environment", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md16", null ],
+      [ "Critical components", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md17", [
+        [ "3.1 Card Validation", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md18", null ],
+        [ "3.2 Combat Mechanics", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md19", null ],
+        [ "3.3 The AI System", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md20", null ],
+        [ "3.4 Saving Progress", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md21", null ]
       ] ],
-      [ "Integration with CI", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md20", null ],
-      [ "Success criteria", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md21", null ],
-      [ "Reporting", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md22", null ]
+      [ "Integration with CI", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md22", null ],
+      [ "Success criteria", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md23", null ],
+      [ "Reporting", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md24", null ]
     ] ],
     [ "Test List", "test.html", null ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
