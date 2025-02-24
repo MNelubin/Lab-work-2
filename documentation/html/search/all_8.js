@@ -16,6 +16,9 @@ var searchData=
   ['contacts_13',['Contacts',['..//home/debil/Lab-work-2/README.md#autotoc_md27',1,'']]],
   ['core_20system_20requirements_14',['Complete Core System Requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html',1,'']]],
   ['core_20test_20plan_15',['Core Test Plan',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html',1,'']]],
-  ['criteria_16',['5. Success criteria',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md23',1,'']]],
-  ['critical_20components_17',['3. Critical components',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md17',1,'']]]
+  ['creature_5fcard_16',['Creature_Card',['../classCreature__Card.html',1,'Creature_Card'],['../classCreature__Card.html#aea47b7b6cb4c10e4aeba9bedcfcd02b6',1,'Creature_Card::Creature_Card()']]],
+  ['creature_5fcard_2ecpp_17',['creature_card.cpp',['../creature__card_8cpp.html',1,'']]],
+  ['creature_5fcard_2eh_18',['creature_card.h',['../creature__card_8h.html',1,'']]],
+  ['criteria_19',['5. Success criteria',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md23',1,'']]],
+  ['critical_20components_20',['3. Critical components',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md17',1,'']]]
 ];
