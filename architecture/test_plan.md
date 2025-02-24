@@ -8,7 +8,7 @@
 - Save/load game progress
 
 **Integration tests** (10% coverage):
-- AI's work with different types of maps
+- AI's work with different types of cards
 
 ## 2. Tools and environment
 - **Framework**: Google Test (gtest)
@@ -23,7 +23,7 @@
         sudo ln -sf /usr/bin/g++-11 /usr/bin/g++
   ```
 
-##3. Critical components
+## 3. Critical components
 
 ### 3.1 Card Validation
 **Test cases:**
@@ -67,7 +67,7 @@ TEST(AITest, BestCardSelection) {
 }
 ```
 
-###3.4 Saving Progress
+### 3.4 Saving Progress
 **File format:**
 ```json
 {
@@ -117,5 +117,5 @@ jobs:
 - All tests are error-free
 - 100% coverage of critical scenarios
 
-##6. Reporting
+## 6. Reporting
 - Notifications about test crashes in CI
