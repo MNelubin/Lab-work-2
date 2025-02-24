@@ -1,0 +1,85 @@
+\doxysection{/home/debil/\+Lab-\/work-\/2/test-\/card.cpp File Reference}
+\hypertarget{test-card_8cpp}{}\label{test-card_8cpp}\index{/home/debil/Lab-\/work-\/2/test-\/card.cpp@{/home/debil/Lab-\/work-\/2/test-\/card.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include "{}card.\+h"{}}\newline
+{\ttfamily \#include "{}spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}enums.\+h"{}}\newline
+{\ttfamily \#include "{}attack\+\_\+spell\+\_\+card.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}} (Card\+Basic\+Test, Constructor\+And\+Getters)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a880e202bb1b4b19e41edd12692dd282f}{TEST}} (Card\+Basic\+Test, Setters\+Validation)
+\item 
+\mbox{\hyperlink{test-card_8cpp_ae975df4617bfe3142fbf1bbaf2b7060a}{TEST}} (Spell\+Card\+Test, Inheritance\+And\+Element\+Handling)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a92a2c114f065ab3055be1d27920b91f1}{TEST}} (Spell\+Card\+Test, Mana\+Boundary\+Cases)
+\item 
+\mbox{\hyperlink{test-card_8cpp_a8cd2d182df39ce141fa84259f8cb46c8}{TEST}} (Attack\+Spell\+Test, Damage\+Management)
+\item 
+\mbox{\hyperlink{test-card_8cpp_aba0011ba7054595b83c46b7f89d33a59}{TEST}} (Attack\+Spell\+Test, Invalid\+Damage\+Throws)
+\item 
+int \mbox{\hyperlink{test-card_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Test entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test-card_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\index{test-\/card.cpp@{test-\/card.cpp}!main@{main}}
+\index{main@{main}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Test entry point. 
+
+\Hypertarget{test-card_8cpp_a8cd2d182df39ce141fa84259f8cb46c8}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a8cd2d182df39ce141fa84259f8cb46c8} 
+TEST (\begin{DoxyParamCaption}\item[{Attack\+Spell\+Test}]{}{, }\item[{Damage\+Management}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000005}{Test}}]Attack spell damage validation @group Combat\+Mechanics \end{DoxyRefDesc}
+\Hypertarget{test-card_8cpp_aba0011ba7054595b83c46b7f89d33a59}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_aba0011ba7054595b83c46b7f89d33a59} 
+TEST (\begin{DoxyParamCaption}\item[{Attack\+Spell\+Test}]{}{, }\item[{Invalid\+Damage\+Throws}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000006}{Test}}]Invalid damage initialization @group Error\+Handling \end{DoxyRefDesc}
+\Hypertarget{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a} 
+TEST (\begin{DoxyParamCaption}\item[{Card\+Basic\+Test}]{}{, }\item[{Constructor\+And\+Getters}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000001}{Test}}]Verify base \doxylink{classCard}{Card} class constructor and getters @group Core\+Functionality \end{DoxyRefDesc}
+\Hypertarget{test-card_8cpp_a880e202bb1b4b19e41edd12692dd282f}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a880e202bb1b4b19e41edd12692dd282f} 
+TEST (\begin{DoxyParamCaption}\item[{Card\+Basic\+Test}]{}{, }\item[{Setters\+Validation}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000002}{Test}}]Testing getters and setters @group Card\+Tests \end{DoxyRefDesc}
+\Hypertarget{test-card_8cpp_ae975df4617bfe3142fbf1bbaf2b7060a}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_ae975df4617bfe3142fbf1bbaf2b7060a} 
+TEST (\begin{DoxyParamCaption}\item[{Spell\+Card\+Test}]{}{, }\item[{Inheritance\+And\+Element\+Handling}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000003}{Test}}]\doxylink{classSpell__Card}{Spell\+\_\+\+Card} elemental functionality verification @group Spell\+Features \end{DoxyRefDesc}
+\Hypertarget{test-card_8cpp_a92a2c114f065ab3055be1d27920b91f1}\index{test-\/card.cpp@{test-\/card.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test-\/card.cpp@{test-\/card.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{test-card_8cpp_a92a2c114f065ab3055be1d27920b91f1} 
+TEST (\begin{DoxyParamCaption}\item[{Spell\+Card\+Test}]{}{, }\item[{Mana\+Boundary\+Cases}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000004}{Test}}]Boundary values for mana @group Spell\+Tests \end{DoxyRefDesc}

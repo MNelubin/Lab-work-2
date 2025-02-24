@@ -1,0 +1,31 @@
+\chapter{General description of the system}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2General__architecture}{}\label{md__2home_2debil_2Lab-work-2_2architecture_2General__architecture}\index{General description of the system@{General description of the system}}
+\label{md__2home_2debil_2Lab-work-2_2architecture_2General__architecture_autotoc_md0}%
+\Hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2General__architecture_autotoc_md0}%
+
+
+The game is a turn—based card RPG where human and AI players use cards to attack, defend, heal, and power up. ~\newline
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2General__architecture_autotoc_md1}{}\doxysubsection{\texorpdfstring{Main components\+:}{Main components\+:}}\label{md__2home_2debil_2Lab-work-2_2architecture_2General__architecture_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\bfseries{Cards}}\+: 12 types combined in an inheritance hierarchy (for example, {\ttfamily \doxylink{classAttack__Spell__Card}{Attack\+\_\+\+Spell\+\_\+\+Card}}, {\ttfamily Beast\+\_\+\+Card}). ~\newline
+
+\item {\bfseries{Players}}\+:
+\item {\ttfamily Human\+\_\+\+Player}\+: User-\/controlled, saves statistics. ~\newline
+
+\begin{DoxyItemize}
+\item {\ttfamily AI\+\_\+\+Player}\+: Automatically selects optimal moves via {\ttfamily count\+\_\+best()}. ~\newline
+
+\end{DoxyItemize}
+\item {\bfseries{Characters}}\+: 3 classes ({\ttfamily Healer\+\_\+\+Character}, {\ttfamily Tank\+\_\+\+Character}, {\ttfamily Knight\+\_\+\+Character}) with unique abilities ({\ttfamily shielding()}, {\ttfamily healing()}). ~\newline
+
+\item {\bfseries{Mechanics}}\+: ~\newline
+
+\begin{DoxyItemize}
+\item Mana and player lives. ~\newline
+
+\item Character levels and multipliers ({\ttfamily Dmg\+\_\+\+MLTPL}, {\ttfamily Heal\+\_\+\+MLTPL}). ~\newline
+
+\item Player interaction with cards ({\ttfamily Use\+\_\+card()}, {\ttfamily Eat\+\_\+card()},{\ttfamily Throw\+\_\+card\+\_\+out()}). 
+\end{DoxyItemize}
+\end{DoxyItemize}
