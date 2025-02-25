@@ -6,6 +6,7 @@
 #include "enums.h"
 #include "spell_card.h"
 #include "attack_spell_card.h"
+#include "heal_spell_card.h"
 
 void demonstrate_spell() {
     Spell_Card lightning("Lightning Bolt", "Deals 8 damage", 
@@ -46,6 +47,47 @@ void demonstrate_attack_spell() {
     }
 }
 
+void demonstrate_heal_spell() {
+    try {
+        // Create
+        Heal_Spell_Card rejuvenation("Nature's Touch", 
+            "Restores health to all allies",
+            Rarity::Epic, 8, Element::Earth, 15, 1.5f);
+        
+        // Output values
+        std::cout << "\n[Heal Spell Demo]\n"
+                  << "Name: " << rejuvenation.get_name() << "\n"
+                  << "Base Heal: " << rejuvenation.get_base_heal() << "\n"
+                  << "Efficiency: " << rejuvenation.get_eff() << "\n"
+                  << "Element: " << static_cast<int>(rejuvenation.get_element()) << "\n";
+        
+        // Modifying values
+        rejuvenation.set_base_heal(25);
+        rejuvenation.set_eff(2.0f);
+        std::cout << "Upgraded Heal: " << rejuvenation.get_base_heal() << "\n"
+                  << "Improved Efficiency: " << rejuvenation.get_eff() << "\n";
+        
+        // Constructor test
+        Heal_Spell_Card invalid_heal("Broken Heal", "", 
+            Rarity::Common, 2, Element::Water, -10, 0.5f);
+            
+        Heal_Spell_Card invalid_eff("No Effect", "", 
+            Rarity::Rare, 3, Element::Air, 10, -1.0f);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        Heal_Spell_Card test("Test Spell", "", Rarity::Common, 1, Element::Fire, 5, 1.0f);
+        test.set_base_heal(-5); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+
 int main() {
     // Create sample card
     Card fireball("Fireball", "Deals 5 damage", Rarity::Uncommon, 3);
@@ -61,5 +103,6 @@ int main() {
 
     demonstrate_spell();
     demonstrate_attack_spell();
+    demonstrate_heal_spell();
     return 0;
 } 
