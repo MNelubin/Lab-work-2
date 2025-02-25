@@ -25,11 +25,13 @@
 **Calculation formulas:**
 
 
-```
 # Armor
+```
 -adjusted damage efficie_dmg = max(0, (base_dmg * dmg_MLTPL) - total_armor)
+```
 
 # Treatment when using the card
+```
 heal_value = base_heal * heal_MLTPL * efficiency
 ```
 
@@ -56,14 +58,14 @@ if (!was_armored){
 4. If the damage is equal, the priority of the cards is first
 
 **Selection example:**
-``
+```
 Cards in your hand: 
 - Fireball (cost=3, dmg=5)
 - Heal (cost=2, heal=3)
 - Shield (cost=1, armor=2)
 
 AI Selection: Fireball (max. damage)
-``
+```
 
 ## Saving progress (temporarily for json example)
 **Saved data:**

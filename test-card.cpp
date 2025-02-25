@@ -11,7 +11,7 @@
 
 /**
  * @test Verify base Card class constructor and getters
- * @group CoreFunctionality
+ * @group Getters/Setters/Initializations
  */
 TEST(CardBasicTest, ConstructorAndGetters) {
     // Arrange
@@ -32,7 +32,7 @@ TEST(CardBasicTest, ConstructorAndGetters) {
 
 /**
  * @test Testing getters and setters
- * @group CardTests
+ * @group Getters/Setters/Initializations
  */
 TEST(CardBasicTest, SettersValidation) {
     // Arrange
@@ -59,7 +59,7 @@ TEST(CardBasicTest, SettersValidation) {
 
 /**
  * @test Spell_Card elemental functionality verification
- * @group SpellFeatures
+ * @group Getters/Setters/Initializations
  */
 TEST(SpellCardTest, InheritanceAndElementHandling) {
     // Arrange
@@ -100,7 +100,7 @@ TEST(SpellCardTest, ManaBoundaryCases) {
 
 /**
  * @test Attack spell damage validation
- * @group CombatMechanics
+ * @group Getters/Setters/Initializations
  */
 TEST(AttackSpellTest, DamageManagement) {
     Attack_Spell_Card spell("Fire Blast", "Instant damage", 
@@ -121,6 +121,52 @@ TEST(AttackSpellTest, InvalidDamageThrows) {
         Attack_Spell_Card("Invalid", "Test", Rarity::Common, 0, Element::Fire, -1),
         std::invalid_argument
     );
+}
+
+
+// ==================== Heal_Spell_Card Class Tests ====================
+
+/**
+ * @test Heal value management
+ * @group Getters/Setters/Initializations
+ */
+TEST(HealSpellTest, HealManagement) {
+    Heal_Spell_Card spell("Healing Wave", "Restore health", 
+                         Rarity::Rare, 4, Element::Water, 10, 1.2f);
+    
+    // Check initial values
+    EXPECT_EQ(spell.get_base_heal(), 10);
+    ASSERT_FLOAT_EQ(spell.get_eff(), 1.2f);
+    
+    // Test setters
+    spell.set_base_heal(15);
+    spell.set_eff(1.5f);
+    
+    EXPECT_EQ(spell.get_base_heal(), 15);
+    ASSERT_FLOAT_EQ(spell.get_eff(), 1.5f);
+}
+
+/**
+ * @test Invalid heal/efficiency values
+ * @group ErrorHandling
+ */
+TEST(HealSpellTest, InvalidValuesThrow) {
+    // Test invalid constructor arguments
+    EXPECT_THROW(
+        Heal_Spell_Card("Invalid Heal", "Test", Rarity::Common, 2, Element::Earth, -5, 0.5f),
+        std::invalid_argument
+    );
+    
+    EXPECT_THROW(
+        Heal_Spell_Card("Invalid Eff", "Test", Rarity::Epic, 3, Element::Air, 10, -1.0f),
+        std::invalid_argument
+    );
+    
+    // Test invalid setter calls
+    Heal_Spell_Card spell("Test", "Test", Rarity::Common, 1, Element::Fire, 5, 1.0f);
+    
+    EXPECT_THROW(spell.set_base_heal(-1), std::invalid_argument);
+    ASSERT_THROW(spell.set_eff(0.0f), std::invalid_argument);
 }
 
 // ==================== Test Runner ====================
