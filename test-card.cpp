@@ -6,6 +6,7 @@
 #include "spell_card.h"
 #include "enums.h"
 #include "attack_spell_card.h"
+#include "heal_spell_card.h"
 
 // ==================== Card Class Tests ====================
 
