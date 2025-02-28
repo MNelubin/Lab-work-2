@@ -93,7 +93,7 @@ void demonstrate_heal_spell() {
 void demonstrate_buff_spell() {
     try {
         // Create
-        BuffSpellCard powerUp("Power Surge", 
+        Buff_Spell_Card powerUp("Power Surge", 
             "Increases attack power of all allies",
             Rarity::Rare, 6, Element::Fire, 1.8f);
         
@@ -108,7 +108,7 @@ void demonstrate_buff_spell() {
         std::cout << "Upgraded Multiplier: " << powerUp.get_multiplier() << "\n";
         
         // Constructor test
-        BuffSpellCard invalid_buff("Broken Buff", "", 
+        Buff_Spell_Card invalid_buff("Broken Buff", "", 
             Rarity::Common, 2, Element::Water, -1.0f);
     }
     catch(const std::exception& e) {
@@ -117,7 +117,7 @@ void demonstrate_buff_spell() {
 
     // Added setters checkup
     try {
-        BuffSpellCard test("Test Buff", "", Rarity::Common, 1, Element::Air, 1.0f);
+        Buff_Spell_Card test("Test Buff", "", Rarity::Common, 1, Element::Air, 1.0f);
         test.set_multiplier(0.0f); 
     }
     catch(const std::exception& e) {
@@ -127,7 +127,7 @@ void demonstrate_buff_spell() {
 void demonstrate_defence_spell() {
     try {
         // Create
-        DefenceSpellCard shield("Shield Wall", 
+        Defence_Spell_Card shield("Shield Wall", 
             "Increases defense of all allies",
             Rarity::Rare, 4, Element::Earth, 5);
         
@@ -142,7 +142,7 @@ void demonstrate_defence_spell() {
         std::cout << "Upgraded Defense: " << shield.get_base_def() << "\n";
         
         // Constructor test
-        DefenceSpellCard invalid_def("Broken Shield", "", 
+        Defence_Spell_Card invalid_def("Broken Shield", "", 
             Rarity::Common, 2, Element::Water, -1);
     }
     catch(const std::exception& e) {
@@ -151,7 +151,7 @@ void demonstrate_defence_spell() {
 
     // Added setters checkup
     try {
-        DefenceSpellCard test("Test Shield", "", Rarity::Common, 1, Element::Air, 5);
+        Defence_Spell_Card test("Test Shield", "", Rarity::Common, 1, Element::Air, 5);
         test.set_base_def(0); 
     }
     catch(const std::exception& e) {

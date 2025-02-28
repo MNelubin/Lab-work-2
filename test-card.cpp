@@ -180,7 +180,7 @@ TEST(HealSpellTest, InvalidValuesThrow) {
  * @addtogroup GCI
  */
 TEST(BuffSpellTest, BasicFunctionality) {
-    BuffSpellCard spell("Power Up", "Increases strength", 
+    Buff_Spell_Card spell("Power Up", "Increases strength", 
                        Rarity::Common, 3, Element::Earth, 1.5f);
     
     EXPECT_EQ(spell.get_name(), "Power Up");
@@ -193,11 +193,11 @@ TEST(BuffSpellTest, BasicFunctionality) {
  */
 TEST(BuffSpellTest, InvalidValuesThrow) {
     EXPECT_THROW(
-        BuffSpellCard("Invalid", "Test", Rarity::Common, 2, Element::Fire, -1.0f),
+        Buff_Spell_Card("Invalid", "Test", Rarity::Common, 2, Element::Fire, -1.0f),
         std::invalid_argument
     );
     
-    BuffSpellCard spell("Test", "Test", Rarity::Common, 1, Element::Fire, 1.0f);
+    Buff_Spell_Card spell("Test", "Test", Rarity::Common, 1, Element::Fire, 1.0f);
     
     EXPECT_THROW(spell.set_multiplier(0.0f), std::invalid_argument);
 }
@@ -210,7 +210,7 @@ TEST(BuffSpellTest, InvalidValuesThrow) {
  * @addtogroup GCI
  */
 TEST(DefenceSpellTest, BasicFunctionality) {
-    DefenceSpellCard spell("Shield Wall", "Increases defense", 
+    Defence_Spell_Card spell("Shield Wall", "Increases defense", 
                          Rarity::Common, 3, Element::Earth, 5);
     
     EXPECT_EQ(spell.get_name(), "Shield Wall");
@@ -223,11 +223,11 @@ TEST(DefenceSpellTest, BasicFunctionality) {
  */
 TEST(DefenceSpellTest, InvalidValuesThrow) {
     EXPECT_THROW(
-        DefenceSpellCard("Invalid", "Test", Rarity::Common, 2, Element::Fire, -1),
+        Defence_Spell_Card("Invalid", "Test", Rarity::Common, 2, Element::Fire, -1),
         std::invalid_argument
     );
     
-    DefenceSpellCard spell("Test", "Test", Rarity::Common, 1, Element::Fire, 5);
+    Defence_Spell_Card spell("Test", "Test", Rarity::Common, 1, Element::Fire, 5);
     
     EXPECT_THROW(spell.set_base_def(0), std::invalid_argument);
 }
