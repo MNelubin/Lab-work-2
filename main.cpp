@@ -7,6 +7,8 @@
 #include "spell_card.h"
 #include "attack_spell_card.h"
 #include "heal_spell_card.h"
+#include "buff_spell_card.h"
+#include "defence_spell_card.h"
 
 void demonstrate_spell() {
     Spell_Card lightning("Lightning Bolt", "Deals 8 damage", 
@@ -88,6 +90,76 @@ void demonstrate_heal_spell() {
     }
 }
 
+void demonstrate_buff_spell() {
+    try {
+        // Create
+        BuffSpellCard powerUp("Power Surge", 
+            "Increases attack power of all allies",
+            Rarity::Rare, 6, Element::Fire, 1.8f);
+        
+        // Output values
+        std::cout << "\n[Buff Spell Demo]\n"
+                  << "Name: " << powerUp.get_name() << "\n"
+                  << "Multiplier: " << powerUp.get_multiplier() << "\n"
+                  << "Element: " << static_cast<int>(powerUp.get_element()) << "\n";
+        
+        // Modifying values
+        powerUp.set_multiplier(2.5f);
+        std::cout << "Upgraded Multiplier: " << powerUp.get_multiplier() << "\n";
+        
+        // Constructor test
+        BuffSpellCard invalid_buff("Broken Buff", "", 
+            Rarity::Common, 2, Element::Water, -1.0f);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        BuffSpellCard test("Test Buff", "", Rarity::Common, 1, Element::Air, 1.0f);
+        test.set_multiplier(0.0f); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+void demonstrate_defence_spell() {
+    try {
+        // Create
+        DefenceSpellCard shield("Shield Wall", 
+            "Increases defense of all allies",
+            Rarity::Rare, 4, Element::Earth, 5);
+        
+        // Output values
+        std::cout << "\n[Defence Spell Demo]\n"
+                  << "Name: " << shield.get_name() << "\n"
+                  << "Base Defense: " << shield.get_base_def() << "\n"
+                  << "Element: " << static_cast<int>(shield.get_element()) << "\n";
+        
+        // Modifying values
+        shield.set_base_def(8);
+        std::cout << "Upgraded Defense: " << shield.get_base_def() << "\n";
+        
+        // Constructor test
+        DefenceSpellCard invalid_def("Broken Shield", "", 
+            Rarity::Common, 2, Element::Water, -1);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        DefenceSpellCard test("Test Shield", "", Rarity::Common, 1, Element::Air, 5);
+        test.set_base_def(0); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+
+
 int main() {
     // Create sample card
     Card fireball("Fireball", "Deals 5 damage", Rarity::Uncommon, 3);
@@ -104,5 +176,7 @@ int main() {
     demonstrate_spell();
     demonstrate_attack_spell();
     demonstrate_heal_spell();
+    demonstrate_buff_spell();
+    demonstrate_defence_spell();
     return 0;
 } 

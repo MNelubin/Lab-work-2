@@ -7,6 +7,8 @@
 #include "enums.h"
 #include "attack_spell_card.h"
 #include "heal_spell_card.h"
+#include "buff_spell_card.h"
+#include "defence_spell_card.h"
 
 // ==================== Card Class Tests ====================
 
@@ -169,6 +171,67 @@ TEST(HealSpellTest, InvalidValuesThrow) {
     EXPECT_THROW(spell.set_base_heal(-1), std::invalid_argument);
     ASSERT_THROW(spell.set_eff(0.0f), std::invalid_argument);
 }
+
+
+// ==================== Buff_Spell_Card Class Tests ====================
+
+/**
+ * @test Buff_Spell_Card basic functionality
+ * @addtogroup GCI
+ */
+TEST(BuffSpellTest, BasicFunctionality) {
+    BuffSpellCard spell("Power Up", "Increases strength", 
+                       Rarity::Common, 3, Element::Earth, 1.5f);
+    
+    EXPECT_EQ(spell.get_name(), "Power Up");
+    EXPECT_FLOAT_EQ(spell.get_multiplier(), 1.5f);
+}
+
+/**
+ * @test Invalid values for Buff_Spell_Card
+ * @addtogroup ErrorHandling
+ */
+TEST(BuffSpellTest, InvalidValuesThrow) {
+    EXPECT_THROW(
+        BuffSpellCard("Invalid", "Test", Rarity::Common, 2, Element::Fire, -1.0f),
+        std::invalid_argument
+    );
+    
+    BuffSpellCard spell("Test", "Test", Rarity::Common, 1, Element::Fire, 1.0f);
+    
+    EXPECT_THROW(spell.set_multiplier(0.0f), std::invalid_argument);
+}
+
+
+// ==================== Defence_Spell_Card Class Tests ====================
+
+/**
+ * @test Defence_Spell_Card basic functionality
+ * @addtogroup GCI
+ */
+TEST(DefenceSpellTest, BasicFunctionality) {
+    DefenceSpellCard spell("Shield Wall", "Increases defense", 
+                         Rarity::Common, 3, Element::Earth, 5);
+    
+    EXPECT_EQ(spell.get_name(), "Shield Wall");
+    EXPECT_EQ(spell.get_base_def(), 5);
+}
+
+/**
+ * @test Invalid values for Defence_Spell_Card
+ * @addtogroup ErrorHandling
+ */
+TEST(DefenceSpellTest, InvalidValuesThrow) {
+    EXPECT_THROW(
+        DefenceSpellCard("Invalid", "Test", Rarity::Common, 2, Element::Fire, -1),
+        std::invalid_argument
+    );
+    
+    DefenceSpellCard spell("Test", "Test", Rarity::Common, 1, Element::Fire, 5);
+    
+    EXPECT_THROW(spell.set_base_def(0), std::invalid_argument);
+}
+
 
 // ==================== Test Runner ====================
 
