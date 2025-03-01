@@ -9,6 +9,12 @@
 #include "heal_spell_card.h"
 #include "buff_spell_card.h"
 #include "defence_spell_card.h"
+#include "beast_card.h"
+#include "creature_card.h"
+#include "weapon_card.h"
+#include "artifact_card.h"
+#include "shield_card.h"
+#include "buff_card.h"
 
 void demonstrate_spell() {
     Spell_Card lightning("Lightning Bolt", "Deals 8 damage", 
@@ -124,6 +130,30 @@ void demonstrate_buff_spell() {
         std::cerr << "Setter Error: " << e.what() << "\n";
     }
 }
+
+void demonstrate_buff_card() {
+    try {
+        // Create
+        Buff_Card buff("Power Surge", "Boosts attack power", 
+                      Rarity::Rare, 4, 2.0f);
+        
+        // Output
+        std::cout << "\n[Buff Card Demo]\n"
+                  << "Name: " << buff.get_name() << "\n"
+                  << "Description: " << buff.get_description() << "\n"
+                  << "Rarity: " << static_cast<int>(buff.get_rarity()) << "\n"
+                  << "Mana Cost: " << buff.get_mana_cost() << "\n"
+                  << "Buff Amount: " << buff.get_buff_amount() << "\n";
+        
+        // Testing
+        buff.set_buff_amount(2.5f);
+        std::cout << "Updated Buff Amount: " << buff.get_buff_amount() << "\n";
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+}
+
 void demonstrate_defence_spell() {
     try {
         // Create
@@ -159,6 +189,176 @@ void demonstrate_defence_spell() {
     }
 }
 
+void demonstrate_beast_card() {
+    try {
+        // Create
+        Beast_Card wolf("Wolf", "A fierce predator", 
+                        Rarity::Common, 3, 5, Tribe::North);
+        
+        // Output values
+        std::cout << "\n[Beast Card Demo]\n"
+                  << "Name: " << wolf.get_name() << "\n"
+                  << "Base Damage: " << wolf.get_base_dmg() << "\n"
+                  << "Tribe: " << static_cast<int>(wolf.get_tribe()) << "\n";
+        
+        // Modifying values
+        wolf.set_base_dmg(8);
+        wolf.set_tribe(Tribe::South);
+        std::cout << "Upgraded Damage: " << wolf.get_base_dmg() << "\n"
+                  << "New Tribe: " << static_cast<int>(wolf.get_tribe()) << "\n";
+        
+        // Constructor test
+        Beast_Card invalid_beast("Broken Beast", "", 
+                                Rarity::Common, 2, -1, Tribe::North);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        Beast_Card test("Test Beast", "", Rarity::Common, 1, 5, Tribe::North);
+        test.set_base_dmg(0); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+
+void demonstrate_creature_card() {
+    try {
+        // Create
+        Creature_Card knight("Knight", "A brave warrior", 
+                              Rarity::Common, 4, 6, 1.2f);
+        
+        // Output values
+        std::cout << "\n[Creature Card Demo]\n"
+                  << "Name: " << knight.get_name() << "\n"
+                  << "Base Damage: " << knight.get_base_dmg() << "\n"
+                  << "Weapon Multiplier: " << knight.get_weapon_multiplier() << "\n";
+        
+        // Modifying values
+        knight.set_base_dmg(8);
+        knight.set_weapon_multiplier(1.5f);
+        std::cout << "Upgraded Damage: " << knight.get_base_dmg() << "\n"
+                  << "Improved Weapon Multiplier: " << knight.get_weapon_multiplier() << "\n";
+        
+        // Constructor test
+        Creature_Card invalid_creature("Broken Creature", "", 
+                                       Rarity::Common, 2, -1, 1.0f);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        Creature_Card test("Test Creature", "", Rarity::Common, 1, 5, 1.0f);
+        test.set_base_dmg(0); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+
+void demonstrate_weapon_card() {
+    try {
+        // Create
+        Weapon_Card sword("Sword", "Increases attack damage", 
+                          Rarity::Common, 3, 5);
+        
+        // Output values
+        std::cout << "\n[Weapon Card Demo]\n"
+                  << "Name: " << sword.get_name() << "\n"
+                  << "Damage Increase: " << sword.get_dmg_up() << "\n";
+        
+        // Modifying values
+        sword.set_dmg_up(8);
+        std::cout << "Upgraded Damage Increase: " << sword.get_dmg_up() << "\n";
+        
+        // Constructor test
+        Weapon_Card invalid_weapon("Broken Weapon", "", 
+                                   Rarity::Common, 2, -1);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        Weapon_Card test("Test Weapon", "", Rarity::Common, 1, 5);
+        test.set_dmg_up(0); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+
+void demonstrate_artifact_card() {
+    try {
+        // Create
+        Artifact_Card amulet("Amulet", "Increases power", 
+                              Rarity::Rare, 4, 1.5f);
+        
+        // Output values
+        std::cout << "\n[Artifact Card Demo]\n"
+                  << "Name: " << amulet.get_name() << "\n"
+                  << "Multiplier: " << amulet.get_multiplier() << "\n";
+        
+        // Modifying values
+        amulet.set_multiplier(2.0f);
+        std::cout << "Upgraded Multiplier: " << amulet.get_multiplier() << "\n";
+        
+        // Constructor test
+        Artifact_Card invalid_artifact("Broken Artifact", "", 
+                                       Rarity::Common, 2, -1.0f);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        Artifact_Card test("Test Artifact", "", Rarity::Common, 1, 1.0f);
+        test.set_multiplier(0.0f); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
+
+void demonstrate_shield_card() {
+    try {
+        // Create
+        Shield_Card shield("Iron Shield", "Protects from damage", 
+                            Rarity::Common, 3, 5);
+        
+        // Output values
+        std::cout << "\n[Shield Card Demo]\n"
+                  << "Name: " << shield.get_name() << "\n"
+                  << "Usage: " << shield.get_usage() << "\n";
+        
+        // Modifying values
+        shield.set_usage(8);
+        std::cout << "Upgraded Usage: " << shield.get_usage() << "\n";
+        
+        // Constructor test
+        Shield_Card invalid_shield("Broken Shield", "", 
+                                    Rarity::Common, 2, -1);
+    }
+    catch(const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << "\n";
+    }
+
+    // Added setters checkup
+    try {
+        Shield_Card test("Test Shield", "", Rarity::Common, 1, 5);
+        test.set_usage(0); 
+    }
+    catch(const std::exception& e) {
+        std::cerr << "Setter Error: " << e.what() << "\n";
+    }
+}
 
 int main() {
     // Create sample card
@@ -177,6 +377,12 @@ int main() {
     demonstrate_attack_spell();
     demonstrate_heal_spell();
     demonstrate_buff_spell();
+    demonstrate_buff_card();
     demonstrate_defence_spell();
+    demonstrate_beast_card();
+    demonstrate_creature_card();
+    demonstrate_weapon_card();
+    demonstrate_artifact_card();
+    demonstrate_shield_card();
     return 0;
 } 
