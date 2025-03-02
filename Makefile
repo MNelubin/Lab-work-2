@@ -48,7 +48,8 @@ $(PROJECT): main.o $(LIBPROJECT)
 	$(CXX) -o $@ main.o $(LDXXFLAGS)
 
 $(TESTPROJECT): $(LIBPROJECT) $(TEST_OBJ)
-	$(CXX) -o tests/test-card $(TEST_OBJ) $(SRC) $(LDGTESTFLAGS)
+	$(CXX) -o tests/test-card $(TEST_OBJ) $(filter-out src/main.o, $(OBJ)) $(LDGTESTFLAGS)
+
 test: $(TESTPROJECT)
 
 all: $(PROJECT)
