@@ -33,15 +33,15 @@ class Card {
   - Card_Name : String
   - description : String
   - rarity : Rarity
-  - Mana_cost : Integer
+  - Mana_cost : int
   + Get_Card_Name() : String
   + Set_Card_Name(name: String)
   + Get_Description() : String
   + Set_Description(desc: String)
   + Get_Rarity() : Rarity
   + Set_Rarity(rarity: Rarity)
-  + Get_Mana_Cost() : Integer
-  + Set_Mana_Cost(cost: Integer)
+  + Get_Mana_Cost() : int
+  + Set_Mana_Cost(cost: int)
 }
 
 class Spell_Card {
@@ -51,16 +51,16 @@ class Spell_Card {
 }
 
 class Attack_Spell_Card {
-  - Base_DMG : Integer
-  + Get_Base_DMG() : Integer
-  + Set_Base_DMG(dmg: Integer)
+  - Base_DMG : int
+  + Get_Base_DMG() : int
+  + Set_Base_DMG(dmg: int)
 }
 
 class Heal_Spell_Card {
   - Efficiency_deg : Float
-  - Base_Heal : Integer
-  + Get_Base_Heal() : Integer
-  + Set_Base_Heal(heal: Integer)
+  - Base_Heal : int
+  + Get_Base_Heal() : int
+  + Set_Base_Heal(heal: int)
   + Get_Efficiency() : Float
   + Set_Efficiency(eff: Float)
 }
@@ -72,33 +72,33 @@ class Buff_Spell_Card {
 }
 
 class Defence_Spell_Card {
-  - Base_DEF : Integer
-  + Get_Base_DEF() : Integer
-  + Set_Base_DEF(def: Integer)
+  - Base_DEF : int
+  + Get_Base_DEF() : int
+  + Set_Base_DEF(def: int)
 }
 
 class Beast_Card {
-  - Base_DMG : Integer
+  - Base_DMG : int
   - Tribe : TribeType
-  + Get_Base_DMG() : Integer
-  + Set_Base_DMG(dmg: Integer)
+  + Get_Base_DMG() : int
+  + Set_Base_DMG(dmg: int)
   + Get_Tribe() : TribeType
   + Set_Tribe(tribe: TribeType)
 }
 
 class Creature_Card {
-  - Base_DMG : Integer
+  - Base_DMG : int
   - Weapon_multiplier : Float
   + Get_Weapon_multiplier() : Float
   + Set_Weapon_multiplier(mult: Float)
-  + Get_Base_DMG() : Integer
-  + Set_Base_DMG(dmg: Integer)
+  + Get_Base_DMG() : int
+  + Set_Base_DMG(dmg: int)
 }
 
 class Weapon_Card {
-  - DMG_up : Integer
-  + Get_DMG_up() : Integer
-  + Set_DMG_up(dmg: Integer)
+  - DMG_up : int
+  + Get_DMG_up() : int
+  + Set_DMG_up(dmg: int)
 }
 
 class Artifact_Card {
@@ -108,9 +108,9 @@ class Artifact_Card {
 }
 
 class Shield_Card {
-  - Usage : Integer
-  + Get_Usage() : Integer
-  + Set_Usage(usage: Integer)
+  - Usage : int
+  + Get_Usage() : int
+  + Set_Usage(usage: int)
 }
 
 class Buff_Card {
@@ -124,33 +124,37 @@ class Buff_Card {
 '#############################################
 
 class Hand {
-  - amount : Integer
-  - cards : Variant<Vector<Card_types>>
-  + Delete_1(index: Integer)
-  + Generate(id: Integer)
-  + Get_Amount() : Integer
-  + Set_Amount(count: Integer)
+  - amount : int
+  - cards : vector<unique_ptr<Card>>
+  + add_card(unique_ptr<Card>)
+  + remove_card(index: int)
+  + get_card(index: int) : Card&
+  + sort_by_mana()
+  + generate(id: int)
+  + get_amount() : int
+  + get_unique_card_types() : vector<string>
+  + get_cards_by_type(type_name: string&) : vector<reference_wrapper<Card>>
 }
 
 class Player {
-  - hp : Integer
-  - mana : Integer
-  - armor : Integer
+  - hp : int
+  - mana : int
+  - armor : int
   - PHand : Hand
   - name : String
   - Character : Character
-  - Shield_amount : Integer
+  - Shield_amount : int
   + Show_Hand()
-  + Eat_card(index: Integer)
-  + Use_card(target: Player, index: Integer)
-  + Take_damage(amount: Integer)
-  + Throw_out(index: Integer)
-  + Get_Hp() : Integer
-  + Set_Hp(value: Integer)
-  + Get_Mana() : Integer
-  + Set_Mana(value: Integer)
-  + Get_Armor() : Integer
-  + Set_Armor(value: Integer)
+  + Eat_card(index: int)
+  + Use_card(target: Player, index: int)
+  + Take_damage(amount: int)
+  + Throw_out(index: int)
+  + Get_Hp() : int
+  + Set_Hp(value: int)
+  + Get_Mana() : int
+  + Set_Mana(value: int)
+  + Get_Armor() : int
+  + Set_Armor(value: int)
   + Get_Name() : String
   + Set_Name(name: String)
   + Get_Character() : Character
@@ -158,7 +162,7 @@ class Player {
 }
 
 class AI_Player {
-  + count_best() : Integer
+  + count_best() : int
 }
 
 class Human_Player_Player {
@@ -170,17 +174,17 @@ class Human_Player_Player {
 '#############################################
 
 class Character {
-  - xp : Integer
+  - xp : int
   - name : String
   - Heal_MLTPL : Float
   - Dmg_MLTPL : Float
   - Armor_MLTPL : Float
   - description : String
-  - xp_to_next_lvl : Integer
-  - lvl : Integer
+  - xp_to_next_lvl : int
+  - lvl : int
   + lvl_up()
-  + Get_Xp() : Integer
-  + Set_Xp(value: Integer)
+  + Get_Xp() : int
+  + Set_Xp(value: int)
   + Get_Name() : String
   + Set_Name(name: String)
   + Get_Heal_Multiplier() : Float
@@ -191,36 +195,36 @@ class Character {
   + Set_Armor_Multiplier(value: Float)
   + Get_Description() : String
   + Set_Description(desc: String)
-  + Get_Xp_To_Next_Lvl() : Integer
-  + Set_Xp_To_Next_Lvl(value: Integer)
-  + Get_Level() : Integer
-  + Set_Level(value: Integer)
+  + Get_Xp_To_Next_Lvl() : int
+  + Set_Xp_To_Next_Lvl(value: int)
+  + Get_Level() : int
+  + Set_Level(value: int)
 }
 
 class Healer_Character {
-  - Heal_amount : Integer
+  - Heal_amount : int
   + Heal()
-  + Get_Heal_Amount() : Integer
-  + Set_Heal_Amount(value: Integer)
+  + Get_Heal_Amount() : int
+  + Set_Heal_Amount(value: int)
 }
 
 class Tank_Character {
   - was_up : Boolean
-  - Shield_amount : Integer
+  - Shield_amount : int
   + Get_Was_Up() : Boolean
   + Set_Was_Up(state: Boolean)
-  + Get_Shield_Amount() : Integer
-  + Set_Shield_Amount(value: Integer)
+  + Get_Shield_Amount() : int
+  + Set_Shield_Amount(value: int)
   + Shielding()
 }
 
 class Knight_Character {
-  - armor_up_amount : Integer
+  - armor_up_amount : int
   - was_armored : Boolean
   + Get_Was_Armored() : Boolean
   + Set_Was_Armored(state: Boolean)
-  + Get_Armor_Up() : Integer
-  + Set_Armor_Up(value: Integer)
+  + Get_Armor_Up() : int
+  + Set_Armor_Up(value: int)
   + Armoring()
 }
 
