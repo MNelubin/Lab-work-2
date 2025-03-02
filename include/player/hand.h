@@ -7,7 +7,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
-#include "card.h"
+#include "../cards/card.h"
 
 /**
  * @brief Represents a player's hand containing various types of cards

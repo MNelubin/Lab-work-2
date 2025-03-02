@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "artifact_card.h"
+#include "../../include/cards/artifact_card.h"
 #include <stdexcept>
 
 Artifact_Card::Artifact_Card(const std::string& name, const std::string& description,

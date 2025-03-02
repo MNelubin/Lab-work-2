@@ -10,15 +10,27 @@ A = ar
 
 AFLAGS = rsv
 
-CCXFLAGS = -I. -std=c++17 -Wall -g -fPIC -Werror -Wpedantic -Wall
+CCXFLAGS = -I. -std=c++17 -Wall -g -fPIC -Werror -Wpedantic -Wall -Iinclude
 
 LDXXFLAGS = $(CCXFLAGS) -L. -l:$(LIBPROJECT)
 
 LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
 
-DEPS=$(wildcard *.h)
+INC_DIR = include
 
-OBJ = card.o spell_card.o attack_spell_card.o heal_spell_card.o buff_spell_card.o defence_spell_card.o beast_card.o creature_card.o weapon_card.o artifact_card.o shield_card.o buff_card.o hand.o
+DEPS=$(wildcard $(INC_DIR)/*.h)
+
+SRC_DIR = src
+
+SRC = $(wildcard $(SRC_DIR)/*.cpp) \
+      $(wildcard $(SRC_DIR)/cards/*.cpp) \
+      $(wildcard $(SRC_DIR)/player/*.cpp)
+
+OBJ = $(SRC:.cpp=.o)
+
+#OBJ = card.o spell_card.o attack_spell_card.o heal_spell_card.o buff_spell_card.o defence_spell_card.o beast_card.o creature_card.o weapon_card.o artifact_card.o shield_card.o buff_card.o hand.o
+
+TEST_DIR = tests
 
 TEST_OBJ = test-card.o
 
@@ -36,7 +48,7 @@ $(PROJECT): main.o $(LIBPROJECT)
 	$(CXX) -o $@ main.o $(LDXXFLAGS)
 
 $(TESTPROJECT): $(LIBPROJECT) $(TEST_OBJ)
-	$(CXX) -o $@ $(TEST_OBJ) $(LDGTESTFLAGS)
+	$(CXX) -o tests/unit_tests tests/test-card.cpp $(SRC) $(LDGTESTFLAGS)
 
 test: $(TESTPROJECT)
 

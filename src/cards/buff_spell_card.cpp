@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "buff_spell_card.h"
+#include "../../include/cards/buff_spell_card.h"
 #include <stdexcept>
 
 Buff_Spell_Card::Buff_Spell_Card(const std::string& name, const std::string& description,

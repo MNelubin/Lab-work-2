@@ -2,20 +2,20 @@
     Lab-2
 */
 #include <gtest/gtest.h>
-#include "card.h"
-#include "spell_card.h"
-#include "enums.h"
-#include "attack_spell_card.h"
-#include "heal_spell_card.h"
-#include "buff_spell_card.h"
-#include "defence_spell_card.h"
-#include "beast_card.h"
-#include "creature_card.h"
-#include "weapon_card.h"
-#include "artifact_card.h"
-#include "shield_card.h"
-#include "buff_card.h"
-#include "hand.h"
+#include "../include/cards/card.h"
+#include "../include/cards/spell_card.h"
+#include "../include/cards/enums.h"
+#include "../include/cards/attack_spell_card.h"
+#include "../include/cards/heal_spell_card.h"
+#include "../include/cards/buff_spell_card.h"
+#include "../include/cards/defence_spell_card.h"
+#include "../include/cards/beast_card.h"
+#include "../include/cards/creature_card.h"
+#include "../include/cards/weapon_card.h"
+#include "../include/cards/artifact_card.h"
+#include "../include/cards/shield_card.h"
+#include "../include/cards/buff_card.h"
+#include "../include/player/hand.h"
 
 // ==================== Card Class Tests ====================
 

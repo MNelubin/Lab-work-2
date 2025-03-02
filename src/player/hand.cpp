@@ -1,9 +1,9 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "hand.h"
-#include "shield_card.h"
-#include "buff_card.h"
+#include "../../include/player/hand.h"
+#include "../../include/cards/shield_card.h"
+#include "../../include/cards/buff_card.h"
 #include <stdexcept>
 #include <algorithm>
 

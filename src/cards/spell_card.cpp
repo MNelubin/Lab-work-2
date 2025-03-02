@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "spell_card.h"
+#include "../../include/cards/spell_card.h"
 
 Spell_Card::Spell_Card(const std::string& name, const std::string& description,
                        Rarity rarity, int mana_cost, Element element)

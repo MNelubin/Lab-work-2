@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "card.h"
+#include "../../include/cards/card.h"
 
 // Card class constructor
 Card::Card(const std::string& name, const std::string& description, 

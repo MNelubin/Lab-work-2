@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "defence_spell_card.h"
+#include "../../include/cards/defence_spell_card.h"
 #include <stdexcept>
 
 Defence_Spell_Card::Defence_Spell_Card(const std::string& name, const std::string& description,

@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "shield_card.h"
+#include "../../include/cards/shield_card.h"
 #include <stdexcept>
 
 Shield_Card::Shield_Card(const std::string& name, const std::string& description,

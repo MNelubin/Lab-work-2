@@ -4,8 +4,8 @@
 '#############################################
 
 enum Rarity {
-  Free
   Common
+  Uncommon
   Rare
   Epic
 }
@@ -13,9 +13,8 @@ enum Rarity {
 enum ElementType {
   Fire
   Water
-  Air
   Earth
-  Arcane
+  Air
 }
 
 enum TribeType {

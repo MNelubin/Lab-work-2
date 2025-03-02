@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "attack_spell_card.h"
+#include "../../include/cards/attack_spell_card.h"
 #include <stdexcept>
 
 Attack_Spell_Card::Attack_Spell_Card(const std::string& name, const std::string& description,

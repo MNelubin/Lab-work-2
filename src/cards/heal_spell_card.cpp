@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "heal_spell_card.h"
+#include "../../include/cards/heal_spell_card.h"
 #include <stdexcept> 
 
 // Constructor realisation

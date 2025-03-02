@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "beast_card.h"
+#include "../../include/cards/beast_card.h"
 #include <stdexcept>
 
 Beast_Card::Beast_Card(const std::string& name, const std::string& description,

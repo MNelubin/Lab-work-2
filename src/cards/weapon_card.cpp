@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "weapon_card.h"
+#include "../../include/cards/weapon_card.h"
 #include <stdexcept>
 
 Weapon_Card::Weapon_Card(const std::string& name, const std::string& description,

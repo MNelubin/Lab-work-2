@@ -1,7 +1,7 @@
 /* Maxim Nelyubin st132907@student.spbu.ru
     Lab-2
 */
-#include "creature_card.h"
+#include "../../include/cards/creature_card.h"
 #include <stdexcept>
 
 Creature_Card::Creature_Card(const std::string& name, const std::string& description,
