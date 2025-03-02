@@ -18,7 +18,7 @@ LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
 
 DEPS=$(wildcard *.h)
 
-OBJ = card.o spell_card.o attack_spell_card.o heal_spell_card.o buff_spell_card.o defence_spell_card.o beast_card.o creature_card.o weapon_card.o artifact_card.o shield_card.o buff_card.o
+OBJ = card.o spell_card.o attack_spell_card.o heal_spell_card.o buff_spell_card.o defence_spell_card.o beast_card.o creature_card.o weapon_card.o artifact_card.o shield_card.o buff_card.o hand.o
 
 TEST_OBJ = test-card.o
 

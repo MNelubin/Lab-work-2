@@ -15,6 +15,7 @@
 #include "artifact_card.h"
 #include "shield_card.h"
 #include "buff_card.h"
+#include "hand.h"
 
 // ==================== Card Class Tests ====================
 
@@ -426,6 +427,145 @@ TEST(BuffCardTest, InvalidValuesThrow) {
     EXPECT_THROW(buff.set_buff_amount(0.0f), std::invalid_argument);
 }
 
+
+// ==================== Hand Class Tests ====================
+
+/**
+ * @test Basic Hand functionality
+ * @addtogroup GCI
+ */
+TEST(HandTest, ConstructorAndGetters) {
+    Hand hand;
+    
+    // Test initial state
+    EXPECT_EQ(hand.get_amount(), 0);
+    EXPECT_TRUE(hand.get_unique_card_types().empty());
+}
+
+/**
+ * @test Add and remove card from Hand functionality
+ * @addtogroup GCI
+ */
+TEST(HandTest, AddAndRemoveCard) {
+    Hand hand;
+    
+    // Add a card and verify
+    hand.add_card(std::make_unique<Shield_Card>("Test Shield", "Test", Rarity::Common, 2, 3));
+    EXPECT_EQ(hand.get_amount(), 1);
+    
+    // Remove the card and verify
+    hand.remove_card(0);
+    EXPECT_EQ(hand.get_amount(), 0);
+}
+
+/**
+ * @test Invalid index handling in Hand
+ * @addtogroup ErrorHandling
+ */
+TEST(HandTest, InvalidIndexHandling) {
+    Hand hand;
+    
+    // Test remove_card with invalid index
+    EXPECT_THROW(hand.remove_card(-1), std::out_of_range);
+    EXPECT_THROW(hand.remove_card(0), std::out_of_range);
+    
+    // Test get_card with invalid index
+    EXPECT_THROW(hand.get_card(-1), std::out_of_range);
+    EXPECT_THROW(hand.get_card(0), std::out_of_range);
+}
+
+/**
+ * @test Card retrieval functionality in Hand
+ * @addtogroup GCI
+ */
+TEST(HandTest, GetCard) {
+    Hand hand;
+    hand.add_card(std::make_unique<Shield_Card>("Test Shield", "Test", Rarity::Common, 2, 3));
+    
+    // Verify card properties
+    Card& card = hand.get_card(0);
+    EXPECT_EQ(card.get_name(), "Test Shield");
+    EXPECT_EQ(card.get_mana_cost(), 2);
+}
+
+/**
+ * @test Sorting Hand functionality
+ * @addtogroup GCI
+ */
+TEST(HandTest, SortByMana) {
+    Hand hand;
+    
+    // Add cards with different mana costs
+    hand.add_card(std::make_unique<Shield_Card>("Shield 1", "Test", Rarity::Common, 5, 3));
+    hand.add_card(std::make_unique<Buff_Card>("Buff 1", "Test", Rarity::Common, 2, 1.5f));
+    hand.add_card(std::make_unique<Shield_Card>("Shield 2", "Test", Rarity::Common, 3, 3));
+    
+    // Sort and verify order
+    hand.sort_by_mana();
+    EXPECT_EQ(hand.get_card(0).get_mana_cost(), 5);
+    EXPECT_EQ(hand.get_card(1).get_mana_cost(), 3);
+    EXPECT_EQ(hand.get_card(2).get_mana_cost(), 2);
+}
+
+/**
+ * @test Standard Hand generation
+ * @addtogroup GCI
+ */
+TEST(HandTest, GenerateStandardHands) {
+    Hand hand;
+    
+    // Test valid hand generation
+    EXPECT_NO_THROW(hand.generate(1));
+    EXPECT_GT(hand.get_amount(), 0);
+    
+    EXPECT_NO_THROW(hand.generate(2));
+    EXPECT_GT(hand.get_amount(), 0);
+    
+    EXPECT_NO_THROW(hand.generate(3));
+    EXPECT_GT(hand.get_amount(), 0);
+    
+    // Test invalid hand ID
+    EXPECT_THROW(hand.generate(0), std::invalid_argument);
+    EXPECT_THROW(hand.generate(4), std::invalid_argument);
+}
+
+/**
+ * @test Unique card types in Hand functionality
+ * @addtogroup GCI
+ */
+TEST(HandTest, GetUniqueCardTypes) {
+    Hand hand;
+    
+    // Add different card types
+    hand.add_card(std::make_unique<Shield_Card>("Shield 1", "Test", Rarity::Common, 2, 3));
+    hand.add_card(std::make_unique<Buff_Card>("Buff 1", "Test", Rarity::Common, 3, 1.5f));
+    hand.add_card(std::make_unique<Shield_Card>("Shield 2", "Test", Rarity::Common, 2, 3));
+    
+    // Verify unique types
+    auto types = hand.get_unique_card_types();
+    EXPECT_EQ(types.size(), 2);
+}
+
+/**
+ * @test Get cards by type in Hand functionality
+ * @addtogroup GCI
+ */
+TEST(HandTest, GetCardsByType) {
+    Hand hand;
+    
+    // Add cards
+    hand.add_card(std::make_unique<Shield_Card>("Shield 1", "Test", Rarity::Common, 2, 3));
+    hand.add_card(std::make_unique<Buff_Card>("Buff 1", "Test", Rarity::Common, 3, 1.5f));
+    hand.add_card(std::make_unique<Shield_Card>("Shield 2", "Test", Rarity::Common, 2, 3));
+    
+    // Get Shield cards and verify
+    auto shield_cards = hand.get_cards_by_type(typeid(Shield_Card).name());
+    EXPECT_EQ(shield_cards.size(), 2);
+    
+    // Get Buff cards and verify
+    auto buff_cards = hand.get_cards_by_type(typeid(Buff_Card).name());
+    EXPECT_EQ(buff_cards.size(), 1);
+}
 
 // ==================== Test Runner ====================
 
