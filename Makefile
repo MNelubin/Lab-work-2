@@ -44,8 +44,8 @@ default: all
 $(LIBPROJECT): $(OBJ)
 	$(A) $(AFLAGS) $@ $^
 
-$(PROJECT): main.o $(LIBPROJECT)
-	$(CXX) -o $@ main.o $(LDXXFLAGS)
+$(PROJECT): src/main.o $(LIBPROJECT)
+	$(CXX) -o $@ src/main.o $(LDXXFLAGS)
 
 $(TESTPROJECT): $(LIBPROJECT) $(TEST_OBJ)
 	$(CXX) -o tests/test-card $(TEST_OBJ) $(filter-out src/main.o, $(OBJ)) $(LDGTESTFLAGS)
@@ -57,7 +57,7 @@ all: $(PROJECT)
 .PHONY: clean
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 cleanall: clean
 	rm -f $(PROJECT) $(LIBPROJECT) $(TESTPROJECT)
