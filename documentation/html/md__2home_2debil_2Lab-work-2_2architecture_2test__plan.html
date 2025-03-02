@@ -145,13 +145,14 @@ $(function(){initNavTree('md__2home_2debil_2Lab-work-2_2architecture_2test__plan
 <div class="line">}</div>
 <div class="ttc" id="aclassAttack__Spell__Card_html"><div class="ttname"><a href="classAttack__Spell__Card.html">Attack_Spell_Card</a></div><div class="ttdoc">Specialized spell for direct damage.</div><div class="ttdef"><b>Definition</b> attack_spell_card.h:14</div></div>
 <div class="ttc" id="aclassCard_html"><div class="ttname"><a href="classCard.html">Card</a></div><div class="ttdoc">Base class representing a game card.</div><div class="ttdef"><b>Definition</b> card.h:17</div></div>
-<div class="ttc" id="atest-card_8cpp_html_afeb6d4047a9b58aca40a22b0e710266a"><div class="ttname"><a href="test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a></div><div class="ttdeci">TEST(CardBasicTest, ConstructorAndGetters)</div><div class="ttdef"><b>Definition</b> test-card.cpp:19</div></div>
+<div class="ttc" id="atest-card_8cpp_html_afeb6d4047a9b58aca40a22b0e710266a"><div class="ttname"><a href="test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a></div><div class="ttdeci">TEST(CardBasicTest, ConstructorAndGetters)</div><div class="ttdef"><b>Definition</b> test-card.cpp:25</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
 3.2 Combat Mechanics</h2>
 <p><b>Sample data:</b> </p><div class="fragment"><div class="line">vector&lt;Card&gt; test_deck = {</div>
 <div class="line">    <a class="code hl_class" href="classAttack__Spell__Card.html">Attack_Spell_Card</a>(<span class="stringliteral">&quot;Fireball&quot;</span>, 3, 5),</div>
-<div class="line">    Shield_Card(<span class="stringliteral">&quot;Iron Shield&quot;</span>, 2, 3)</div>
+<div class="line">    <a class="code hl_class" href="classShield__Card.html">Shield_Card</a>(<span class="stringliteral">&quot;Iron Shield&quot;</span>, 2, 3)</div>
 <div class="line">};</div>
+<div class="ttc" id="aclassShield__Card_html"><div class="ttname"><a href="classShield__Card.html">Shield_Card</a></div><div class="ttdoc">Specialized card for shields.</div><div class="ttdef"><b>Definition</b> shield_card.h:14</div></div>
 </div><!-- fragment --><p><b>Test cases:</b></p><ol type="1">
 <li>Damage 5 vs Armor 3 → 2 damage</li>
 <li>Double shield (3+3) → armor 6</li>
