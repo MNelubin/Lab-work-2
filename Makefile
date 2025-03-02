@@ -32,7 +32,7 @@ OBJ = $(SRC:.cpp=.o)
 
 TEST_DIR = tests
 
-TEST_OBJ = test-card.o
+TEST_OBJ = tests/test-card.o
 
 .PHONY: default
 
@@ -48,8 +48,7 @@ $(PROJECT): main.o $(LIBPROJECT)
 	$(CXX) -o $@ main.o $(LDXXFLAGS)
 
 $(TESTPROJECT): $(LIBPROJECT) $(TEST_OBJ)
-	$(CXX) -o tests/unit_tests tests/test-card.cpp $(SRC) $(LDGTESTFLAGS)
-
+	$(CXX) -o tests/test-card $(TEST_OBJ) $(SRC) $(LDGTESTFLAGS)
 test: $(TESTPROJECT)
 
 all: $(PROJECT)
