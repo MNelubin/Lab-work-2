@@ -198,6 +198,7 @@ class Character {
   + Set_Xp_To_Next_Lvl(value: int)
   + Get_Level() : int
   + Set_Level(value: int)
+  + add_xp(amount: int)
 }
 
 class Healer_Character {
