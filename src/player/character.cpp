@@ -5,7 +5,7 @@
 
 Character::Character() 
     : xp_to_next_lvl(100), lvl(1), xp(0), name(""), heal_mltpl(1.0f), dmg_mltpl(1.0f), armor_mltpl(1.0f),
-      description("")  {}
+      description(""), ability_uses(3)  {}
 
 Character::Character(const std::string& name, const std::string& description) {
     set_name(name);
@@ -16,11 +16,12 @@ Character::Character(const std::string& name, const std::string& description) {
     heal_mltpl = 1.0f;
     dmg_mltpl = 1.0f;
     armor_mltpl = 1.0f;
+    ability_uses =3;
     
 }
 
 Character::Character(int xp_to_next_lvl, int lvl, int xp, const std::string& name, float heal_mltpl, float dmg_mltpl,
-                     float armor_mltpl, const std::string& description
+                     float armor_mltpl, const std::string& description, int ability_uses
                      ) {
     set_xp_to_next_lvl(xp_to_next_lvl);
     set_level(lvl);
@@ -30,6 +31,7 @@ Character::Character(int xp_to_next_lvl, int lvl, int xp, const std::string& nam
     set_dmg_multiplier(dmg_mltpl);
     set_armor_multiplier(armor_mltpl);
     set_description(description);
+    set_ability_uses(ability_uses);
     
 }
 
@@ -143,3 +145,17 @@ void Character::add_xp(int amount) {
     }
     set_xp(get_xp() + amount);
 }
+
+int Character::get_ability_uses() const {
+    return ability_uses;
+}
+
+void Character::set_ability_uses(int value) {
+    if (value < 0) {
+        throw std::invalid_argument("Ability uses cannot be negative");
+    }
+    ability_uses = value;
+}
+
+
+

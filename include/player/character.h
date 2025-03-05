@@ -6,6 +6,7 @@
 
 #include <string>
 #include <stdexcept>
+class Player;
 
 /**
  * @brief Represents a game character with progression system
@@ -24,7 +25,8 @@ private:
     float dmg_mltpl;      ///< Damage multiplier. Must be > 0
     float armor_mltpl;    ///< Armor multiplier. Must be > 0
     std::string description; ///< Character description. Max length 200 characters
-    
+    int ability_uses; ///< Number of times the special ability can be used. Must be >0
+
 
 public:
     /**
@@ -39,7 +41,7 @@ public:
      * - dmg_mltpl: 1.0
      * - armor_mltpl: 1.0
      * - description: ""
-     
+     * - ability_uses: 3
      */
     Character();
 
@@ -61,11 +63,12 @@ public:
      * @param dmg_mltpl Damage multiplier
      * @param armor_mltpl Armor multiplier
      * @param description Character description
-     
+     * @param ability_uses Number of ability uses possible
+
      * @throws std::invalid_argument if any parameter is invalid
      */
     Character(int xp_to_next_lvl, int lvl,int xp, const std::string& name, float heal_mltpl, float dmg_mltpl,
-              float armor_mltpl, const std::string& description
+              float armor_mltpl, const std::string& description, int ability_uses
               );
 
     /**
@@ -189,6 +192,25 @@ public:
      * @post If xp >= xp_to_next_lvl, triggers lvl_up()
      */
     void add_xp(int amount);
+
+
+    /**
+     * @brief Get ability uses
+     * @return Current number of ability uses
+     */
+    int get_ability_uses() const;
+
+    /**
+     * @brief Set ability uses
+     * @param value New number of ability uses
+     * @throws std::invalid_argument if value < 0
+     */
+    void set_ability_uses(int value);
+
+    virtual ~Character() = default; // A virtual destructor for correctly deleting subclasses
+
+    virtual void special_action(Player& player) = 0; // A virtual method for special actions
+
 };
 
 #endif // CHARACTER_H

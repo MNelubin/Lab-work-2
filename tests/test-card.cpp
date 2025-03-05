@@ -16,7 +16,12 @@
 #include "../include/cards/shield_card.h"
 #include "../include/cards/buff_card.h"
 #include "../include/player/hand.h"
+#include "../include/player/player.h"
 #include "../include/player/character.h"
+#include "../include/player/tank_character.h"
+#include "../include/player/healer_character.h"
+#include "../include/player/knight_character.h"
+
 
 // ==================== Card Class Tests ====================
 
@@ -577,7 +582,7 @@ TEST(HandTest, GetCardsByType) {
  */
 TEST(CharacterTest, DefaultConstructor) {
     // Arrange & Act
-    Character character;
+    Healer_Character character;
 
     // Assert
     EXPECT_EQ(character.get_xp(), 0);
@@ -596,7 +601,7 @@ TEST(CharacterTest, DefaultConstructor) {
  */
 TEST(CharacterTest, NameDescriptionConstructorValid) {
     // Arrange & Act
-    Character character("Aragorn", "A brave ranger from the North");
+    Healer_Character character("Aragorn", "A brave ranger from the North");
 
     // Assert
     EXPECT_EQ(character.get_name(), "Aragorn");
@@ -609,7 +614,7 @@ TEST(CharacterTest, NameDescriptionConstructorValid) {
  */
 TEST(CharacterTest, NameDescriptionConstructorInvalidName) {
     EXPECT_THROW(
-        Character character(std::string(51, 'a'), "Valid description"),
+        Healer_Character character(std::string(51, 'a'), "Valid description"),
         std::invalid_argument
     );
 }
@@ -620,7 +625,7 @@ TEST(CharacterTest, NameDescriptionConstructorInvalidName) {
  */
 TEST(CharacterTest, NameDescriptionConstructorInvalidDescription) {
     EXPECT_THROW(
-        Character character("Valid name", std::string(201, 'a')),
+        Healer_Character character("Valid name", std::string(201, 'a')),
         std::invalid_argument
     );
 }
@@ -631,7 +636,7 @@ TEST(CharacterTest, NameDescriptionConstructorInvalidDescription) {
  */
 TEST(CharacterTest, FullConstructorValid) {
     // Arrange & Act
-    Character character(200, 2, 100, "Legolas", 1.2f, 1.3f, 1.1f, "Elven archer");
+    Healer_Character character(200, 2, 100, "Legolas", 1.2f, 1.3f, 1.1f, "Elven archer",1);
 
     // Assert
     EXPECT_EQ(character.get_xp_to_next_lvl(), 200);
@@ -642,6 +647,8 @@ TEST(CharacterTest, FullConstructorValid) {
     EXPECT_FLOAT_EQ(character.get_dmg_multiplier(), 1.3f);
     EXPECT_FLOAT_EQ(character.get_armor_multiplier(), 1.1f);
     EXPECT_EQ(character.get_description(), "Elven archer");
+    EXPECT_EQ(character.get_ability_uses(), 1);
+    
 }
 
 /**
@@ -650,7 +657,7 @@ TEST(CharacterTest, FullConstructorValid) {
  */
 TEST(CharacterTest, FullConstructorInvalidXp) {
     EXPECT_THROW(
-        Character character(100, 1, -1, "Valid", 1.0f, 1.0f, 1.0f, "Valid"),
+        Healer_Character character(100, 1, -1, "Valid", 1.0f, 1.0f, 1.0f, "Valid",1),
         std::invalid_argument
     );
 }
@@ -661,7 +668,7 @@ TEST(CharacterTest, FullConstructorInvalidXp) {
  */
 TEST(CharacterTest, FullConstructorInvalidHealMultiplier) {
     EXPECT_THROW(
-        Character character(100, 1, 0, "Valid", 0.0f, 1.0f, 1.0f, "Valid"),
+        Healer_Character character(100, 1, 0, "Valid", 0.0f, 1.0f, 1.0f, "Valid",1),
         std::invalid_argument
     );
 }
@@ -672,7 +679,7 @@ TEST(CharacterTest, FullConstructorInvalidHealMultiplier) {
  */
 TEST(CharacterTest, FullConstructorInvalidXpToNextLvl) {
     EXPECT_THROW(
-        Character character(0, 1, 0, "Valid", 1.0f, 1.0f, 1.0f, "Valid"),
+        Healer_Character character(0, 1, 0, "Valid", 1.0f, 1.0f, 1.0f, "Valid",1),
         std::invalid_argument
     );
 }
@@ -683,7 +690,7 @@ TEST(CharacterTest, FullConstructorInvalidXpToNextLvl) {
  */
 TEST(CharacterTest, FullConstructorInvalidLevel) {
     EXPECT_THROW(
-        Character character(100, 0, 0, "Valid", 1.0f, 1.0f, 1.0f, "Valid"),
+        Healer_Character character(100, 0, 0, "Valid", 1.0f, 1.0f, 1.0f, "Valid",1),
         std::invalid_argument
     );
 }
@@ -696,7 +703,7 @@ TEST(CharacterTest, FullConstructorInvalidLevel) {
  */
 TEST(CharacterTest, SetXpValid) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     character.set_xp(50);
@@ -708,7 +715,7 @@ TEST(CharacterTest, SetXpValid) {
  * @addtogroup ErrorHandling
  */
 TEST(CharacterTest, SetXpInvalid) {
-    Character character;
+    Healer_Character character;
     EXPECT_THROW(character.set_xp(-1), std::invalid_argument);
 }
 
@@ -718,7 +725,7 @@ TEST(CharacterTest, SetXpInvalid) {
  */
 TEST(CharacterTest, SetNameValid) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     character.set_name("Gandalf");
@@ -730,7 +737,7 @@ TEST(CharacterTest, SetNameValid) {
  * @addtogroup ErrorHandling
  */
 TEST(CharacterTest, SetNameInvalid) {
-    Character character;
+    Healer_Character character;
     EXPECT_THROW(character.set_name(std::string(51, 'a')), std::invalid_argument);
 }
 
@@ -740,7 +747,7 @@ TEST(CharacterTest, SetNameInvalid) {
  */
 TEST(CharacterTest, SetHealMultiplierValid) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     character.set_heal_multiplier(1.5f);
@@ -752,7 +759,7 @@ TEST(CharacterTest, SetHealMultiplierValid) {
  * @addtogroup ErrorHandling
  */
 TEST(CharacterTest, SetHealMultiplierInvalid) {
-    Character character;
+    Healer_Character character;
     EXPECT_THROW(character.set_heal_multiplier(0.0f), std::invalid_argument);
 }
 
@@ -762,7 +769,7 @@ TEST(CharacterTest, SetHealMultiplierInvalid) {
  */
 TEST(CharacterTest, SetDescriptionValid) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     character.set_description("A wise wizard");
@@ -774,7 +781,7 @@ TEST(CharacterTest, SetDescriptionValid) {
  * @addtogroup ErrorHandling
  */
 TEST(CharacterTest, SetDescriptionInvalid) {
-    Character character;
+    Healer_Character character;
     EXPECT_THROW(character.set_description(std::string(201, 'a')), std::invalid_argument);
 }
 
@@ -784,7 +791,7 @@ TEST(CharacterTest, SetDescriptionInvalid) {
  */
 TEST(CharacterTest, SetXpToNextLvlValid) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     character.set_xp_to_next_lvl(150);
@@ -796,7 +803,7 @@ TEST(CharacterTest, SetXpToNextLvlValid) {
  * @addtogroup ErrorHandling
  */
 TEST(CharacterTest, SetXpToNextLvlInvalid) {
-    Character character;
+    Healer_Character character;
     EXPECT_THROW(character.set_xp_to_next_lvl(0), std::invalid_argument);
 }
 
@@ -806,7 +813,7 @@ TEST(CharacterTest, SetXpToNextLvlInvalid) {
  */
 TEST(CharacterTest, SetLevelValid) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     character.set_level(3);
@@ -818,7 +825,7 @@ TEST(CharacterTest, SetLevelValid) {
  * @addtogroup ErrorHandling
  */
 TEST(CharacterTest, SetLevelInvalid) {
-    Character character;
+    Healer_Character character;
     EXPECT_THROW(character.set_level(0), std::invalid_argument);
 }
 
@@ -830,7 +837,7 @@ TEST(CharacterTest, SetLevelInvalid) {
  */
 TEST(CharacterTest, GettersReturnCorrectValues) {
     // Arrange
-    Character character(200, 2,100, "Frodo", 1.2f, 1.3f, 1.1f, "Hobbit from the Shire" );
+    Healer_Character character(200, 2,100, "Frodo", 1.2f, 1.3f, 1.1f, "Hobbit from the Shire",1 );
 
     // Act & Assert
     EXPECT_EQ(character.get_xp_to_next_lvl(), 200);
@@ -852,7 +859,7 @@ TEST(CharacterTest, GettersReturnCorrectValues) {
  */
 TEST(CharacterTest, SingleLevelUp) {
     // Arrange
-    Character character;
+    Healer_Character character;
     character.set_xp_to_next_lvl(100);
     character.set_xp(100);
 
@@ -871,7 +878,7 @@ TEST(CharacterTest, SingleLevelUp) {
  */
 TEST(CharacterTest, MultipleLevelUps) {
     // Arrange
-    Character character;
+    Healer_Character character;
     character.set_xp_to_next_lvl(100);
     character.set_xp(250); // Enough for 2 level-ups
 
@@ -891,7 +898,7 @@ TEST(CharacterTest, MultipleLevelUps) {
  */
 TEST(CharacterTest, NoLevelUp) {
     // Arrange
-    Character character;
+    Healer_Character character;
     character.set_xp_to_next_lvl(100);
     character.set_xp(99);
 
@@ -912,7 +919,7 @@ TEST(CharacterTest, NoLevelUp) {
  */
 TEST(CharacterTest, AddXpPositive) {
     // Arrange
-    Character character;
+    Healer_Character character;
     character.set_xp(50);
 
     // Act
@@ -928,7 +935,7 @@ TEST(CharacterTest, AddXpPositive) {
  */
 TEST(CharacterTest, AddXpZero) {
     // Arrange
-    Character character;
+    Healer_Character character;
     character.set_xp(50);
 
     // Act
@@ -944,7 +951,7 @@ TEST(CharacterTest, AddXpZero) {
  */
 TEST(CharacterTest, AddXpNegative) {
     // Arrange
-    Character character;
+    Healer_Character character;
 
     // Act & Assert
     EXPECT_THROW(character.add_xp(-10), std::invalid_argument);
@@ -956,7 +963,7 @@ TEST(CharacterTest, AddXpNegative) {
  */
 TEST(CharacterTest, AddXpTriggersLevelUp) {
     // Arrange
-    Character character;
+    Healer_Character character;
     character.set_xp_to_next_lvl(100);
     character.set_xp(50);
 
@@ -968,6 +975,84 @@ TEST(CharacterTest, AddXpTriggersLevelUp) {
     EXPECT_EQ(character.get_xp(), 0);
 }
 
+/**
+ * @test Verify Healer_Character constructor initializes fields correctly
+ * @addtogroup GCI
+ */
+TEST(HealerCharacterTest, Constructor) {
+    Healer_Character healer(15, 100, 1, 0, "Healer", 1.0f, 1.0f, 1.0f, "Healer description", 3);
+    EXPECT_EQ(healer.get_heal_amount(), 15);
+    EXPECT_EQ(healer.get_ability_uses(), 3);
+}
+
+/**
+ * @test Verify Healer_Character special action heals the player
+ * @addtogroup GCI
+ */
+TEST(HealerCharacterTest, SpecialAction) {
+    Player player(100, 50, 0, "Test Player", std::make_unique<Healer_Character>(10, 100, 1, 0, "Healer", 1.0f, 1.0f, 1.0f, "Healer description", 2));
+    EXPECT_NO_THROW(player.perform_special_action());
+    EXPECT_EQ(player.get_hp(), 110);
+    EXPECT_EQ(player.get_character().get_ability_uses(), 1);
+}
+
+// ==================== Tank_Character Tests ====================
+
+/**
+ * @test Verify Tank_Character constructor initializes fields correctly
+ * @addtogroup GCI
+ */
+TEST(TankCharacterTest, Constructor) {
+    Tank_Character tank( 100, 1, 0, "Tank", 1.0f, 1.0f, 1.0f, "Tank description", 3, 2);
+    EXPECT_EQ(tank.get_shield_add(), 2);
+    EXPECT_EQ(tank.get_ability_uses(), 3);
+}
+
+/**
+ * @test Verify Tank_Character special action applies shield correctly
+ * @addtogroup GCI
+ */
+TEST(TankCharacterTest, SpecialAction) {
+    Player player(100, 50, 0, "Test Player", nullptr, 0);
+    Tank_Character tank(100, 1, 0, "Tank", 1.0f, 1.0f, 1.0f, "Tank description", 2, 3);
+    player.set_character(std::make_unique<Tank_Character>(tank));
+    
+    EXPECT_NO_THROW(player.perform_special_action());
+    EXPECT_EQ(player.get_shield_amount(), 3); 
+    EXPECT_EQ(player.get_character().get_ability_uses(), 1);
+}
+
+// ==================== Knight_Character Tests ====================
+
+/**
+ * @test Verify Knight_Character constructor initializes fields correctly
+ * @addtogroup GCI
+ */
+TEST(KnightCharacterTest, Constructor) {
+    Knight_Character knight(100, 1, 0, "Knight", 1.0f, 1.0f, 1.0f, "Knight description", 3, 5, 0);
+    EXPECT_EQ(knight.get_armor_up(), 5);
+    EXPECT_EQ(knight.get_armored_amount(), 0);
+    EXPECT_EQ(knight.get_ability_uses(), 3);
+}
+
+/**
+ * @test Verify Knight_Character special action applies armor correctly
+ * @addtogroup GCI
+ */
+TEST(KnightCharacterTest, SpecialAction) {
+    Player player(100, 50, 0, "Test Player", nullptr, 0);
+    Knight_Character knight(100, 1, 0, "Knight", 1.0f, 1.0f, 1.0f, "Knight description", 2, 5, 0);
+    player.set_character(std::make_unique<Knight_Character>(knight));
+    
+    EXPECT_NO_THROW(player.perform_special_action());
+    
+    auto* knight_ptr = dynamic_cast<Knight_Character*>(&player.get_character());
+    ASSERT_NE(knight_ptr, nullptr);
+    
+    EXPECT_EQ(player.get_armor(), 5);
+    EXPECT_EQ(knight_ptr->get_armored_amount(), 1);
+    EXPECT_EQ(knight_ptr->get_ability_uses(), 1);
+}
 // ==================== Test Runner ====================
 
 /**
