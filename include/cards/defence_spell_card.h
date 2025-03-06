@@ -16,6 +16,8 @@ private:
     int base_def; ///< Base defense value
 
 public:
+
+
     /**
      * @brief Construct a new Defence Spell Card object
      * 
@@ -31,6 +33,18 @@ public:
                     int base_def);
 
     /**
+     * @brief Construct a new Defence Spell Card object
+     * 
+     * @param name Display name of the card
+     * @param description Flavor text and effect description
+     * @param rarity Rarity category from enum
+     * @param mana_cost Required mana to play
+     * @param elem Element type of the spell (from enum ElementType)
+     */
+    Defence_Spell_Card(const std::string& name, const std::string& description,
+                                  Rarity rarity, int mana_cost, Element elem);
+
+    /**
      * @brief Get base defense value
      * @return Current base defense
      */
@@ -44,6 +58,9 @@ public:
      * @post new_def == get_base_def()
      */
     void set_base_def(int new_def);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
 };
 
 #endif

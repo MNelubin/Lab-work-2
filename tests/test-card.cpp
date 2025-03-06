@@ -37,7 +37,7 @@ TEST(CardBasicTest, ConstructorAndGetters) {
     const int mana = 5;
     
     // Act
-    Card card(name, desc, rarity, mana);
+    Weapon_Card card(name, desc, rarity, mana);
     
     // Assert
     EXPECT_EQ(card.get_name(), name);
@@ -52,7 +52,7 @@ TEST(CardBasicTest, ConstructorAndGetters) {
  */
 TEST(CardBasicTest, SettersValidation) {
     // Arrange
-    Card card("", "", Rarity::Common, 0);
+    Weapon_Card card("", "", Rarity::Common, 0);
     
     // Act & Assert: Name
     card.set_name("Ice Lance");
@@ -79,7 +79,7 @@ TEST(CardBasicTest, SettersValidation) {
  */
 TEST(SpellCardTest, InheritanceAndElementHandling) {
     // Arrange
-    Spell_Card spell("Frost Nova", "Freeze enemies", 
+    Defence_Spell_Card spell("Frost Nova", "Freeze enemies", 
                     Rarity::Uncommon, 4, Element::Water);
     
     // Act & Assert: Base conditions check
@@ -102,12 +102,12 @@ TEST(SpellCardTest, InheritanceAndElementHandling) {
  */
 TEST(SpellCardTest, ManaBoundaryCases) {
     // Arrange & Act: Min Value
-    Spell_Card spell1("Spark", "Minor shock", 
+    Defence_Spell_Card spell1("Spark", "Minor shock", 
                      Rarity::Common, 0, Element::Air);
     EXPECT_EQ(spell1.get_mana_cost(), 0);
     
     // Arrange & Act: Max value
-    Spell_Card spell2("Armageddon", "Global destruction", 
+    Defence_Spell_Card spell2("Armageddon", "Global destruction", 
                      Rarity::Epic, 10, Element::Fire);
     EXPECT_EQ(spell2.get_mana_cost(), 10);
 }

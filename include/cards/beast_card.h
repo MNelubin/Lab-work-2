@@ -58,6 +58,10 @@ public:
      * @post new_tribe == get_tribe()
      */
     void set_tribe(Tribe new_tribe);
+
+    void use(Player& user, Player& target) override;
+    
+    CardType get_type() const override;
 };
 
 #endif 

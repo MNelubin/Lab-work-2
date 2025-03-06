@@ -42,6 +42,9 @@ public:
      * @post new_buff_amount == get_buff_amount()
      */
     void set_buff_amount(float new_buff_amount);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
 };
 
 #endif

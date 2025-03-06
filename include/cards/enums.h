@@ -45,5 +45,20 @@ enum class Tribe {
     West,       ///< Western alliance
     South       ///< Southern tribes
 };
-
+// enums.h
+/**
+ * @brief Card type enumeration
+ */
+enum class CardType {
+    Beast,        ///< Cards representing creatures
+    Buff,         ///< Cards providing temporary bonuses
+    Creature,     ///< Cards that summon creatures
+    Shield,       ///< Cards providing protection
+    Weapon,       ///< Cards enhancing attack power
+    Artifact,     ///< Cards with global effects
+    AttackSpell,  ///< Damage-dealing spell cards
+    HealSpell,    ///< Healing spell cards
+    BuffSpell,    ///< Temporary buff spell cards
+    DefenceSpell  ///< Defensive spell cards
+};
 #endif

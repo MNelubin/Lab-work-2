@@ -59,6 +59,11 @@ public:
      * @post new_multiplier == get_weapon_multiplier()
      */
     void set_weapon_multiplier(float new_multiplier);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
+
+    
 };
 
 #endif 

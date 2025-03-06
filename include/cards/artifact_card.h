@@ -14,6 +14,7 @@
 class Artifact_Card : public Card {
 private:
     float multiplier; ///< Multiplier value for the artifact
+    
 
 public:
     /**
@@ -42,6 +43,9 @@ public:
      * @post new_multiplier == get_multiplier()
      */
     void set_multiplier(float new_multiplier);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
 };
 
 #endif 

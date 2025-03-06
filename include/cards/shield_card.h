@@ -42,6 +42,10 @@ public:
      * @post new_usage == get_usage()
      */
     void set_usage(int new_usage);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
 };
 
-#endif 
+
+#endif

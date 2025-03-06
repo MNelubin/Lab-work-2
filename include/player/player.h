@@ -28,6 +28,10 @@ private:
     std::string name; ///< Name of the player
     Hand hand; ///< Player's hand of cards
     int shield_amount; ///< Number of shields available
+    float cumulative_attack_multiplier; ///< Multiplier for attack power, accumulates during the turn
+    float cumulative_heal_multiplier; ///< Multiplier for healing effectiveness, accumulates during the turn
+    int cumulative_weapon_adder; ///< Additive bonus of weapon damage, accumulates during the turn
+    bool turn_active; ///< Indicates whether the player's turn is currently active
 
 public:
     /**
@@ -40,6 +44,10 @@ public:
      * - name: "Player"
      * - character: nullptr
      * - shield_amount: 0
+     * - cumulative_attack_multiplier: 1.0f
+     * - cumulative_heal_multiplier: 1.0f
+     * - cumulative_weapon_adder: 0
+     * - turn_active: true
      */
     Player();
 
@@ -51,6 +59,12 @@ public:
      * @param name Player's name
      * @param character Initial Character (can be nullptr)
      * @param shield_amount Initial number of shields
+     * 
+     * Initializes multipliers and turn state:
+     * - cumulative_attack_multiplier: 1.0f
+     * - cumulative_heal_multiplier: 1.0f
+     * - cumulative_weapon_adder: 0
+     * - turn_active: true
      * 
      * @throws std::invalid_argument if hp, mana, or armor are negative
      */
@@ -115,27 +129,54 @@ public:
     void show_hand();
 
     /**
-     * @brief Eat a card from the hand
+     * @brief Eats a card from the hand, increasing player's HP based on card's rarity and character's HP multiplier.
+     * 
+     * This method:
+     * 1. Validates the card index
+     * 2. Gets the card's rarity and converts it to a numerical value (Common=1, Uncommon=2, Rare=3, Epic=4)
+     * 3. Retrieves the character's HP multiplier
+     * 4. Calculates the HP increase as (rarity value * 10) multiplied by the HP multiplier
+     * 5. Converts the result to integer and adds it to player's HP
+     * 6. Removes the card from the hand
+     * 
      * @param index Position of the card to eat
      * 
-     * @throws std::out_of_range if index is invalid
+     * @throws std::out_of_range If the card index is invalid
+     * @throws std::runtime_error If the character is not set
      */
     void eat_card(int index);
 
     /**
-     * @brief Use a card on a target player
-     * @param target Player to use the card on
-     * @param index Position of the card to use
+     * @brief Uses a card from the player's hand on a target player with mana cost deduction.
      * 
-     * @throws std::out_of_range if index is invalid
+     * This method performs the following actions:
+     * 1. Validates the card index
+     * 2. Checks if the player has sufficient mana
+     * 3. Deducts mana from the player
+     * 4. Retrieves the card's type
+     * 5. Applies the card's effect to the target player
+     * 6. Removes the card from the player's hand
+     * 7. Checks if the card type ends the player's turn (Combat cards)
+     * 
+     * @param target Player to apply the card effect to
+     * @param index Index of the card in the player's hand
+     * 
+     * @throws std::out_of_range If the card index is invalid
+     * @throws std::runtime_error If the player doesn't have enough mana
      */
-    void use_card(Player& target, int index);
+    void use_card( int index, Player& target);
 
     /**
-     * @brief Apply damage to the player
-     * @param amount Damage to apply
+     * @brief Applies damage to the player, reducing shields, armor, and HP in that order.
      * 
-     * @throws std::invalid_argument if amount is negative
+     * This method processes damage in the following order:
+     * 1. Shields absorb damage up to their maximum capacity (each shield can absorb up to 10 damage)
+     * 2. Remaining damage is absorbed by armor (1 damage reduces armor by 1)
+     * 3. Any remaining damage is subtracted from HP
+     * 
+     * @param damage Amount of damage to apply
+     * 
+     * @throws std::invalid_argument If damage is negative
      */
     void take_damage(int amount);
 
@@ -219,6 +260,115 @@ public:
      * @throws std::runtime_error if Character is not set
      */
     std::string get_character_statistics() const;
+
+    /**
+     * @brief Resets the stroke parameters to their initial values
+     * @details Initializes attack and healing multipliers, activates the turn.
+     * @post 
+     * - cumulative_attack_multiplier = 1.0f
+     * - cumulative_heal_multiplier = 1.0f
+     * - cumulative_weapon_adder = 0
+     * - turn_active = true
+     */
+    void reset_turn();
+
+    /**
+     * @brief Applies multiplier to total attack power
+     * @param effect Effect multiplier (must be > 0)
+     * @note Multipliers are combined multiplicatively with each other
+     * @warning Incorrect values (<=0) may lead to unexpected behavior
+     */
+    void apply_attack_multiplier(float effect);
+
+    /**
+     * @brief Applies a multiplier to treatment effectiveness
+     * @param effect Effect multiplier (must be > 0)
+     * @note Multipliers are combined multiplicatively with each other
+     * @warning Incorrect values (<=0) may lead to calculation errors
+     */
+    void apply_heal_multiplier(float effect);
+
+    /**
+     * @brief Adds a bonus to weapon damage effectiveness
+     * @param effect Bonus value to add
+     * @note Bonuses are combined additively with each other
+     */
+    void add_weapon_bonus(int effect);
+
+    /**
+     * @brief Completes the current turn and resets the temporary modifiers
+     * @details Performs the same actions as reset_turn()
+     * @see reset_turn()
+     */
+    void end_turn();
+
+    /**
+     * @brief Get the cumulative attack multiplier
+     * @return Current attack multiplier value
+     */
+    float get_cumulative_attack_multiplier() const;
+
+    /**
+     * @brief Set the cumulative attack multiplier
+     * @param value New attack multiplier value
+     * @throws std::invalid_argument if value <= 0
+     */
+    void set_cumulative_attack_multiplier(float value);
+
+    /**
+     * @brief Get the cumulative heal multiplier
+     * @return Current heal multiplier value
+     */
+    float get_cumulative_heal_multiplier() const;
+
+    /**
+     * @brief Set the cumulative heal multiplier
+     * @param value New heal multiplier value
+     * @throws std::invalid_argument if value <= 0
+     */
+    void set_cumulative_heal_multiplier(float value);
+
+    /**
+     * @brief Get the cumulative weapon bonus
+     * @return Current weapon bonus value
+     */
+    int get_cumulative_weapon_bonus() const;
+
+    /**
+     * @brief Set the cumulative weapon bonus
+     * @param value New weapon bonus value
+     */
+    void set_cumulative_weapon_bonus(int value);
+
+    /**
+     * @brief Check if the turn is active
+     * @return true if turn is active, false otherwise
+     */
+    bool is_turn_active() const;
+
+    /**
+     * @brief Set the turn active state
+     * @param value New turn active state
+     */
+    void set_turn_active(bool value);
+
+    /**
+     * @brief Get the player's hand
+     * @return Reference to the player's hand
+     */
+    Hand& get_hand();
+
+    /**
+     * @brief Get the player's hand (const version)
+     * @return Const reference to the player's hand
+     */
+    const Hand& get_hand() const;
+
+    /**
+     * @brief Set the player's hand
+     * @param new_hand New hand to set
+     */
+    void set_hand(Hand new_hand);
 };
 
 #endif // PLAYER_H

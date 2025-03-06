@@ -2,6 +2,9 @@
     Lab-2
 */
 #include "../../include/cards/heal_spell_card.h"
+#include "../../include/player/player.h"
+#include "../../include/player/character.h"
+
 #include <stdexcept> 
 
 // Constructor realisation
@@ -44,4 +47,21 @@ void Heal_Spell_Card::set_eff(float new_eff) {
         throw std::invalid_argument("Efficiency must be positive");
     }
     efficiency_deg = new_eff;
+}
+
+void Heal_Spell_Card::use(Player& user, Player& target) {
+    /**
+     * @brief Heal target player
+     */
+
+    int heal_amount=static_cast<int>(
+    get_base_heal() * user.get_character().get_heal_multiplier() 
+    * user.get_cumulative_heal_multiplier() * get_eff());
+    user.set_hp(heal_amount + user.get_hp());
+
+    user.end_turn();
+}
+
+CardType Heal_Spell_Card::get_type() const {
+    return CardType::HealSpell;
 }

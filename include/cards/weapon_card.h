@@ -19,6 +19,17 @@ public:
     /**
      * @brief Construct a new Weapon Card object
      * 
+     * @param name Display name of the card
+     * @param description Flavor text and effect description
+     * @param rarity Rarity category from enum
+     * @param mana_cost Required mana to play
+     */
+    Weapon_Card(const std::string& name, const std::string& description,
+                         Rarity rarity, int mana_cost);
+
+    /**
+     * @brief Construct a new Weapon Card object
+     * 
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -42,6 +53,9 @@ public:
      * @post new_dmg_up == get_dmg_up()
      */
     void set_dmg_up(int new_dmg_up);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
 };
 
 #endif 

@@ -2,6 +2,9 @@
     Lab-2
 */
 #include "../../include/cards/creature_card.h"
+#include "../../include/player/player.h"
+#include "../../include/player/character.h"
+
 #include <stdexcept>
 
 Creature_Card::Creature_Card(const std::string& name, const std::string& description,
@@ -37,3 +40,19 @@ void Creature_Card::set_weapon_multiplier(float new_multiplier) {
     }
     weapon_multiplier = new_multiplier;
 } 
+
+void Creature_Card::use(Player& user, Player& target) {
+    /**
+     * @brief Summons creature 
+     */
+    int total_power = static_cast<int>((get_base_dmg() +(get_weapon_multiplier() * user.get_cumulative_weapon_bonus()))*user.get_cumulative_attack_multiplier());
+    target.take_damage(total_power);
+
+    user.end_turn();
+    
+
+}
+
+CardType Creature_Card::get_type() const {
+    return CardType::Creature;
+}

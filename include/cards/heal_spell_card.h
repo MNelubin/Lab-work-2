@@ -61,6 +61,9 @@ public:
      */
     void set_eff(float new_eff);
 
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
+
 };
 
 #endif 

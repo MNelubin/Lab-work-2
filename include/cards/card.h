@@ -8,6 +8,7 @@
 /// @file enums.h
 #include "enums.h"
 
+class Player;
 /**
  * @brief Base class representing a game card
  * 
@@ -90,6 +91,20 @@ public:
      * @post get_mana_cost() == new_cost
      */
     void set_mana_cost(int new_cost);
+
+
+    /**
+     * @brief Apply card effect to target
+     * @param user Player using the card
+     * @param target Player affected by the card
+     */
+    virtual void use(Player& user, Player& target) = 0;
+    
+    /**
+     * @brief Get card type
+     * @return CardType identifier
+     */
+    virtual CardType get_type() const = 0;
 };
 
 #endif

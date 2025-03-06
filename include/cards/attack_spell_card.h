@@ -43,6 +43,9 @@ public:
      * @throws std::invalid_argument if damage <=0
      */
     void set_base_damage(int new_damage);
+
+    void use(Player& user, Player& target) override;
+    CardType get_type() const override;
 };
 
 #endif 
