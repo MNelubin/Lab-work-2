@@ -61,4 +61,26 @@ enum class CardType {
     BuffSpell,    ///< Temporary buff spell cards
     DefenceSpell  ///< Defensive spell cards
 };
+
+/**
+ * @brief Converts CardType enum to string representation
+ * 
+ * @param type CardType value
+ * @return std::string Textual representation of the card type
+ */
+inline std::string cardTypeToString(CardType type) {
+    switch (type) {
+        case CardType::Beast:        return "Beast";
+        case CardType::Buff:         return "Buff";
+        case CardType::Creature:     return "Creature";
+        case CardType::Shield:       return "Shield";
+        case CardType::Weapon:       return "Weapon";
+        case CardType::Artifact:     return "Artifact";
+        case CardType::AttackSpell:  return "Attack Spell";
+        case CardType::HealSpell:    return "Heal Spell";
+        case CardType::BuffSpell:    return "Buff Spell";
+        case CardType::DefenceSpell: return "Defence Spell";
+        default:                     return "Unknown";
+    }
+}
 #endif

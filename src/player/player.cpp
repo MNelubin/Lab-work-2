@@ -10,6 +10,7 @@
 #include "../../include/player/tank_character.h"
 #include "../../include/player/healer_character.h"
 #include "../../include/player/knight_character.h"
+#include "../../include/cards/enums.h"
 
 Player::Player() 
     : hp(100), mana(50), armor(0), shield_amount(0),
@@ -77,7 +78,8 @@ void Player::show_hand() {
     for (int i = 0; i < hand.get_amount(); ++i) {
         const auto& card = hand.get_card(i);
         std::cout << "[" << i << "] " << card.get_name() << " (" 
-                  << card.get_mana_cost() << " mana)" << std::endl;
+                  << card.get_mana_cost() << " mana) - Type: " 
+                  << cardTypeToString(card.get_type()) << std::endl;
     }
 }
 

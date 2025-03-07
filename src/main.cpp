@@ -162,8 +162,9 @@ void start_1v1_match() {
 
         player1.set_turn_active(false);
         while(!player1.is_turn_active()){
+
             player1.show_hand();
-            std::cout << "Choose a card to use (index): ";
+            std::cout << "Your mana: "<< player1.get_mana()<< "\n" <<"Choose a card to use (index): ";
             int card_index;
             std::cin >> card_index;
             try {
@@ -171,6 +172,10 @@ void start_1v1_match() {
                 std::cout << "Used card successfully!\n";
             } catch (const std::exception& e) {
                 std::cout << "Error: " << e.what() << '\n';
+            }
+            player1.get_hand().sort_by_mana();
+            if (player1.get_mana() <= 0) {
+                player1.set_turn_active(true); // No mana left
             }
 
             
@@ -184,22 +189,34 @@ void start_1v1_match() {
         // Player 2's turn (AI)
         std::cout << "\n=== Player 2's Turn ===\n";
         std::cout << "AI is thinking...\n";
-        
-        player2.set_turn_active(false);
-        while(!player2.is_turn_active()){
-        // Simple AI logic: random card usage
 
-            if (!player2.get_hand().get_amount()!=0) {
-                int ai_card_index = std::rand() % player2.get_hand().get_amount();
-                try {
-                    std::cout << "AI used a card!:"<< player2.get_hand().get_card(ai_card_index).get_name()<<"\n";
-                    player2.use_card(ai_card_index, player1);
-                    
-                } catch (...) {
-                    std::cout << "AI failed to use a card.\n";
+        player2.set_turn_active(false); // Begin the AI's turn
+
+        while (!player2.is_turn_active() && player2.get_hand().get_amount() > 0) {
+            int ai_card_index = std::rand() % player2.get_hand().get_amount();
+            
+            try {
+                const Card& selected_card = player2.get_hand().get_card(ai_card_index);
+                std::cout << "AI used card: " << selected_card.get_name() << "\n";
+                player2.use_card(ai_card_index, player1);
+                
+                if (selected_card.get_type() == CardType::AttackSpell ||
+                    selected_card.get_type() == CardType::HealSpell ||
+                    selected_card.get_type() == CardType::Beast) {
+                    player2.set_turn_active(true);
                 }
+                
+                if (player2.get_mana() <= 0) {
+                    player2.set_turn_active(true);
+                }
+            } catch (...) {
+                std::cout << "AI failed to use a card.\n";
+                player2.set_turn_active(true);
             }
         }
+
+        player2.end_turn();
+            
 
         std::cout << "Player 1's HP: " << player1.get_hp() << '\n';
         if (player1.get_hp() <= 0) {
