@@ -6,11 +6,16 @@ var annotated_dup =
     [ "Buff_Card", "classBuff__Card.html", "classBuff__Card" ],
     [ "Buff_Spell_Card", "classBuff__Spell__Card.html", "classBuff__Spell__Card" ],
     [ "Card", "classCard.html", "classCard" ],
+    [ "Character", "classCharacter.html", "classCharacter" ],
     [ "Creature_Card", "classCreature__Card.html", "classCreature__Card" ],
     [ "Defence_Spell_Card", "classDefence__Spell__Card.html", "classDefence__Spell__Card" ],
     [ "Hand", "classHand.html", "classHand" ],
     [ "Heal_Spell_Card", "classHeal__Spell__Card.html", "classHeal__Spell__Card" ],
+    [ "Healer_Character", "classHealer__Character.html", "classHealer__Character" ],
+    [ "Knight_Character", "classKnight__Character.html", "classKnight__Character" ],
+    [ "Player", "classPlayer.html", "classPlayer" ],
     [ "Shield_Card", "classShield__Card.html", "classShield__Card" ],
     [ "Spell_Card", "classSpell__Card.html", "classSpell__Card" ],
+    [ "Tank_Character", "classTank__Character.html", "classTank__Character" ],
     [ "Weapon_Card", "classWeapon__Card.html", "classWeapon__Card" ]
 ];

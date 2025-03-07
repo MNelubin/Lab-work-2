@@ -1,6 +1,5 @@
 \doxysection{/home/debil/\+Lab-\/work-\/2/src/main.cpp File Reference}
 \hypertarget{main_8cpp}{}\label{main_8cpp}\index{/home/debil/Lab-\/work-\/2/src/main.cpp@{/home/debil/Lab-\/work-\/2/src/main.cpp}}
-{\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include "{}../include/cards/card.\+h"{}}\newline
 {\ttfamily \#include "{}../include/cards/enums.\+h"{}}\newline
 {\ttfamily \#include "{}../include/cards/spell\+\_\+card.\+h"{}}\newline
@@ -14,105 +13,99 @@
 {\ttfamily \#include "{}../include/cards/artifact\+\_\+card.\+h"{}}\newline
 {\ttfamily \#include "{}../include/cards/shield\+\_\+card.\+h"{}}\newline
 {\ttfamily \#include "{}../include/cards/buff\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/player.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/healer\+\_\+character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/tank\+\_\+character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/knight\+\_\+character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/hand.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{main_8cpp_a834c75978b26a25987dc06ccdd12853e}{demonstrate\+\_\+spell}} ()
+void \mbox{\hyperlink{main_8cpp_ad593bc6accc813e0ba99391d052637f2}{start\+\_\+1v1\+\_\+match}} ()
+\begin{DoxyCompactList}\small\item\em Runs a 1v1 match between two players with predefined characters and hands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a116f5db451cfe52a4f8ae0bdf32e3bbc}{game\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Main game menu with options to start a new game or exit. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCharacter}{Character}} $>$ \mbox{\hyperlink{main_8cpp_a4cd362624950beb777f81ef925812780}{create\+\_\+predefined\+\_\+character}} (int choice)
+\begin{DoxyCompactList}\small\item\em Creates a predefined character based on the choice. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCharacter}{Character}} $>$ \mbox{\hyperlink{main_8cpp_a0ac17a11fcae6e24a280a83880b76106}{create\+\_\+predefined\+\_\+character\+\_\+ai}} (int choice)
 \item 
-void \mbox{\hyperlink{main_8cpp_aeb14d5786d139fc84ac4209fa2355ea4}{demonstrate\+\_\+attack\+\_\+spell}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_a5f83dbaf39156cd3c6c653ffb825691e}{demonstrate\+\_\+heal\+\_\+spell}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_add20cb61e5fd072ad72235a35619311e}{demonstrate\+\_\+buff\+\_\+spell}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_a34e21f3b425cf13e9bf14a69e2523588}{demonstrate\+\_\+buff\+\_\+card}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_a17a0bb942defce79de3313f1e3a000da}{demonstrate\+\_\+defence\+\_\+spell}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_aba20daa82d6da940cf3784152964eaed}{demonstrate\+\_\+beast\+\_\+card}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_a98d243db64d37c1bfa1d7d592fb6a553}{demonstrate\+\_\+creature\+\_\+card}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_a424f85ca15634865ed7085697b1db932}{demonstrate\+\_\+weapon\+\_\+card}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_af016f234456f39f49612bc130fae7a04}{demonstrate\+\_\+artifact\+\_\+card}} ()
-\item 
-void \mbox{\hyperlink{main_8cpp_a61e99f71007da32e3b907b34912edbde}{demonstrate\+\_\+shield\+\_\+card}} ()
-\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCharacter}{Character}} $>$ \mbox{\hyperlink{main_8cpp_a81bb81b5e8257a9c0d26582ce5aacbf4}{create\+\_\+ai\+\_\+character}} ()
+\begin{DoxyCompactList}\small\item\em Creates a random AI character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main function to run the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{main_8cpp_af016f234456f39f49612bc130fae7a04}\index{main.cpp@{main.cpp}!demonstrate\_artifact\_card@{demonstrate\_artifact\_card}}
-\index{demonstrate\_artifact\_card@{demonstrate\_artifact\_card}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_artifact\_card()}{demonstrate\_artifact\_card()}}
-{\footnotesize\ttfamily \label{main_8cpp_af016f234456f39f49612bc130fae7a04} 
-void demonstrate\+\_\+artifact\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\Hypertarget{main_8cpp_a81bb81b5e8257a9c0d26582ce5aacbf4}\index{main.cpp@{main.cpp}!create\_ai\_character@{create\_ai\_character}}
+\index{create\_ai\_character@{create\_ai\_character}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_ai\_character()}{create\_ai\_character()}}
+{\footnotesize\ttfamily \label{main_8cpp_a81bb81b5e8257a9c0d26582ce5aacbf4} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCharacter}{Character}} $>$ create\+\_\+ai\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_aeb14d5786d139fc84ac4209fa2355ea4}\index{main.cpp@{main.cpp}!demonstrate\_attack\_spell@{demonstrate\_attack\_spell}}
-\index{demonstrate\_attack\_spell@{demonstrate\_attack\_spell}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_attack\_spell()}{demonstrate\_attack\_spell()}}
-{\footnotesize\ttfamily \label{main_8cpp_aeb14d5786d139fc84ac4209fa2355ea4} 
-void demonstrate\+\_\+attack\+\_\+spell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_aba20daa82d6da940cf3784152964eaed}\index{main.cpp@{main.cpp}!demonstrate\_beast\_card@{demonstrate\_beast\_card}}
-\index{demonstrate\_beast\_card@{demonstrate\_beast\_card}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_beast\_card()}{demonstrate\_beast\_card()}}
-{\footnotesize\ttfamily \label{main_8cpp_aba20daa82d6da940cf3784152964eaed} 
-void demonstrate\+\_\+beast\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a34e21f3b425cf13e9bf14a69e2523588}\index{main.cpp@{main.cpp}!demonstrate\_buff\_card@{demonstrate\_buff\_card}}
-\index{demonstrate\_buff\_card@{demonstrate\_buff\_card}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_buff\_card()}{demonstrate\_buff\_card()}}
-{\footnotesize\ttfamily \label{main_8cpp_a34e21f3b425cf13e9bf14a69e2523588} 
-void demonstrate\+\_\+buff\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+Creates a random AI character. 
 
-\Hypertarget{main_8cpp_add20cb61e5fd072ad72235a35619311e}\index{main.cpp@{main.cpp}!demonstrate\_buff\_spell@{demonstrate\_buff\_spell}}
-\index{demonstrate\_buff\_spell@{demonstrate\_buff\_spell}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_buff\_spell()}{demonstrate\_buff\_spell()}}
-{\footnotesize\ttfamily \label{main_8cpp_add20cb61e5fd072ad72235a35619311e} 
-void demonstrate\+\_\+buff\+\_\+spell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\begin{DoxyReturn}{Returns}
+Unique pointer to the created character 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a4cd362624950beb777f81ef925812780}\index{main.cpp@{main.cpp}!create\_predefined\_character@{create\_predefined\_character}}
+\index{create\_predefined\_character@{create\_predefined\_character}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_predefined\_character()}{create\_predefined\_character()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4cd362624950beb777f81ef925812780} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCharacter}{Character}} $>$ create\+\_\+predefined\+\_\+character (\begin{DoxyParamCaption}\item[{int}]{choice}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a98d243db64d37c1bfa1d7d592fb6a553}\index{main.cpp@{main.cpp}!demonstrate\_creature\_card@{demonstrate\_creature\_card}}
-\index{demonstrate\_creature\_card@{demonstrate\_creature\_card}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_creature\_card()}{demonstrate\_creature\_card()}}
-{\footnotesize\ttfamily \label{main_8cpp_a98d243db64d37c1bfa1d7d592fb6a553} 
-void demonstrate\+\_\+creature\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a17a0bb942defce79de3313f1e3a000da}\index{main.cpp@{main.cpp}!demonstrate\_defence\_spell@{demonstrate\_defence\_spell}}
-\index{demonstrate\_defence\_spell@{demonstrate\_defence\_spell}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_defence\_spell()}{demonstrate\_defence\_spell()}}
-{\footnotesize\ttfamily \label{main_8cpp_a17a0bb942defce79de3313f1e3a000da} 
-void demonstrate\+\_\+defence\+\_\+spell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a5f83dbaf39156cd3c6c653ffb825691e}\index{main.cpp@{main.cpp}!demonstrate\_heal\_spell@{demonstrate\_heal\_spell}}
-\index{demonstrate\_heal\_spell@{demonstrate\_heal\_spell}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_heal\_spell()}{demonstrate\_heal\_spell()}}
-{\footnotesize\ttfamily \label{main_8cpp_a5f83dbaf39156cd3c6c653ffb825691e} 
-void demonstrate\+\_\+heal\+\_\+spell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+Creates a predefined character based on the choice. 
 
-\Hypertarget{main_8cpp_a61e99f71007da32e3b907b34912edbde}\index{main.cpp@{main.cpp}!demonstrate\_shield\_card@{demonstrate\_shield\_card}}
-\index{demonstrate\_shield\_card@{demonstrate\_shield\_card}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_shield\_card()}{demonstrate\_shield\_card()}}
-{\footnotesize\ttfamily \label{main_8cpp_a61e99f71007da32e3b907b34912edbde} 
-void demonstrate\+\_\+shield\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a834c75978b26a25987dc06ccdd12853e}\index{main.cpp@{main.cpp}!demonstrate\_spell@{demonstrate\_spell}}
-\index{demonstrate\_spell@{demonstrate\_spell}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_spell()}{demonstrate\_spell()}}
-{\footnotesize\ttfamily \label{main_8cpp_a834c75978b26a25987dc06ccdd12853e} 
-void demonstrate\+\_\+spell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\begin{DoxyParams}{Parameters}
+{\em choice} & 1 for healer, 2 for tank, 3 for knight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unique pointer to the created character 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a0ac17a11fcae6e24a280a83880b76106}\index{main.cpp@{main.cpp}!create\_predefined\_character\_ai@{create\_predefined\_character\_ai}}
+\index{create\_predefined\_character\_ai@{create\_predefined\_character\_ai}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_predefined\_character\_ai()}{create\_predefined\_character\_ai()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ac17a11fcae6e24a280a83880b76106} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCharacter}{Character}} $>$ create\+\_\+predefined\+\_\+character\+\_\+ai (\begin{DoxyParamCaption}\item[{int}]{choice}{}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a424f85ca15634865ed7085697b1db932}\index{main.cpp@{main.cpp}!demonstrate\_weapon\_card@{demonstrate\_weapon\_card}}
-\index{demonstrate\_weapon\_card@{demonstrate\_weapon\_card}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{demonstrate\_weapon\_card()}{demonstrate\_weapon\_card()}}
-{\footnotesize\ttfamily \label{main_8cpp_a424f85ca15634865ed7085697b1db932} 
-void demonstrate\+\_\+weapon\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\Hypertarget{main_8cpp_a116f5db451cfe52a4f8ae0bdf32e3bbc}\index{main.cpp@{main.cpp}!game\_menu@{game\_menu}}
+\index{game\_menu@{game\_menu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{game\_menu()}{game\_menu()}}
+{\footnotesize\ttfamily \label{main_8cpp_a116f5db451cfe52a4f8ae0bdf32e3bbc} 
+void game\+\_\+menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main game menu with options to start a new game or exit. 
 
 \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
 int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main function to run the game. 
+
+\Hypertarget{main_8cpp_ad593bc6accc813e0ba99391d052637f2}\index{main.cpp@{main.cpp}!start\_1v1\_match@{start\_1v1\_match}}
+\index{start\_1v1\_match@{start\_1v1\_match}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{start\_1v1\_match()}{start\_1v1\_match()}}
+{\footnotesize\ttfamily \label{main_8cpp_ad593bc6accc813e0ba99391d052637f2} 
+void start\+\_\+1v1\+\_\+match (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Runs a 1v1 match between two players with predefined characters and hands. 
 

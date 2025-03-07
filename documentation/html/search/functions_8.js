@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['set_5fbase_5fdamage_0',['set_base_damage',['../classAttack__Spell__Card.html#ac1a600a06a634cf0df13eacc1ccfcfdc',1,'Attack_Spell_Card']]],
-  ['set_5fbase_5fdef_1',['set_base_def',['../classDefence__Spell__Card.html#ae387a8ce1f62c698907c97e0848f5ca1',1,'Defence_Spell_Card']]],
-  ['set_5fbase_5fdmg_2',['set_base_dmg',['../classBeast__Card.html#a23e648986998cabf69fe217fab8619b6',1,'Beast_Card::set_base_dmg()'],['../classCreature__Card.html#a223112e35222eb05096bb750842b58eb',1,'Creature_Card::set_base_dmg()']]],
-  ['set_5fbase_5fheal_3',['set_base_heal',['../classHeal__Spell__Card.html#a906d642ad0a7d4149ba3e3cb1d8fba42',1,'Heal_Spell_Card']]],
-  ['set_5fbuff_5famount_4',['set_buff_amount',['../classBuff__Card.html#a015ede8b07d633414a1a411bb26c2413',1,'Buff_Card']]],
-  ['set_5fdescription_5',['set_description',['../classCard.html#a7df878df1ad6073334c8f7332ad5cdd0',1,'Card']]],
-  ['set_5fdmg_5fup_6',['set_dmg_up',['../classWeapon__Card.html#ae69ee912f429f44ac16f9ac694b6ca3b',1,'Weapon_Card']]],
-  ['set_5feff_7',['set_eff',['../classHeal__Spell__Card.html#a23e654648903ca6447793e44b8d85111',1,'Heal_Spell_Card']]],
-  ['set_5felement_8',['set_element',['../classSpell__Card.html#a6835e1758f2b40ef22191f8ccc222dcd',1,'Spell_Card']]],
-  ['set_5fmana_5fcost_9',['set_mana_cost',['../classCard.html#a6ec8620c325a26bec6d230ac30875bfc',1,'Card']]],
-  ['set_5fmultiplier_10',['set_multiplier',['../classArtifact__Card.html#a5aff3a1b347156ad272a789c4edb21b5',1,'Artifact_Card::set_multiplier()'],['../classBuff__Spell__Card.html#a69771db8eec22d2556ac65a2ce6ec524',1,'Buff_Spell_Card::set_multiplier()']]],
-  ['set_5fname_11',['set_name',['../classCard.html#ac02cf2194bc6fda38b2ec9567e965c7f',1,'Card']]],
-  ['set_5frarity_12',['set_rarity',['../classCard.html#aeb3584b001b5bb4f06ae6632cfdecd8f',1,'Card']]],
-  ['set_5ftribe_13',['set_tribe',['../classBeast__Card.html#a24431e4371ea2c8127263578f6a0df96',1,'Beast_Card']]],
-  ['set_5fusage_14',['set_usage',['../classShield__Card.html#a3f78ae2ede64ace2d0697ec99477a9c4',1,'Shield_Card']]],
-  ['set_5fweapon_5fmultiplier_15',['set_weapon_multiplier',['../classCreature__Card.html#a53b4620ab65e655e564bbaa6afc22ce5',1,'Creature_Card']]],
-  ['shield_5fcard_16',['Shield_Card',['../classShield__Card.html#a7c19f0e4eb8af2f53d127d3f146d0254',1,'Shield_Card']]],
-  ['sort_5fby_5fmana_17',['sort_by_mana',['../classHand.html#ac5494271768be40a87efd694557812a1',1,'Hand']]],
-  ['spell_5fcard_18',['Spell_Card',['../classSpell__Card.html#a410e68985095603e4e6d2d5946ba3cca',1,'Spell_Card']]]
+  ['knight_5fcharacter_0',['Knight_Character',['../classKnight__Character.html#a07f123dc1da13cb0af8a297dd68058fe',1,'Knight_Character::Knight_Character()'],['../classKnight__Character.html#af2a6eded17efc19ac64a1e316d53f10f',1,'Knight_Character::Knight_Character(int xp_to_next_lvl, int lvl, int xp, const std::string &amp;name, float heal_mltpl, float dmg_mltpl, float armor_mltpl, const std::string &amp;description, int ability_uses, int armor_up, int armored_amount)']]]
 ];

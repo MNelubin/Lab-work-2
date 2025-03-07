@@ -20,10 +20,16 @@ Inheritance diagram for Defence\+\_\+\+Spell\+\_\+\+Card\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classDefence__Spell__Card_a00062fd04adc07974a1b7fff9ab57c2d}{Defence\+\_\+\+Spell\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} elem, int base\+\_\+def)
 \begin{DoxyCompactList}\small\item\em Construct a new Defence Spell \doxylink{classCard}{Card} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDefence__Spell__Card_a6a0680719ed9373a84e71ea33a409928}{Defence\+\_\+\+Spell\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} elem)
+\begin{DoxyCompactList}\small\item\em Construct a new Defence Spell \doxylink{classCard}{Card} object. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classDefence__Spell__Card_ad4141d423a55ca4a0373bdf662cc1ed1}{get\+\_\+base\+\_\+def}} () const
 \begin{DoxyCompactList}\small\item\em Get base defense value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDefence__Spell__Card_ae387a8ce1f62c698907c97e0848f5ca1}{set\+\_\+base\+\_\+def}} (int new\+\_\+def)
-\begin{DoxyCompactList}\small\item\em Update base defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update base defense value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDefence__Spell__Card_a920795fab19d38aa00d98d216ccc24e8}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classDefence__Spell__Card_ac38bea5c19d3efe35905a848c6727c6e}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSpell__Card}{Spell\+\_\+\+Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -85,7 +91,7 @@ Inherits from \doxylink{classSpell__Card}{Spell\+\_\+\+Card} and adds defense me
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classDefence__Spell__Card_a00062fd04adc07974a1b7fff9ab57c2d}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
 \index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
-\doxysubsubsection{\texorpdfstring{Defence\_Spell\_Card()}{Defence\_Spell\_Card()}}
+\doxysubsubsection{\texorpdfstring{Defence\_Spell\_Card()}{Defence\_Spell\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{classDefence__Spell__Card_a00062fd04adc07974a1b7fff9ab57c2d} 
 Defence\+\_\+\+Spell\+\_\+\+Card\+::\+Defence\+\_\+\+Spell\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{, }\item[{\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}}]{elem}{, }\item[{int}]{base\+\_\+def}{}\end{DoxyParamCaption})}
 
@@ -108,6 +114,29 @@ Construct a new Defence Spell \doxylink{classCard}{Card} object.
 {\em base\+\_\+def} & Base defense value \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classDefence__Spell__Card_a6a0680719ed9373a84e71ea33a409928}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{Defence\_Spell\_Card()}{Defence\_Spell\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDefence__Spell__Card_a6a0680719ed9373a84e71ea33a409928} 
+Defence\+\_\+\+Spell\+\_\+\+Card\+::\+Defence\+\_\+\+Spell\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{, }\item[{\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}}]{elem}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Defence Spell \doxylink{classCard}{Card} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Display name of the card \\
+\hline
+{\em description} & Flavor text and effect description \\
+\hline
+{\em rarity} & \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum \\
+\hline
+{\em mana\+\_\+cost} & Required mana to play \\
+\hline
+{\em elem} & \doxylink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element} type of the spell (from enum Element\+Type) \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -124,6 +153,23 @@ Get base defense value.
 \begin{DoxyReturn}{Returns}
 Current base defense 
 \end{DoxyReturn}
+\Hypertarget{classDefence__Spell__Card_ac38bea5c19d3efe35905a848c6727c6e}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classDefence__Spell__Card_ac38bea5c19d3efe35905a848c6727c6e} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Defence\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classDefence__Spell__Card_ae387a8ce1f62c698907c97e0848f5ca1}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!set\_base\_def@{set\_base\_def}}
 \index{set\_base\_def@{set\_base\_def}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
 \doxysubsubsection{\texorpdfstring{set\_base\_def()}{set\_base\_def()}}
@@ -150,6 +196,27 @@ new\+\_\+def \texorpdfstring{$>$}{>} 0
 \begin{DoxyPostcond}{Postcondition}
 new\+\_\+def == \doxylink{classDefence__Spell__Card_ad4141d423a55ca4a0373bdf662cc1ed1}{get\+\_\+base\+\_\+def()} 
 \end{DoxyPostcond}
+\Hypertarget{classDefence__Spell__Card_a920795fab19d38aa00d98d216ccc24e8}\index{Defence\_Spell\_Card@{Defence\_Spell\_Card}!use@{use}}
+\index{use@{use}!Defence\_Spell\_Card@{Defence\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classDefence__Spell__Card_a920795fab19d38aa00d98d216ccc24e8} 
+void Defence\+\_\+\+Spell\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Increase defense
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -23,7 +23,11 @@ Inheritance diagram for Shield\+\_\+\+Card\+:\begin{figure}[H]
 int \mbox{\hyperlink{classShield__Card_a7f84bff1fc3eb028942299b3aca21f3c}{get\+\_\+usage}} () const
 \begin{DoxyCompactList}\small\item\em Get number of uses. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classShield__Card_a3f78ae2ede64ace2d0697ec99477a9c4}{set\+\_\+usage}} (int new\+\_\+usage)
-\begin{DoxyCompactList}\small\item\em Update number of uses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update number of uses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShield__Card_a5e0ec8556d3c34d9fd39f5cfba3a6d8d}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classShield__Card_a9582fb2df07acf597659155c75c3252f}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCard}{Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -93,6 +97,23 @@ Construct a new Shield \doxylink{classCard}{Card} object.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classShield__Card_a9582fb2df07acf597659155c75c3252f}\index{Shield\_Card@{Shield\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Shield\_Card@{Shield\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classShield__Card_a9582fb2df07acf597659155c75c3252f} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Shield\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classShield__Card_a7f84bff1fc3eb028942299b3aca21f3c}\index{Shield\_Card@{Shield\_Card}!get\_usage@{get\_usage}}
 \index{get\_usage@{get\_usage}!Shield\_Card@{Shield\_Card}}
 \doxysubsubsection{\texorpdfstring{get\_usage()}{get\_usage()}}
@@ -132,6 +153,27 @@ new\+\_\+usage \texorpdfstring{$>$}{>} 0
 \begin{DoxyPostcond}{Postcondition}
 new\+\_\+usage == \doxylink{classShield__Card_a7f84bff1fc3eb028942299b3aca21f3c}{get\+\_\+usage()} 
 \end{DoxyPostcond}
+\Hypertarget{classShield__Card_a5e0ec8556d3c34d9fd39f5cfba3a6d8d}\index{Shield\_Card@{Shield\_Card}!use@{use}}
+\index{use@{use}!Shield\_Card@{Shield\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classShield__Card_a5e0ec8556d3c34d9fd39f5cfba3a6d8d} 
+void Shield\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Add shields to target
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

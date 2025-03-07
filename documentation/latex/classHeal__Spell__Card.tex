@@ -27,7 +27,11 @@ void \mbox{\hyperlink{classHeal__Spell__Card_a906d642ad0a7d4149ba3e3cb1d8fba42}{
 float \mbox{\hyperlink{classHeal__Spell__Card_a13e85c526601fd84fe88ff4cd95b0129}{get\+\_\+eff}} () const
 \begin{DoxyCompactList}\small\item\em Get efficiency value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classHeal__Spell__Card_a23e654648903ca6447793e44b8d85111}{set\+\_\+eff}} (float new\+\_\+eff)
-\begin{DoxyCompactList}\small\item\em Update efficiency value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update efficiency value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeal__Spell__Card_a9ba2d68259888b7b9c0907cb05e7e6a0}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classHeal__Spell__Card_aacc1716afff99e7dac2775f2b02c92dd}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSpell__Card}{Spell\+\_\+\+Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -143,6 +147,23 @@ Get efficiency value.
 \begin{DoxyReturn}{Returns}
 Current efficiency 
 \end{DoxyReturn}
+\Hypertarget{classHeal__Spell__Card_aacc1716afff99e7dac2775f2b02c92dd}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classHeal__Spell__Card_aacc1716afff99e7dac2775f2b02c92dd} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Heal\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classHeal__Spell__Card_a906d642ad0a7d4149ba3e3cb1d8fba42}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!set\_base\_heal@{set\_base\_heal}}
 \index{set\_base\_heal@{set\_base\_heal}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
 \doxysubsubsection{\texorpdfstring{set\_base\_heal()}{set\_base\_heal()}}
@@ -195,6 +216,27 @@ new\+\_\+eff \texorpdfstring{$>$}{>} 0
 {\em std\+::invalid\+\_\+argument} & if eff \texorpdfstring{$<$}{<}=0 \\
 \hline
 \end{DoxyExceptions}
+\Hypertarget{classHeal__Spell__Card_a9ba2d68259888b7b9c0907cb05e7e6a0}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!use@{use}}
+\index{use@{use}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classHeal__Spell__Card_a9ba2d68259888b7b9c0907cb05e7e6a0} 
+void Heal\+\_\+\+Spell\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Heal target player
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

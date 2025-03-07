@@ -23,7 +23,11 @@ Inheritance diagram for Buff\+\_\+\+Spell\+\_\+\+Card\+:\begin{figure}[H]
 float \mbox{\hyperlink{classBuff__Spell__Card_aa5f70e882001e4816d329c681b0d6634}{get\+\_\+multiplier}} () const
 \begin{DoxyCompactList}\small\item\em Get buff multiplier value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classBuff__Spell__Card_a69771db8eec22d2556ac65a2ce6ec524}{set\+\_\+multiplier}} (float new\+\_\+multiplier)
-\begin{DoxyCompactList}\small\item\em Update buff multiplier value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update buff multiplier value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBuff__Spell__Card_ac366cae710a189505858400f2b294e45}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classBuff__Spell__Card_a9f222af3bb4ef5a2fb6fa2c035506787}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSpell__Card}{Spell\+\_\+\+Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,6 +128,23 @@ Get buff multiplier value.
 \begin{DoxyReturn}{Returns}
 Current buff multiplier 
 \end{DoxyReturn}
+\Hypertarget{classBuff__Spell__Card_a9f222af3bb4ef5a2fb6fa2c035506787}\index{Buff\_Spell\_Card@{Buff\_Spell\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Buff\_Spell\_Card@{Buff\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classBuff__Spell__Card_a9f222af3bb4ef5a2fb6fa2c035506787} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Buff\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classBuff__Spell__Card_a69771db8eec22d2556ac65a2ce6ec524}\index{Buff\_Spell\_Card@{Buff\_Spell\_Card}!set\_multiplier@{set\_multiplier}}
 \index{set\_multiplier@{set\_multiplier}!Buff\_Spell\_Card@{Buff\_Spell\_Card}}
 \doxysubsubsection{\texorpdfstring{set\_multiplier()}{set\_multiplier()}}
@@ -150,6 +171,27 @@ new\+\_\+multiplier\texorpdfstring{$>$}{>}0
 \begin{DoxyPostcond}{Postcondition}
 new\+\_\+multipier==\doxylink{classBuff__Spell__Card_aa5f70e882001e4816d329c681b0d6634}{get\+\_\+multiplier()} 
 \end{DoxyPostcond}
+\Hypertarget{classBuff__Spell__Card_ac366cae710a189505858400f2b294e45}\index{Buff\_Spell\_Card@{Buff\_Spell\_Card}!use@{use}}
+\index{use@{use}!Buff\_Spell\_Card@{Buff\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classBuff__Spell__Card_ac366cae710a189505858400f2b294e45} 
+void Buff\+\_\+\+Spell\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Apply temporary stat boost
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

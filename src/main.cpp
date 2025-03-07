@@ -147,22 +147,23 @@ void start_1v1_match() {
     
     // Generate hands for both players
     player1.get_hand().generate(2);
-    player2.get_hand().generate(1);
+    player2.get_hand().generate(3);
 
     bool game_over = false;
     std::cout << "\nMatch Started!\n";
     
     while (!game_over) {
         player1.set_mana(10);
-        player2.set_mana(100);
+        player2.set_mana(10);
         // Player 1's turn
         std::cout << "\n=== Player 1's Turn ===\n";
         
         
 
         player1.set_turn_active(false);
-        while(!player1.is_turn_active()){
-
+        while(!player1.is_turn_active() && player1.get_hand().get_amount() > 0){
+        
+	    player1.get_hand().sort_by_mana();
             player1.show_hand();
             std::cout << "Your mana: "<< player1.get_mana()<< "\n" <<"Choose a card to use (index): ";
             int card_index;
@@ -173,7 +174,9 @@ void start_1v1_match() {
             } catch (const std::exception& e) {
                 std::cout << "Error: " << e.what() << '\n';
             }
-            player1.get_hand().sort_by_mana();
+            
+            
+            
             if (player1.get_mana() <= 0) {
                 player1.set_turn_active(true); // No mana left
             }
@@ -193,22 +196,26 @@ void start_1v1_match() {
         player2.set_turn_active(false); // Begin the AI's turn
 
         while (!player2.is_turn_active() && player2.get_hand().get_amount() > 0) {
-            int ai_card_index = std::rand() % player2.get_hand().get_amount();
+        
+            player2.get_hand().sort_by_mana();
+        
+            //int ai_card_index = std::rand() % player2.get_hand().get_amount();
             
             try {
-                const Card& selected_card = player2.get_hand().get_card(ai_card_index);
-                std::cout << "AI used card: " << selected_card.get_name() << "\n";
-                player2.use_card(ai_card_index, player1);
+            	for (int i=player2.get_hand().get_amount()-1 ;(i>0 && !player2.is_turn_active() && player2.get_mana() > 0);i--){
+            		const Card& selected_card = player2.get_hand().get_card(i);
+                	std::cout << "AI used card: " << selected_card.get_name() << " - " << cardTypeToString(selected_card.get_type()) << " - " << selected_card.get_mana_cost()<< "\n"<< "AI mana: "<< player2.get_mana()-selected_card.get_mana_cost() << "\n";
+                	if (selected_card.get_mana_cost()<=player2.get_mana()){
+                		player2.use_card(i, player1);
+                		i = player2.get_hand().get_amount()-1;
+                	}
+            	
+            	}
+            	
+                player2.set_turn_active(true);
                 
-                if (selected_card.get_type() == CardType::AttackSpell ||
-                    selected_card.get_type() == CardType::HealSpell ||
-                    selected_card.get_type() == CardType::Beast) {
-                    player2.set_turn_active(true);
-                }
                 
-                if (player2.get_mana() <= 0) {
-                    player2.set_turn_active(true);
-                }
+                
             } catch (...) {
                 std::cout << "AI failed to use a card.\n";
                 player2.set_turn_active(true);
@@ -224,13 +231,23 @@ void start_1v1_match() {
             game_over = true;
         }
 
-        // Option to end match
+        // Option to end match or give new cards
         std::cout << "\nEnd match? (y/n): ";
         char end_choice;
         std::cin >> end_choice;
         if (end_choice == 'y' || end_choice == 'Y') {
             break;
         }
+        std::cout << "\nGive new cards? (y/n): ";
+       
+        std::cin >> end_choice;
+        if (end_choice == 'y' || end_choice == 'Y') {
+        	int deck_index = std::rand() % 3 + 1;
+        	player1.get_hand().generate(deck_index);
+        	deck_index = std::rand() % 3 + 1;
+        	player2.get_hand().generate(deck_index);
+        }
+        
     }
 
     std::cout << "Match ended.\n";

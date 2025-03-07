@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove_5fcard_0',['remove_card',['../classHand.html#a0658ee144ba8c58cae6a61950eb154dd',1,'Hand']]]
+  ['is_5fturn_5factive_0',['is_turn_active',['../classPlayer.html#a5c97b1bd6063ea9fbfc035820813f4d3',1,'Player']]]
 ];

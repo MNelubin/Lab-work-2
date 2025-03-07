@@ -1,24 +1,5 @@
 var searchData=
 [
-  ['generate_0',['generate',['../classHand.html#a9e6aac43dba379bda6bc67cf01793081',1,'Hand']]],
-  ['get_5famount_1',['get_amount',['../classHand.html#a297b1bef3dae532600ae359b4e522b6b',1,'Hand']]],
-  ['get_5fbase_5fdamage_2',['get_base_damage',['../classAttack__Spell__Card.html#a83e31c36a9151341b9a375b9eca4d084',1,'Attack_Spell_Card']]],
-  ['get_5fbase_5fdef_3',['get_base_def',['../classDefence__Spell__Card.html#ad4141d423a55ca4a0373bdf662cc1ed1',1,'Defence_Spell_Card']]],
-  ['get_5fbase_5fdmg_4',['get_base_dmg',['../classBeast__Card.html#ab2f5ee344c3d3a49d2749e76c9edd453',1,'Beast_Card::get_base_dmg()'],['../classCreature__Card.html#aadd6905b60a8cfd291e2ee23a6d5a76d',1,'Creature_Card::get_base_dmg()']]],
-  ['get_5fbase_5fheal_5',['get_base_heal',['../classHeal__Spell__Card.html#aab8105089297d0a5e93b1e5918bcdee4',1,'Heal_Spell_Card']]],
-  ['get_5fbuff_5famount_6',['get_buff_amount',['../classBuff__Card.html#a393bbadabac5ca695ad92950fec72124',1,'Buff_Card']]],
-  ['get_5fcard_7',['get_card',['../classHand.html#aef66bfc3507501b01647eea97f5247ef',1,'Hand']]],
-  ['get_5fcards_5fby_5ftype_8',['get_cards_by_type',['../classHand.html#adad976dd2d139ea61247121b66c73114',1,'Hand']]],
-  ['get_5fdescription_9',['get_description',['../classCard.html#a5519eb130702a7e04ce06834353d9aa2',1,'Card']]],
-  ['get_5fdmg_5fup_10',['get_dmg_up',['../classWeapon__Card.html#aa0975ca7990bbe9fcefc9f6886d93326',1,'Weapon_Card']]],
-  ['get_5feff_11',['get_eff',['../classHeal__Spell__Card.html#a13e85c526601fd84fe88ff4cd95b0129',1,'Heal_Spell_Card']]],
-  ['get_5felement_12',['get_element',['../classSpell__Card.html#a789c3ea0ce07363a9c1a878d49e9b50e',1,'Spell_Card']]],
-  ['get_5fmana_5fcost_13',['get_mana_cost',['../classCard.html#a8fedebb4917ed6efdabd817f389d7b9a',1,'Card']]],
-  ['get_5fmultiplier_14',['get_multiplier',['../classArtifact__Card.html#af8215beae2d5e85682a6fbcfa658e87d',1,'Artifact_Card::get_multiplier()'],['../classBuff__Spell__Card.html#aa5f70e882001e4816d329c681b0d6634',1,'Buff_Spell_Card::get_multiplier()']]],
-  ['get_5fname_15',['get_name',['../classCard.html#a39c0e62ffe4979b8d8142b416043ff26',1,'Card']]],
-  ['get_5frarity_16',['get_rarity',['../classCard.html#a7dc04f8244d247431df9894755c8f4bf',1,'Card']]],
-  ['get_5ftribe_17',['get_tribe',['../classBeast__Card.html#a916e85ce5f8f65abedbeb7b76d641764',1,'Beast_Card']]],
-  ['get_5funique_5fcard_5ftypes_18',['get_unique_card_types',['../classHand.html#a3d4d59725b6c613c462245dd440ab1db',1,'Hand']]],
-  ['get_5fusage_19',['get_usage',['../classShield__Card.html#a7f84bff1fc3eb028942299b3aca21f3c',1,'Shield_Card']]],
-  ['get_5fweapon_5fmultiplier_20',['get_weapon_multiplier',['../classCreature__Card.html#ae8aadee98a59de6d8b2e4397e228c5ed',1,'Creature_Card']]]
+  ['eat_5fcard_0',['eat_card',['../classPlayer.html#a13d9bdfa1eff068eca64494ac8ea6ded',1,'Player']]],
+  ['end_5fturn_1',['end_turn',['../classPlayer.html#a3c9a084e68ea363850c3fe08fdefbc7e',1,'Player']]]
 ];

@@ -107,8 +107,7 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;<a class="el" href="card_8h_source.html">../include/cards/card.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="card_8h_source.html">../include/cards/card.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="enums_8h_source.html">../include/cards/enums.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spell__card_8h_source.html">../include/cards/spell_card.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="attack__spell__card_8h_source.html">../include/cards/attack_spell_card.h</a>&quot;</code><br />
@@ -121,43 +120,47 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="artifact__card_8h_source.html">../include/cards/artifact_card.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="shield__card_8h_source.html">../include/cards/shield_card.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="buff__card_8h_source.html">../include/cards/buff_card.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="player_8h_source.html">../include/player/player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="character_8h_source.html">../include/player/character.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="healer__character_8h_source.html">../include/player/healer_character.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tank__character_8h_source.html">../include/player/tank_character.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="knight__character_8h_source.html">../include/player/knight_character.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hand_8h_source.html">../include/player/hand.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a834c75978b26a25987dc06ccdd12853e" id="r_a834c75978b26a25987dc06ccdd12853e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a834c75978b26a25987dc06ccdd12853e">demonstrate_spell</a> ()</td></tr>
-<tr class="separator:a834c75978b26a25987dc06ccdd12853e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb14d5786d139fc84ac4209fa2355ea4" id="r_aeb14d5786d139fc84ac4209fa2355ea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb14d5786d139fc84ac4209fa2355ea4">demonstrate_attack_spell</a> ()</td></tr>
-<tr class="separator:aeb14d5786d139fc84ac4209fa2355ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f83dbaf39156cd3c6c653ffb825691e" id="r_a5f83dbaf39156cd3c6c653ffb825691e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f83dbaf39156cd3c6c653ffb825691e">demonstrate_heal_spell</a> ()</td></tr>
-<tr class="separator:a5f83dbaf39156cd3c6c653ffb825691e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add20cb61e5fd072ad72235a35619311e" id="r_add20cb61e5fd072ad72235a35619311e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add20cb61e5fd072ad72235a35619311e">demonstrate_buff_spell</a> ()</td></tr>
-<tr class="separator:add20cb61e5fd072ad72235a35619311e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e21f3b425cf13e9bf14a69e2523588" id="r_a34e21f3b425cf13e9bf14a69e2523588"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e21f3b425cf13e9bf14a69e2523588">demonstrate_buff_card</a> ()</td></tr>
-<tr class="separator:a34e21f3b425cf13e9bf14a69e2523588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17a0bb942defce79de3313f1e3a000da" id="r_a17a0bb942defce79de3313f1e3a000da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17a0bb942defce79de3313f1e3a000da">demonstrate_defence_spell</a> ()</td></tr>
-<tr class="separator:a17a0bb942defce79de3313f1e3a000da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba20daa82d6da940cf3784152964eaed" id="r_aba20daa82d6da940cf3784152964eaed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba20daa82d6da940cf3784152964eaed">demonstrate_beast_card</a> ()</td></tr>
-<tr class="separator:aba20daa82d6da940cf3784152964eaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98d243db64d37c1bfa1d7d592fb6a553" id="r_a98d243db64d37c1bfa1d7d592fb6a553"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98d243db64d37c1bfa1d7d592fb6a553">demonstrate_creature_card</a> ()</td></tr>
-<tr class="separator:a98d243db64d37c1bfa1d7d592fb6a553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a424f85ca15634865ed7085697b1db932" id="r_a424f85ca15634865ed7085697b1db932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a424f85ca15634865ed7085697b1db932">demonstrate_weapon_card</a> ()</td></tr>
-<tr class="separator:a424f85ca15634865ed7085697b1db932"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af016f234456f39f49612bc130fae7a04" id="r_af016f234456f39f49612bc130fae7a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af016f234456f39f49612bc130fae7a04">demonstrate_artifact_card</a> ()</td></tr>
-<tr class="separator:af016f234456f39f49612bc130fae7a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61e99f71007da32e3b907b34912edbde" id="r_a61e99f71007da32e3b907b34912edbde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61e99f71007da32e3b907b34912edbde">demonstrate_shield_card</a> ()</td></tr>
-<tr class="separator:a61e99f71007da32e3b907b34912edbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad593bc6accc813e0ba99391d052637f2" id="r_ad593bc6accc813e0ba99391d052637f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad593bc6accc813e0ba99391d052637f2">start_1v1_match</a> ()</td></tr>
+<tr class="memdesc:ad593bc6accc813e0ba99391d052637f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a 1v1 match between two players with predefined characters and hands.  <br /></td></tr>
+<tr class="separator:ad593bc6accc813e0ba99391d052637f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116f5db451cfe52a4f8ae0bdf32e3bbc" id="r_a116f5db451cfe52a4f8ae0bdf32e3bbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a116f5db451cfe52a4f8ae0bdf32e3bbc">game_menu</a> ()</td></tr>
+<tr class="memdesc:a116f5db451cfe52a4f8ae0bdf32e3bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main game menu with options to start a new game or exit.  <br /></td></tr>
+<tr class="separator:a116f5db451cfe52a4f8ae0bdf32e3bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd362624950beb777f81ef925812780" id="r_a4cd362624950beb777f81ef925812780"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classCharacter.html">Character</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cd362624950beb777f81ef925812780">create_predefined_character</a> (int choice)</td></tr>
+<tr class="memdesc:a4cd362624950beb777f81ef925812780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a predefined character based on the choice.  <br /></td></tr>
+<tr class="separator:a4cd362624950beb777f81ef925812780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac17a11fcae6e24a280a83880b76106" id="r_a0ac17a11fcae6e24a280a83880b76106"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classCharacter.html">Character</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac17a11fcae6e24a280a83880b76106">create_predefined_character_ai</a> (int choice)</td></tr>
+<tr class="separator:a0ac17a11fcae6e24a280a83880b76106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81bb81b5e8257a9c0d26582ce5aacbf4" id="r_a81bb81b5e8257a9c0d26582ce5aacbf4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classCharacter.html">Character</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81bb81b5e8257a9c0d26582ce5aacbf4">create_ai_character</a> ()</td></tr>
+<tr class="memdesc:a81bb81b5e8257a9c0d26582ce5aacbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a random AI character.  <br /></td></tr>
+<tr class="separator:a81bb81b5e8257a9c0d26582ce5aacbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function to run the game.  <br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af016f234456f39f49612bc130fae7a04" name="af016f234456f39f49612bc130fae7a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af016f234456f39f49612bc130fae7a04">&#9670;&#160;</a></span>demonstrate_artifact_card()</h2>
+<a id="a81bb81b5e8257a9c0d26582ce5aacbf4" name="a81bb81b5e8257a9c0d26582ce5aacbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81bb81b5e8257a9c0d26582ce5aacbf4">&#9670;&#160;</a></span>create_ai_character()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void demonstrate_artifact_card </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classCharacter.html">Character</a> &gt; create_ai_character </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -165,18 +168,47 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a random AI character. </p>
+<dl class="section return"><dt>Returns</dt><dd>Unique pointer to the created character </dd></dl>
+
 </div>
 </div>
-<a id="aeb14d5786d139fc84ac4209fa2355ea4" name="aeb14d5786d139fc84ac4209fa2355ea4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb14d5786d139fc84ac4209fa2355ea4">&#9670;&#160;</a></span>demonstrate_attack_spell()</h2>
+<a id="a4cd362624950beb777f81ef925812780" name="a4cd362624950beb777f81ef925812780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd362624950beb777f81ef925812780">&#9670;&#160;</a></span>create_predefined_character()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void demonstrate_attack_spell </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classCharacter.html">Character</a> &gt; create_predefined_character </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>choice</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a predefined character based on the choice. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choice</td><td>1 for healer, 2 for tank, 3 for knight </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Unique pointer to the created character </dd></dl>
+
+</div>
+</div>
+<a id="a0ac17a11fcae6e24a280a83880b76106" name="a0ac17a11fcae6e24a280a83880b76106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac17a11fcae6e24a280a83880b76106">&#9670;&#160;</a></span>create_predefined_character_ai()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classCharacter.html">Character</a> &gt; create_predefined_character_ai </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>choice</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -184,14 +216,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aba20daa82d6da940cf3784152964eaed" name="aba20daa82d6da940cf3784152964eaed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba20daa82d6da940cf3784152964eaed">&#9670;&#160;</a></span>demonstrate_beast_card()</h2>
+<a id="a116f5db451cfe52a4f8ae0bdf32e3bbc" name="a116f5db451cfe52a4f8ae0bdf32e3bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116f5db451cfe52a4f8ae0bdf32e3bbc">&#9670;&#160;</a></span>game_menu()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void demonstrate_beast_card </td>
+          <td class="memname">void game_menu </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -199,141 +231,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a34e21f3b425cf13e9bf14a69e2523588" name="a34e21f3b425cf13e9bf14a69e2523588"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34e21f3b425cf13e9bf14a69e2523588">&#9670;&#160;</a></span>demonstrate_buff_card()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_buff_card </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="add20cb61e5fd072ad72235a35619311e" name="add20cb61e5fd072ad72235a35619311e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add20cb61e5fd072ad72235a35619311e">&#9670;&#160;</a></span>demonstrate_buff_spell()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_buff_spell </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a98d243db64d37c1bfa1d7d592fb6a553" name="a98d243db64d37c1bfa1d7d592fb6a553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98d243db64d37c1bfa1d7d592fb6a553">&#9670;&#160;</a></span>demonstrate_creature_card()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_creature_card </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a17a0bb942defce79de3313f1e3a000da" name="a17a0bb942defce79de3313f1e3a000da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17a0bb942defce79de3313f1e3a000da">&#9670;&#160;</a></span>demonstrate_defence_spell()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_defence_spell </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5f83dbaf39156cd3c6c653ffb825691e" name="a5f83dbaf39156cd3c6c653ffb825691e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f83dbaf39156cd3c6c653ffb825691e">&#9670;&#160;</a></span>demonstrate_heal_spell()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_heal_spell </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a61e99f71007da32e3b907b34912edbde" name="a61e99f71007da32e3b907b34912edbde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61e99f71007da32e3b907b34912edbde">&#9670;&#160;</a></span>demonstrate_shield_card()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_shield_card </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a834c75978b26a25987dc06ccdd12853e" name="a834c75978b26a25987dc06ccdd12853e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a834c75978b26a25987dc06ccdd12853e">&#9670;&#160;</a></span>demonstrate_spell()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_spell </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a424f85ca15634865ed7085697b1db932" name="a424f85ca15634865ed7085697b1db932"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a424f85ca15634865ed7085697b1db932">&#9670;&#160;</a></span>demonstrate_weapon_card()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void demonstrate_weapon_card </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Main game menu with options to start a new game or exit. </p>
 
 </div>
 </div>
@@ -351,6 +249,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Main function to run the game. </p>
+
+</div>
+</div>
+<a id="ad593bc6accc813e0ba99391d052637f2" name="ad593bc6accc813e0ba99391d052637f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad593bc6accc813e0ba99391d052637f2">&#9670;&#160;</a></span>start_1v1_match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void start_1v1_match </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Runs a 1v1 match between two players with predefined characters and hands. </p>
 
 </div>
 </div>

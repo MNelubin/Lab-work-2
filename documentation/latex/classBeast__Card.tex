@@ -27,7 +27,11 @@ void \mbox{\hyperlink{classBeast__Card_a23e648986998cabf69fe217fab8619b6}{set\+\
 \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} \mbox{\hyperlink{classBeast__Card_a916e85ce5f8f65abedbeb7b76d641764}{get\+\_\+tribe}} () const
 \begin{DoxyCompactList}\small\item\em Get tribe type. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classBeast__Card_a24431e4371ea2c8127263578f6a0df96}{set\+\_\+tribe}} (\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} new\+\_\+tribe)
-\begin{DoxyCompactList}\small\item\em Update tribe type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update tribe type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBeast__Card_a5daa8862d3775dd7678abf2277ab62d6}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classBeast__Card_aa52840c0c464905d92ae10146ac5d784}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCard}{Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -125,6 +129,23 @@ Get tribe type.
 \begin{DoxyReturn}{Returns}
 Current tribe type 
 \end{DoxyReturn}
+\Hypertarget{classBeast__Card_aa52840c0c464905d92ae10146ac5d784}\index{Beast\_Card@{Beast\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classBeast__Card_aa52840c0c464905d92ae10146ac5d784} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Beast\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classBeast__Card_a23e648986998cabf69fe217fab8619b6}\index{Beast\_Card@{Beast\_Card}!set\_base\_dmg@{set\_base\_dmg}}
 \index{set\_base\_dmg@{set\_base\_dmg}!Beast\_Card@{Beast\_Card}}
 \doxysubsubsection{\texorpdfstring{set\_base\_dmg()}{set\_base\_dmg()}}
@@ -169,6 +190,32 @@ Update tribe type.
 \begin{DoxyPostcond}{Postcondition}
 new\+\_\+tribe == \doxylink{classBeast__Card_a916e85ce5f8f65abedbeb7b76d641764}{get\+\_\+tribe()} 
 \end{DoxyPostcond}
+\Hypertarget{classBeast__Card_a5daa8862d3775dd7678abf2277ab62d6}\index{Beast\_Card@{Beast\_Card}!use@{use}}
+\index{use@{use}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classBeast__Card_a5daa8862d3775dd7678abf2277ab62d6} 
+void Beast\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Deal damage to target 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If card is already used\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

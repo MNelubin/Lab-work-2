@@ -18,12 +18,18 @@ Inheritance diagram for Weapon\+\_\+\+Card\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classWeapon__Card_a3a26b4ed423ba6876b4c1478722cfac9}{Weapon\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}})
+\begin{DoxyCompactList}\small\item\em Construct a new Weapon \doxylink{classCard}{Card} object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classWeapon__Card_a0032754f9786adfd9eedf468f8623be3}{Weapon\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, int dmg\+\_\+up)
 \begin{DoxyCompactList}\small\item\em Construct a new Weapon \doxylink{classCard}{Card} object. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classWeapon__Card_aa0975ca7990bbe9fcefc9f6886d93326}{get\+\_\+dmg\+\_\+up}} () const
 \begin{DoxyCompactList}\small\item\em Get damage increase value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classWeapon__Card_ae69ee912f429f44ac16f9ac694b6ca3b}{set\+\_\+dmg\+\_\+up}} (int new\+\_\+dmg\+\_\+up)
-\begin{DoxyCompactList}\small\item\em Update damage increase value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update damage increase value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWeapon__Card_ab43c64f4b8eb9d53243948214c5b2839}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classWeapon__Card_a0a1c00305e2ff12d39eb2ca28dce9c39}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCard}{Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,9 +73,30 @@ Specialized card for weapons.
 Inherits from \doxylink{classCard}{Card} and adds weapon-\/specific properties. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWeapon__Card_a3a26b4ed423ba6876b4c1478722cfac9}\index{Weapon\_Card@{Weapon\_Card}!Weapon\_Card@{Weapon\_Card}}
+\index{Weapon\_Card@{Weapon\_Card}!Weapon\_Card@{Weapon\_Card}}
+\doxysubsubsection{\texorpdfstring{Weapon\_Card()}{Weapon\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classWeapon__Card_a3a26b4ed423ba6876b4c1478722cfac9} 
+Weapon\+\_\+\+Card\+::\+Weapon\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Weapon \doxylink{classCard}{Card} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Display name of the card \\
+\hline
+{\em description} & Flavor text and effect description \\
+\hline
+{\em rarity} & \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum \\
+\hline
+{\em mana\+\_\+cost} & Required mana to play \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classWeapon__Card_a0032754f9786adfd9eedf468f8623be3}\index{Weapon\_Card@{Weapon\_Card}!Weapon\_Card@{Weapon\_Card}}
 \index{Weapon\_Card@{Weapon\_Card}!Weapon\_Card@{Weapon\_Card}}
-\doxysubsubsection{\texorpdfstring{Weapon\_Card()}{Weapon\_Card()}}
+\doxysubsubsection{\texorpdfstring{Weapon\_Card()}{Weapon\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{classWeapon__Card_a0032754f9786adfd9eedf468f8623be3} 
 Weapon\+\_\+\+Card\+::\+Weapon\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{, }\item[{int}]{dmg\+\_\+up}{}\end{DoxyParamCaption})}
 
@@ -106,6 +133,23 @@ Get damage increase value.
 \begin{DoxyReturn}{Returns}
 Current damage increase 
 \end{DoxyReturn}
+\Hypertarget{classWeapon__Card_a0a1c00305e2ff12d39eb2ca28dce9c39}\index{Weapon\_Card@{Weapon\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Weapon\_Card@{Weapon\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classWeapon__Card_a0a1c00305e2ff12d39eb2ca28dce9c39} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Weapon\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classWeapon__Card_ae69ee912f429f44ac16f9ac694b6ca3b}\index{Weapon\_Card@{Weapon\_Card}!set\_dmg\_up@{set\_dmg\_up}}
 \index{set\_dmg\_up@{set\_dmg\_up}!Weapon\_Card@{Weapon\_Card}}
 \doxysubsubsection{\texorpdfstring{set\_dmg\_up()}{set\_dmg\_up()}}
@@ -132,6 +176,27 @@ new\+\_\+dmg\+\_\+up \texorpdfstring{$>$}{>} 0
 \begin{DoxyPostcond}{Postcondition}
 new\+\_\+dmg\+\_\+up == \doxylink{classWeapon__Card_aa0975ca7990bbe9fcefc9f6886d93326}{get\+\_\+dmg\+\_\+up()} 
 \end{DoxyPostcond}
+\Hypertarget{classWeapon__Card_ab43c64f4b8eb9d53243948214c5b2839}\index{Weapon\_Card@{Weapon\_Card}!use@{use}}
+\index{use@{use}!Weapon\_Card@{Weapon\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classWeapon__Card_ab43c64f4b8eb9d53243948214c5b2839} 
+void Weapon\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Deal enhanced damage
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

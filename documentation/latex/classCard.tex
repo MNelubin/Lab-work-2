@@ -37,7 +37,11 @@ void \mbox{\hyperlink{classCard_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\+\_\+rari
 int \mbox{\hyperlink{classCard_a8fedebb4917ed6efdabd817f389d7b9a}{get\+\_\+mana\+\_\+cost}} () const
 \begin{DoxyCompactList}\small\item\em Gets current mana cost value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCard_a6ec8620c325a26bec6d230ac30875bfc}{set\+\_\+mana\+\_\+cost}} (int new\+\_\+cost)
-\begin{DoxyCompactList}\small\item\em Updates mana cost requirement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates mana cost requirement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target)=0
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{get\+\_\+type}} () const =0
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -143,6 +147,23 @@ Retrieves current rarity classification.
 \begin{DoxyReturn}{Returns}
 \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} enum value 
 \end{DoxyReturn}
+\Hypertarget{classCard_af18514eb50324ad8b79064af87f45067}\index{Card@{Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classCard_af18514eb50324ad8b79064af87f45067} 
+virtual \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classArtifact__Card_a033599111892c8e37ab1f268e5e1e6d6}{Artifact\+\_\+\+Card}}, \mbox{\hyperlink{classAttack__Spell__Card_a6d0cd22f7f35a4a66c66c8db9639488b}{Attack\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classBeast__Card_aa52840c0c464905d92ae10146ac5d784}{Beast\+\_\+\+Card}}, \mbox{\hyperlink{classBuff__Card_aca8ba9618dd8d0aba224c10fc3cbb8ed}{Buff\+\_\+\+Card}}, \mbox{\hyperlink{classBuff__Spell__Card_a9f222af3bb4ef5a2fb6fa2c035506787}{Buff\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classCreature__Card_a9cf1273cdea7670349ba0f5a89cb634c}{Creature\+\_\+\+Card}}, \mbox{\hyperlink{classDefence__Spell__Card_ac38bea5c19d3efe35905a848c6727c6e}{Defence\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classHeal__Spell__Card_aacc1716afff99e7dac2775f2b02c92dd}{Heal\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classShield__Card_a9582fb2df07acf597659155c75c3252f}{Shield\+\_\+\+Card}}, and \mbox{\hyperlink{classWeapon__Card_a0a1c00305e2ff12d39eb2ca28dce9c39}{Weapon\+\_\+\+Card}}.
+
 \Hypertarget{classCard_a7df878df1ad6073334c8f7332ad5cdd0}\index{Card@{Card}!set\_description@{set\_description}}
 \index{set\_description@{set\_description}!Card@{Card}}
 \doxysubsubsection{\texorpdfstring{set\_description()}{set\_description()}}
@@ -218,6 +239,27 @@ Changes card\textquotesingle{}s rarity category.
 \begin{DoxyPostcond}{Postcondition}
 \doxylink{classCard_a7dc04f8244d247431df9894755c8f4bf}{get\+\_\+rarity()} == new\+\_\+rarity 
 \end{DoxyPostcond}
+\Hypertarget{classCard_a0f53ecf6d310dfb256556bfa70e2609e}\index{Card@{Card}!use@{use}}
+\index{use@{use}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classCard_a0f53ecf6d310dfb256556bfa70e2609e} 
+virtual void Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classArtifact__Card_a128c475e801c9e0aeca3e65ffac0b49f}{Artifact\+\_\+\+Card}}, \mbox{\hyperlink{classAttack__Spell__Card_a4b2690d2e36bcfddd20dc71182fc980e}{Attack\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classBeast__Card_a5daa8862d3775dd7678abf2277ab62d6}{Beast\+\_\+\+Card}}, \mbox{\hyperlink{classBuff__Card_a6e7cd8a907cd6952e32c20e69070b003}{Buff\+\_\+\+Card}}, \mbox{\hyperlink{classBuff__Spell__Card_ac366cae710a189505858400f2b294e45}{Buff\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classCreature__Card_a19685c4b929f1194938d8d1657ab3154}{Creature\+\_\+\+Card}}, \mbox{\hyperlink{classDefence__Spell__Card_a920795fab19d38aa00d98d216ccc24e8}{Defence\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classHeal__Spell__Card_a9ba2d68259888b7b9c0907cb05e7e6a0}{Heal\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{classShield__Card_a5e0ec8556d3c34d9fd39f5cfba3a6d8d}{Shield\+\_\+\+Card}}, and \mbox{\hyperlink{classWeapon__Card_ab43c64f4b8eb9d53243948214c5b2839}{Weapon\+\_\+\+Card}}.
+
 
 
 \doxysubsection{Member Data Documentation}

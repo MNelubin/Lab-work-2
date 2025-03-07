@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['rare_0',['Rare',['../enums_8h.html#a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a',1,'enums.h']]],
-  ['rarity_1',['Rarity',['../enums_8h.html#a6c4fc244cdc975f7fd572fa614617600',1,'enums.h']]],
-  ['rarity_2',['rarity',['../classCard.html#a99e9ad9d7adc84d9637c768d6ee43905',1,'Card']]],
-  ['readme_2emd_3',['README.md',['../README_8md.html',1,'']]],
-  ['remove_5fcard_4',['remove_card',['../classHand.html#a0658ee144ba8c58cae6a61950eb154dd',1,'Hand']]],
-  ['reporting_5',['6. Reporting',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md24',1,'']]],
-  ['requirements_6',['Complete Core System Requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html',1,'']]],
-  ['requirements_7',['requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html',1,'Brief system requirements'],['../md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md12',1,'Functional requirements']]],
-  ['requirements_2emd_8',['requirements.md',['../requirements_8md.html',1,'']]],
-  ['requirements_5fshort_2emd_9',['requirements_short.md',['../requirements__short_8md.html',1,'']]],
-  ['run_10',['Run',['..//home/debil/Lab-work-2/README.md#autotoc_md30',1,'']]]
+  ['parameters_0',['Basic map parameters',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md3',1,'']]],
+  ['perform_5fspecial_5faction_1',['perform_special_action',['../classPlayer.html#a3fecd7cf3f2125ffb5fdd103644f261a',1,'Player']]],
+  ['plan_2',['Core Test Plan',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html',1,'']]],
+  ['player_3',['Player',['../classPlayer.html',1,'Player'],['../classPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../classPlayer.html#af9c22c6310c86cf7ff76ba1ab5e8278c',1,'Player::Player(int hp, int mana, int armor, const std::string &amp;name, std::unique_ptr&lt; Character &gt; character=nullptr, int shield_amount=0)'],['../classPlayer.html#ae8015d1f08ba69d663cfdaea1a64d1a4',1,'Player::Player(const Player &amp;)=delete'],['../classPlayer.html#a635af5e438af5a296c88f768e5e93eb0',1,'Player::Player(Player &amp;&amp;other) noexcept']]],
+  ['player_2ecpp_4',['player.cpp',['../player_8cpp.html',1,'']]],
+  ['player_2eh_5',['player.h',['../player_8h.html',1,'']]],
+  ['progress_6',['3.4 Saving Progress',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md21',1,'']]],
+  ['progress_20temporarily_20for_20json_20example_7',['Saving progress (temporarily for json example)',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md9',1,'']]]
 ];

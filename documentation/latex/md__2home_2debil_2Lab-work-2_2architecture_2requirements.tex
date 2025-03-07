@@ -18,18 +18,18 @@
 \end{DoxyItemize}\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2requirements_autotoc_md4}{}\doxysection{\texorpdfstring{Characters and abilities}{Characters and abilities}}\label{md__2home_2debil_2Lab-work-2_2architecture_2requirements_autotoc_md4}
 
 \begin{DoxyItemize}
-\item {\bfseries{Tank\+\_\+\+Character}}\+:
+\item {\bfseries{\doxylink{classTank__Character}{Tank\+\_\+\+Character}}}\+:
 \item Shielding() is available 1 time per battle
 \begin{DoxyItemize}
 \item Shield\+\_\+amount is combined with other shields
 \end{DoxyItemize}
-\item {\bfseries{Knight\+\_\+\+Character}}\+:
+\item {\bfseries{\doxylink{classKnight__Character}{Knight\+\_\+\+Character}}}\+:
 \begin{DoxyItemize}
 \item Armoring() adds a fixed value to the armor
 \end{DoxyItemize}
 \item The armor is valid until the end of the battle
-\item {\bfseries{Healer\+\_\+\+Character}}\+:
-\item Number of treatments = Character level
+\item {\bfseries{\doxylink{classHealer__Character}{Healer\+\_\+\+Character}}}\+:
+\item Number of treatments = \doxylink{classCharacter}{Character} level
 \begin{DoxyItemize}
 \item Heal\+\_\+\+MLTPL increases with the level
 \end{DoxyItemize}
@@ -115,7 +115,7 @@
 {\bfseries{Test example\+:}} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(TankTest,\ ShieldLimit)\ \{}
-\DoxyCodeLine{\ \ \ \ Tank\_Character\ tank;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTank__Character}{Tank\_Character}}\ tank;}
 \DoxyCodeLine{\ \ \ \ tank.Shielding();\ \textcolor{comment}{//\ OK}}
 \DoxyCodeLine{\ \ \ \ ASSERT\_THROW(tank.Shielding(),\ AbilityLimitReached);}
 \DoxyCodeLine{\}}

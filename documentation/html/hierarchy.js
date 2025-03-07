@@ -14,5 +14,11 @@ var hierarchy =
       ] ],
       [ "Weapon_Card", "classWeapon__Card.html", null ]
     ] ],
-    [ "Hand", "classHand.html", null ]
+    [ "Character", "classCharacter.html", [
+      [ "Healer_Character", "classHealer__Character.html", null ],
+      [ "Knight_Character", "classKnight__Character.html", null ],
+      [ "Tank_Character", "classTank__Character.html", null ]
+    ] ],
+    [ "Hand", "classHand.html", null ],
+    [ "Player", "classPlayer.html", null ]
 ];

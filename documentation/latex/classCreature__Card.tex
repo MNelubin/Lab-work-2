@@ -27,7 +27,11 @@ void \mbox{\hyperlink{classCreature__Card_a223112e35222eb05096bb750842b58eb}{set
 float \mbox{\hyperlink{classCreature__Card_ae8aadee98a59de6d8b2e4397e228c5ed}{get\+\_\+weapon\+\_\+multiplier}} () const
 \begin{DoxyCompactList}\small\item\em Get weapon multiplier value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCreature__Card_a53b4620ab65e655e564bbaa6afc22ce5}{set\+\_\+weapon\+\_\+multiplier}} (float new\+\_\+multiplier)
-\begin{DoxyCompactList}\small\item\em Update weapon multiplier value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update weapon multiplier value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCreature__Card_a19685c4b929f1194938d8d1657ab3154}{use}} (\mbox{\hyperlink{classPlayer}{Player}} \&user, \mbox{\hyperlink{classPlayer}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{classCreature__Card_a9cf1273cdea7670349ba0f5a89cb634c}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCard}{Card}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -112,6 +116,23 @@ Get base damage value.
 \begin{DoxyReturn}{Returns}
 Current base damage 
 \end{DoxyReturn}
+\Hypertarget{classCreature__Card_a9cf1273cdea7670349ba0f5a89cb634c}\index{Creature\_Card@{Creature\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Creature\_Card@{Creature\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classCreature__Card_a9cf1273cdea7670349ba0f5a89cb634c} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Creature\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCard_af18514eb50324ad8b79064af87f45067}{Card}}.
+
 \Hypertarget{classCreature__Card_ae8aadee98a59de6d8b2e4397e228c5ed}\index{Creature\_Card@{Creature\_Card}!get\_weapon\_multiplier@{get\_weapon\_multiplier}}
 \index{get\_weapon\_multiplier@{get\_weapon\_multiplier}!Creature\_Card@{Creature\_Card}}
 \doxysubsubsection{\texorpdfstring{get\_weapon\_multiplier()}{get\_weapon\_multiplier()}}
@@ -177,6 +198,27 @@ new\+\_\+multiplier \texorpdfstring{$>$}{>} 0
 \begin{DoxyPostcond}{Postcondition}
 new\+\_\+multiplier == \doxylink{classCreature__Card_ae8aadee98a59de6d8b2e4397e228c5ed}{get\+\_\+weapon\+\_\+multiplier()} 
 \end{DoxyPostcond}
+\Hypertarget{classCreature__Card_a19685c4b929f1194938d8d1657ab3154}\index{Creature\_Card@{Creature\_Card}!use@{use}}
+\index{use@{use}!Creature\_Card@{Creature\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{classCreature__Card_a19685c4b929f1194938d8d1657ab3154} 
+void Creature\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{classPlayer}{Player} using the card \\
+\hline
+{\em target} & \doxylink{classPlayer}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Summons creature
+
+Implements \mbox{\hyperlink{classCard_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -106,7 +106,7 @@ $(function(){initNavTree('classCard.html',''); initResizable(true); });
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classCard-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Card Class Reference</div></div>
+  <div class="headertitle"><div class="title">Card Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -166,6 +166,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6ec8620c325a26bec6d230ac30875bfc" id="r_a6ec8620c325a26bec6d230ac30875bfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ec8620c325a26bec6d230ac30875bfc">set_mana_cost</a> (int new_cost)</td></tr>
 <tr class="memdesc:a6ec8620c325a26bec6d230ac30875bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates mana cost requirement.  <br /></td></tr>
 <tr class="separator:a6ec8620c325a26bec6d230ac30875bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f53ecf6d310dfb256556bfa70e2609e" id="r_a0f53ecf6d310dfb256556bfa70e2609e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f53ecf6d310dfb256556bfa70e2609e">use</a> (<a class="el" href="classPlayer.html">Player</a> &amp;user, <a class="el" href="classPlayer.html">Player</a> &amp;target)=0</td></tr>
+<tr class="memdesc:a0f53ecf6d310dfb256556bfa70e2609e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply card effect to target.  <br /></td></tr>
+<tr class="separator:a0f53ecf6d310dfb256556bfa70e2609e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af18514eb50324ad8b79064af87f45067" id="r_af18514eb50324ad8b79064af87f45067"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="enums_8h.html#a76b9e96d86b331202dcc0fba38b758cd">CardType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af18514eb50324ad8b79064af87f45067">get_type</a> () const =0</td></tr>
+<tr class="memdesc:af18514eb50324ad8b79064af87f45067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get card type.  <br /></td></tr>
+<tr class="separator:af18514eb50324ad8b79064af87f45067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -336,6 +342,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af18514eb50324ad8b79064af87f45067" name="af18514eb50324ad8b79064af87f45067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18514eb50324ad8b79064af87f45067">&#9670;&#160;</a></span>get_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="enums_8h.html#a76b9e96d86b331202dcc0fba38b758cd">CardType</a> Card::get_type </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get card type. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="enums_8h.html#a76b9e96d86b331202dcc0fba38b758cd" title="Card type enumeration.">CardType</a> identifier </dd></dl>
+
+<p>Implemented in <a class="el" href="classArtifact__Card.html#a033599111892c8e37ab1f268e5e1e6d6">Artifact_Card</a>, <a class="el" href="classAttack__Spell__Card.html#a6d0cd22f7f35a4a66c66c8db9639488b">Attack_Spell_Card</a>, <a class="el" href="classBeast__Card.html#aa52840c0c464905d92ae10146ac5d784">Beast_Card</a>, <a class="el" href="classBuff__Card.html#aca8ba9618dd8d0aba224c10fc3cbb8ed">Buff_Card</a>, <a class="el" href="classBuff__Spell__Card.html#a9f222af3bb4ef5a2fb6fa2c035506787">Buff_Spell_Card</a>, <a class="el" href="classCreature__Card.html#a9cf1273cdea7670349ba0f5a89cb634c">Creature_Card</a>, <a class="el" href="classDefence__Spell__Card.html#ac38bea5c19d3efe35905a848c6727c6e">Defence_Spell_Card</a>, <a class="el" href="classHeal__Spell__Card.html#aacc1716afff99e7dac2775f2b02c92dd">Heal_Spell_Card</a>, <a class="el" href="classShield__Card.html#a9582fb2df07acf597659155c75c3252f">Shield_Card</a>, and <a class="el" href="classWeapon__Card.html#a0a1c00305e2ff12d39eb2ca28dce9c39">Weapon_Card</a>.</p>
+
+</div>
+</div>
 <a id="a7df878df1ad6073334c8f7332ad5cdd0" name="a7df878df1ad6073334c8f7332ad5cdd0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7df878df1ad6073334c8f7332ad5cdd0">&#9670;&#160;</a></span>set_description()</h2>
 
@@ -438,6 +474,46 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="#a7dc04f8244d247431df9894755c8f4bf" title="Retrieves current rarity classification.">get_rarity()</a> == new_rarity </dd></dl>
+
+</div>
+</div>
+<a id="a0f53ecf6d310dfb256556bfa70e2609e" name="a0f53ecf6d310dfb256556bfa70e2609e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f53ecf6d310dfb256556bfa70e2609e">&#9670;&#160;</a></span>use()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Card::use </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply card effect to target. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td><a class="el" href="classPlayer.html" title="Represents a player in the game with associated character and attributes.">Player</a> using the card </td></tr>
+    <tr><td class="paramname">target</td><td><a class="el" href="classPlayer.html" title="Represents a player in the game with associated character and attributes.">Player</a> affected by the card </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classArtifact__Card.html#a128c475e801c9e0aeca3e65ffac0b49f">Artifact_Card</a>, <a class="el" href="classAttack__Spell__Card.html#a4b2690d2e36bcfddd20dc71182fc980e">Attack_Spell_Card</a>, <a class="el" href="classBeast__Card.html#a5daa8862d3775dd7678abf2277ab62d6">Beast_Card</a>, <a class="el" href="classBuff__Card.html#a6e7cd8a907cd6952e32c20e69070b003">Buff_Card</a>, <a class="el" href="classBuff__Spell__Card.html#ac366cae710a189505858400f2b294e45">Buff_Spell_Card</a>, <a class="el" href="classCreature__Card.html#a19685c4b929f1194938d8d1657ab3154">Creature_Card</a>, <a class="el" href="classDefence__Spell__Card.html#a920795fab19d38aa00d98d216ccc24e8">Defence_Spell_Card</a>, <a class="el" href="classHeal__Spell__Card.html#a9ba2d68259888b7b9c0907cb05e7e6a0">Heal_Spell_Card</a>, <a class="el" href="classShield__Card.html#a5e0ec8556d3c34d9fd39f5cfba3a6d8d">Shield_Card</a>, and <a class="el" href="classWeapon__Card.html#ab43c64f4b8eb9d53243948214c5b2839">Weapon_Card</a>.</p>
 
 </div>
 </div>

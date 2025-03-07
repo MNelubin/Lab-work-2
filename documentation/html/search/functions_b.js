@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7ecard_0',['~Card',['../classCard.html#a24d9140b69cd7fcc6b4787350fdeb5e9',1,'Card']]],
-  ['_7espell_5fcard_1',['~Spell_Card',['../classSpell__Card.html#a54fcb4f872bb6bc22e324d241ebfdd1b',1,'Spell_Card']]]
+  ['operator_3d_0',['operator=',['../classPlayer.html#a6cbb28bf742e34a2b2456ce7d53b6980',1,'Player::operator=(const Player &amp;)=delete'],['../classPlayer.html#a016d4b899c2a4fc17509a8aa44cee683',1,'Player::operator=(Player &amp;&amp;other) noexcept']]]
 ];
