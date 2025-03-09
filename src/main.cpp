@@ -146,8 +146,8 @@ void start_1v1_match() {
     Player player2(100, 50, 0, "Player 2", create_ai_character());
     
     // Generate hands for both players
-    player1.get_hand().generate(2);
-    player2.get_hand().generate(3);
+    player1.get_hand().generate(4);
+    player2.get_hand().generate(4);
 
     bool game_over = false;
     std::cout << "\nMatch Started!\n";
@@ -162,8 +162,17 @@ void start_1v1_match() {
 
         player1.set_turn_active(false);
         while(!player1.is_turn_active() && player1.get_hand().get_amount() > 0){
+
+            if (!player1.has_combat_cards()){
+                
+        	    player1.get_hand().generate(4);
+
+                std::cout << "No cards to make a move\n";
+                player1.set_turn_active(false);
+                break;
+            }
         
-	    player1.get_hand().sort_by_mana();
+	        player1.get_hand().sort_by_mana();
             player1.show_hand();
             std::cout << "Your mana: "<< player1.get_mana()<< "\n" <<"Choose a card to use (index): ";
             int card_index;
@@ -196,7 +205,15 @@ void start_1v1_match() {
         player2.set_turn_active(false); // Begin the AI's turn
 
         while (!player2.is_turn_active() && player2.get_hand().get_amount() > 0) {
-        
+            if (!player2.has_combat_cards()){
+                
+        	    player2.get_hand().generate(4);
+
+                std::cout << "No cards to make a move\n";
+                break;
+            }
+
+
             player2.get_hand().sort_by_mana();
         
             //int ai_card_index = std::rand() % player2.get_hand().get_amount();
@@ -242,10 +259,10 @@ void start_1v1_match() {
        
         std::cin >> end_choice;
         if (end_choice == 'y' || end_choice == 'Y') {
-        	int deck_index = std::rand() % 3 + 1;
-        	player1.get_hand().generate(deck_index);
-        	deck_index = std::rand() % 3 + 1;
-        	player2.get_hand().generate(deck_index);
+        	
+        	player1.get_hand().generate(4);
+        	
+        	player2.get_hand().generate(4);
         }
         
     }

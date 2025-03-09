@@ -5,6 +5,7 @@
 #define HEAL_SPELL_CARD_H
 
 #include "spell_card.h"
+#include <iostream>
 
 /**
  * @brief Specialized spell for heal
@@ -30,6 +31,20 @@ public:
      */
     Heal_Spell_Card(const std::string& name, const std::string& description,
                      Rarity rarity, int mana_cost, Element elem, int heal, float eff);
+    
+    /**
+     * @brief Default constructor
+     * 
+     * Initializes card with default values:
+     * - name: "Unnamed Heal Spell"
+     * - description: "No description"
+     * - rarity: Rarity::Common
+     * - mana_cost: 0
+     * - element: Element::Water
+     * - base_heal: 5
+     * - efficiency_deg: 1.0f
+     */
+    Heal_Spell_Card();
     
     /**
      * @brief Get base heal value
@@ -62,7 +77,12 @@ public:
     void set_eff(float new_eff);
 
     void use(Player& user, Player& target) override;
+
     CardType get_type() const override;
+
+    void generate_properties() override;
+
+    void print_key_info() const override;
 
 };
 

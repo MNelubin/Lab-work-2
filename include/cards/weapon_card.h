@@ -40,6 +40,18 @@ public:
                 Rarity rarity, int mana_cost, int dmg_up);
 
     /**
+     * @brief Default constructor
+     * 
+     * Initializes card with default values:
+     * - name: "Unnamed Weapon"
+     * - description: "No description"
+     * - rarity: Rarity::Common
+     * - mana_cost: 0
+     * - dmg_up: 2
+     */
+    Weapon_Card();
+
+    /**
      * @brief Get damage increase value
      * @return Current damage increase
      */
@@ -55,7 +67,12 @@ public:
     void set_dmg_up(int new_dmg_up);
 
     void use(Player& user, Player& target) override;
+
     CardType get_type() const override;
+
+    void generate_properties() override;
+
+    void print_key_info() const override;
 };
 
 #endif 

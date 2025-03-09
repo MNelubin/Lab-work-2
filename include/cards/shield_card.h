@@ -29,6 +29,18 @@ public:
                 Rarity rarity, int mana_cost, int usage);
 
     /**
+     * @brief Default constructor
+     * 
+     * Initializes card with default values:
+     * - name: "Unnamed Shield"
+     * - description: "No description"
+     * - rarity: Rarity::Common
+     * - mana_cost: 0
+     * - usage: 2
+     */
+    Shield_Card();
+
+    /**
      * @brief Get number of uses
      * @return Current number of uses
      */
@@ -44,8 +56,15 @@ public:
     void set_usage(int new_usage);
 
     void use(Player& user, Player& target) override;
+
     CardType get_type() const override;
+
+    void generate_properties() override;
+    
+    void print_key_info() const override;
 };
+
+
 
 
 #endif

@@ -39,3 +39,45 @@ void Buff_Spell_Card::use(Player& user, Player& target) {
 CardType Buff_Spell_Card::get_type() const {
     return CardType::BuffSpell;
 }
+
+
+
+
+/**
+* @brief Generate random properties for Buff Spell card
+*/
+void Buff_Spell_Card::generate_properties()  {
+    // Generate random rarity first
+    Rarity random_rarity = generate_random_rarity();
+    set_rarity(random_rarity);
+
+    std::uniform_int_distribution<int> name_dist(0, buff_spell_names.size() - 1);
+    std::uniform_int_distribution<int> desc_dist(0, buff_spell_descriptions.size() - 1);
+    
+    set_name(buff_spell_names[name_dist(rng)]);
+    set_description(buff_spell_descriptions[desc_dist(rng)]);
+    set_element(static_cast<Element>(rng() % 4));
+    
+    switch (get_rarity()) {
+        case Rarity::Common:
+            multiplier = 1.1f + static_cast<float>(rng() % 5) * 0.1f;
+            mana_cost = 1 + static_cast<int>(rng() % 2);
+            break;
+        case Rarity::Uncommon:
+            multiplier = 1.3f + static_cast<float>(rng() % 8) * 0.1f;
+            mana_cost = 1 + static_cast<int>(rng() % 3);
+            break;
+        case Rarity::Rare:
+            multiplier = 1.6f + static_cast<float>(rng() % 11) * 0.1f;
+            mana_cost = 2 + static_cast<int>(rng() % 3);
+            break;
+        case Rarity::Epic:
+            multiplier = 2.0f + static_cast<float>(rng() % 16) * 0.1f;
+            mana_cost = 2 + static_cast<int>(rng() % 5);
+            break;
+    }
+}
+
+void Buff_Spell_Card::print_key_info() const {
+    std::cout << "Multiplier: " << multiplier;
+}

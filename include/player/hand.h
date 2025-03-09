@@ -8,6 +8,16 @@
 #include <memory>
 #include <algorithm>
 #include "../cards/card.h"
+#include "../cards/beast_card.h"
+#include "../cards/buff_card.h"
+#include "../cards/creature_card.h"
+#include "../cards/shield_card.h"
+#include "../cards/weapon_card.h"
+#include "../cards/artifact_card.h"
+#include "../cards/attack_spell_card.h"
+#include "../cards/heal_spell_card.h"
+#include "../cards/buff_spell_card.h"
+#include "../cards/defence_spell_card.h"
 
 /**
  * @brief Represents a player's hand containing various types of cards
@@ -82,6 +92,26 @@ public:
      * @return Vector of references to matching cards
      */
     std::vector<std::reference_wrapper<Card>> get_cards_by_type(const std::string& type_name) const;
+
+    /**
+     * @brief Generates a random card and adds it to the hand
+     * 
+     * This method randomly selects a card type and creates a card of that type
+     * with randomly generated properties. The card is then added to the hand.
+     * 
+     * The probability distribution for card types is as follows:
+     * - Beast Card: 10%
+     * - Buff Card: 10%
+     * - Creature Card: 10%
+     * - Shield Card: 10%
+     * - Weapon Card: 10%
+     * - Artifact Card: 10%
+     * - Attack Spell Card: 10%
+     * - Heal Spell Card: 10%
+     * - Buff Spell Card: 10%
+     * - Defence Spell Card: 10%
+     */
+    void generate_random_card();
 };
 
 #endif

@@ -532,7 +532,7 @@ TEST(HandTest, GenerateStandardHands) {
     
     // Test invalid hand ID
     EXPECT_THROW(hand.generate(0), std::invalid_argument);
-    EXPECT_THROW(hand.generate(4), std::invalid_argument);
+    EXPECT_THROW(hand.generate(5), std::invalid_argument);
 }
 
 /**

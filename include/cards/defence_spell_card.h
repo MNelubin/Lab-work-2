@@ -45,6 +45,19 @@ public:
                                   Rarity rarity, int mana_cost, Element elem);
 
     /**
+     * @brief Default constructor
+     * 
+     * Initializes card with default values:
+     * - name: "Unnamed Defence Spell"
+     * - description: "No description"
+     * - rarity: Rarity::Common
+     * - mana_cost: 0
+     * - element: Element::Earth
+     * - base_def: 2
+     */
+    Defence_Spell_Card();
+
+    /**
      * @brief Get base defense value
      * @return Current base defense
      */
@@ -60,7 +73,12 @@ public:
     void set_base_def(int new_def);
 
     void use(Player& user, Player& target) override;
+
     CardType get_type() const override;
+
+    void generate_properties() override;
+
+    void print_key_info() const override;
 };
 
 #endif

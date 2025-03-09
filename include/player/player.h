@@ -124,7 +124,24 @@ public:
     void perform_special_action();
 
     /**
-     * @brief Show the player's hand
+     * @brief Displays the player's hand with detailed information about each card
+     * 
+     * This method prints the player's hand to the console, showing the following details for each card:
+     * - Index of the card in the hand
+     * - Card name (colored according to its rarity)
+     * - Mana cost
+     * - Card type (e.g., AttackSpell, HealSpell, Beast)
+     * - Key information specific to the card type (e.g., damage, healing, multiplier)
+     * 
+     * The card name is displayed with a color code based on its rarity:
+     * - Common: White
+     * - Uncommon: Green
+     * - Rare: Blue
+     * - Epic: Magenta
+     * 
+     * @see get_color_code()
+     * @see cardTypeToString()
+     * @see print_key_info()
      */
     void show_hand();
 
@@ -369,6 +386,31 @@ public:
      * @param new_hand New hand to set
      */
     void set_hand(Hand new_hand);
+
+    /**
+     * @brief Check if the hand contains any Beast, Creature, or AttackSpell cards
+     * @return true if any of the specified card types are found, false otherwise
+     */
+    bool has_combat_cards() const;
+
+    /**
+     * @brief Get the ANSI color code for a given rarity
+     * 
+     * This method returns the ANSI escape code for the color associated with the card's rarity.
+     * The color codes are as follows:
+     * - Common: White (\033[37m)
+     * - Uncommon: Green (\033[32m)
+     * - Rare: Blue (\033[34m)
+     * - Epic: Magenta (\033[35m)
+     * 
+     * @param rarity The rarity of the card
+     * @return ANSI color code as a string
+     */
+    std::string get_color_code(Rarity rarity);
+
+    
+
+
 };
 
 #endif // PLAYER_H

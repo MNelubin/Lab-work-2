@@ -73,13 +73,17 @@ void Player::perform_special_action() {
     character->special_action(*this);
 }
 
+
 void Player::show_hand() {
     std::cout << "Player's Hand:" << std::endl;
     for (int i = 0; i < hand.get_amount(); ++i) {
         const auto& card = hand.get_card(i);
-        std::cout << "[" << i << "] " << card.get_name() << " (" 
+        std::string color_code = get_color_code(card.get_rarity());
+        std::cout << "[" << i << "] " << color_code << card.get_name() << "\033[0m" << " (" 
                   << card.get_mana_cost() << " mana) - Type: " 
-                  << cardTypeToString(card.get_type()) << std::endl;
+                  << cardTypeToString(card.get_type()) ;
+        card.print_key_info();
+        std::cout << std::endl;
     }
 }
 
@@ -318,4 +322,30 @@ const Hand& Player::get_hand() const {
 
 void Player::set_hand(Hand new_hand) {
     hand = std::move(new_hand);
+}
+
+bool Player::has_combat_cards() const {
+    for (int i = 0; i < hand.get_amount(); ++i) {
+        const auto& card = hand.get_card(i);
+        CardType type = card.get_type();
+        if (type == CardType::Beast || type == CardType::Creature || type == CardType::AttackSpell) {
+            return true;
+        }
+    }
+    return false;
+}
+
+std::string Player::get_color_code(Rarity rarity) {
+    switch(rarity) {
+        case Rarity::Common:
+            return "\033[37m"; // White
+        case Rarity::Uncommon:
+            return "\033[32m"; // Green
+        case Rarity::Rare:
+            return "\033[34m"; // Blue
+        case Rarity::Epic:
+            return "\033[35m"; // Magenta
+        default:
+            return "\033[37m"; // Default to white
+    }
 }

@@ -29,6 +29,18 @@ public:
               Rarity rarity, int mana_cost, float buff_amount);
 
     /**
+     * @brief Default constructor
+     * 
+     * Initializes card with default values:
+     * - name: "Unnamed Buff"
+     * - description: "No description"
+     * - rarity: Rarity::Common
+     * - mana_cost: 0
+     * - buff_amount: 1.1f
+     */
+    Buff_Card();
+
+    /**
      * @brief Get buff amount
      * @return Current buff amount
      */
@@ -44,7 +56,12 @@ public:
     void set_buff_amount(float new_buff_amount);
 
     void use(Player& user, Player& target) override;
+
     CardType get_type() const override;
+
+    void generate_properties() override;
+
+    void print_key_info() const override;
 };
 
 #endif

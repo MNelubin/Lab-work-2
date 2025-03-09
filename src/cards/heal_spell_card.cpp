@@ -23,6 +23,13 @@ Heal_Spell_Card::Heal_Spell_Card(
     }
 }
 
+// Default constructor implementation
+Heal_Spell_Card::Heal_Spell_Card()
+    : Spell_Card("Unnamed Heal Spell", "No description", Rarity::Common, 0, Element::Water), 
+      base_heal(5), efficiency_deg(1.0f) 
+{
+}
+
 // Getter for base_heal
 int Heal_Spell_Card::get_base_heal() const {
     return base_heal;
@@ -64,4 +71,48 @@ void Heal_Spell_Card::use(Player& user, Player& target) {
 
 CardType Heal_Spell_Card::get_type() const {
     return CardType::HealSpell;
+}
+
+
+/**
+* @brief Generate random properties for Heal Spell card
+*/
+void Heal_Spell_Card::generate_properties() {
+    // Generate random rarity first
+    Rarity random_rarity = generate_random_rarity();
+    set_rarity(random_rarity);
+
+    std::uniform_int_distribution<int> name_dist(0, heal_names.size() - 1);
+    std::uniform_int_distribution<int> desc_dist(0, heal_descriptions.size() - 1);
+    
+    set_name(heal_names[name_dist(rng)]);
+    set_description(heal_descriptions[desc_dist(rng)]);
+    set_element(static_cast<Element>(rng() % 4));
+    
+    switch (get_rarity()) {
+        case Rarity::Common:
+            base_heal = 3 + static_cast<int>(rng() % 6);
+            efficiency_deg = 1.0f + static_cast<float>(rng() % 3) * 0.1f;
+            mana_cost = 1 + static_cast<int>(rng() % 2);
+            break;
+        case Rarity::Uncommon:
+            base_heal = 3 + static_cast<int>(rng() % 10);
+            efficiency_deg = 1.2f + static_cast<float>(rng() % 5) * 0.1f;
+            mana_cost = 1 + static_cast<int>(rng() % 3);
+            break;
+        case Rarity::Rare:
+            base_heal = 6 + static_cast<int>(rng() % 15);
+            efficiency_deg = 1.4f + static_cast<float>(rng() % 8) * 0.1f;
+            mana_cost = 2 + static_cast<int>(rng() % 3);
+            break;
+        case Rarity::Epic:
+            base_heal = 10 + static_cast<int>(rng() % 25);
+            efficiency_deg = 1.7f + static_cast<float>(rng() % 12) * 0.1f;
+            mana_cost = 2 + static_cast<int>(rng() % 5);
+            break;
+    }
+}
+
+void Heal_Spell_Card::print_key_info() const {
+    std::cout << "Base Heal: " << base_heal << ", Efficiency: " << efficiency_deg;
 }

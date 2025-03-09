@@ -83,4 +83,29 @@ inline std::string cardTypeToString(CardType type) {
         default:                     return "Unknown";
     }
 }
+
+/**
+ * @brief Converts a Tribe enum value to its string representation
+ * 
+ * This function takes a Tribe enum value and returns the corresponding
+ * string representation. It is useful for displaying tribe information
+ * in a human-readable format.
+ * 
+ * @param tribe The Tribe enum value to convert
+ * @return std::string The string representation of the tribe
+ */
+inline std::string tribeToString(Tribe tribe) {
+    switch (tribe) {
+        case Tribe::North:
+            return "North";
+        case Tribe::East:
+            return "East";
+        case Tribe::West:
+            return "West";
+        case Tribe::South:
+            return "South";
+        default:
+            return "Unknown Tribe";
+    }
+}
 #endif

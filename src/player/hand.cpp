@@ -58,6 +58,13 @@ void Hand::generate(int id) {
         case 3:
             create_standard_hand_3();
             break;
+        case 4: {
+            int num_cards = 15 + (rng() % 6); // Generates 15-20 inclusive
+            for (int i = 0; i < num_cards; ++i) {
+                generate_random_card();
+            }
+            break;
+        }
         default:
             throw std::invalid_argument("Invalid hand ID");
     }
@@ -138,4 +145,51 @@ void Hand::create_standard_hand_3() {
     add_card(std::make_unique<Heal_Spell_Card>("Eternal Life", "Restores full HP", Rarity::Epic, 10, Element::Water, 50, 2.0f));
     add_card(std::make_unique<Creature_Card>("Dragonspawn", "Fire-breathing creature", Rarity::Epic, 10, 15, 1.8f));
     add_card(std::make_unique<Weapon_Card>("Oblivion Edge", "Legendary weapon", Rarity::Epic, 9, 20));
+}
+
+void Hand::generate_random_card() {
+    int random = rng() % 100; // Generates a number between 0 and 99
+
+    // Define probability ranges for each card type
+    if (random < 10) { // 10% chance for Beast Card
+        auto card = std::make_unique<Beast_Card>("Wild Boar", "Basic beast attack", Rarity::Common, 2, 4, Tribe::North);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 20) { // 10% chance for Buff Card
+        auto card = std::make_unique<Buff_Card>("Power Boost", "Increases attack power", Rarity::Common, 3, 1.5f);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 30) { // 10% chance for Creature Card
+        auto card = std::make_unique<Creature_Card>("Goblin Warrior", "Weak creature", Rarity::Common, 3, 4, 1.1f);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 40) { // 10% chance for Shield Card
+        auto card = std::make_unique<Shield_Card>("Basic Shield", "Provides basic protection", Rarity::Common, 2, 3);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 50) { // 10% chance for Weapon Card
+        auto card = std::make_unique<Weapon_Card>("Bronze Sword", "Simple weapon", Rarity::Common, 2, 3);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 60) { // 10% chance for Artifact Card
+        auto card = std::make_unique<Artifact_Card>("Amulet of Majesty", "Enhances all attributes", Rarity::Epic, 7, 1.7f);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 70) { // 10% chance for Attack Spell Card
+        auto card = std::make_unique<Attack_Spell_Card>("Firebolt", "Basic fire damage", Rarity::Common, 3, Element::Fire, 6);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 80) { // 10% chance for Heal Spell Card
+        auto card = std::make_unique<Heal_Spell_Card>("Small Heal", "Restores minor HP", Rarity::Common, 2, Element::Water, 5, 1.0f);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else if (random < 90) { // 10% chance for Buff Spell Card
+        auto card = std::make_unique<Buff_Spell_Card>("Battle Cry", "Temporary attack boost", Rarity::Rare, 4, Element::Air, 2.0f);
+        card->generate_properties();
+        add_card(std::move(card));
+    } else { // 10% chance for Defence Spell Card
+        auto card = std::make_unique<Defence_Spell_Card>("Iron Skin", "Hardened defense", Rarity::Common, 2, Element::Earth, 3);
+        card->generate_properties();
+        add_card(std::move(card));
+    }
 }

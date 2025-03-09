@@ -61,9 +61,12 @@ public:
     void set_weapon_multiplier(float new_multiplier);
 
     void use(Player& user, Player& target) override;
+
     CardType get_type() const override;
 
+    void generate_properties() override;
     
+    void print_key_info() const override;
 };
 
 #endif 

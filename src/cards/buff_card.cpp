@@ -5,6 +5,7 @@
 #include "../../include/player/player.h"
 
 #include <stdexcept>
+#include <iostream>
 
 Buff_Card::Buff_Card(const std::string& name, const std::string& description,
                      Rarity rarity, int mana_cost, float buff_amount)
@@ -36,4 +37,46 @@ void Buff_Card::use(Player& user, Player& target) {
 
 CardType Buff_Card::get_type() const {
     return CardType::Buff;
+}
+
+void Buff_Card::generate_properties() {
+        // Generate random rarity first
+        Rarity random_rarity = generate_random_rarity();
+        set_rarity(random_rarity);
+        
+        std::uniform_int_distribution<int> name_dist(0, buff_names.size() - 1);
+        std::uniform_int_distribution<int> desc_dist(0, buff_descriptions.size() - 1);
+        
+        set_name(buff_names[name_dist(rng)]);
+        set_description(buff_descriptions[desc_dist(rng)]);
+        
+        switch (get_rarity()) {
+            case Rarity::Common:
+                buff_amount = 1.1f + static_cast<float>(rng() % 5) * 0.1f;
+                mana_cost = 1 + static_cast<int>(rng() % 2);
+                break;
+            case Rarity::Uncommon:
+                buff_amount = 1.3f + static_cast<float>(rng() % 8) * 0.1f;
+                mana_cost = 1 + static_cast<int>(rng() % 3);
+                break;
+            case Rarity::Rare:
+                buff_amount = 1.6f + static_cast<float>(rng() % 11) * 0.1f;
+                mana_cost = 2 + static_cast<int>(rng() % 3);
+                break;
+            case Rarity::Epic:
+                buff_amount = 2.0f + static_cast<float>(rng() % 16) * 0.1f;
+                mana_cost = 2 + static_cast<int>(rng() % 5);
+                break;
+        }
+    }
+
+// Default constructor implementation
+Buff_Card::Buff_Card()
+    : Card("Unnamed Buff", "No description", Rarity::Common, 0), 
+      buff_amount(1.0f) 
+{
+}
+
+void Buff_Card::print_key_info() const {
+    std::cout << "Buff Amount: " << buff_amount;
 }
