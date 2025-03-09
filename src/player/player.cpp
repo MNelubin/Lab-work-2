@@ -76,12 +76,42 @@ void Player::perform_special_action() {
 
 void Player::show_hand() {
     std::cout << "Player's Hand:" << std::endl;
+    
+    // Calculate maximum width for the initial portion (index, name, mana)
+    size_t max_width = 0;
     for (int i = 0; i < hand.get_amount(); ++i) {
         const auto& card = hand.get_card(i);
         std::string color_code = get_color_code(card.get_rarity());
-        std::cout << "[" << i << "] " << color_code << card.get_name() << "\033[0m" << " (" 
-                  << card.get_mana_cost() << " mana) - Type: " 
-                  << cardTypeToString(card.get_type()) ;
+        std::string display = "[" + std::to_string(i) + "] " + color_code + card.get_name() + "\033[0m (" 
+                            + std::to_string(card.get_mana_cost()) + " mana) - ";
+        max_width = std::max(max_width, display.size());
+    }
+    
+    // Display each card with proper formatting
+    for (int i = 0; i < hand.get_amount(); ++i) {
+        const auto& card = hand.get_card(i);
+        std::string color_code = get_color_code(card.get_rarity());
+        std::string display = "[" + std::to_string(i) + "] " + color_code + card.get_name() + "\033[0m (" 
+                            + std::to_string(card.get_mana_cost()) + " mana) - ";
+        
+        // Calculate padding needed to align the "Type:" field
+        std::string padding(max_width - display.size(), ' ');
+        
+        // Determine card type color
+        std::string type_color;
+        if (card.get_type() == CardType::Beast || 
+            card.get_type() == CardType::Creature || 
+            card.get_type() == CardType::AttackSpell||
+            card.get_type() == CardType::HealSpell ) {
+            type_color = "\033[31m"; // Red color
+        } else {
+            type_color = "\033[37m"; // White color
+        }
+        
+        std::cout << display << padding << type_color << "Type: " << cardTypeToString(card.get_type()) 
+                  << " | "<< "\033[0m";
+        
+        // Print key information
         card.print_key_info();
         std::cout << std::endl;
     }
@@ -259,15 +289,15 @@ void Player::reset_turn() {
 }
 
 void Player::apply_attack_multiplier(float effect) {
-    cumulative_attack_multiplier *= effect;
+    cumulative_attack_multiplier = std::round(cumulative_attack_multiplier * effect * 100) / 100;
 }
 
 void Player::apply_heal_multiplier(float effect) {
-    cumulative_heal_multiplier *= effect;
+    cumulative_heal_multiplier  = std::round(cumulative_heal_multiplier * effect * 100) / 100;
 }
 
 void Player::add_weapon_bonus(int effect) {
-    cumulative_weapon_adder += effect;
+    cumulative_weapon_adder = cumulative_weapon_adder + effect;
 }
 
 void Player::end_turn() {

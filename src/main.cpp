@@ -145,126 +145,226 @@ void start_1v1_match() {
     Player player1(100, 50, 0, "Player 1", create_predefined_character(player_choice));
     Player player2(100, 50, 0, "Player 2", create_ai_character());
     
-    // Generate hands for both players
+    // Generate initial hands for both players
     player1.get_hand().generate(4);
     player2.get_hand().generate(4);
 
     bool game_over = false;
+
     std::cout << "\nMatch Started!\n";
     
     while (!game_over) {
+        bool skip_turn_p1 = false;
+        bool skip_turn_p2 = false;
+
+        // Reset mana at the start of each turn
         player1.set_mana(10);
         player2.set_mana(10);
+
         // Player 1's turn
         std::cout << "\n=== Player 1's Turn ===\n";
         
-        
-
-        player1.set_turn_active(false);
-        while(!player1.is_turn_active() && player1.get_hand().get_amount() > 0){
-
-            if (!player1.has_combat_cards()){
-                
-        	    player1.get_hand().generate(4);
-
-                std::cout << "No cards to make a move\n";
-                player1.set_turn_active(false);
+        // Check if player has playable cards or needs to regenerate hand
+        bool has_playable_cards = false;
+        int min_mana_cost = 100;
+        bool has_playable = false;
+        for (int i = 0; i < player1.get_hand().get_amount(); ++i) {
+            if (player1.get_hand().get_card(i).get_type() == CardType::Beast ||
+                 player1.get_hand().get_card(i).get_type() == CardType::Creature ||
+                 player1.get_hand().get_card(i).get_type() == CardType::AttackSpell||
+                 player1.get_hand().get_card(i).get_type() == CardType::HealSpell ) {
+                has_playable = true;
+                 }
+            min_mana_cost = std::min(min_mana_cost,player1.get_hand().get_card(i).get_mana_cost());
+            if (min_mana_cost<=player1.get_mana() && has_playable){
+                has_playable_cards = true;
                 break;
             }
-        
-	        player1.get_hand().sort_by_mana();
-            player1.show_hand();
-            std::cout << "Your mana: "<< player1.get_mana()<< "\n" <<"Choose a card to use (index): ";
-            int card_index;
-            std::cin >> card_index;
-            try {
-                player1.use_card(card_index, player2);
-                std::cout << "Used card successfully!\n";
-            } catch (const std::exception& e) {
-                std::cout << "Error: " << e.what() << '\n';
-            }
-            
-            
-            
-            if (player1.get_mana() <= 0) {
-                player1.set_turn_active(true); // No mana left
-            }
-
-            
         }
-        std::cout << "Player 2's HP: " << player2.get_hp() << '\n';
+
+        if (!has_playable_cards || player1.get_hand().get_amount() == 0) {
+            std::cout << "No playable cards or empty hand. Regenerating hand and skipping turn.\n";
+            player1.get_hand().generate(4);
+            skip_turn_p1 = true;
+        }
+
+        if (!skip_turn_p1) {
+            player1.set_turn_active(false);
+            while (!player1.is_turn_active() && player1.get_hand().get_amount() > 0) {
+                player1.get_hand().sort_by_mana();
+                player1.show_hand();
+
+                // Display player statistics after showing hand
+                std::cout << "\nYour Status:\n";
+                std::cout << "HP: " << player1.get_hp() 
+                          << " | Mana: " << player1.get_mana() 
+                          << " | Armor: " << player1.get_armor() 
+                          << " | Shield: " << player1.get_shield_amount() 
+                          << " | Atk Multiplier: " << player1.get_cumulative_attack_multiplier() 
+                          << " | Heal Multiplier: " << player1.get_cumulative_heal_multiplier() 
+                          << " | Weapon Adder: " << player1.get_cumulative_weapon_bonus();
+
+                // Display player statistics after showing hand
+                std::cout << "\nEnemy Stat.:\n";
+                std::cout << "HP: " << player2.get_hp() 
+                          << " | Mana: " << player2.get_mana() 
+                          << " | Armor: " << player2.get_armor() 
+                          << " | Shield: " << player2.get_shield_amount() 
+                          << " | Atk Multiplier: " << player2.get_cumulative_attack_multiplier() 
+                          << " | Heal Multiplier: " << player2.get_cumulative_heal_multiplier() 
+                          << " | Weapon Adder: " << player2.get_cumulative_weapon_bonus() << "\n\n";
+
+                std::cout << "Choose a card to use (index): ";
+                int card_index;
+                std::cin >> card_index;
+
+                try {
+                    player1.use_card(card_index, player2);
+                    std::cout << "Used card successfully!\n";
+                    std::cout << "Player 2's HP: " << player2.get_hp() << '\n';
+                } catch (...) {
+                    std::cout << "Error using card.\n";
+                }
+
+                // Check if player has no mana left or no playable cards
+                has_playable_cards = false;
+                min_mana_cost = 100;
+                has_playable = false;
+                for (int i = 0; i < player1.get_hand().get_amount(); ++i) {
+                    if (player1.get_hand().get_card(i).get_type() == CardType::Beast ||
+                        player1.get_hand().get_card(i).get_type() == CardType::Creature ||
+                        player1.get_hand().get_card(i).get_type() == CardType::AttackSpell||
+                        player1.get_hand().get_card(i).get_type() == CardType::HealSpell ) {
+                        has_playable = true;
+                        }
+                    min_mana_cost = std::min(min_mana_cost,player1.get_hand().get_card(i).get_mana_cost());
+                    if (min_mana_cost<=player1.get_mana() && has_playable){
+                        has_playable_cards = true;
+                        break;
+                    }
+                }
+
+                if (!has_playable_cards) {std::cout<<"No playable cards\n";}
+                if (player1.get_mana() <= 0) {std::cout<<"No mana\n";}
+                if (player1.get_hand().get_amount() == 0) {std::cout<<"No cards in hand\n";}
+
+                if (!has_playable_cards || player1.get_mana() <= 0 || player1.get_hand().get_amount() == 0) {
+                    player1.set_turn_active(true);
+                }
+            }
+        } else {
+            std::cout << "Skipping Player 1's turn due to hand regeneration.\n";
+        }
+
+        // Check if Player 2 is defeated
         if (player2.get_hp() <= 0) {
             std::cout << "Player 1 wins!\n";
             game_over = true;
-            break;
+            continue;
         }
+
         // Player 2's turn (AI)
         std::cout << "\n=== Player 2's Turn ===\n";
         std::cout << "AI is thinking...\n";
 
-        player2.set_turn_active(false); // Begin the AI's turn
-
-        while (!player2.is_turn_active() && player2.get_hand().get_amount() > 0) {
-            if (!player2.has_combat_cards()){
-                
-        	    player2.get_hand().generate(4);
-
-                std::cout << "No cards to make a move\n";
+         // Check if player has no mana left or no playable cards
+        has_playable_cards = false;
+        min_mana_cost = 100;
+        has_playable = false;
+        for (int i = 0; i < player2.get_hand().get_amount(); ++i) {
+            if (player2.get_hand().get_card(i).get_type() == CardType::Beast ||
+                player2.get_hand().get_card(i).get_type() == CardType::Creature ||
+                player2.get_hand().get_card(i).get_type() == CardType::AttackSpell||
+                player2.get_hand().get_card(i).get_type() == CardType::HealSpell ) {
+                has_playable = true;
+                }
+                min_mana_cost = std::min(min_mana_cost,player2.get_hand().get_card(i).get_mana_cost());
+            if (min_mana_cost<=player2.get_mana() && has_playable){
+                has_playable_cards = true;
                 break;
-            }
-
-
-            player2.get_hand().sort_by_mana();
-        
-            //int ai_card_index = std::rand() % player2.get_hand().get_amount();
-            
-            try {
-            	for (int i=player2.get_hand().get_amount()-1 ;(i>0 && !player2.is_turn_active() && player2.get_mana() > 0);i--){
-            		const Card& selected_card = player2.get_hand().get_card(i);
-                	std::cout << "AI used card: " << selected_card.get_name() << " - " << cardTypeToString(selected_card.get_type()) << " - " << selected_card.get_mana_cost()<< "\n"<< "AI mana: "<< player2.get_mana()-selected_card.get_mana_cost() << "\n";
-                	if (selected_card.get_mana_cost()<=player2.get_mana()){
-                		player2.use_card(i, player1);
-                		i = player2.get_hand().get_amount()-1;
-                	}
-            	
-            	}
-            	
-                player2.set_turn_active(true);
-                
-                
-                
-            } catch (...) {
-                std::cout << "AI failed to use a card.\n";
-                player2.set_turn_active(true);
             }
         }
 
-        player2.end_turn();
-            
+        if (!has_playable_cards) {std::cout<<"No playable cards\n";}
+        if (player1.get_mana() <= 0) {std::cout<<"No mana\n";}
+        if (player1.get_hand().get_amount() == 0) {std::cout<<"No cards in hand\n";}
 
-        std::cout << "Player 1's HP: " << player1.get_hp() << '\n';
+
+        if (!has_playable_cards || player2.get_hand().get_amount() == 0) {
+            std::cout << "No playable cards or empty hand. Regenerating hand and skipping turn.\n";
+            player2.get_hand().generate(4);
+            skip_turn_p2 = true;
+        }
+
+        if (!skip_turn_p2) {
+            player2.set_turn_active(false);
+            while (!player2.is_turn_active() && player2.get_hand().get_amount() > 0) {
+                player2.get_hand().sort_by_mana();
+                
+                // Simple AI logic
+                if (!player2.get_hand().get_amount() ==0) {
+                    int ai_card_index = std::rand() % player2.get_hand().get_amount();
+                    if (player2.get_hand().get_card(ai_card_index).get_mana_cost()<=player2.get_mana()){
+                        try {
+                            std::cout << "AI used card: " << player2.get_hand().get_card(ai_card_index).get_name() << "\n";
+                            player2.use_card(ai_card_index, player1);
+                            std::cout << "Player 1's HP: " << player1.get_hp() << '\n';
+                        } catch (...) {
+                            std::cout << "AI failed to use a card.\n";
+                        }
+                    }
+                }
+                // Check if player has no mana left or no playable cards
+                has_playable_cards = false;
+                min_mana_cost = 100;
+                has_playable = false;
+                for (int i = 0; i < player2.get_hand().get_amount(); ++i) {
+                    if (player2.get_hand().get_card(i).get_type() == CardType::Beast ||
+                        player2.get_hand().get_card(i).get_type() == CardType::Creature ||
+                        player2.get_hand().get_card(i).get_type() == CardType::AttackSpell||
+                        player2.get_hand().get_card(i).get_type() == CardType::HealSpell ) {
+                        has_playable = true;
+                    }
+                    min_mana_cost = std::min(min_mana_cost,player2.get_hand().get_card(i).get_mana_cost());
+                    if (min_mana_cost<=player2.get_mana() && has_playable){
+                        has_playable_cards = true;
+                        break;
+                    }
+                }
+
+                if (!has_playable_cards || player2.get_mana() <= 0 || player2.get_hand().get_amount() == 0) {
+                    player2.set_turn_active(true);
+                }
+            }
+        } else {
+            std::cout << "Skipping Player 2's turn due to hand regeneration.\n";
+        }
+
+        // Check if Player 1 is defeated
         if (player1.get_hp() <= 0) {
             std::cout << "Player 2 wins!\n";
             game_over = true;
+            continue;
         }
 
-        // Option to end match or give new cards
-        std::cout << "\nEnd match? (y/n): ";
-        char end_choice;
-        std::cin >> end_choice;
-        if (end_choice == 'y' || end_choice == 'Y') {
+        // Ask if players want to continue
+        char choice;
+        std::cout << "Continue? (y/n): ";
+        std::cin >> choice;
+        if (choice != 'y' && choice != 'Y') {
             break;
         }
+
+        // Option to give new cards
         std::cout << "\nGive new cards? (y/n): ";
-       
-        std::cin >> end_choice;
-        if (end_choice == 'y' || end_choice == 'Y') {
-        	
-        	player1.get_hand().generate(4);
-        	
-        	player2.get_hand().generate(4);
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            player1.get_hand().generate(4);
+            player2.get_hand().generate(4);
         }
         
+        player1.end_turn();
+        player2.end_turn();
     }
 
     std::cout << "Match ended.\n";

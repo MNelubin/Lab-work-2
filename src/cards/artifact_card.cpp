@@ -34,8 +34,8 @@ void Artifact_Card::use(Player& user, Player& target) {
      * Modifies all attack heal and weapon multipliers,
      * makes effects persistent until reset
      */
-    user.apply_attack_multiplier(user.get_cumulative_attack_multiplier() * get_multiplier());
-    user.apply_heal_multiplier(user.get_cumulative_heal_multiplier() * get_multiplier());
+    user.apply_attack_multiplier(user.get_cumulative_attack_multiplier() * (get_multiplier()));
+    user.apply_heal_multiplier(user.get_cumulative_heal_multiplier() * (get_multiplier()));
     user.set_cumulative_weapon_bonus(user.get_cumulative_weapon_bonus() * get_multiplier());
     
 }
