@@ -19,15 +19,18 @@ Player::Player()
 
 Player::Player(int hp, int mana, int armor, const std::string& name, 
                std::unique_ptr<Character> character, int shield_amount)
-    : character(std::move(character)), hp(hp), mana(mana), armor(armor), name(name), 
-      shield_amount(shield_amount), cumulative_attack_multiplier(1.0f),
-      cumulative_heal_multiplier(1.0f), cumulative_weapon_adder(0),
-      turn_active(true) {
+    : character(std::move(character)), hp(hp), mana(mana), armor(armor), 
+      name(name), shield_amount(shield_amount),
+      cumulative_attack_multiplier(1.0f), cumulative_heal_multiplier(1.0f),
+      cumulative_weapon_adder(0), turn_active(true) 
+{
     if (hp < 0 || mana < 0 || armor < 0 || shield_amount < 0) {
         throw std::invalid_argument("Player attributes cannot be negative");
     }
+    
 }
 
+/*
 Player::Player(Player&& other) noexcept 
     : character(std::move(other.character)), hp(other.hp), mana(other.mana), 
       armor(other.armor), name(other.name), hand(std::move(other.hand)), 
@@ -53,9 +56,11 @@ Player& Player::operator=(Player&& other) noexcept {
     return *this;
 }
 
-Player::~Player() {}
+*/
 
-void Player::set_character(std::unique_ptr<Character> new_character) {
+
+
+void Player::set_character(std::unique_ptr<Character>&& new_character) {
     character = std::move(new_character);
 }
 
@@ -73,48 +78,58 @@ void Player::perform_special_action() {
     character->special_action(*this);
 }
 
+void Player::get_special_action_info(){
+    if (!character) {
+        throw std::runtime_error("Character not set");
+    }
+    character->special_action_info();
+}
 
 void Player::show_hand() {
-    std::cout << "Player's Hand:" << std::endl;
+    std::cout << "\n\033[36m=== Your Hand ===\033[0m\n";
     
+    // Display special ability information
+    //std::cout << "\n\033[33m[Special Ability]\033[0m ";
+    //get_special_action_info();
+    //std::cout << "\n";
+
     // Calculate maximum width for the initial portion (index, name, mana)
     size_t max_width = 0;
-    for (int i = 0; i < hand.get_amount(); ++i) {
+    for(int i = 0; i < hand.get_amount(); ++i) {
         const auto& card = hand.get_card(i);
         std::string color_code = get_color_code(card.get_rarity());
-        std::string display = "[" + std::to_string(i) + "] " + color_code + card.get_name() + "\033[0m (" 
+        std::string display = "[" + std::to_string(i) + "] " + color_code 
+                            + card.get_name() + "\033[0m (" 
                             + std::to_string(card.get_mana_cost()) + " mana) - ";
         max_width = std::max(max_width, display.size());
     }
     
     // Display each card with proper formatting
-    for (int i = 0; i < hand.get_amount(); ++i) {
+    for(int i = 0; i < hand.get_amount(); ++i) {
         const auto& card = hand.get_card(i);
         std::string color_code = get_color_code(card.get_rarity());
-        std::string display = "[" + std::to_string(i) + "] " + color_code + card.get_name() + "\033[0m (" 
+        std::string display = "[" + std::to_string(i) + "] " + color_code 
+                            + card.get_name() + "\033[0m (" 
                             + std::to_string(card.get_mana_cost()) + " mana) - ";
         
         // Calculate padding needed to align the "Type:" field
         std::string padding(max_width - display.size(), ' ');
         
         // Determine card type color
-        std::string type_color;
-        if (card.get_type() == CardType::Beast || 
-            card.get_type() == CardType::Creature || 
-            card.get_type() == CardType::AttackSpell||
-            card.get_type() == CardType::HealSpell ) {
-            type_color = "\033[31m"; // Red color
-        } else {
-            type_color = "\033[37m"; // White color
+        std::string type_color = "\033[37m";
+        if(card.get_type() == CardType::Beast || 
+           card.get_type() == CardType::Creature || 
+           card.get_type() == CardType::AttackSpell || 
+           card.get_type() == CardType::HealSpell) {
+            type_color = "\033[31m";
         }
         
-        std::cout << display << padding << type_color << "Type: " << cardTypeToString(card.get_type()) 
-                  << " | "<< "\033[0m";
-        
-        // Print key information
+        std::cout << display << padding << type_color << "Type: " 
+                 << cardTypeToString(card.get_type()) << " | \033[0m";
         card.print_key_info();
-        std::cout << std::endl;
+        std::cout << "\n";
     }
+    std::cout << "\n\033[36m==================\033[0m\n";
 }
 
 void Player::eat_card(int index) {
@@ -379,3 +394,5 @@ std::string Player::get_color_code(Rarity rarity) {
             return "\033[37m"; // Default to white
     }
 }
+
+

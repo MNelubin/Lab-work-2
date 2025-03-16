@@ -49,3 +49,21 @@ void Healer_Character::special_action(Player& player) {
     player.set_hp(player.get_hp() + heal_amount*this->get_heal_multiplier());
     this->set_ability_uses(this->get_ability_uses()-1);
 }
+
+void Healer_Character::special_action_info(){
+    std::cout<<"Heal amount: "<<get_heal_amount();
+}
+
+
+void Healer_Character::serialize(std::ostream& os) const {
+    Character::serialize(os);
+    int calculated_heal = get_level() * 10; // lvl * 10
+    os.write(reinterpret_cast<const char*>(&calculated_heal), sizeof(calculated_heal));
+}
+
+void Healer_Character::deserialize(std::istream& is) {
+    Character::deserialize(is);
+
+    is.read(reinterpret_cast<char*>(&heal_amount), sizeof(heal_amount));
+    heal_amount = get_level() * 10;
+}

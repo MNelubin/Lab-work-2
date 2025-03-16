@@ -75,6 +75,41 @@ public:
      * @throws std::runtime_error if ability_uses is 0
      */
     virtual void special_action(Player& player) override;
+
+
+    /**
+     * @brief Display information about the special action
+     * 
+     * This method prints the current heal amount that the healer can restore
+     * to the player's health when the special action is used.
+     */
+    virtual void special_action_info() override;
+
+    /**
+     * @brief Serialize the Healer_Character object to an output stream
+     * 
+     * This method writes the Healer_Character's data (including inherited
+     * data from Character) to the provided output stream in binary format.
+     * 
+     * @param os The output stream to write to
+     */
+    void serialize(std::ostream& os) const override;
+
+    /**
+     * @brief Deserialize the Healer_Character object from an input stream
+     * 
+     * This method reads the Healer_Character's data (including inherited
+     * data from Character) from the provided input stream in binary format.
+     * 
+     * @param is The input stream to read from
+     */
+    void deserialize(std::istream& is) override;
+
+    /**
+     * @brief Get the class name of the character
+     * @return std::string The name of the character's class ("Healer")
+     */
+    std::string get_class_name() const override { return "Healer"; }
 };
 
 #endif // HEALER_CHARACTER_H

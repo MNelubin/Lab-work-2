@@ -39,3 +39,23 @@ void Tank_Character::special_action(Player& player) {
     this->set_ability_uses(this->get_ability_uses() - 1);
     was_ability_used = true; 
 }
+
+void Tank_Character::special_action_info(){
+    std::cout<<"Shield amount: "<<get_shield_add();
+}
+
+void Tank_Character::serialize(std::ostream& os) const {
+    Character::serialize(os);
+    int calculated_shield = get_level() + 5; // lvl +5
+    bool reset_ability_flag = false; 
+    os.write(reinterpret_cast<const char*>(&calculated_shield), sizeof(calculated_shield));
+    os.write(reinterpret_cast<const char*>(&reset_ability_flag), sizeof(reset_ability_flag));
+}
+
+void Tank_Character::deserialize(std::istream& is) {
+    Character::deserialize(is);
+    is.read(reinterpret_cast<char*>(&shield_add), sizeof(shield_add));
+    is.read(reinterpret_cast<char*>(&was_ability_used), sizeof(was_ability_used));
+    shield_add = get_level() + 5;
+    was_ability_used = false; 
+}

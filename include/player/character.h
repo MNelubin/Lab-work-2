@@ -6,6 +6,7 @@
 
 #include <string>
 #include <stdexcept>
+#include <sstream>
 class Player;
 
 /**
@@ -207,9 +208,46 @@ public:
      */
     void set_ability_uses(int value);
 
+    /**
+     * @brief Serialize character data to output stream
+     * @param os Output stream to write to
+     */
+    virtual void serialize(std::ostream& os) const;
+
+    /**
+     * @brief Deserialize character data from input stream
+     * @param is Input stream to read from
+     */
+    virtual void deserialize(std::istream& is);
+
     virtual ~Character() = default; // A virtual destructor for correctly deleting subclasses
 
     virtual void special_action(Player& player) = 0; // A virtual method for special actions
+
+    /**
+     * @brief Get a formatted string with the character's statistics
+     * 
+     * This method returns a string containing all relevant character statistics,
+     * including level, experience, multipliers, and other attributes.
+     * 
+     * @return std::string Formatted string with character statistics
+     */
+    std::string get_character_statistics() const;
+
+    /**
+     * @brief Display information about the character's special action
+     * 
+     * This method is intended to provide details about the character's special
+     * ability, such as its effects, costs, or other relevant information.
+     * It is implemented by derived classes to provide class-specific details.
+     */
+    virtual void special_action_info() = 0;
+
+    /**
+     * @brief Get the class name of the character
+     * @return std::string The name of the character's class
+     */
+    virtual std::string get_class_name() const = 0; 
 
 };
 

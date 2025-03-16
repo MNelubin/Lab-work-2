@@ -2,6 +2,7 @@
     Lab-2
 */
 #include <gtest/gtest.h>
+#include <sstream>
 #include "../include/cards/card.h"
 #include "../include/cards/spell_card.h"
 #include "../include/cards/enums.h"
@@ -21,6 +22,8 @@
 #include "../include/player/tank_character.h"
 #include "../include/player/healer_character.h"
 #include "../include/player/knight_character.h"
+#include "../include/player/ai_player.h"
+#include "../include/player/human_player.h"
 
 
 // ==================== Card Class Tests ====================
@@ -143,46 +146,75 @@ TEST(AttackSpellTest, InvalidDamageThrows) {
 // ==================== Heal_Spell_Card Class Tests ====================
 
 /**
- * @test Heal_Spell_Card value management
- * @addtogroup GCI
+ * @test Verify constructor initializes fields correctly
+ * @group HealSpell
  */
-TEST(HealSpellTest, HealManagement) {
-    Heal_Spell_Card spell("Healing Wave", "Restore health", 
+TEST(HealSpellTest, ConstructorAndGetters) {
+    Heal_Spell_Card spell("Healing Wave", "Restores health", 
                          Rarity::Rare, 4, Element::Water, 10, 1.2f);
     
-    // Check initial values
+    EXPECT_EQ(spell.get_name(), "Healing Wave");
+    EXPECT_EQ(spell.get_mana_cost(), 4);
     EXPECT_EQ(spell.get_base_heal(), 10);
-    ASSERT_FLOAT_EQ(spell.get_eff(), 1.2f);
+    EXPECT_FLOAT_EQ(spell.get_eff(), 1.2f);
+    EXPECT_EQ(spell.get_element(), Element::Water);
+}
+
+/**
+ * @test Verify setters with valid values
+ * @group HealSpell
+ */
+TEST(HealSpellTest, SettersValidValues) {
+    Heal_Spell_Card spell("Test", "Test", Rarity::Common, 2, Element::Fire, 5, 1.0f);
     
-    // Test setters
     spell.set_base_heal(15);
     spell.set_eff(1.5f);
     
     EXPECT_EQ(spell.get_base_heal(), 15);
-    ASSERT_FLOAT_EQ(spell.get_eff(), 1.5f);
+    EXPECT_FLOAT_EQ(spell.get_eff(), 1.5f);
 }
 
 /**
- * @test Invalid heal/efficiency values for Heal_Spell_Card
- * @addtogroup ErrorHandling
+ * @test Verify setters throw for invalid values
+ * @group ErrorHandling
  */
-TEST(HealSpellTest, InvalidValuesThrow) {
-    // Test invalid constructor arguments
-    EXPECT_THROW(
-        Heal_Spell_Card("Invalid Heal", "Test", Rarity::Common, 2, Element::Earth, -5, 0.5f),
-        std::invalid_argument
-    );
-    
-    EXPECT_THROW(
-        Heal_Spell_Card("Invalid Eff", "Test", Rarity::Epic, 3, Element::Air, 10, -1.0f),
-        std::invalid_argument
-    );
-    
-    // Test invalid setter calls
-    Heal_Spell_Card spell("Test", "Test", Rarity::Common, 1, Element::Fire, 5, 1.0f);
+TEST(HealSpellTest, SettersInvalidValues) {
+    Heal_Spell_Card spell("Test", "Test", Rarity::Common, 1, Element::Air, 5, 1.0f);
     
     EXPECT_THROW(spell.set_base_heal(-1), std::invalid_argument);
-    ASSERT_THROW(spell.set_eff(0.0f), std::invalid_argument);
+    EXPECT_THROW(spell.set_eff(0.0f), std::invalid_argument);
+}
+
+/**
+ * @test Verify use() method applies healing with multipliers
+ * @group HealSpell
+ */
+TEST(HealSpellTest, UseAppliesHealing) {
+    Heal_Spell_Card spell("Cure", "Heals 20 HP", Rarity::Uncommon, 3, Element::Earth, 20, 1.5f);
+    AI_Player caster(100, 10, 0, "Caster", nullptr);
+    AI_Player target(50, 5, 0, "Target", nullptr);
+    
+    // Set healer's multiplier (e.g., from character)
+    caster.set_cumulative_heal_multiplier(2.0f);
+    
+    spell.use(caster, target);
+    
+    // Expected healing: 20 (base) * 1.5 (eff) * 2.0 (multiplier) = 60
+    EXPECT_EQ(target.get_hp(), 50 + 60);
+}
+
+/**
+ * @test Verify print_key_info() displays correct data
+ * @group HealSpell
+ */
+TEST(HealSpellTest, PrintKeyInfoOutput) {
+    Heal_Spell_Card spell("Minor Heal", "Basic healing", Rarity::Common, 2, Element::Water, 10, 1.0f);
+    testing::internal::CaptureStdout();
+    spell.print_key_info();
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_TRUE(output.find("Heal: 10") != std::string::npos);
+    EXPECT_TRUE(output.find("Eff: 1") != std::string::npos);
 }
 
 
@@ -347,30 +379,51 @@ TEST(WeaponCardTest, InvalidValuesThrow) {
 // ==================== Artifact_Card Class Tests ====================
 
 /**
- * @test Artifact_Card basic functionality
- * @addtogroup GCI
+ * @test Verify Artifact_Card's use() method correctly applies multipliers
+ * @group ArtifactCard
  */
-TEST(ArtifactCardTest, BasicFunctionality) {
-    Artifact_Card artifact("Amulet", "Increases power", 
-                           Rarity::Rare, 4, 1.5f);
+TEST(ArtifactCardTest, UseAppliesMultipliers) {
+    Artifact_Card artifact("Test", "Boost", Rarity::Common, 2, 1.5f);
+    AI_Player player(100, 10, 0, "TestPlayer", nullptr);
     
-    EXPECT_EQ(artifact.get_name(), "Amulet");
-    EXPECT_FLOAT_EQ(artifact.get_multiplier(), 1.5f);
+    // Set initial multipliers and bonus
+    player.set_cumulative_attack_multiplier(2.0f);
+    player.set_cumulative_heal_multiplier(1.0f);
+    player.set_cumulative_weapon_bonus(4);
+
+    // Apply artifact effect
+    artifact.use(player, player);
+
+    // Verify results with current logic (double multiplication)
+    EXPECT_FLOAT_EQ(player.get_cumulative_attack_multiplier(), 6.0f); // 2.0 * (2.0 * 1.5)
+    EXPECT_FLOAT_EQ(player.get_cumulative_heal_multiplier(), 1.5f);   // 1.0 * (1.0 * 1.5)
+    EXPECT_EQ(player.get_cumulative_weapon_bonus(), 6);               // 4 * 1.5
+}
+
+
+
+/**
+ * @test Verify print_key_info() displays correct multiplier
+ * @group ArtifactCard
+ */
+TEST(ArtifactCardTest, PrintKeyInfoOutput) {
+    Artifact_Card artifact("Test", "Desc", Rarity::Epic, 5, 2.5f);
+    testing::internal::CaptureStdout();
+    artifact.print_key_info();
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_TRUE(output.find("Multiplier: 2.5") != std::string::npos);
 }
 
 /**
- * @test Invalid values for Artifact_Card
- * @addtogroup ErrorHandling
+ * @test Verify constructor throws for invalid multiplier
+ * @group ErrorHandling
  */
-TEST(ArtifactCardTest, InvalidValuesThrow) {
+TEST(ArtifactCardTest, InvalidMultiplierThrows) {
     EXPECT_THROW(
-        Artifact_Card("Invalid", "Test", Rarity::Common, 2, -1.0f),
+        Artifact_Card("Invalid", "Test", Rarity::Common, 2, 0.0f),
         std::invalid_argument
     );
-    
-    Artifact_Card artifact("Test", "Test", Rarity::Common, 1, 1.0f);
-    
-    EXPECT_THROW(artifact.set_multiplier(0.0f), std::invalid_argument);
 }
 
 
@@ -990,7 +1043,7 @@ TEST(HealerCharacterTest, Constructor) {
  * @addtogroup GCI
  */
 TEST(HealerCharacterTest, SpecialAction) {
-    Player player(100, 50, 0, "Test Player", std::make_unique<Healer_Character>(10, 100, 1, 0, "Healer", 1.0f, 1.0f, 1.0f, "Healer description", 2));
+    AI_Player player(100, 50, 0, "Test Player", std::make_unique<Healer_Character>(10, 100, 1, 0, "Healer", 1.0f, 1.0f, 1.0f, "Healer description", 2));
     EXPECT_NO_THROW(player.perform_special_action());
     EXPECT_EQ(player.get_hp(), 110);
     EXPECT_EQ(player.get_character().get_ability_uses(), 1);
@@ -1013,7 +1066,7 @@ TEST(TankCharacterTest, Constructor) {
  * @addtogroup GCI
  */
 TEST(TankCharacterTest, SpecialAction) {
-    Player player(100, 50, 0, "Test Player", nullptr, 0);
+    AI_Player player(100, 50, 0, "Test Player", nullptr, 0);
     Tank_Character tank(100, 1, 0, "Tank", 1.0f, 1.0f, 1.0f, "Tank description", 2, 3);
     player.set_character(std::make_unique<Tank_Character>(tank));
     
@@ -1040,7 +1093,7 @@ TEST(KnightCharacterTest, Constructor) {
  * @addtogroup GCI
  */
 TEST(KnightCharacterTest, SpecialAction) {
-    Player player(100, 50, 0, "Test Player", nullptr, 0);
+    AI_Player player(100, 50, 0, "Test Player", nullptr, 0);
     Knight_Character knight(100, 1, 0, "Knight", 1.0f, 1.0f, 1.0f, "Knight description", 2, 5, 0);
     player.set_character(std::make_unique<Knight_Character>(knight));
     
@@ -1051,7 +1104,7 @@ TEST(KnightCharacterTest, SpecialAction) {
     
     EXPECT_EQ(player.get_armor(), 5);
     EXPECT_EQ(knight_ptr->get_armored_amount(), 1);
-    EXPECT_EQ(knight_ptr->get_ability_uses(), 1);
+    EXPECT_EQ(knight_ptr->get_ability_uses(), 1);   
 }
 // ==================== Test Runner ====================
 

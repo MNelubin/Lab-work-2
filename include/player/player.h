@@ -14,27 +14,27 @@ class Character;
 
 
 /**
- * @brief Represents a player in the game with associated character and attributes
+ * @brief Base class representing a game player
  * 
- * The Player class encapsulates all attributes and behaviors related to a game player,
- * including health points, mana, armor, and an associated character with special abilities.
+ * Provides common interface and data for all player types
  */
 class Player {
-private:
-    std::unique_ptr<Character> character; ///< Unique pointer to the associated Character
-    int hp; ///< Current health points of the player
-    int mana; ///< Current mana points of the player
-    int armor; ///< Current armor points of the player
-    std::string name; ///< Name of the player
+protected:
+    std::unique_ptr<Character> character; ///< The player's character
+    int hp; ///< Health points
+    int mana; ///< Mana points
+    int armor; ///< Armor value
+    std::string name; ///< Player's name
     Hand hand; ///< Player's hand of cards
-    int shield_amount; ///< Number of shields available
-    float cumulative_attack_multiplier; ///< Multiplier for attack power, accumulates during the turn
-    float cumulative_heal_multiplier; ///< Multiplier for healing effectiveness, accumulates during the turn
-    int cumulative_weapon_adder; ///< Additive bonus of weapon damage, accumulates during the turn
-    bool turn_active; ///< Indicates whether the player's turn is currently active
+    int shield_amount; ///< Shield value
+    float cumulative_attack_multiplier; ///< Cumulative attack multiplier
+    float cumulative_heal_multiplier; ///< Cumulative heal multiplier
+    int cumulative_weapon_adder; ///< Cumulative weapon bonus
+    bool turn_active; ///< Indicates if it's the player's turn
 
 public:
-    /**
+
+     /**
      * @brief Default constructor
      * 
      * Initializes player with default values:
@@ -51,52 +51,36 @@ public:
      */
     Player();
 
+
     /**
-     * @brief Parameterized constructor
+     * @brief Construct a new Player object
+     * 
      * @param hp Initial health points
      * @param mana Initial mana points
-     * @param armor Initial armor points
+     * @param armor Initial armor value
      * @param name Player's name
-     * @param character Initial Character (can be nullptr)
-     * @param shield_amount Initial number of shields
+     * @param character Player's character (optional)
+     * @param shield_amount Initial shield value (optional)
+     */
+    Player(int hp, int mana, int armor, const std::string& name,
+          std::unique_ptr<Character> character = nullptr,
+          int shield_amount = 0);
+    
+    /**
+     * @brief Virtual destructor
+     */
+    virtual ~Player() = default;
+
+
+    /**
+     * @brief Check if the player is human
      * 
-     * Initializes multipliers and turn state:
-     * - cumulative_attack_multiplier: 1.0f
-     * - cumulative_heal_multiplier: 1.0f
-     * - cumulative_weapon_adder: 0
-     * - turn_active: true
-     * 
-     * @throws std::invalid_argument if hp, mana, or armor are negative
+     * @return true if the player is human, false otherwise
      */
-    Player(int hp, int mana, int armor, const std::string& name, 
-       std::unique_ptr<Character> character = nullptr, int shield_amount = 0);
+    virtual bool is_human() const = 0;
 
-    /**
-     * @brief Copy constructor (deleted due to unique_ptr)
-     */
-    Player(const Player&) = delete;
 
-    /**
-     * @brief Move constructor
-     */
-    Player(Player&& other) noexcept;
-
-    /**
-     * @brief Copy assignment operator (deleted due to unique_ptr)
-     */
-    Player& operator=(const Player&) = delete;
-
-    /**
-     * @brief Move assignment operator
-     */
-    Player& operator=(Player&& other) noexcept;
-
-    /**
-     * @brief Destructor
-     * 
-     * Properly releases the owned Character
-     */
-    ~Player();
+   
 
     /**
      * @brief Set the associated Character
@@ -104,7 +88,7 @@ public:
      * 
      * @throws std::invalid_argument if new_character is invalid
      */
-    void set_character(std::unique_ptr<Character> new_character);
+    void set_character(std::unique_ptr<Character>&& new_character);
 
     /**
      * @brief Get the associated Character
@@ -123,22 +107,30 @@ public:
      */
     void perform_special_action();
 
+
+
+    void get_special_action_info();
+
     /**
-     * @brief Displays the player's hand with detailed information about each card
+     * @brief Displays the player's hand with detailed information and special ability status
      * 
-     * This method prints the player's hand to the console, showing the following details for each card:
-     * - Index of the card in the hand
-     * - Card name (colored according to its rarity)
-     * - Mana cost
-     * - Card type (e.g., AttackSpell, HealSpell, Beast)
-     * - Key information specific to the card type (e.g., damage, healing, multiplier)
+     * This enhanced method:
+     * 1. Shows a colored header for the hand section
+     * 2. Displays information about the character's special ability including remaining uses
+     * 3. Lists all cards in hand with:
+     *    - Index
+     *    - Colored name based on rarity
+     *    - Mana cost
+     *    - Type (colored red for combat cards)
+     *    - Key card-specific information
+     * 4. Adds a colored footer for visual separation
      * 
-     * The card name is displayed with a color code based on its rarity:
-     * - Common: White
-     * - Uncommon: Green
-     * - Rare: Blue
-     * - Epic: Magenta
-     * 
+     * The display uses ANSI color codes for better visual distinction:
+     * - Hand header: Cyan (\033[36m)
+     * - Ability info: Yellow (\033[33m)
+     * - Combat card types: Red (\033[31m)
+     * - Normal card types: White (\033[37m)
+     *
      * @see get_color_code()
      * @see cardTypeToString()
      * @see print_key_info()
@@ -408,7 +400,6 @@ public:
      */
     std::string get_color_code(Rarity rarity);
 
-    
 
 
 };

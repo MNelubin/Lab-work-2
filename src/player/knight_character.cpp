@@ -45,12 +45,33 @@ void Knight_Character::set_armored_amount(int value) {
 }
 
 void Knight_Character::special_action(Player& player) {
-    if (this->get_ability_uses() == 0) {
+    if (get_ability_uses() == 0) {
         throw std::runtime_error("No ability uses remaining");
     }
     
-    int armor_to_add = armor_up * this->get_armor_multiplier();
-    player.set_armor(player.get_armor() + armor_to_add - this->get_armored_amount());
-    this->set_ability_uses(this->get_ability_uses() - 1);
+    int armor_to_add = armor_up * get_armor_multiplier();
+    player.set_armor(player.get_armor() + armor_to_add - get_armored_amount());
+    this->set_ability_uses(get_ability_uses() - 1);
     this->set_armored_amount(armored_amount + 1); // Увеличиваем armored_amount
+}
+
+void Knight_Character::special_action_info(){
+    std::cout<<"Armor up amount: "<<get_armor_up()-get_armored_amount();
+}
+
+
+void Knight_Character::serialize(std::ostream& os) const {
+    Character::serialize(os);
+    int calculated_armor = get_level() * 5 + 20; // lvl *5 +20
+    int reset_armored = 0; 
+    os.write(reinterpret_cast<const char*>(&calculated_armor), sizeof(calculated_armor));
+    os.write(reinterpret_cast<const char*>(&reset_armored), sizeof(reset_armored));
+}
+
+void Knight_Character::deserialize(std::istream& is) {
+    Character::deserialize(is);
+    is.read(reinterpret_cast<char*>(&armor_up), sizeof(armor_up));
+    is.read(reinterpret_cast<char*>(&armored_amount), sizeof(armored_amount));
+    armor_up = get_level() * 5 + 20;
+    armored_amount = 0; 
 }

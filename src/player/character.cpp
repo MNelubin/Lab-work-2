@@ -157,5 +157,59 @@ void Character::set_ability_uses(int value) {
     ability_uses = value;
 }
 
+void Character::serialize(std::ostream& os) const {
+    os.write(reinterpret_cast<const char*>(&xp_to_next_lvl), sizeof(xp_to_next_lvl));
+    os.write(reinterpret_cast<const char*>(&lvl), sizeof(lvl));
+    os.write(reinterpret_cast<const char*>(&xp), sizeof(xp));
+    
+    size_t name_len = name.size();
+    os.write(reinterpret_cast<const char*>(&name_len), sizeof(name_len));
+    os.write(name.c_str(), name_len);
+    
+    os.write(reinterpret_cast<const char*>(&heal_mltpl), sizeof(heal_mltpl));
+    os.write(reinterpret_cast<const char*>(&dmg_mltpl), sizeof(dmg_mltpl));
+    os.write(reinterpret_cast<const char*>(&armor_mltpl), sizeof(armor_mltpl));
+    
+    size_t desc_len = description.size();
+    os.write(reinterpret_cast<const char*>(&desc_len), sizeof(desc_len));
+    os.write(description.c_str(), desc_len);
+    
+    //ability_uses==lvl;
+    os.write(reinterpret_cast<const char*>(&lvl), sizeof(lvl));
+}
 
+void Character::deserialize(std::istream& is) {
+    is.read(reinterpret_cast<char*>(&xp_to_next_lvl), sizeof(xp_to_next_lvl));
+    is.read(reinterpret_cast<char*>(&lvl), sizeof(lvl));
+    is.read(reinterpret_cast<char*>(&xp), sizeof(xp));
+    
+    size_t name_len;
+    is.read(reinterpret_cast<char*>(&name_len), sizeof(name_len));
+    name.resize(name_len);
+    is.read(&name[0], name_len);
+    
+    is.read(reinterpret_cast<char*>(&heal_mltpl), sizeof(heal_mltpl));
+    is.read(reinterpret_cast<char*>(&dmg_mltpl), sizeof(dmg_mltpl));
+    is.read(reinterpret_cast<char*>(&armor_mltpl), sizeof(armor_mltpl));
+    
+    size_t desc_len;
+    is.read(reinterpret_cast<char*>(&desc_len), sizeof(desc_len));
+    description.resize(desc_len);
+    is.read(&description[0], desc_len);
+    
+    is.read(reinterpret_cast<char*>(&ability_uses), sizeof(ability_uses));
+}
+
+std::string Character::get_character_statistics() const {
+    std::stringstream ss;
+    ss << "Name: " << name << " | "
+       << "Class: " << get_class_name() << " | "
+       << "Level: " << lvl << " | "
+       << "XP: " << xp << "/" << xp_to_next_lvl << " | "
+       << "Description: " << description << " | "
+       << "Heal Multiplier: " << heal_mltpl << " | "
+       << "Damage Multiplier: " << dmg_mltpl << " | "
+       << "Armor Multiplier: " << armor_mltpl << "\n" ;
+    return ss.str();
+}
 
