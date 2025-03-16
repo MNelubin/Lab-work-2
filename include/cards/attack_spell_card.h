@@ -30,6 +30,19 @@ public:
                      Rarity rarity, int mana_cost, Element elem, int dmg);
     
     /**
+     * @brief Default constructor
+     * 
+     * Initializes card with default values:
+     * - name: "Unnamed Attack Spell"
+     * - description: "No description"
+     * - rarity: Rarity::Common
+     * - mana_cost: 0
+     * - element: Element::Fire
+     * - base_damage: 3
+     */
+    Attack_Spell_Card();
+    
+    /**
      * @brief Get base damage value
      * @return Current base damage
      */
@@ -43,6 +56,14 @@ public:
      * @throws std::invalid_argument if damage <=0
      */
     void set_base_damage(int new_damage);
+
+    void use(Player& user, Player& target) override;
+    
+    CardType get_type() const override;
+
+    void generate_properties() override;
+
+    void print_key_info() const override;
 };
 
 #endif 
