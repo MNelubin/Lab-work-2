@@ -1,90 +1,84 @@
 @startuml
+allowmixing
 
 
-'#############################################
-' Main components
-'#############################################
-
-component "Card System" as cards {
-    [Card Manager] as card_mgr
+' Define components
+component "Player Management" as PM {
+  class Player
+  class Hand
+  class AI_player
+  class Human_player
 }
 
-component "Player System" as players {
-    [Player Manager] as player_mgr
-    [AI Module] as ai_mod
-    [Hand Controller] as hand_ctrl
+component "Character System" as CS {
+  class Character
+  class Healer_Character
+  class Tank_Character
+  class Knight_Character
 }
 
-component "Character System" as chars {
-    [Character Progression] as char_prog
-    [Ability Manager] as ability_mgr
+component "Card System" as CardSys {
+  class Card
+  class Spell_Card
+  class Attack_Spell_Card
+  class Heal_Spell_Card
+  class Buff_Spell_Card
+  class Defence_Spell_Card
+  class Beast_Card
+  class Creature_Card
+  class Weapon_Card
+  class Artifact_Card
+  class Shield_Card
+  class Buff_Card
 }
 
-component "Battle Mechanics" as battle {
-    [Damage Calculator] as dmg_calc
-    [Healing System] as heal_sys
-    [Buff Controller] as buff_ctrl
+component "Testing" as Test {
+  component "Data Validation" as DataVal
+  component "Gameplay Testing" as GameplayTest
 }
 
-component "Validation" as valid {
-    [Mana Validator] as mana_val
-    [Damage Validator] as dmg_val
+component "Gameplay" as GP {
 }
 
-component "Data Persistence" as persist {
-    [Save/Load Manager] as save_mgr
-    [Stats Recorder] as stats_rec
+component "Game Saving" as Save {
 }
 
-component "Testing" as test {
-    [Unit Tests] as unit_tests
-    [Integration Tests] as int_tests
-}
+' Define relationships
+PM --> GP : Manages
+PM --> CardSys : Uses cards
+PM --> CS : Linked to
+DataVal --> PM : Validates player data
+DataVal --> CS : Validates character data
+DataVal --> CardSys : Validates card data
+GameplayTest --> GP : Tests
+GameplayTest --> PM : Tests player interactions
+GameplayTest --> CardSys : Tests card effects
+Save --> CS : Saves/loads character data
 
-'#############################################
-' Component links
-'#############################################
-
-cards --> players : Provides card data
-players --> battle : Uses in combat
-chars --> players : Manages characters
-battle --> valid : Requires validation
-test --> cards : Verifies card logic
-test --> players : Tests player actions
-persist --> players : Saves player progress
-ai_mod --> cards : Accesses card info
-hand_ctrl --> card_mgr : Manages cards
-dmg_calc --> dmg_val : Validates damage
-heal_sys --> mana_val : Checks mana
-
-'#############################################
-' Explanations
-'#############################################
-
-note top of cards
-  Includes all card classes:
-- Card, Spell_Card, Attack_Spell_Card
-  - Beast_Card, Weapon_Card, etc.
+' Add notes
+note bottom of PM
+Manages player data (health, mana) and card actions via Hand.
 end note
 
-note right of players
-  Player Management:
-- Human_Player_Player
-- AI_Player
-  - Interaction with the hand
+note bottom of CS
+Defines character types and their unique abilities.
 end note
 
-note left of chars
-  The character system:
-  - Character, Healer_Character
-  - Tank_Character, Knight_Character
-  - Levelling up (lvl_up)
+note bottom of CardSys
+Creates cards and manages their effects.
 end note
 
-note bottom of battle
-  Combat Mechanics:
-- Damage/Healing calculation
-  - Application of buffs
-  - Interaction of cards and characters
+note left of Test
+Contains testing components:
+- Data Validation
+- Gameplay Testing
+end note
+
+note right of GP
+Represents the overall gameplay logic and interactions in the game.
+end note
+
+note right of Save
+Saves character data to files and loads it based on the player's name.
 end note
 @enduml

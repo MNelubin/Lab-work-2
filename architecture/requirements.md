@@ -1,104 +1,44 @@
-# Complete Core System Requirements
+## GENERAL
 
-## Basic map parameters
-- **Name**: 3-50 characters (Latin/Cyrillic/numbers)
-- **Mana**: integer 0-10 inclusive
-- **Damage**: minimum value 1, integer
-- **Rarity**: 4 variants (Common, Uncommon, Rare, Epic)
-- **Special Types**:
-- Attacking spells: Base_DMG ≥ 1
-  - Shields: Stackable (cumulative)
-- Treatment: Base_Heal ≥ 0
+### Operating System
+- **Ubuntu**: Version 18.04 or higher is recommended for compatibility with the build tools and libraries used in this project.
 
-## Characters and abilities
-- **Tank_Character**:
-- Shielding() is available 1 time per battle
-  - Shield_amount is combined with other shields
-- **Knight_Character**:
-  - Armoring() adds a fixed value to the armor
-- The armor is valid until the end of the battle
-- **Healer_Character**:
-- Number of treatments = Character level
-  - Heal_MLTPL increases with the level
+### Processor
+- **Architecture**: x86_64 (64-bit)
+- **Performance**: Any modern dual-core processor or better will suffice for running the game.
 
-## Combat mechanics
-**Calculation formulas:**
+### Memory
+- **RAM**: At least 2 GB of RAM is required for smooth operation.
 
+### Storage
+- **Free Space**: Approximately 500 MB of free space is needed for the game files and potential temporary files generated during compilation.
 
-# Armor
-```
--adjusted damage efficie_dmg = max(0, (base_dmg * dmg_MLTPL) - total_armor)
-```
+### Graphics
+- **Resolution**: 1024x768 or higher for optimal display.
 
-# Treatment when using the card
-```
-heal_value = base_heal * heal_MLTPL * efficiency
-```
+## SOFTWARE REQUIREMENTS
 
-**Validation of actions:**
-```cpp
-if (mana < mana_cost){
-    raise NotEnoughManaError(f"Need {card_cost}, have {mana}")
-}
+### Compiler
+- **C++ Compiler**: g++ 7.0 or higher is required to compile the C++17 codebase.
+  - You can check your g++ version by running `g++ --version` in the terminal.
+  - If g++ is not installed, you can install it using the command: `sudo apt install build-essential`.
 
-if (!was_up){
-    throw AbilityLockedError("Shield already used")
-}
+### Build Tools
+- **Make**: GNU Make is required to build the project.
+  - Version 4.1 or higher is preferred.
+  - You can check the version by running `make --version`.
+  - If Make is not installed, you can install it using the command: `sudo apt install make`.
 
-if (!was_armored){
-    throw AbilityLockedError("Armor already used")
-}
-```
+### Testing Framework
+- **Google Test**: This project uses the Google Test framework for unit testing.
+  - Ensure that Google Test is installed and properly configured on your system.
 
-## The AI system
-**Card selection algorithm:**
-1. Filter by available mana
-2. Sort by descending damage
-3. Choosing the top 1 card
-4. If the damage is equal, the priority of the cards is first
+## ADDITIONAL REQUIREMENTS
 
-**Selection example:**
-```
-Cards in your hand: 
-- Fireball (cost=3, dmg=5)
-- Heal (cost=2, heal=3)
-- Shield (cost=1, armor=2)
+### Terminal
+- A terminal emulator that supports ANSI escape codes for colored output is required.
 
-AI Selection: Fireball (max. damage)
-```
+### Version Control
+- **Git**: Access to the project's repository requires Git.
+  - You can install Git using the command: `sudo apt install git`.
 
-## Saving progress (temporarily for json example)
-**Saved data:**
-
-```json
-{
-  "player_name": "Vova",
-  "characters": {
-    "healer": {
-      "xp": 1200,
-      "level": 3
-    },
-    "tank": {
-      "xp": 800,
-      "level": 2
-    }
-  }
-}
-```
-
-## Test scenarios
-**Mandatory checks:**
-1. Creating a map with mana=10 → success
-2. Creating a map with dmg=0 → error
-3. Double use of Shielding() → error
-4. Saving/loading level progress
-5. Damage calculation for armor=5 dmg=8 and Dmg_MLTPL=1.0 → 3 damage
-
-**Test example:**
-```cpp
-TEST(TankTest, ShieldLimit) {
-    Tank_Character tank;
-    tank.Shielding(); // OK
-    ASSERT_THROW(tank.Shielding(), AbilityLimitReached);
-}
-```
