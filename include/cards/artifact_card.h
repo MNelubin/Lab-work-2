@@ -8,18 +8,19 @@
 
 /**
  * @brief Specialized card for artifacts
- * 
+ *
  * Inherits from Card and adds artifact-specific properties.
  */
-class Artifact_Card : public Card {
+class Artifact_Card : public Card
+{
 private:
     float multiplier; ///< Multiplier value for the artifact
-    
+
 
 public:
     /**
      * @brief Construct a new Artifact Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -34,7 +35,7 @@ public:
      * @return Current multiplier
      */
     float get_multiplier() const;
-    
+
     /**
      * @brief Update multiplier value
      * @param new_multiplier Must be positive
@@ -54,4 +55,4 @@ public:
 };
 
 
-#endif 
+#endif

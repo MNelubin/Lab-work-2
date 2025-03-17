@@ -1,0 +1,380 @@
+\doxysection{Heal\+\_\+\+Spell\+\_\+\+Card Class Reference}
+\hypertarget{class_heal___spell___card}{}\label{class_heal___spell___card}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+
+
+Specialized spell for heal.  
+
+
+
+
+{\ttfamily \#include $<$heal\+\_\+spell\+\_\+card.\+h$>$}
+
+Inheritance diagram for Heal\+\_\+\+Spell\+\_\+\+Card\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d5/de4/class_heal___spell___card}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_heal___spell___card_ae45471508a6c21c428e5f80b44ed95e9}{Heal\+\_\+\+Spell\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} elem, int heal, float eff)
+\begin{DoxyCompactList}\small\item\em Construct a new Heal Spell \doxylink{class_card}{Card} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_heal___spell___card_aea51b2e1a4ba4fc02251e6cbd2952f3e}{Heal\+\_\+\+Spell\+\_\+\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_heal___spell___card_aab8105089297d0a5e93b1e5918bcdee4}{get\+\_\+base\+\_\+heal}} () const
+\begin{DoxyCompactList}\small\item\em Get base heal value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_heal___spell___card_a906d642ad0a7d4149ba3e3cb1d8fba42}{set\+\_\+base\+\_\+heal}} (int new\+\_\+heal)
+\begin{DoxyCompactList}\small\item\em Update heal value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_heal___spell___card_a13e85c526601fd84fe88ff4cd95b0129}{get\+\_\+eff}} () const
+\begin{DoxyCompactList}\small\item\em Get efficiency value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_heal___spell___card_a23e654648903ca6447793e44b8d85111}{set\+\_\+eff}} (float new\+\_\+eff)
+\begin{DoxyCompactList}\small\item\em Update efficiency value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_heal___spell___card_a9ba2d68259888b7b9c0907cb05e7e6a0}{use}} (\mbox{\hyperlink{class_player}{Player}} \&user, \mbox{\hyperlink{class_player}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{class_heal___spell___card_aacc1716afff99e7dac2775f2b02c92dd}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_heal___spell___card_a1abb0c1904ecd009d8387a246000a958}{generate\+\_\+properties}} () override
+\begin{DoxyCompactList}\small\item\em Generate random properties for Heal Spell card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_heal___spell___card_abd7f880257409275ae1b0ae553c337ce}{print\+\_\+key\+\_\+info}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_spell___card}{Spell\+\_\+\+Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spell___card_a410e68985095603e4e6d2d5946ba3cca}{Spell\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \mbox{\hyperlink{class_spell___card_a66aca7764f7ee1f25d6ac9c6f92e60fe}{element}})
+\begin{DoxyCompactList}\small\item\em Construct a new Spell \doxylink{class_card}{Card} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_spell___card_a54fcb4f872bb6bc22e324d241ebfdd1b}{\texorpdfstring{$\sim$}{\string~}\+Spell\+\_\+\+Card}} ()=default
+\item 
+\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \mbox{\hyperlink{class_spell___card_a789c3ea0ce07363a9c1a878d49e9b50e}{get\+\_\+element}} () const
+\begin{DoxyCompactList}\small\item\em Get the element type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spell___card_a6835e1758f2b40ef22191f8ccc222dcd}{set\+\_\+element}} (\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} new\+\_\+element)
+\begin{DoxyCompactList}\small\item\em Change elemental affinity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_card}{Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}} (const std\+::string \&\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_card}{Card} object with specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9}{\texorpdfstring{$\sim$}{\string~}\+Card}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic deletion. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_a39c0e62ffe4979b8d8142b416043ff26}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current card name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\+\_\+name}} (const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Updates card\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_a5519eb130702a7e04ce06834353d9aa2}{get\+\_\+description}} () const
+\begin{DoxyCompactList}\small\item\em Gets current effect description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\+\_\+description}} (const std\+::string \&new\+\_\+desc)
+\begin{DoxyCompactList}\small\item\em Modifies card\textquotesingle{}s effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\+\_\+rarity}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current rarity classification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\+\_\+rarity}} (\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} new\+\_\+rarity)
+\begin{DoxyCompactList}\small\item\em Changes card\textquotesingle{}s rarity category. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_card_a8fedebb4917ed6efdabd817f389d7b9a}{get\+\_\+mana\+\_\+cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets current mana cost value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_a6ec8620c325a26bec6d230ac30875bfc}{set\+\_\+mana\+\_\+cost}} (int new\+\_\+cost)
+\begin{DoxyCompactList}\small\item\em Updates mana cost requirement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\+\_\+random\+\_\+rarity}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random rarity based on predefined probabilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_heal___spell___card_acab822a3ccc24961c697145ce8efb4ac}{base\+\_\+heal}}
+\begin{DoxyCompactList}\small\item\em Base heal value without modifiers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_heal___spell___card_a05ae2c877188700b9ccf1988b02d7745}{efficiency\+\_\+deg}}
+\begin{DoxyCompactList}\small\item\em Modifier of healing, corr. with rarity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_spell___card}{Spell\+\_\+\+Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \mbox{\hyperlink{class_spell___card_a66aca7764f7ee1f25d6ac9c6f92e60fe}{element}}
+\begin{DoxyCompactList}\small\item\em Magical element type from enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_card}{Card}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}
+\begin{DoxyCompactList}\small\item\em Display name of the card. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}
+\begin{DoxyCompactList}\small\item\em Flavor text and effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}
+\begin{DoxyCompactList}\small\item\em \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}
+\begin{DoxyCompactList}\small\item\em Required mana to play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized spell for heal. 
+
+Inherits from \doxylink{class_spell___card}{Spell\+\_\+\+Card} and adds heal mechanics. 
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8h_source_l00015}{15}} of file \mbox{\hyperlink{heal__spell__card_8h_source}{heal\+\_\+spell\+\_\+card.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_heal___spell___card_ae45471508a6c21c428e5f80b44ed95e9}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{Heal\_Spell\_Card()}{Heal\_Spell\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_ae45471508a6c21c428e5f80b44ed95e9} 
+Heal\+\_\+\+Spell\+\_\+\+Card\+::\+Heal\+\_\+\+Spell\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{, }\item[{\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}}]{elem}{, }\item[{int}]{heal}{, }\item[{float}]{eff}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Heal Spell \doxylink{class_card}{Card} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Initial display name for the card \\
+\hline
+\mbox{\texttt{ in}}  & {\em description} & Initial effect description text \\
+\hline
+\mbox{\texttt{ in}}  & {\em rarity} & Starting rarity classification \\
+\hline
+\mbox{\texttt{ in}}  & {\em mana\+\_\+cost} & Base mana cost required to play \\
+\hline
+\mbox{\texttt{ in}}  & {\em elem} & Associated element \\
+\hline
+\mbox{\texttt{ in}}  & {\em heal} & Base heal value \\
+\hline
+\mbox{\texttt{ in}}  & {\em eff} & Efficiency of heal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_aea51b2e1a4ba4fc02251e6cbd2952f3e}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{Heal\_Spell\_Card()}{Heal\_Spell\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_aea51b2e1a4ba4fc02251e6cbd2952f3e} 
+Heal\+\_\+\+Spell\+\_\+\+Card\+::\+Heal\+\_\+\+Spell\+\_\+\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initializes card with default values\+:
+\begin{DoxyItemize}
+\item name\+: "{}\+Unnamed Heal Spell"{}
+\item description\+: "{}\+No description"{}
+\item rarity\+: \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity\+::\+Common}
+\item mana\+\_\+cost\+: 0
+\item element\+: \doxylink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}{Element\+::\+Water}
+\item base\+\_\+heal\+: 5
+\item efficiency\+\_\+deg\+: 1.\+0f 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_heal___spell___card_a1abb0c1904ecd009d8387a246000a958}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!generate\_properties@{generate\_properties}}
+\index{generate\_properties@{generate\_properties}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{generate\_properties()}{generate\_properties()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_a1abb0c1904ecd009d8387a246000a958} 
+void Heal\+\_\+\+Spell\+\_\+\+Card\+::generate\+\_\+properties (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generate random properties for Heal Spell card. 
+
+
+
+Implements \mbox{\hyperlink{class_card_ab4c481f82a991bd9b2f992e6ea38ec91}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_aab8105089297d0a5e93b1e5918bcdee4}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!get\_base\_heal@{get\_base\_heal}}
+\index{get\_base\_heal@{get\_base\_heal}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_base\_heal()}{get\_base\_heal()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_aab8105089297d0a5e93b1e5918bcdee4} 
+int Heal\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+base\+\_\+heal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get base heal value. 
+
+\begin{DoxyReturn}{Returns}
+Current base heal 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_a13e85c526601fd84fe88ff4cd95b0129}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!get\_eff@{get\_eff}}
+\index{get\_eff@{get\_eff}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_eff()}{get\_eff()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_a13e85c526601fd84fe88ff4cd95b0129} 
+float Heal\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+eff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get efficiency value. 
+
+\begin{DoxyReturn}{Returns}
+Current efficiency 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_aacc1716afff99e7dac2775f2b02c92dd}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_aacc1716afff99e7dac2775f2b02c92dd} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Heal\+\_\+\+Spell\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_card_af18514eb50324ad8b79064af87f45067}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_abd7f880257409275ae1b0ae553c337ce}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!print\_key\_info@{print\_key\_info}}
+\index{print\_key\_info@{print\_key\_info}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{print\_key\_info()}{print\_key\_info()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_abd7f880257409275ae1b0ae553c337ce} 
+void Heal\+\_\+\+Spell\+\_\+\+Card\+::print\+\_\+key\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_card_a27225a0e526b92785afee861f43853fd}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_a906d642ad0a7d4149ba3e3cb1d8fba42}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!set\_base\_heal@{set\_base\_heal}}
+\index{set\_base\_heal@{set\_base\_heal}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{set\_base\_heal()}{set\_base\_heal()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_a906d642ad0a7d4149ba3e3cb1d8fba42} 
+void Heal\+\_\+\+Spell\+\_\+\+Card\+::set\+\_\+base\+\_\+heal (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+heal}{}\end{DoxyParamCaption})}
+
+
+
+Update heal value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+heal} & Must be positive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+heal \texorpdfstring{$>$}{>} 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{class_heal___spell___card_aab8105089297d0a5e93b1e5918bcdee4}{get\+\_\+base\+\_\+heal()}==new\+\_\+heal 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if heal \texorpdfstring{$<$}{<}=0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_a23e654648903ca6447793e44b8d85111}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!set\_eff@{set\_eff}}
+\index{set\_eff@{set\_eff}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{set\_eff()}{set\_eff()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_a23e654648903ca6447793e44b8d85111} 
+void Heal\+\_\+\+Spell\+\_\+\+Card\+::set\+\_\+eff (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+eff}{}\end{DoxyParamCaption})}
+
+
+
+Update efficiency value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+eff} & Must be positive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+eff \texorpdfstring{$>$}{>} 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{class_heal___spell___card_a13e85c526601fd84fe88ff4cd95b0129}{get\+\_\+eff()}==new\+\_\+eff 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if eff \texorpdfstring{$<$}{<}=0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_heal___spell___card_a9ba2d68259888b7b9c0907cb05e7e6a0}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!use@{use}}
+\index{use@{use}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_a9ba2d68259888b7b9c0907cb05e7e6a0} 
+void Heal\+\_\+\+Spell\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{class_player}{Player} using the card \\
+\hline
+{\em target} & \doxylink{class_player}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Heal target player
+
+Implements \mbox{\hyperlink{class_card_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{heal__spell__card_8cpp_source}{heal\+\_\+spell\+\_\+card.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_heal___spell___card_acab822a3ccc24961c697145ce8efb4ac}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!base\_heal@{base\_heal}}
+\index{base\_heal@{base\_heal}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{base\_heal}{base\_heal}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_acab822a3ccc24961c697145ce8efb4ac} 
+int Heal\+\_\+\+Spell\+\_\+\+Card\+::base\+\_\+heal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base heal value without modifiers. 
+
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8h_source_l00018}{18}} of file \mbox{\hyperlink{heal__spell__card_8h_source}{heal\+\_\+spell\+\_\+card.\+h}}.
+
+\Hypertarget{class_heal___spell___card_a05ae2c877188700b9ccf1988b02d7745}\index{Heal\_Spell\_Card@{Heal\_Spell\_Card}!efficiency\_deg@{efficiency\_deg}}
+\index{efficiency\_deg@{efficiency\_deg}!Heal\_Spell\_Card@{Heal\_Spell\_Card}}
+\doxysubsubsection{\texorpdfstring{efficiency\_deg}{efficiency\_deg}}
+{\footnotesize\ttfamily \label{class_heal___spell___card_a05ae2c877188700b9ccf1988b02d7745} 
+float Heal\+\_\+\+Spell\+\_\+\+Card\+::efficiency\+\_\+deg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modifier of healing, corr. with rarity. 
+
+
+
+Definition at line \mbox{\hyperlink{heal__spell__card_8h_source_l00019}{19}} of file \mbox{\hyperlink{heal__spell__card_8h_source}{heal\+\_\+spell\+\_\+card.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/cards/\mbox{\hyperlink{heal__spell__card_8h}{heal\+\_\+spell\+\_\+card.\+h}}\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/src/cards/\mbox{\hyperlink{heal__spell__card_8cpp}{heal\+\_\+spell\+\_\+card.\+cpp}}\end{DoxyCompactItemize}

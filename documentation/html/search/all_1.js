@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['2_20combat_20mechanics_0',['3.2 Combat Mechanics',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md19',1,'']]],
-  ['2_20tools_20and_20environment_1',['2. Tools and environment',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md16',1,'']]]
+  ['2_20spell_20cards_20functionality_0',['3.2 Spell Cards Functionality',['../df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md19',1,'']]],
+  ['2_20tools_20and_20environment_1',['2. Tools and Environment',['../df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md16',1,'']]]
 ];

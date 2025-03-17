@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['knight_5fcharacter_0',['Knight_Character',['../classKnight__Character.html',1,'']]]
+  ['knight_5fcharacter_0',['Knight_Character',['../dc/de5/class_knight___character.html',1,'']]]
 ];

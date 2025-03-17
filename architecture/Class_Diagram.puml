@@ -1,8 +1,7 @@
 @startuml
-'#############################################
-' Transfers
-'#############################################
+!theme reddress-lightred
 
+' Define enumerations
 enum Rarity {
   Common
   Uncommon
@@ -10,252 +9,308 @@ enum Rarity {
   Epic
 }
 
-enum ElementType {
+enum Element {
   Fire
   Water
   Earth
   Air
 }
 
-enum TribeType {
+enum Tribe {
+  North
+  East
+  West
+  South
+}
+
+enum CardType {
   Beast
-  Human
-  Undead
-  Dragon
+  Buff
+  Creature
+  Shield
+  Weapon
+  Artifact
+  AttackSpell
+  HealSpell
+  BuffSpell
+  DefenceSpell
 }
 
-'#############################################
-' Basic classes
-'#############################################
-
+' Base class Card
 class Card {
-  - Card_Name : String
-  - description : String
-  - rarity : Rarity
-  - Mana_cost : int
-  + Get_Card_Name() : String
-  + Set_Card_Name(name: String)
-  + Get_Description() : String
-  + Set_Description(desc: String)
-  + Get_Rarity() : Rarity
-  + Set_Rarity(rarity: Rarity)
-  + Get_Mana_Cost() : int
-  + Set_Mana_Cost(cost: int)
+  - name: string
+  - description: string
+  - rarity: Rarity
+  - mana_cost: int
+  + get_name(): string
+  + set_name(new_name: string)
+  + get_description(): string
+  + set_description(new_desc: string)
+  + get_rarity(): Rarity
+  + set_rarity(new_rarity: Rarity)
+  + get_mana_cost(): int
+  + set_mana_cost(new_cost: int)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Spell_Card {
-  - Element : ElementType
-  + Get_Element() : ElementType
-  + Set_Element(element: ElementType)
+' Subclasses of Card
+class Spell_Card extends Card {
+  - element: Element
+  + get_element(): Element
+  + set_element(new_element: Element)
 }
 
-class Attack_Spell_Card {
-  - Base_DMG : int
-  + Get_Base_DMG() : int
-  + Set_Base_DMG(dmg: int)
+class Attack_Spell_Card extends Spell_Card {
+  - base_damage: int
+  + get_base_damage(): int
+  + set_base_damage(new_damage: int)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Heal_Spell_Card {
-  - Efficiency_deg : Float
-  - Base_Heal : int
-  + Get_Base_Heal() : int
-  + Set_Base_Heal(heal: int)
-  + Get_Efficiency() : Float
-  + Set_Efficiency(eff: Float)
+class Heal_Spell_Card extends Spell_Card {
+  - base_heal: int
+  - efficiency: float
+  + get_base_heal(): int
+  + set_base_heal(new_heal: int)
+  + get_efficiency(): float
+  + set_efficiency(new_eff: float)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Buff_Spell_Card {
-  - Multiplier : Float
-  + Get_Multiplier() : Float
-  + Set_Multiplier(multiplier: Float)
+class Buff_Spell_Card extends Spell_Card {
+  - multiplier: float
+  + get_multiplier(): float
+  + set_multiplier(new_multiplier: float)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Defence_Spell_Card {
-  - Base_DEF : int
-  + Get_Base_DEF() : int
-  + Set_Base_DEF(def: int)
+class Defence_Spell_Card extends Spell_Card {
+  - base_defense: int
+  + get_base_defense(): int
+  + set_base_defense(new_def: int)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Beast_Card {
-  - Base_DMG : int
-  - Tribe : TribeType
-  + Get_Base_DMG() : int
-  + Set_Base_DMG(dmg: int)
-  + Get_Tribe() : TribeType
-  + Set_Tribe(tribe: TribeType)
+class Beast_Card extends Card {
+  - base_damage: int
+  - tribe: Tribe
+  + get_base_damage(): int
+  + set_base_damage(new_dmg: int)
+  + get_tribe(): Tribe
+  + set_tribe(new_tribe: Tribe)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Creature_Card {
-  - Base_DMG : int
-  - Weapon_multiplier : Float
-  + Get_Weapon_multiplier() : Float
-  + Set_Weapon_multiplier(mult: Float)
-  + Get_Base_DMG() : int
-  + Set_Base_DMG(dmg: int)
+class Creature_Card extends Card {
+  - base_damage: int
+  - weapon_multiplier: float
+  + get_base_damage(): int
+  + set_base_damage(new_dmg: int)
+  + get_weapon_multiplier(): float
+  + set_weapon_multiplier(new_multiplier: float)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Weapon_Card {
-  - DMG_up : int
-  + Get_DMG_up() : int
-  + Set_DMG_up(dmg: int)
+class Weapon_Card extends Card {
+  - damage_increase: int
+  + get_damage_increase(): int
+  + set_damage_increase(new_dmg_up: int)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Artifact_Card {
-  - Multiplier : Float
-  + Get_Multiplier() : Float
-  + Set_Multiplier(mult: Float)
+class Artifact_Card extends Card {
+  - multiplier: float
+  + get_multiplier(): float
+  + set_multiplier(new_multiplier: float)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Shield_Card {
-  - Usage : int
-  + Get_Usage() : int
-  + Set_Usage(usage: int)
+class Shield_Card extends Card {
+  - usage: int
+  + get_usage(): int
+  + set_usage(new_usage: int)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-class Buff_Card {
-  - Buff_amount : Float
-  + Get_Buff_amount() : Float
-  + Set_Buff_amount(amount: Float)
+class Buff_Card extends Card {
+  - buff_amount: float
+  + get_buff_amount(): float
+  + set_buff_amount(new_buff_amount: float)
+  + use(user: Player, target: Player)
+  + get_type(): CardType
+  + generate_properties()
+  + print_key_info()
 }
 
-'#############################################
-' Player and Hand classes
-'#############################################
+' Base class Character
+class Character {
+  - xp_to_next_level: int
+  - level: int
+  - experience: int
+  - name: string
+  - heal_multiplier: float
+  - damage_multiplier: float
+  - armor_multiplier: float
+  - description: string
+  - ability_uses: int
+  + level_up()
+  + get_experience(): int
+  + set_experience(value: int)
+  + get_name(): string
+  + set_name(name: string)
+  + get_heal_multiplier(): float
+  + set_heal_multiplier(value: float)
+  + get_damage_multiplier(): float
+  + set_damage_multiplier(value: float)
+  + get_armor_multiplier(): float
+  + set_armor_multiplier(value: float)
+  + get_description(): string
+  + set_description(description: string)
+  + get_xp_to_next_level(): int
+  + set_xp_to_next_level(value: int)
+  + get_level(): int
+  + set_level(value: int)
+  + add_experience(amount: int)
+  + get_ability_uses(): int
+  + set_ability_uses(value: int)
+  + special_action(player: Player)
+}
 
+' Subclasses of Character
+class Healer_Character extends Character {
+  - heal_amount: int
+  + get_heal_amount(): int
+  + set_heal_amount(value: int)
+  + special_action(player: Player)
+}
+
+class Tank_Character extends Character {
+  - shield_add: int
+  + get_shield_add(): int
+  + set_shield_add(value: int)
+  + special_action(player: Player)
+}
+
+class Knight_Character extends Character {
+  - damage_increase: int
+  + get_damage_increase(): int
+  + set_damage_increase(value: int)
+  + special_action(player: Player)
+}
+
+' Base class Player
+class Player {
+  - character: unique_ptr<Character>
+  - health_points: int
+  - mana: int
+  - armor: int
+  - name: string
+  - hand: Hand
+  - shield_amount: int
+  - cumulative_attack_multiplier: float
+  - cumulative_heal_multiplier: float
+  - cumulative_weapon_adder: int
+  - turn_active: bool
+  + set_character(new_character: unique_ptr<Character>)
+  + get_character(): Character&
+  + perform_special_action()
+  + show_hand()
+  + eat_card(index: int)
+  + use_card(index: int, target: Player)
+  + take_damage(amount: int)
+  + throw_out(index: int)
+  + get_health_points(): int
+  + set_health_points(value: int)
+  + get_mana(): int
+  + set_mana(value: int)
+  + get_armor(): int
+  + set_armor(value: int)
+  + get_name(): string
+  + set_name(name: string)
+  + get_shield_amount(): int
+  + set_shield_amount(value: int)
+  + get_character_statistics(): string
+  + reset_turn()
+  + apply_attack_multiplier(effect: float)
+  + apply_heal_multiplier(effect: float)
+  + add_weapon_bonus(effect: int)
+  + end_turn()
+  + get_cumulative_attack_multiplier(): float
+  + set_cumulative_attack_multiplier(value: float)
+  + get_cumulative_heal_multiplier(): float
+  + set_cumulative_heal_multiplier(value: float)
+  + get_cumulative_weapon_bonus(): int
+  + set_cumulative_weapon_bonus(value: int)
+  + is_turn_active(): bool
+  + set_turn_active(value: bool)
+  + get_hand(): Hand&
+  + set_hand(new_hand: Hand)
+  + has_combat_cards(): bool
+}
+
+' Subclasses of Player
+class AI_Player extends Player {
+  + find_best_combination(): pair<int, int>
+  + calculate_card_value(card: Card): int
+}
+
+class Human_Player extends Player {
+  - characters: vector<unique_ptr<Character>>
+  + add_character(character: unique_ptr<Character>)
+  + save_characters(filename: string)
+  + load_characters(filename: string)
+  + customize_character(character: Character)
+  + show_characters()
+  + release_character(): unique_ptr<Character>
+}
+
+' Class Hand
 class Hand {
-  - amount : int
-  - cards : vector<unique_ptr<Card>>
-  + add_card(unique_ptr<Card>)
+  - cards: vector<unique_ptr<Card>>
+  - amount: int
+  + add_card(card: unique_ptr<Card>)
   + remove_card(index: int)
-  + get_card(index: int) : Card&
+  + get_card(index: int): Card&
   + sort_by_mana()
   + generate(id: int)
-  + get_amount() : int
-  + get_unique_card_types() : vector<string>
-  + get_cards_by_type(type_name: string&) : vector<reference_wrapper<Card>>
+  + get_amount(): int
+  + get_unique_card_types(): vector<string>
+  + get_cards_by_type(type_name: string): vector<reference_wrapper<Card>>
+  + generate_random_card()
 }
 
-class Player {
-  - hp : int
-  - mana : int
-  - armor : int
-  - PHand : Hand
-  - name : String
-  - Character : Character
-  - Shield_amount : int
-  + Show_Hand()
-  + Eat_card(index: int)
-  + Use_card(target: Player, index: int)
-  + Take_damage(amount: int)
-  + Throw_out(index: int)
-  + Get_Hp() : int
-  + Set_Hp(value: int)
-  + Get_Mana() : int
-  + Set_Mana(value: int)
-  + Get_Armor() : int
-  + Set_Armor(value: int)
-  + Get_Name() : String
-  + Set_Name(name: String)
-  + Get_Character() : Character
-  + Set_Character(character: Character)
-}
-
-class AI_Player {
-  + count_best() : int
-}
-
-class Human_Player_Player {
-  + Write_info()
-}
-
-'#############################################
-' Character Classes
-'#############################################
-
-class Character {
-  - xp : int
-  - name : String
-  - Heal_MLTPL : Float
-  - Dmg_MLTPL : Float
-  - Armor_MLTPL : Float
-  - description : String
-  - xp_to_next_lvl : int
-  - lvl : int
-  + lvl_up()
-  + Get_Xp() : int
-  + Set_Xp(value: int)
-  + Get_Name() : String
-  + Set_Name(name: String)
-  + Get_Heal_Multiplier() : Float
-  + Set_Heal_Multiplier(value: Float)
-  + Get_Dmg_Multiplier() : Float
-  + Set_Dmg_Multiplier(value: Float)
-  + Get_Armor_Multiplier() : Float
-  + Set_Armor_Multiplier(value: Float)
-  + Get_Description() : String
-  + Set_Description(desc: String)
-  + Get_Xp_To_Next_Lvl() : int
-  + Set_Xp_To_Next_Lvl(value: int)
-  + Get_Level() : int
-  + Set_Level(value: int)
-  + add_xp(amount: int)
-}
-
-class Healer_Character {
-  - Heal_amount : int
-  + Heal()
-  + Get_Heal_Amount() : int
-  + Set_Heal_Amount(value: int)
-}
-
-class Tank_Character {
-  - was_up : Boolean
-  - Shield_amount : int
-  + Get_Was_Up() : Boolean
-  + Set_Was_Up(state: Boolean)
-  + Get_Shield_Amount() : int
-  + Set_Shield_Amount(value: int)
-  + Shielding()
-}
-
-class Knight_Character {
-  - armor_up_amount : int
-  - was_armored : Boolean
-  + Get_Was_Armored() : Boolean
-  + Set_Was_Armored(state: Boolean)
-  + Get_Armor_Up() : int
-  + Set_Armor_Up(value: int)
-  + Armoring()
-}
-
-'#############################################
-' Inheritance
-'#############################################
-
-Spell_Card --|> Card
-Attack_Spell_Card --|> Spell_Card
-Heal_Spell_Card --|> Spell_Card
-Buff_Spell_Card --|> Spell_Card
-Defence_Spell_Card --|> Spell_Card
-Beast_Card --|> Card
-Creature_Card --|> Card
-Weapon_Card --|> Card
-Artifact_Card --|> Card
-Shield_Card --|> Card
-Buff_Card --|> Card
-
-AI_Player --|> Player
-Human_Player_Player --|> Player
-
-Healer_Character --|> Character
-Tank_Character --|> Character
-Knight_Character --|> Character
-
-'#############################################
-' Associations
-'#############################################
-
-Player "1" *-- "1" Hand : PHand
-Player "1" *-- "1" Character : Character
-Hand "1" *-- "0..*" Card : Cards
+' Relationships
+Player "1" --> "1" Character : has
+Player "1" --> "1" Hand : has
+Hand "1" --> "*" Card : contains
 @enduml

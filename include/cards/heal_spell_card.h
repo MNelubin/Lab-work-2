@@ -9,10 +9,11 @@
 
 /**
  * @brief Specialized spell for heal
- * 
+ *
  * Inherits from Spell_Card and adds heal mechanics.
  */
-class Heal_Spell_Card : public Spell_Card {
+class Heal_Spell_Card : public Spell_Card
+{
 private:
     int base_heal; ///< Base heal value without modifiers
     float efficiency_deg; ///< Modifier of healing, corr. with rarity
@@ -20,7 +21,7 @@ private:
 public:
     /**
      * @brief Construct a new Heal Spell Card object
-     * 
+     *
      * @param[in] name Initial display name for the card
      * @param[in] description Initial effect description text
      * @param[in] rarity Starting rarity classification
@@ -30,11 +31,11 @@ public:
      * @param[in] eff Efficiency of heal
      */
     Heal_Spell_Card(const std::string& name, const std::string& description,
-                     Rarity rarity, int mana_cost, Element elem, int heal, float eff);
-    
+                    Rarity rarity, int mana_cost, Element elem, int heal, float eff);
+
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes card with default values:
      * - name: "Unnamed Heal Spell"
      * - description: "No description"
@@ -45,13 +46,13 @@ public:
      * - efficiency_deg: 1.0f
      */
     Heal_Spell_Card();
-    
+
     /**
      * @brief Get base heal value
      * @return Current base heal
      */
     int get_base_heal() const;
-    
+
     /**
      * @brief Update heal value
      * @param[in] new_heal Must be positive
@@ -61,12 +62,12 @@ public:
      */
     void set_base_heal(int new_heal);
 
-        /**
-     * @brief Get efficiency value
-     * @return Current efficiency
-     */
+    /**
+    * @brief Get efficiency value
+    * @return Current efficiency
+    */
     float get_eff() const;
-    
+
     /**
      * @brief Update efficiency value
      * @param[in] new_eff Must be positive
@@ -86,4 +87,4 @@ public:
 
 };
 
-#endif 
+#endif

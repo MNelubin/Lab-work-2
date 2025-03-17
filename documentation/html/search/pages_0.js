@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['brief_20system_20requirements_0',['Brief system requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html',1,'']]]
+  ['1_20types_20of_20tests_0',['1. Types of Tests',['../df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html',1,'']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['json_20example_0',['Saving progress (temporarily for json example)',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md9',1,'']]]
+  ['knight_5fcharacter_0',['Knight_Character',['../dc/de5/class_knight___character.html',1,'Knight_Character'],['../dc/de5/class_knight___character.html#a07f123dc1da13cb0af8a297dd68058fe',1,'Knight_Character::Knight_Character()'],['../dc/de5/class_knight___character.html#af2a6eded17efc19ac64a1e316d53f10f',1,'Knight_Character::Knight_Character(int xp_to_next_lvl, int lvl, int xp, const std::string &amp;name, float heal_mltpl, float dmg_mltpl, float armor_mltpl, const std::string &amp;description, int ability_uses, int armor_up, int armored_amount)']]],
+  ['knight_5fcharacter_2ecpp_1',['knight_character.cpp',['../db/d3c/knight__character_8cpp.html',1,'']]],
+  ['knight_5fcharacter_2eh_2',['knight_character.h',['../d2/d17/knight__character_8h.html',1,'']]],
+  ['knightcharacter_3',['KnightCharacter',['../db/df5/group___knight_character.html',1,'']]]
 ];

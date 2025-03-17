@@ -1,16 +1,20 @@
+/* Maxim Nelyubin st132907@student.spbu.ru
+    Lab-2
+*/
 #ifndef AI_PLAYER_H
 #define AI_PLAYER_H
 
 #include "player.h"
-#include <utility> 
+#include <utility>
 
 /**
  * @brief AI-controlled player with decision logic
- * 
+ *
  * Inherits from Player and implements AI-specific behavior,
  * such as automatic card selection and turn execution.
  */
-class AI_Player : public Player {
+class AI_Player : public Player
+{
 public:
     /**
      * @brief Inherit constructors from Player
@@ -21,25 +25,28 @@ public:
 
     /**
      * @brief Check if the player is human
-     * 
+     *
      * @return false (always, since this is an AI player)
      */
-    bool is_human() const override { return false; }
+    bool is_human() const override
+    {
+        return false;
+    }
 
 
 
     /**
      * @brief Find the best combination of cards to play
-     * 
+     *
      * @return std::pair<int, int> Indices of the best main and secondary cards
      */
     std::pair<int, int> find_best_combination() const;
 
-private:
     /**
      * @brief Structure for storing card information
      */
-    struct CardScore {
+    struct CardScore
+    {
         int index; ///< Index of the card in the hand
         int value; ///< Calculated value of the card
         int mana_cost; ///< Mana cost of the card
@@ -48,13 +55,16 @@ private:
 
     /**
      * @brief Calculate the value of a card based on its type and effects
-     * 
+     *
      * @param card The card to evaluate
      * @return int The calculated value
      */
     int calculate_card_value(const Card& card) const;
 
-    
+private:
+
+
+
 };
 
 #endif // AI_PLAYER_H 

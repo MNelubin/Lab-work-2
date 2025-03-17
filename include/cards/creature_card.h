@@ -8,10 +8,11 @@
 
 /**
  * @brief Specialized card for creatures
- * 
+ *
  * Inherits from Card and adds creature-specific properties.
  */
-class Creature_Card : public Card {
+class Creature_Card : public Card
+{
 private:
     int base_dmg; ///< Base damage value
     float weapon_multiplier; ///< Multiplier for weapon damage
@@ -19,7 +20,7 @@ private:
 public:
     /**
      * @brief Construct a new Creature Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -35,7 +36,7 @@ public:
      * @return Current base damage
      */
     int get_base_dmg() const;
-    
+
     /**
      * @brief Update base damage value
      * @param new_dmg Must be positive
@@ -50,7 +51,7 @@ public:
      * @return Current weapon multiplier
      */
     float get_weapon_multiplier() const;
-    
+
     /**
      * @brief Update weapon multiplier value
      * @param new_multiplier Must be positive
@@ -65,8 +66,8 @@ public:
     CardType get_type() const override;
 
     void generate_properties() override;
-    
+
     void print_key_info() const override;
 };
 
-#endif 
+#endif

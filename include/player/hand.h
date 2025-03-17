@@ -21,11 +21,12 @@
 
 /**
  * @brief Represents a player's hand containing various types of cards
- * 
+ *
  * The Hand class manages a collection of polymorphic Card objects,
  * allowing for various operations like adding, removing, and sorting cards.
  */
-class Hand {
+class Hand
+{
 private:
     std::vector<std::unique_ptr<Card>> cards; ///< Collection of cards in hand
     int amount; ///< Current number of cards in hand
@@ -95,10 +96,10 @@ public:
 
     /**
      * @brief Generates a random card and adds it to the hand
-     * 
+     *
      * This method randomly selects a card type and creates a card of that type
      * with randomly generated properties. The card is then added to the hand.
-     * 
+     *
      * The probability distribution for card types is as follows:
      * - Beast Card: 10%
      * - Buff Card: 10%

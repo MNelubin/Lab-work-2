@@ -1,4 +1,4 @@
 var files_dup =
 [
-    [ "Lab-work-2", "dir_0e20fe1ab5364e5588bc147ecaa037f0.html", "dir_0e20fe1ab5364e5588bc147ecaa037f0" ]
+    [ "D:", "dir_275089585c7fc1b5fd5d7d42c69cb1da.html", "dir_275089585c7fc1b5fd5d7d42c69cb1da" ]
 ];

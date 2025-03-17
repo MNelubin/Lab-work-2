@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['complete_20core_20system_20requirements_0',['Complete Core System Requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html',1,'']]],
-  ['core_20system_20requirements_1',['Complete Core System Requirements',['../md__2home_2debil_2Lab-work-2_2architecture_2requirements.html',1,'']]],
-  ['core_20test_20plan_2',['Core Test Plan',['../md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html',1,'']]]
+  ['description_20of_20the_20system_0',['General description of the system',['../d9/d5f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture.html',1,'']]]
 ];

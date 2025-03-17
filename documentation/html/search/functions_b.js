@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d_0',['operator=',['../classPlayer.html#a6cbb28bf742e34a2b2456ce7d53b6980',1,'Player::operator=(const Player &amp;)=delete'],['../classPlayer.html#a016d4b899c2a4fc17509a8aa44cee683',1,'Player::operator=(Player &amp;&amp;other) noexcept']]]
+  ['main_0',['main',['../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../db/d9c/test-card_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;test-card.cpp']]]
 ];

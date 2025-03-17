@@ -1,121 +1,135 @@
-# Core Test Plan
+## 1. Types of Tests
+**Unit Tests** (90% coverage):
+- Card class functionality (constructors, getters/setters)
+- Spell cards (Attack, Heal, Buff, Defence)
+- Creature cards (Beast, Creature)
+- Weapon and Shield cards
+- Character class and derived classes (Healer, Tank, Knight)
+- Hand class operations
+- Player class interactions
 
-## 1. Types of tests
-**Unit tests** (90% coverage):
-- Validation of card attributes (mana, damage, rarity)
-- Checking ability limits (Shielding(), Armoring())
-- Calculating damage/healing formulas
-- Save/load game progress
+**Integration Tests** (10% coverage):
+- AI player decision making
+- Human player interactions
+- Card usage in game context
+- Character abilities integration
 
-**Integration tests** (10% coverage):
-- AI's work with different types of cards
-
-## 2. Tools and environment
+## 2. Tools and Environment
 - **Framework**: Google Test (gtest)
 - **OS**: Ubuntu 22.04 LTS
 - **Compiler**: GCC 11+
-- **CI**: Existing system with preinstalled:
-```yaml
-- name: Setup environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y g++-11 make libgtest-dev
-        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++
-  ```
+- **CI/CD**: GitHub Actions
 
-## 3. Critical components
+## 3. Critical Components
 
-### 3.1 Card Validation
-**Test cases:**
-```cpp
-TEST(CardTest, InvalidMana) {
-    Card card;
-    ASSERT_THROW(card.Set_Mana_Cost(11), InvalidCardException);
-}
+### 3.1 Card Class Validation
+**Test Cases:**
+- Constructor validation for all card types
+- Getter and setter functionality
+- Rarity distribution verification
+- Type detection through polymorphism
+- Pure virtual method implementation
 
-TEST(CardTest, MinimumDamage) {
-    Attack_Spell_Card card;
-    ASSERT_THROW(card.Set_Base_DMG(0), InvalidDamageValue);
-}
-```
+### 3.2 Spell Cards Functionality
+**Test Cases:**
+- Attack spell damage calculation
+- Heal spell recovery validation
+- Buff spell multiplier application
+- Defence spell shield application
+- Mana cost validation
+- Special abilities implementation
 
-### 3.2 Combat Mechanics
-**Sample data:**
-```cpp
-vector<Card> test_deck = {
-    Attack_Spell_Card("Fireball", 3, 5),
-    Shield_Card("Iron Shield", 2, 3)
-};
-```
+### 3.3 Character Class Functionality
+**Test Cases:**
+- Level-up mechanics
+- Experience management
+- Ability uses tracking
+- Special actions implementation
+- Character statistics formatting
 
-**Test cases:**
-1. Damage 5 vs Armor 3 → 2 damage
-2. Double shield (3+3) → armor 6
-3. Attempt to re-Shielding() → error
+### 3.4 Player Class Interactions
+**Test Cases:**
+- Hand management
+- Card usage and effects
+- Damage and healing calculations
+- Turn management
+- Special action execution
 
-### 3.3 The AI System
-**Logic of choice:**
-```cpp
-TEST(AITest, BestCardSelection) {
-    
-    vector<Card> hand = {
-        {mana: 3, dmg: 5},
-        {mana: 2, dmg: 3}
-    };
-    AI_Player ai(hand);
-    ASSERT_EQ(ai.count_best(), 0); // Selecting the first card
-}
-```
+### 3.5 AI Player Decision Making
+**Test Cases:**
+- Best card combination selection
+- Combat card prioritization
+- Mana management
+- Strategy implementation
 
-### 3.4 Saving Progress
-**File format:**
-```json
-{
-  "player_name": "Vova",
-  "characters": {
-    "tank": {"xp": 300, "level": 1}
-  }
-}
-```
+### 3.6 Human Player Features
+**Test Cases:**
+- Character management
+- Save/load functionality
+- Customization interface
+- Input validation
 
-## 4. Integration with CI
+## 4. Integration with CI/CD
 **Configuration:**
 ```yaml
+name: C++ CI
+
+on: [push, pull_request]
+
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+  build-and-test:
 
-    - name: Setup environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y g++-11 make libgtest-dev
-        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++
+    runs-on: ubuntu-latest
 
-    - name: Build tests
-      run: |
-        make test
+    steps:
 
-    - name: Execute tests
-      run: |
-        ./test-card_app
+    - name: Checkout code
 
-    - name: Build release
-      run: |
-        make clean
-        make
+      uses: actions/checkout@v4
 
-    - name: Cleanup
-      run: |
-        make cleanall 
+    - name: Setup environment
+
+      run: |
+
+        sudo apt-get update
+
+        sudo apt-get install -y g++-11 make libgtest-dev
+
+        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++
+
+    - name: Build tests
+
+      run: |
+
+        make test
+
+    - name: Execute tests
+
+      run: |
+
+        ./test-card_app
+
+    - name: Build release
+
+      run: |
+
+        make clean
+
+        make
+
+    - name: Cleanup
+
+      run: |
+
+        make cleanall
 ```
 
-## 5. Success criteria
-- All tests are error-free
-- 100% coverage of critical scenarios
+## 5. Success Criteria
+- All unit tests pass
+- Integration tests demonstrate correct system behavior
+- Test coverage meets requirements
+- No crashes
 
 ## 6. Reporting
-- Notifications about test crashes in CI
+- Detailed test results in CI/CD pipeline

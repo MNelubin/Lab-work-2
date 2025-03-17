@@ -5,8 +5,8 @@ The game is a turn—based card RPG where human and AI players use cards to atta
 - **Cards**: 12 types combined in an inheritance hierarchy (for example, `Attack_Spell_Card`, `Beast_Card`).  
 - **Players**:
 - `Human_Player`: User-controlled, saves statistics.  
-  - `AI_Player`: Automatically selects optimal moves via `count_best()`.  
-- **Characters**: 3 classes (`Healer_Character`, `Tank_Character`, `Knight_Character`) with unique abilities (`shielding()`, `healing()`).  
+  - `AI_Player`: Automatically selects optimal moves via `find_best_combination()`.  
+- **Characters**: 3 classes (`Healer_Character`, `Tank_Character`, `Knight_Character`) with unique abilities .  
 - **Mechanics**:  
   - Mana and player lives.  
   - Character levels and multipliers (`Dmg_MLTPL`, `Heal_MLTPL`).  

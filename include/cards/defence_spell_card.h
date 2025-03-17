@@ -8,10 +8,11 @@
 
 /**
  * @brief Specialized spell for defense
- * 
+ *
  * Inherits from Spell_Card and adds defense mechanics.
  */
-class Defence_Spell_Card : public Spell_Card {
+class Defence_Spell_Card : public Spell_Card
+{
 private:
     int base_def; ///< Base defense value
 
@@ -20,7 +21,7 @@ public:
 
     /**
      * @brief Construct a new Defence Spell Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -29,12 +30,12 @@ public:
      * @param base_def Base defense value
      */
     Defence_Spell_Card(const std::string& name, const std::string& description,
-                    Rarity rarity, int mana_cost, Element elem, 
-                    int base_def);
+                       Rarity rarity, int mana_cost, Element elem,
+                       int base_def);
 
     /**
      * @brief Construct a new Defence Spell Card object
-     * 
+     *
      * @param name Display name of the card
      * @param description Flavor text and effect description
      * @param rarity Rarity category from enum
@@ -42,11 +43,11 @@ public:
      * @param elem Element type of the spell (from enum ElementType)
      */
     Defence_Spell_Card(const std::string& name, const std::string& description,
-                                  Rarity rarity, int mana_cost, Element elem);
+                       Rarity rarity, int mana_cost, Element elem);
 
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes card with default values:
      * - name: "Unnamed Defence Spell"
      * - description: "No description"
@@ -62,7 +63,7 @@ public:
      * @return Current base defense
      */
     int get_base_def() const;
-    
+
     /**
      * @brief Update base defense value
      * @param new_def Must be positive

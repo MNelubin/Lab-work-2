@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../test-card_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;test-card.cpp']]]
+  ['load_5fcharacters_0',['load_characters',['../de/d3e/class_human___player.html#a2d6230c94ac86b02f430820968a4a455',1,'Human_Player']]],
+  ['lvl_5fup_1',['lvl_up',['../d7/da7/class_character.html#aafc1d877e3aa78d3f1639feac733d6e5',1,'Character']]]
 ];

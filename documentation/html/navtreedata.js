@@ -25,44 +25,46 @@
 var NAVTREE =
 [
   [ "Card game", "index.html", [
-    [ "General description of the system", "md__2home_2debil_2Lab-work-2_2architecture_2General__architecture.html", null ],
-    [ "Complete Core System Requirements", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html", [
-      [ "Basic map parameters", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md3", null ],
-      [ "Characters and abilities", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md4", null ],
-      [ "Combat mechanics", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md5", null ],
-      [ "Armor", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md6", null ],
-      [ "Treatment when using the card", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md7", [
-        [ "The AI system", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md8", null ],
-        [ "Saving progress (temporarily for json example)", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md9", null ],
-        [ "Test scenarios", "md__2home_2debil_2Lab-work-2_2architecture_2requirements.html#autotoc_md10", null ]
+    [ "General description of the system", "d9/d5f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture.html", null ],
+    [ "GENERAL", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html", [
+      [ "SOFTWARE REQUIREMENTS", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md8", [
+        [ "Operating System", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md3", null ],
+        [ "Processor", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md4", null ],
+        [ "Memory", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md5", null ],
+        [ "Storage", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md6", null ],
+        [ "Graphics", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md7", null ],
+        [ "Compiler", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md9", null ],
+        [ "Build Tools", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md10", null ],
+        [ "Testing Framework", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md11", null ]
+      ] ],
+      [ "ADDITIONAL REQUIREMENTS", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md12", [
+        [ "Terminal", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md13", null ],
+        [ "Version Control", "dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md14", null ]
       ] ]
     ] ],
-    [ "Brief system requirements", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html", [
-      [ "Functional requirements", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md12", null ],
-      [ "Usage Scenarios", "md__2home_2debil_2Lab-work-2_2architecture_2requirements__short.html#autotoc_md13", null ]
-    ] ],
-    [ "Core Test Plan", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html", [
-      [ "Types of tests", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md15", null ],
-      [ "Tools and environment", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md16", null ],
-      [ "Critical components", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md17", [
-        [ "3.1 Card Validation", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md18", null ],
-        [ "3.2 Combat Mechanics", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md19", null ],
-        [ "3.3 The AI System", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md20", null ],
-        [ "3.4 Saving Progress", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md21", null ]
+    [ "1. Types of Tests", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html", [
+      [ "Tools and Environment", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md16", null ],
+      [ "Critical Components", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md17", [
+        [ "3.1 Card Class Validation", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md18", null ],
+        [ "3.2 Spell Cards Functionality", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md19", null ],
+        [ "3.3 Character Class Functionality", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md20", null ],
+        [ "3.4 Player Class Interactions", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md21", null ],
+        [ "3.5 AI Player Decision Making", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md22", null ],
+        [ "3.6 Human Player Features", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md23", null ]
       ] ],
-      [ "Integration with CI", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md22", null ],
-      [ "Success criteria", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md23", null ],
-      [ "Reporting", "md__2home_2debil_2Lab-work-2_2architecture_2test__plan.html#autotoc_md24", null ]
+      [ "Integration with CI/CD", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md24", null ],
+      [ "Success Criteria", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md25", null ],
+      [ "Reporting", "df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md26", null ]
     ] ],
-    [ "Test List", "test.html", null ],
+    [ "Test List", "d4/df6/test.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -71,6 +73,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Enumerations", "globals_enum.html", null ]
       ] ]
     ] ]
@@ -80,7 +83,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523"
+"d7/da7/class_character.html#aa3e319f9d3d7d7028040e20468e14b5a",
+"db/d9c/test-card_8cpp.html#ac3318cb6a39b2ea7c912d90aad792db0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

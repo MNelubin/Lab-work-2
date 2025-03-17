@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['knight_5fcharacter_0',['Knight_Character',['../classKnight__Character.html',1,'Knight_Character'],['../classKnight__Character.html#a07f123dc1da13cb0af8a297dd68058fe',1,'Knight_Character::Knight_Character()'],['../classKnight__Character.html#af2a6eded17efc19ac64a1e316d53f10f',1,'Knight_Character::Knight_Character(int xp_to_next_lvl, int lvl, int xp, const std::string &amp;name, float heal_mltpl, float dmg_mltpl, float armor_mltpl, const std::string &amp;description, int ability_uses, int armor_up, int armored_amount)']]],
-  ['knight_5fcharacter_2ecpp_1',['knight_character.cpp',['../knight__character_8cpp.html',1,'']]],
-  ['knight_5fcharacter_2eh_2',['knight_character.h',['../knight__character_8h.html',1,'']]]
+  ['list_0',['Test List',['../d4/df6/test.html',1,'']]],
+  ['load_5fcharacters_1',['load_characters',['../de/d3e/class_human___player.html#a2d6230c94ac86b02f430820968a4a455',1,'Human_Player']]],
+  ['lvl_2',['lvl',['../d7/da7/class_character.html#a1b89dc79e457bb7b95ee1c41145843af',1,'Character']]],
+  ['lvl_5fup_3',['lvl_up',['../d7/da7/class_character.html#aafc1d877e3aa78d3f1639feac733d6e5',1,'Character']]]
 ];

@@ -8,17 +8,18 @@
 
 /**
  * @brief Specialized card for buffs
- * 
+ *
  * Inherits from Card and adds buff-specific properties.
  */
-class Buff_Card : public Card {
+class Buff_Card : public Card
+{
 private:
     float buff_amount; ///< Amount of buff
 
 public:
     /**
      * @brief Construct a new Buff Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -30,7 +31,7 @@ public:
 
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes card with default values:
      * - name: "Unnamed Buff"
      * - description: "No description"
@@ -45,7 +46,7 @@ public:
      * @return Current buff amount
      */
     float get_buff_amount() const;
-    
+
     /**
      * @brief Update buff amount
      * @param new_buff_amount Must be positive
