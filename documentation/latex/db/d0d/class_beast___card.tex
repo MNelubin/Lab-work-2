@@ -1,0 +1,358 @@
+\doxysection{Beast\+\_\+\+Card Class Reference}
+\hypertarget{class_beast___card}{}\label{class_beast___card}\index{Beast\_Card@{Beast\_Card}}
+
+
+Specialized card for beast creatures.  
+
+
+
+
+{\ttfamily \#include $<$beast\+\_\+card.\+h$>$}
+
+Inheritance diagram for Beast\+\_\+\+Card\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{db/d0d/class_beast___card}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_beast___card_a614883a58b47826a4c18274b9aad6295}{Beast\+\_\+\+Card}} (const std\+::string \&\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}, int \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\+\_\+dmg}}, \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}})
+\begin{DoxyCompactList}\small\item\em Construct a new Beast \doxylink{class_card}{Card} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{Beast\+\_\+\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{get\+\_\+base\+\_\+dmg}} () const
+\begin{DoxyCompactList}\small\item\em Get base damage value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_beast___card_a23e648986998cabf69fe217fab8619b6}{set\+\_\+base\+\_\+dmg}} (int new\+\_\+dmg)
+\begin{DoxyCompactList}\small\item\em Update base damage value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} \mbox{\hyperlink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{get\+\_\+tribe}} () const
+\begin{DoxyCompactList}\small\item\em Get tribe type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{set\+\_\+tribe}} (\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} new\+\_\+tribe)
+\begin{DoxyCompactList}\small\item\em Update tribe type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{use}} (\mbox{\hyperlink{class_player}{Player}} \&user, \mbox{\hyperlink{class_player}{Player}} \&target) override
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{get\+\_\+type}} () const override
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{generate\+\_\+properties}} () override
+\begin{DoxyCompactList}\small\item\em Generate random properties for Beast card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{print\+\_\+key\+\_\+info}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_card}{Card}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}} (const std\+::string \&\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_card}{Card} object with specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9}{\texorpdfstring{$\sim$}{\string~}\+Card}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic deletion. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_a39c0e62ffe4979b8d8142b416043ff26}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current card name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\+\_\+name}} (const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Updates card\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_a5519eb130702a7e04ce06834353d9aa2}{get\+\_\+description}} () const
+\begin{DoxyCompactList}\small\item\em Gets current effect description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\+\_\+description}} (const std\+::string \&new\+\_\+desc)
+\begin{DoxyCompactList}\small\item\em Modifies card\textquotesingle{}s effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\+\_\+rarity}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current rarity classification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\+\_\+rarity}} (\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} new\+\_\+rarity)
+\begin{DoxyCompactList}\small\item\em Changes card\textquotesingle{}s rarity category. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_card_a8fedebb4917ed6efdabd817f389d7b9a}{get\+\_\+mana\+\_\+cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets current mana cost value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_a6ec8620c325a26bec6d230ac30875bfc}{set\+\_\+mana\+\_\+cost}} (int new\+\_\+cost)
+\begin{DoxyCompactList}\small\item\em Updates mana cost requirement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\+\_\+random\+\_\+rarity}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random rarity based on predefined probabilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\+\_\+dmg}}
+\begin{DoxyCompactList}\small\item\em Base damage value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}
+\begin{DoxyCompactList}\small\item\em \doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} type of the beast. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_card}{Card}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}
+\begin{DoxyCompactList}\small\item\em Display name of the card. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}
+\begin{DoxyCompactList}\small\item\em Flavor text and effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}
+\begin{DoxyCompactList}\small\item\em \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}
+\begin{DoxyCompactList}\small\item\em Required mana to play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized card for beast creatures. 
+
+Inherits from \doxylink{class_card}{Card} and adds beast-\/specific properties. 
+
+Definition at line \mbox{\hyperlink{beast__card_8h_source_l00015}{15}} of file \mbox{\hyperlink{beast__card_8h_source}{beast\+\_\+card.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_beast___card_a614883a58b47826a4c18274b9aad6295}\index{Beast\_Card@{Beast\_Card}!Beast\_Card@{Beast\_Card}}
+\index{Beast\_Card@{Beast\_Card}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{Beast\_Card()}{Beast\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_beast___card_a614883a58b47826a4c18274b9aad6295} 
+Beast\+\_\+\+Card\+::\+Beast\+\_\+\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{, }\item[{int}]{base\+\_\+dmg}{, }\item[{\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}}]{tribe}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Beast \doxylink{class_card}{Card} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Initial display name for the card \\
+\hline
+{\em description} & Initial effect description text \\
+\hline
+{\em rarity} & Starting rarity classification \\
+\hline
+{\em mana\+\_\+cost} & Base mana cost required to play \\
+\hline
+{\em base\+\_\+dmg} & Base damage value \\
+\hline
+{\em tribe} & \doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} type of the beast \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}\index{Beast\_Card@{Beast\_Card}!Beast\_Card@{Beast\_Card}}
+\index{Beast\_Card@{Beast\_Card}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{Beast\_Card()}{Beast\_Card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af} 
+Beast\+\_\+\+Card\+::\+Beast\+\_\+\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initializes card with default values\+:
+\begin{DoxyItemize}
+\item name\+: "{}\+Unnamed Beast"{}
+\item description\+: "{}\+No description"{}
+\item rarity\+: \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity\+::\+Common}
+\item mana\+\_\+cost\+: 0
+\item base\+\_\+dmg\+: 3
+\item tribe\+: \doxylink{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4}{Tribe\+::\+North} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}\index{Beast\_Card@{Beast\_Card}!generate\_properties@{generate\_properties}}
+\index{generate\_properties@{generate\_properties}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{generate\_properties()}{generate\_properties()}}
+{\footnotesize\ttfamily \label{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5} 
+void Beast\+\_\+\+Card\+::generate\+\_\+properties (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generate random properties for Beast card. 
+
+
+
+Implements \mbox{\hyperlink{class_card_ab4c481f82a991bd9b2f992e6ea38ec91}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}\index{Beast\_Card@{Beast\_Card}!get\_base\_dmg@{get\_base\_dmg}}
+\index{get\_base\_dmg@{get\_base\_dmg}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_base\_dmg()}{get\_base\_dmg()}}
+{\footnotesize\ttfamily \label{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453} 
+int Beast\+\_\+\+Card\+::get\+\_\+base\+\_\+dmg (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get base damage value. 
+
+\begin{DoxyReturn}{Returns}
+Current base damage 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}\index{Beast\_Card@{Beast\_Card}!get\_tribe@{get\_tribe}}
+\index{get\_tribe@{get\_tribe}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_tribe()}{get\_tribe()}}
+{\footnotesize\ttfamily \label{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764} 
+\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} Beast\+\_\+\+Card\+::get\+\_\+tribe (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get tribe type. 
+
+\begin{DoxyReturn}{Returns}
+Current tribe type 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_aa52840c0c464905d92ae10146ac5d784}\index{Beast\_Card@{Beast\_Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{class_beast___card_aa52840c0c464905d92ae10146ac5d784} 
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Beast\+\_\+\+Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_card_af18514eb50324ad8b79064af87f45067}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}\index{Beast\_Card@{Beast\_Card}!print\_key\_info@{print\_key\_info}}
+\index{print\_key\_info@{print\_key\_info}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{print\_key\_info()}{print\_key\_info()}}
+{\footnotesize\ttfamily \label{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938} 
+void Beast\+\_\+\+Card\+::print\+\_\+key\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_card_a27225a0e526b92785afee861f43853fd}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_a23e648986998cabf69fe217fab8619b6}\index{Beast\_Card@{Beast\_Card}!set\_base\_dmg@{set\_base\_dmg}}
+\index{set\_base\_dmg@{set\_base\_dmg}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{set\_base\_dmg()}{set\_base\_dmg()}}
+{\footnotesize\ttfamily \label{class_beast___card_a23e648986998cabf69fe217fab8619b6} 
+void Beast\+\_\+\+Card\+::set\+\_\+base\+\_\+dmg (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+dmg}{}\end{DoxyParamCaption})}
+
+
+
+Update base damage value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+dmg} & Must be positive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+dmg \texorpdfstring{$>$}{>} 0 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if base\+\_\+dmg \texorpdfstring{$<$}{<}= 0 \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPostcond}{Postcondition}
+new\+\_\+dmg == \doxylink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{get\+\_\+base\+\_\+dmg()} 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_a24431e4371ea2c8127263578f6a0df96}\index{Beast\_Card@{Beast\_Card}!set\_tribe@{set\_tribe}}
+\index{set\_tribe@{set\_tribe}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{set\_tribe()}{set\_tribe()}}
+{\footnotesize\ttfamily \label{class_beast___card_a24431e4371ea2c8127263578f6a0df96} 
+void Beast\+\_\+\+Card\+::set\+\_\+tribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}}]{new\+\_\+tribe}{}\end{DoxyParamCaption})}
+
+
+
+Update tribe type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+tribe} & New tribe type to assign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+new\+\_\+tribe == \doxylink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{get\+\_\+tribe()} 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+\Hypertarget{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}\index{Beast\_Card@{Beast\_Card}!use@{use}}
+\index{use@{use}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6} 
+void Beast\+\_\+\+Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{class_player}{Player} using the card \\
+\hline
+{\em target} & \doxylink{class_player}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+Deal damage to target 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If card is already used\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_card_a0f53ecf6d310dfb256556bfa70e2609e}{Card}}.
+
+
+
+Definition at line \mbox{\hyperlink{beast__card_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{beast__card_8cpp_source}{beast\+\_\+card.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}\index{Beast\_Card@{Beast\_Card}!base\_dmg@{base\_dmg}}
+\index{base\_dmg@{base\_dmg}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{base\_dmg}{base\_dmg}}
+{\footnotesize\ttfamily \label{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807} 
+int Beast\+\_\+\+Card\+::base\+\_\+dmg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base damage value. 
+
+
+
+Definition at line \mbox{\hyperlink{beast__card_8h_source_l00017}{17}} of file \mbox{\hyperlink{beast__card_8h_source}{beast\+\_\+card.\+h}}.
+
+\Hypertarget{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}\index{Beast\_Card@{Beast\_Card}!tribe@{tribe}}
+\index{tribe@{tribe}!Beast\_Card@{Beast\_Card}}
+\doxysubsubsection{\texorpdfstring{tribe}{tribe}}
+{\footnotesize\ttfamily \label{class_beast___card_a2deb19e297f4b94755b6870325ed19e2} 
+\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} Beast\+\_\+\+Card\+::tribe\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} type of the beast. 
+
+
+
+Definition at line \mbox{\hyperlink{beast__card_8h_source_l00018}{18}} of file \mbox{\hyperlink{beast__card_8h_source}{beast\+\_\+card.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/cards/\mbox{\hyperlink{beast__card_8h}{beast\+\_\+card.\+h}}\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/src/cards/\mbox{\hyperlink{beast__card_8cpp}{beast\+\_\+card.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,404 @@
+\doxysection{player.\+cpp}
+\hypertarget{player_8cpp_source}{}\label{player_8cpp_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/player/player.cpp@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/player/player.cpp}}
+\mbox{\hyperlink{player_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../../include/player/player.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{character_8h}{../../include/player/character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tank__character_8h}{../../include/player/tank\_character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{healer__character_8h}{../../include/player/healer\_character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{knight__character_8h}{../../include/player/knight\_character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enums_8h}{../../include/cards/enums.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00015}\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{00015}}\ \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player::Player}}()\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00016}00016\ \ \ \ \ :\ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}(100),\ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}(50),\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}(0),\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}(0),}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00017}00017\ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}}(1.0f),\ \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}}(1.0f),}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00018}00018\ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}}(0),\ \mbox{\hyperlink{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}{turn\_active}}(true)\ \{\}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00020}\mbox{\hyperlink{class_player_af9c22c6310c86cf7ff76ba1ab5e8278c}{00020}}\ \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player::Player}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}},\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<Character>\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}})}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00022}00022\ \ \ \ \ :\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}(std::move(\mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}})),\ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}(\mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}),\ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}(\mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}),\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}(\mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}),\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00023}00023\ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}}(\mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}}),\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}(\mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}),}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00024}00024\ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}}(1.0f),\ \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}}(1.0f),}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00025}00025\ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}}(0),\ \mbox{\hyperlink{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}{turn\_active}}(true)\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}\ <\ 0\ ||\ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}\ <\ 0\ ||\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}\ <\ 0\ ||\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Player\ attributes\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00033}00033\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00034}00034\ \textcolor{comment}{Player::Player(Player\&\&\ other)\ noexcept\ }}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00035}00035\ \textcolor{comment}{\ \ \ \ :\ character(std::move(other.character)),\ hp(other.hp),\ mana(other.mana),\ }}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00036}00036\ \textcolor{comment}{\ \ \ \ \ \ armor(other.armor),\ name(other.name),\ hand(std::move(other.hand)),\ }}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00037}00037\ \textcolor{comment}{\ \ \ \ \ \ shield\_amount(other.shield\_amount),\ cumulative\_attack\_multiplier(other.cumulative\_attack\_multiplier),}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00038}00038\ \textcolor{comment}{\ \ \ \ \ \ cumulative\_heal\_multiplier(other.cumulative\_heal\_multiplier),}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ \ \ cumulative\_weapon\_adder(other.cumulative\_weapon\_adder),}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ turn\_active(other.turn\_active)\ \{\}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00041}00041\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00042}00042\ \textcolor{comment}{Player\&\ Player::operator=(Player\&\&\ other)\ noexcept\ \{}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ if\ (this\ !=\ \&other)\ \{}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00044}00044\ \textcolor{comment}{\ \ \ \ \ \ \ \ character\ =\ std::move(other.character);}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00045}00045\ \textcolor{comment}{\ \ \ \ \ \ \ \ hp\ =\ other.hp;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00046}00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ mana\ =\ other.mana;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ armor\ =\ other.armor;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00048}00048\ \textcolor{comment}{\ \ \ \ \ \ \ \ name\ =\ other.name;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ hand\ =\ std::move(other.hand);}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00050}00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ shield\_amount\ =\ other.shield\_amount;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00051}00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ cumulative\_attack\_multiplier\ =\ other.cumulative\_attack\_multiplier;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00052}\mbox{\hyperlink{class_a_i___player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{00052}}\ \textcolor{comment}{\ \ \ \ \ \ \ \ cumulative\_heal\_multiplier\ =\ other.cumulative\_heal\_multiplier;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00053}00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ cumulative\_weapon\_adder\ =\ other.cumulative\_weapon\_adder;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ turn\_active\ =\ other.turn\_active;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00056}00056\ \textcolor{comment}{\ \ \ \ return\ *this;}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00057}00057\ \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00058}00058\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00059}00059\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00063}\mbox{\hyperlink{class_player_a3e07bc1ac222648212f8edaf621cfd0c}{00063}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a3e07bc1ac222648212f8edaf621cfd0c}{Player::set\_character}}(std::unique\_ptr<Character>\&\&\ new\_character)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}\ =\ std::move(new\_character);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00065}\mbox{\hyperlink{class_a_i___player_af9c22c6310c86cf7ff76ba1ab5e8278c}{00065}}\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00067}\mbox{\hyperlink{class_player_a5600b83d4c5b11756cacd30c25955089}{00067}}\ \mbox{\hyperlink{class_character}{Character}}\&\ \mbox{\hyperlink{class_player_a5600b83d4c5b11756cacd30c25955089}{Player::get\_character}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Character\ not\ set"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00074}\mbox{\hyperlink{class_player_a3fecd7cf3f2125ffb5fdd103644f261a}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a3fecd7cf3f2125ffb5fdd103644f261a}{Player::perform\_special\_action}}()\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Character\ not\ set"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>special\_action(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00081}\mbox{\hyperlink{class_player_a32a29e87e109099c521453c64b21696d}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a32a29e87e109099c521453c64b21696d}{Player::get\_special\_action\_info}}()\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Character\ not\ set"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>special\_action\_info();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00088}\mbox{\hyperlink{class_player_a888eabd56fb4f223ebcb78ae11aa5521}{00088}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a888eabd56fb4f223ebcb78ae11aa5521}{Player::show\_hand}}()\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00089}00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)033[36m===\ Your\ Hand\ ===\(\backslash\)033[0m\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00090}00090\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//\ Display\ special\ ability\ information}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}\(\backslash\)n\(\backslash\)033[33m[Special\ Ability]\(\backslash\)033[0m\ "{};}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//get\_special\_action\_info();}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ Calculate\ maximum\ width\ for\ the\ initial\ portion\ (index,\ name,\ mana)}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ max\_width\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_amount();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ card\ =\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_card(i);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ std::string\ color\_code\ =\ \mbox{\hyperlink{class_player_a9f93494cb446abe5acc9943e4dee9e7c}{get\_color\_code}}(card.get\_rarity());}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ std::string\ display\ =\ \textcolor{stringliteral}{"{}["{}}\ +\ std::to\_string(i)\ +\ \textcolor{stringliteral}{"{}]\ "{}}\ +\ color\_code\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ card.get\_name()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)033[0m\ ("{}}\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::to\_string(card.get\_mana\_cost())\ +\ \textcolor{stringliteral}{"{}\ mana)\ -\/\ "{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ max\_width\ =\ std::max(max\_width,\ display.size());}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00106}00106\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{comment}{//\ Display\ each\ card\ with\ proper\ formatting}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_amount();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ card\ =\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_card(i);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ std::string\ color\_code\ =\ \mbox{\hyperlink{class_player_a9f93494cb446abe5acc9943e4dee9e7c}{get\_color\_code}}(card.get\_rarity());}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ std::string\ display\ =\ \textcolor{stringliteral}{"{}["{}}\ +\ std::to\_string(i)\ +\ \textcolor{stringliteral}{"{}]\ "{}}\ +\ color\_code\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ card.get\_name()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)033[0m\ ("{}}\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ std::to\_string(card.get\_mana\_cost())\ +\ \textcolor{stringliteral}{"{}\ mana)\ -\/\ "{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ padding\ needed\ to\ align\ the\ "{}Type:"{}\ field}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ std::string\ padding(max\_width\ -\/\ display.size(),\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ card\ type\ color}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ std::string\ type\_color\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(card.get\_type()\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}{CardType::Beast}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ card.get\_type()\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda35a88e03e6699907873597f5549e0b7a}{CardType::Creature}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ card.get\_type()\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}{CardType::AttackSpell}}\ ||\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ card.get\_type()\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdac19ac8260650e45ea31997ca314611ac}{CardType::HealSpell}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ type\_color\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[31m"{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ display\ <<\ padding\ <<\ type\_color\ <<\ \textcolor{stringliteral}{"{}Type:\ "{}}\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{enums_8h_a3e6f1bbfc27e39b050533212ec4fcdcd}{cardTypeToString}}(card.get\_type())\ <<\ \textcolor{stringliteral}{"{}\ |\ \(\backslash\)033[0m"{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ card.print\_key\_info();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00132}00132\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)033[36m==================\(\backslash\)033[0m\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00135}\mbox{\hyperlink{class_player_a13d9bdfa1eff068eca64494ac8ea6ded}{00135}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a13d9bdfa1eff068eca64494ac8ea6ded}{Player::eat\_card}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_amount())\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ card\ index"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ card\ from\ hand}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_card}{Card}}\&\ card\ =\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_card(index);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Get\ character's\ HP\ multiplier}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{float}\ hp\_multiplier\ =\ \mbox{\hyperlink{class_player_a5600b83d4c5b11756cacd30c25955089}{get\_character}}().\mbox{\hyperlink{class_character_af5e2b75b0ff04a33151796e84859b6d1}{get\_heal\_multiplier}}();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//\ Calculate\ rarity\ value\ (Common=1,\ Uncommon=2,\ Rare=3,\ Epic=4)}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{keywordtype}{int}\ rarity\_value\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(card.\mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}())\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{comment}{//\ Calculate\ HP\ increase\ with\ multiplier\ and\ convert\ to\ integer}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{int}\ hp\_increase\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(rarity\_value\ *\ 10\ *\ hp\_multiplier);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//\ Update\ player's\ HP}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}\ +=\ hp\_increase;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ card\ from\ hand}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00156}00156\ \ \ \ \ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.remove\_card(index);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00159}\mbox{\hyperlink{class_player_a1b16fa32c965db3bd1c67a61de05dd94}{00159}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a1b16fa32c965db3bd1c67a61de05dd94}{Player::use\_card}}(\textcolor{keywordtype}{int}\ index,\ \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}\&\ target)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_amount())\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ card\ index"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{comment}{//\ Get\ reference\ to\ the\ card\ before\ removal}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\&\ card\ =\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_card(index);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ card\_type\ =\ card.\mbox{\hyperlink{class_card_af18514eb50324ad8b79064af87f45067}{get\_type}}();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{comment}{//\ Check\ mana\ cost}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{int}\ mana\_cost\ =\ card.\mbox{\hyperlink{class_card_a8fedebb4917ed6efdabd817f389d7b9a}{get\_mana\_cost}}();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}\ <\ mana\_cost)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Not\ enough\ mana\ to\ use\ this\ card"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00172}00172\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00173}00173\ \ \ \ \ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}\ -\/=\ mana\_cost;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{comment}{//\ Apply\ card\ effect}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00176}00176\ \ \ \ \ card.\mbox{\hyperlink{class_card_a0f53ecf6d310dfb256556bfa70e2609e}{use}}(*\textcolor{keyword}{this},\ target);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//\ Remove\ card\ from\ hand}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00179}00179\ \ \ \ \ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.remove\_card(index);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ card\ type\ ends\ the\ player's\ turn}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{if}\ (card\_type\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}{CardType::AttackSpell}}\ ||}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ card\_type\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdac19ac8260650e45ea31997ca314611ac}{CardType::HealSpell}}\ ||}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ card\_type\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}{CardType::Beast}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{end\_turn}}();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00187}00187\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00189}\mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{00189}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{Player::take\_damage}}(\textcolor{keywordtype}{int}\ damage)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00190}00190\ \ \ \ \ \textcolor{keywordflow}{if}\ (damage\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{keywordtype}{int}\ remaining\_damage\ =\ damage;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{comment}{//\ Apply\ damage\ to\ shields\ first}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_shield\_absorb\ =\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ *\ 10;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ absorbed\_by\_shields\ =\ std::min(remaining\_damage,\ max\_shield\_absorb);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ remaining\_damage\ -\/=\ absorbed\_by\_shields;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ number\ of\ shields\ used\ (ceiling\ division)}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ shields\_used\ =\ (absorbed\_by\_shields\ +\ 9)\ /\ 10;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ =\ std::max(\mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ -\/\ shields\_used,\ 0);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{if}\ (remaining\_damage\ <=\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{comment}{//\ Apply\ damage\ to\ armor\ next}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ armor\_absorb\ =\ std::min(remaining\_damage,\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00211}00211\ \ \ \ \ remaining\_damage\ -\/=\ armor\_absorb;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00212}00212\ \ \ \ \ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}\ =\ std::max(\mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}\ -\/\ armor\_absorb,\ 0);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{if}\ (remaining\_damage\ <=\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{comment}{//\ Apply\ remaining\ damage\ to\ HP}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00217}00217\ \ \ \ \ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}\ =\ std::max(\mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}\ -\/\ remaining\_damage,\ 0);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00218}00218\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00220}\mbox{\hyperlink{class_player_ac6003e36a7024a9f165dba61dd105e2e}{00220}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ac6003e36a7024a9f165dba61dd105e2e}{Player::throw\_out}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_amount())\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ card\ index"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00223}00223\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.remove\_card(index);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00225}00225\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00227}\mbox{\hyperlink{class_player_ad160329edfeac4cbc165344fc86c5bb2}{00227}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_ad160329edfeac4cbc165344fc86c5bb2}{Player::get\_hp}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00229}00229\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00231}\mbox{\hyperlink{class_player_ad56071586a2ec879a5a4a60548f9e8b7}{00231}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ad56071586a2ec879a5a4a60548f9e8b7}{Player::set\_hp}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}HP\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00234}00234\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00236}00236\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00238}\mbox{\hyperlink{class_player_ab39ea4f03f27dfbdc6b7c9f6ef2dfbb7}{00238}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_ab39ea4f03f27dfbdc6b7c9f6ef2dfbb7}{Player::get\_mana}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00240}00240\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00242}\mbox{\hyperlink{class_player_a7cc2889880443f454608d35040d4286f}{00242}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a7cc2889880443f454608d35040d4286f}{Player::set\_mana}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Mana\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00247}00247\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00249}\mbox{\hyperlink{class_player_ad16b1d45b9556a90297044599670e382}{00249}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_ad16b1d45b9556a90297044599670e382}{Player::get\_armor}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00251}00251\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00253}\mbox{\hyperlink{class_player_a8e1d3b12beb3d1f3d81f3377420ce5ce}{00253}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a8e1d3b12beb3d1f3d81f3377420ce5ce}{Player::set\_armor}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Armor\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00257}00257\ \ \ \ \ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00258}00258\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00260}\mbox{\hyperlink{class_player_ab2c0d7b0744ff02b218ab8c26f600c39}{00260}}\ std::string\ \mbox{\hyperlink{class_player_ab2c0d7b0744ff02b218ab8c26f600c39}{Player::get\_name}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00262}00262\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00264}\mbox{\hyperlink{class_player_ac1765f268a7921846fae92341c3c0d0e}{00264}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ac1765f268a7921846fae92341c3c0d0e}{Player::set\_name}}(\textcolor{keyword}{const}\ std::string\&\ Name)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{keywordflow}{if}\ (Name.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Name\ cannot\ be\ empty"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00267}00267\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00268}00268\ \ \ \ \ \mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}}\ =\ Name;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00269}00269\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00271}\mbox{\hyperlink{class_player_a7bb4ef74aabe4954b3a75533d6aa7b04}{00271}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a7bb4ef74aabe4954b3a75533d6aa7b04}{Player::get\_shield\_amount}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00273}00273\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00275}\mbox{\hyperlink{class_player_ad4e8309edc296ef52d4e8333c972c3ee}{00275}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ad4e8309edc296ef52d4e8333c972c3ee}{Player::set\_shield\_amount}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00276}00276\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Shield\ amount\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00278}00278\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00279}00279\ \ \ \ \ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00280}00280\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00282}\mbox{\hyperlink{class_player_a29f1b07b7b4e6a31774ca2e9c9524b33}{00282}}\ std::string\ \mbox{\hyperlink{class_player_a29f1b07b7b4e6a31774ca2e9c9524b33}{Player::get\_character\_statistics}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00283}00283\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Character\ not\ set"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00285}00285\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00286}00286\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00287}00287\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}Character\ Statistics:\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Level:\ "{}}\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_level()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}XP:\ "{}}\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_xp()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Heal\ Multiplier:\ "{}}\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_heal\_multiplier()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Damage\ Multiplier:\ "{}}\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_dmg\_multiplier()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Armor\ Multiplier:\ "{}}\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_armor\_multiplier()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Description:\ "{}}\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_description()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}XP\ to\ Next\ Level:\ "{}}\ <<\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}-\/>get\_xp\_to\_next\_lvl();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00297}00297\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00299}\mbox{\hyperlink{class_player_a0e9ebe65b4942ecf838e3b069e082fee}{00299}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a0e9ebe65b4942ecf838e3b069e082fee}{Player::reset\_turn}}()\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00300}00300\ \ \ \ \ \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}}\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00301}00301\ \ \ \ \ \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}}\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00302}00302\ \ \ \ \ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00303}00303\ \ \ \ \ \mbox{\hyperlink{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}{turn\_active}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00304}00304\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00306}\mbox{\hyperlink{class_player_a7fb226d11afd97a0cfa94b64add02783}{00306}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a7fb226d11afd97a0cfa94b64add02783}{Player::apply\_attack\_multiplier}}(\textcolor{keywordtype}{float}\ effect)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00307}00307\ \ \ \ \ \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}}\ =\ std::round(\mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}}\ *\ effect\ *\ 100)\ /\ 100;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00308}00308\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00310}\mbox{\hyperlink{class_player_aea5d839608659b86880cb28b2247f728}{00310}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aea5d839608659b86880cb28b2247f728}{Player::apply\_heal\_multiplier}}(\textcolor{keywordtype}{float}\ effect)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00311}00311\ \ \ \ \ \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}}\ \ =\ std::round(\mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}}\ *\ effect\ *\ 100)\ /\ 100;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00312}00312\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00314}\mbox{\hyperlink{class_player_a65f7d8e3809c89ecc4d8a0b087b54cf1}{00314}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a65f7d8e3809c89ecc4d8a0b087b54cf1}{Player::add\_weapon\_bonus}}(\textcolor{keywordtype}{int}\ effect)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00315}00315\ \ \ \ \ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}}\ =\ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}}\ +\ effect;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00316}00316\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00318}\mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{00318}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{Player::end\_turn}}()\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00319}00319\ \ \ \ \ \mbox{\hyperlink{class_player_a0e9ebe65b4942ecf838e3b069e082fee}{reset\_turn}}();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00320}00320\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00322}\mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{00322}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{Player::get\_cumulative\_attack\_multiplier}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00324}00324\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00326}\mbox{\hyperlink{class_player_aa4619a2c2e329de1c2e6c5bbca336a15}{00326}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa4619a2c2e329de1c2e6c5bbca336a15}{Player::set\_cumulative\_attack\_multiplier}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00327}00327\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Attack\ multiplier\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00329}00329\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00330}00330\ \ \ \ \ \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\_attack\_multiplier}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00331}00331\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00333}\mbox{\hyperlink{class_player_ad85fd59e2f2edebb6286820fb5275777}{00333}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_ad85fd59e2f2edebb6286820fb5275777}{Player::get\_cumulative\_heal\_multiplier}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00334}00334\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00335}00335\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00337}\mbox{\hyperlink{class_player_a45e117ad919924abff2018f7b67b1e94}{00337}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a45e117ad919924abff2018f7b67b1e94}{Player::set\_cumulative\_heal\_multiplier}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00338}00338\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heal\ multiplier\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00340}00340\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00341}00341\ \ \ \ \ \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\_heal\_multiplier}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00342}00342\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00344}\mbox{\hyperlink{class_player_afb57ee79edbb6f534baa876a8c6d09b2}{00344}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_afb57ee79edbb6f534baa876a8c6d09b2}{Player::get\_cumulative\_weapon\_bonus}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00346}00346\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00348}\mbox{\hyperlink{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}{00348}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}{Player::set\_cumulative\_weapon\_bonus}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00349}00349\ \ \ \ \ \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\_weapon\_adder}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00350}00350\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00352}\mbox{\hyperlink{class_player_a5c97b1bd6063ea9fbfc035820813f4d3}{00352}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_a5c97b1bd6063ea9fbfc035820813f4d3}{Player::is\_turn\_active}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00353}00353\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}{turn\_active}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00354}00354\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00356}\mbox{\hyperlink{class_player_ad7c5b8e3bb61cae1bf35dc76f84efe51}{00356}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ad7c5b8e3bb61cae1bf35dc76f84efe51}{Player::set\_turn\_active}}(\textcolor{keywordtype}{bool}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00357}00357\ \ \ \ \ \mbox{\hyperlink{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}{turn\_active}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00358}00358\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00360}\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{00360}}\ \mbox{\hyperlink{class_hand}{Hand}}\&\ \mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{Player::get\_hand}}()\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00361}00361\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00362}00362\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00364}\mbox{\hyperlink{class_player_a605ceaf0702eb402fd4f235c119038b7}{00364}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_hand}{Hand}}\&\ \mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{Player::get\_hand}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00365}00365\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00368}\mbox{\hyperlink{class_player_a3ba1e75f9dcddaa89f1af4838cb6ee3f}{00368}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a3ba1e75f9dcddaa89f1af4838cb6ee3f}{Player::set\_hand}}(\mbox{\hyperlink{class_hand}{Hand}}\ new\_hand)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00369}00369\ \ \ \ \ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}\ =\ std::move(new\_hand);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00370}00370\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00372}\mbox{\hyperlink{class_player_af7a87268e11ac0ae593ac18c00d29c97}{00372}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_af7a87268e11ac0ae593ac18c00d29c97}{Player::has\_combat\_cards}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00373}00373\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_amount();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ card\ =\ \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}.get\_card(i);}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ type\ =\ card.get\_type();}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}{CardType::Beast}}\ ||\ type\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda35a88e03e6699907873597f5549e0b7a}{CardType::Creature}}\ ||\ type\ ==\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}{CardType::AttackSpell}})\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00379}00379\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00381}00381\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00383}\mbox{\hyperlink{class_player_a9f93494cb446abe5acc9943e4dee9e7c}{00383}}\ std::string\ \mbox{\hyperlink{class_player_a9f93494cb446abe5acc9943e4dee9e7c}{Player::get\_color\_code}}(\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ rarity)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00384}00384\ \ \ \ \ \textcolor{keywordflow}{switch}(rarity)\ \{}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}}:}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}};\ \textcolor{comment}{//\ White}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Rarity::Uncommon}}:}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}};\ \textcolor{comment}{//\ Green}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}}:}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)033[34m"{}};\ \textcolor{comment}{//\ Blue}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}}:}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)033[35m"{}};\ \textcolor{comment}{//\ Magenta}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}};\ \textcolor{comment}{//\ Default\ to\ white}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00395}00395\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00396}00396\ \}}
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{player_8cpp_source_l00398}00398\ }
+
+\end{DoxyCode}

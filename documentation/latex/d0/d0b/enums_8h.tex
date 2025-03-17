@@ -1,0 +1,249 @@
+\doxysection{D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/cards/enums.h File Reference}
+\hypertarget{enums_8h}{}\label{enums_8h}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/enums.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/enums.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \{ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Common}}
+, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Uncommon}}
+, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rare}}
+, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Epic}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines card rarity classifications. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} \{ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Fire}}
+, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}{Water}}
+, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Earth}}
+, \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a71c546fa61f3964d72bdf25223b78669}{Air}}
+ \}
+\begin{DoxyCompactList}\small\item\em Elemental affinity types. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} \{ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4}{North}}
+, \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffaa99dc62d017d04cf67266593f9c3761e}{East}}
+, \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffabf495fc048d8d44b7f32536df5cf3930}{West}}
+, \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffa263d7b2cf53802c9ed127b718c0bf9fd}{South}}
+ \}
+\begin{DoxyCompactList}\small\item\em Geographic faction classifications. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \{ \newline
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}{Beast}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda536e1a5d9f4fe868e6ea5ff628f51f25}{Buff}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda35a88e03e6699907873597f5549e0b7a}{Creature}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda970da5f1f2e32aeb9e488dd017160ab4}{Shield}}
+, \newline
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda18c83669920215a818638ad0e5421e4b}{Weapon}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab96919a088e508abfbb1aa9c4cbb8f0b}{Artifact}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}{Attack\+Spell}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdac19ac8260650e45ea31997ca314611ac}{Heal\+Spell}}
+, \newline
+\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda2fa5923f445f61cb4b187adb32b99459}{Buff\+Spell}}
+, \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda921d97698c9026bbac1c060627721d62}{Defence\+Spell}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_card}{Card} type enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{enums_8h_a3e6f1bbfc27e39b050533212ec4fcdcd}{card\+Type\+To\+String}} (\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Converts \doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} enum to string representation. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{enums_8h_aef8b5d590605db73cdcd8bc7e8ffa651}{tribe\+To\+String}} (\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}} tribe)
+\begin{DoxyCompactList}\small\item\em Converts a \doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} enum value to its string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}\index{enums.h@{enums.h}!CardType@{CardType}}
+\index{CardType@{CardType}!enums.h@{enums.h}}
+\doxysubsubsection{\texorpdfstring{CardType}{CardType}}
+{\footnotesize\ttfamily \label{enums_8h_a76b9e96d86b331202dcc0fba38b758cd} 
+enum class \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+\doxylink{class_card}{Card} type enumeration. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Beast@{Beast}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Beast@{Beast}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e} 
+Beast&Cards representing creatures. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Buff@{Buff}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Buff@{Buff}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda536e1a5d9f4fe868e6ea5ff628f51f25}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda536e1a5d9f4fe868e6ea5ff628f51f25} 
+Buff&Cards providing temporary bonuses. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Creature@{Creature}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Creature@{Creature}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda35a88e03e6699907873597f5549e0b7a}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda35a88e03e6699907873597f5549e0b7a} 
+Creature&Cards that summon creatures. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shield@{Shield}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Shield@{Shield}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda970da5f1f2e32aeb9e488dd017160ab4}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda970da5f1f2e32aeb9e488dd017160ab4} 
+Shield&Cards providing protection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Weapon@{Weapon}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Weapon@{Weapon}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda18c83669920215a818638ad0e5421e4b}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda18c83669920215a818638ad0e5421e4b} 
+Weapon&Cards enhancing attack power. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Artifact@{Artifact}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Artifact@{Artifact}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab96919a088e508abfbb1aa9c4cbb8f0b}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab96919a088e508abfbb1aa9c4cbb8f0b} 
+Artifact&Cards with global effects. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AttackSpell@{AttackSpell}!enums.h@{enums.h}}\index{enums.h@{enums.h}!AttackSpell@{AttackSpell}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012} 
+Attack\+Spell&Damage-\/dealing spell cards. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HealSpell@{HealSpell}!enums.h@{enums.h}}\index{enums.h@{enums.h}!HealSpell@{HealSpell}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cdac19ac8260650e45ea31997ca314611ac}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cdac19ac8260650e45ea31997ca314611ac} 
+Heal\+Spell&Healing spell cards. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BuffSpell@{BuffSpell}!enums.h@{enums.h}}\index{enums.h@{enums.h}!BuffSpell@{BuffSpell}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda2fa5923f445f61cb4b187adb32b99459}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda2fa5923f445f61cb4b187adb32b99459} 
+Buff\+Spell&Temporary buff spell cards. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DefenceSpell@{DefenceSpell}!enums.h@{enums.h}}\index{enums.h@{enums.h}!DefenceSpell@{DefenceSpell}}}\Hypertarget{enums_8h_a76b9e96d86b331202dcc0fba38b758cda921d97698c9026bbac1c060627721d62}\label{enums_8h_a76b9e96d86b331202dcc0fba38b758cda921d97698c9026bbac1c060627721d62} 
+Defence\+Spell&Defensive spell cards. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{enums_8h_source_l00052}{52}} of file \mbox{\hyperlink{enums_8h_source}{enums.\+h}}.
+
+\Hypertarget{enums_8h_a8b9bbfde536d6e2a415388fa10347062}\index{enums.h@{enums.h}!Element@{Element}}
+\index{Element@{Element}!enums.h@{enums.h}}
+\doxysubsubsection{\texorpdfstring{Element}{Element}}
+{\footnotesize\ttfamily \label{enums_8h_a8b9bbfde536d6e2a415388fa10347062} 
+enum class \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Elemental affinity types. 
+
+Defines card\textquotesingle{}s magical alignment Now contains placeholders as descriptions \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fire@{Fire}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Fire@{Fire}}}\Hypertarget{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}\label{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb} 
+Fire&Just fire. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Water@{Water}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Water@{Water}}}\Hypertarget{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}\label{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18} 
+Water&Just water. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Earth@{Earth}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Earth@{Earth}}}\Hypertarget{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}\label{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523} 
+Earth&Just dirt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Air@{Air}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Air@{Air}}}\Hypertarget{enums_8h_a8b9bbfde536d6e2a415388fa10347062a71c546fa61f3964d72bdf25223b78669}\label{enums_8h_a8b9bbfde536d6e2a415388fa10347062a71c546fa61f3964d72bdf25223b78669} 
+Air&just oxygen \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{enums_8h_source_l00028}{28}} of file \mbox{\hyperlink{enums_8h_source}{enums.\+h}}.
+
+\Hypertarget{enums_8h_a6c4fc244cdc975f7fd572fa614617600}\index{enums.h@{enums.h}!Rarity@{Rarity}}
+\index{Rarity@{Rarity}!enums.h@{enums.h}}
+\doxysubsubsection{\texorpdfstring{Rarity}{Rarity}}
+{\footnotesize\ttfamily \label{enums_8h_a6c4fc244cdc975f7fd572fa614617600} 
+enum class \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines card rarity classifications. 
+
+Determines drop probability and crafting cost. Ordered from most common to rarest. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Common@{Common}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Common@{Common}}}\Hypertarget{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}\label{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563} 
+Common&Basic quality. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Uncommon@{Uncommon}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Uncommon@{Uncommon}}}\Hypertarget{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}\label{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00} 
+Uncommon&Not common rarity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rare@{Rare}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Rare@{Rare}}}\Hypertarget{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}\label{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a} 
+Rare&Powerful effects, limited quantity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Epic@{Epic}!enums.h@{enums.h}}\index{enums.h@{enums.h}!Epic@{Epic}}}\Hypertarget{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}\label{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756} 
+Epic&Legendary status, extremely rare. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{enums_8h_source_l00014}{14}} of file \mbox{\hyperlink{enums_8h_source}{enums.\+h}}.
+
+\Hypertarget{enums_8h_af831c68e3c232459dad13935143716ff}\index{enums.h@{enums.h}!Tribe@{Tribe}}
+\index{Tribe@{Tribe}!enums.h@{enums.h}}
+\doxysubsubsection{\texorpdfstring{Tribe}{Tribe}}
+{\footnotesize\ttfamily \label{enums_8h_af831c68e3c232459dad13935143716ff} 
+enum class \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Geographic faction classifications. 
+
+Determines faction alliances. Affects gameplay mechanics. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{North@{North}!enums.h@{enums.h}}\index{enums.h@{enums.h}!North@{North}}}\Hypertarget{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4}\label{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4} 
+North&Northern realms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{East@{East}!enums.h@{enums.h}}\index{enums.h@{enums.h}!East@{East}}}\Hypertarget{enums_8h_af831c68e3c232459dad13935143716ffaa99dc62d017d04cf67266593f9c3761e}\label{enums_8h_af831c68e3c232459dad13935143716ffaa99dc62d017d04cf67266593f9c3761e} 
+East&Eastern empires. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{West@{West}!enums.h@{enums.h}}\index{enums.h@{enums.h}!West@{West}}}\Hypertarget{enums_8h_af831c68e3c232459dad13935143716ffabf495fc048d8d44b7f32536df5cf3930}\label{enums_8h_af831c68e3c232459dad13935143716ffabf495fc048d8d44b7f32536df5cf3930} 
+West&Western alliance. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{South@{South}!enums.h@{enums.h}}\index{enums.h@{enums.h}!South@{South}}}\Hypertarget{enums_8h_af831c68e3c232459dad13935143716ffa263d7b2cf53802c9ed127b718c0bf9fd}\label{enums_8h_af831c68e3c232459dad13935143716ffa263d7b2cf53802c9ed127b718c0bf9fd} 
+South&Southern tribes. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{enums_8h_source_l00042}{42}} of file \mbox{\hyperlink{enums_8h_source}{enums.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{enums_8h_a3e6f1bbfc27e39b050533212ec4fcdcd}\index{enums.h@{enums.h}!cardTypeToString@{cardTypeToString}}
+\index{cardTypeToString@{cardTypeToString}!enums.h@{enums.h}}
+\doxysubsubsection{\texorpdfstring{cardTypeToString()}{cardTypeToString()}}
+{\footnotesize\ttfamily \label{enums_8h_a3e6f1bbfc27e39b050533212ec4fcdcd} 
+std\+::string card\+Type\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts \doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} enum to string representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Textual representation of the card type 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{enums_8h_source_l00071}{71}} of file \mbox{\hyperlink{enums_8h_source}{enums.\+h}}.
+
+\Hypertarget{enums_8h_aef8b5d590605db73cdcd8bc7e8ffa651}\index{enums.h@{enums.h}!tribeToString@{tribeToString}}
+\index{tribeToString@{tribeToString}!enums.h@{enums.h}}
+\doxysubsubsection{\texorpdfstring{tribeToString()}{tribeToString()}}
+{\footnotesize\ttfamily \label{enums_8h_aef8b5d590605db73cdcd8bc7e8ffa651} 
+std\+::string tribe\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}}]{tribe}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts a \doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} enum value to its string representation. 
+
+This function takes a \doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} enum value and returns the corresponding string representation. It is useful for displaying tribe information in a human-\/readable format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tribe} & The \doxylink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe} enum value to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The string representation of the tribe 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{enums_8h_source_l00097}{97}} of file \mbox{\hyperlink{enums_8h_source}{enums.\+h}}.
+

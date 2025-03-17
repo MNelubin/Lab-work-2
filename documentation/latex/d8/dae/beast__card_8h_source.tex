@@ -1,0 +1,44 @@
+\doxysection{beast\+\_\+card.\+h}
+\hypertarget{beast__card_8h_source}{}\label{beast__card_8h_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/beast\_card.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/beast\_card.h}}
+\mbox{\hyperlink{beast__card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ BEAST\_CARD\_H}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ BEAST\_CARD\_H}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enums_8h}{enums.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00015}\mbox{\hyperlink{class_beast___card}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_beast___card_a614883a58b47826a4c18274b9aad6295}{Beast\_Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}\ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00016}00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00017}\mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{00017}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}};\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00018}\mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{00018}}\ \ \ \ \ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}};\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{Beast\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}},\ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}});}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{Beast\_Card}}();}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{get\_base\_dmg}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00052}00052\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a23e648986998cabf69fe217fab8619b6}{set\_base\_dmg}}(\textcolor{keywordtype}{int}\ new\_dmg);}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ \mbox{\hyperlink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{get\_tribe}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{set\_tribe}}(\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ new\_tribe);}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00076}00076\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{generate\_properties}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{print\_key\_info}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00082}00082\ \};}
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8h_source_l00084}00084\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

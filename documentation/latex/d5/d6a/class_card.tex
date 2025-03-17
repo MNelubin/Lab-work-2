@@ -1,0 +1,436 @@
+\doxysection{Card Class Reference}
+\hypertarget{class_card}{}\label{class_card}\index{Card@{Card}}
+
+
+Base class representing a game card.  
+
+
+
+
+{\ttfamily \#include $<$card.\+h$>$}
+
+Inheritance diagram for Card\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.521739cm]{d5/d6a/class_card}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}} (const std\+::string \&\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}, const std\+::string \&\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}, \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}, int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_card}{Card} object with specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9}{\texorpdfstring{$\sim$}{\string~}\+Card}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper polymorphic deletion. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_a39c0e62ffe4979b8d8142b416043ff26}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current card name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\+\_\+name}} (const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Updates card\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_a5519eb130702a7e04ce06834353d9aa2}{get\+\_\+description}} () const
+\begin{DoxyCompactList}\small\item\em Gets current effect description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\+\_\+description}} (const std\+::string \&new\+\_\+desc)
+\begin{DoxyCompactList}\small\item\em Modifies card\textquotesingle{}s effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\+\_\+rarity}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves current rarity classification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\+\_\+rarity}} (\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} new\+\_\+rarity)
+\begin{DoxyCompactList}\small\item\em Changes card\textquotesingle{}s rarity category. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_card_a8fedebb4917ed6efdabd817f389d7b9a}{get\+\_\+mana\+\_\+cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets current mana cost value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_card_a6ec8620c325a26bec6d230ac30875bfc}{set\+\_\+mana\+\_\+cost}} (int new\+\_\+cost)
+\begin{DoxyCompactList}\small\item\em Updates mana cost requirement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_card_a0f53ecf6d310dfb256556bfa70e2609e}{use}} (\mbox{\hyperlink{class_player}{Player}} \&user, \mbox{\hyperlink{class_player}{Player}} \&target)=0
+\begin{DoxyCompactList}\small\item\em Apply card effect to target. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} \mbox{\hyperlink{class_card_af18514eb50324ad8b79064af87f45067}{get\+\_\+type}} () const =0
+\begin{DoxyCompactList}\small\item\em Get card type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_card_ab4c481f82a991bd9b2f992e6ea38ec91}{generate\+\_\+properties}} ()=0
+\begin{DoxyCompactList}\small\item\em Generates random properties based on card\textquotesingle{}s rarity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\+\_\+random\+\_\+rarity}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random rarity based on predefined probabilities. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_card_a27225a0e526b92785afee861f43853fd}{print\+\_\+key\+\_\+info}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}}
+\begin{DoxyCompactList}\small\item\em Display name of the card. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}}
+\begin{DoxyCompactList}\small\item\em Flavor text and effect description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}}
+\begin{DoxyCompactList}\small\item\em \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\+\_\+cost}}
+\begin{DoxyCompactList}\small\item\em Required mana to play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class representing a game card. 
+
+Provides basic card properties and manipulation methods. All specific card types should inherit from this class. 
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00029}{29}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_card_a4445adcdb4e04fae03789796345e402f}\index{Card@{Card}!Card@{Card}}
+\index{Card@{Card}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{Card()}{Card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_card_a4445adcdb4e04fae03789796345e402f} 
+Card\+::\+Card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{, }\item[{int}]{mana\+\_\+cost}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_card}{Card} object with specified parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Initial display name for the card \\
+\hline
+\mbox{\texttt{ in}}  & {\em description} & Initial effect description text \\
+\hline
+\mbox{\texttt{ in}}  & {\em rarity} & Starting rarity classification \\
+\hline
+\mbox{\texttt{ in}}  & {\em mana\+\_\+cost} & Base mana cost required to play \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a783f5854cbe8c183ee3d4414c01472c0}\index{Card@{Card}!Card@{Card}}
+\index{Card@{Card}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{Card()}{Card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_card_a783f5854cbe8c183ee3d4414c01472c0} 
+Card\+::\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initializes card with default values\+:
+\begin{DoxyItemize}
+\item name\+: "{}\+Unnamed Card"{}
+\item description\+: "{}\+No description"{}
+\item rarity\+: \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity\+::\+Common}
+\item mana\+\_\+cost\+: 0 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9}\index{Card@{Card}!````~Card@{\texorpdfstring{$\sim$}{\string~}Card}}
+\index{````~Card@{\texorpdfstring{$\sim$}{\string~}Card}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Card()}{\string~Card()}}
+{\footnotesize\ttfamily \label{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9} 
+virtual Card\+::\texorpdfstring{$\sim$}{\string~}\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for proper polymorphic deletion. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_card_ab4c481f82a991bd9b2f992e6ea38ec91}\index{Card@{Card}!generate\_properties@{generate\_properties}}
+\index{generate\_properties@{generate\_properties}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{generate\_properties()}{generate\_properties()}}
+{\footnotesize\ttfamily \label{class_card_ab4c481f82a991bd9b2f992e6ea38ec91} 
+virtual void Card\+::generate\+\_\+properties (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generates random properties based on card\textquotesingle{}s rarity. 
+
+
+
+Implemented in \mbox{\hyperlink{class_artifact___card_aba5ee7ffcb3fbd25b56fb61fe10d244d}{Artifact\+\_\+\+Card}}, \mbox{\hyperlink{class_attack___spell___card_accc5d93444a87a4e48c751464dc67cdd}{Attack\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{Beast\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___card_a6301ef2f2d1a7c9065ca8e55c9b1f2cd}{Buff\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___spell___card_aeea51de770ba91078483ff8408951d31}{Buff\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_creature___card_a705f500ec460d4576bd1e9e7031523dc}{Creature\+\_\+\+Card}}, \mbox{\hyperlink{class_defence___spell___card_af62d096d61b94605ef42817700400ed4}{Defence\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_heal___spell___card_a1abb0c1904ecd009d8387a246000a958}{Heal\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_shield___card_af30dd23a7b77774ab1cd95a2a842ed98}{Shield\+\_\+\+Card}}, and \mbox{\hyperlink{class_weapon___card_ab0de7a0f130264bca4ed94662bd50809}{Weapon\+\_\+\+Card}}.
+
+\Hypertarget{class_card_aca8967a90a7a4d189235176d89259714}\index{Card@{Card}!generate\_random\_rarity@{generate\_random\_rarity}}
+\index{generate\_random\_rarity@{generate\_random\_rarity}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{generate\_random\_rarity()}{generate\_random\_rarity()}}
+{\footnotesize\ttfamily \label{class_card_aca8967a90a7a4d189235176d89259714} 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} Card\+::generate\+\_\+random\+\_\+rarity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random rarity based on predefined probabilities. 
+
+\begin{DoxyReturn}{Returns}
+Randomly selected rarity 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a5519eb130702a7e04ce06834353d9aa2}\index{Card@{Card}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily \label{class_card_a5519eb130702a7e04ce06834353d9aa2} 
+std\+::string Card\+::get\+\_\+description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets current effect description. 
+
+\begin{DoxyReturn}{Returns}
+Full description text as string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a8fedebb4917ed6efdabd817f389d7b9a}\index{Card@{Card}!get\_mana\_cost@{get\_mana\_cost}}
+\index{get\_mana\_cost@{get\_mana\_cost}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{get\_mana\_cost()}{get\_mana\_cost()}}
+{\footnotesize\ttfamily \label{class_card_a8fedebb4917ed6efdabd817f389d7b9a} 
+int Card\+::get\+\_\+mana\+\_\+cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets current mana cost value. 
+
+\begin{DoxyReturn}{Returns}
+Integer representing required mana 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a39c0e62ffe4979b8d8142b416043ff26}\index{Card@{Card}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily \label{class_card_a39c0e62ffe4979b8d8142b416043ff26} 
+std\+::string Card\+::get\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves current card name. 
+
+\begin{DoxyReturn}{Returns}
+const reference to card\textquotesingle{}s name string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a7dc04f8244d247431df9894755c8f4bf}\index{Card@{Card}!get\_rarity@{get\_rarity}}
+\index{get\_rarity@{get\_rarity}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{get\_rarity()}{get\_rarity()}}
+{\footnotesize\ttfamily \label{class_card_a7dc04f8244d247431df9894755c8f4bf} 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} Card\+::get\+\_\+rarity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves current rarity classification. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} enum value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_af18514eb50324ad8b79064af87f45067}\index{Card@{Card}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{class_card_af18514eb50324ad8b79064af87f45067} 
+virtual \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type}} Card\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get card type. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{Card\+Type} identifier 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_artifact___card_a033599111892c8e37ab1f268e5e1e6d6}{Artifact\+\_\+\+Card}}, \mbox{\hyperlink{class_attack___spell___card_a6d0cd22f7f35a4a66c66c8db9639488b}{Attack\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{Beast\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___card_aca8ba9618dd8d0aba224c10fc3cbb8ed}{Buff\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___spell___card_a9f222af3bb4ef5a2fb6fa2c035506787}{Buff\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_creature___card_a9cf1273cdea7670349ba0f5a89cb634c}{Creature\+\_\+\+Card}}, \mbox{\hyperlink{class_defence___spell___card_ac38bea5c19d3efe35905a848c6727c6e}{Defence\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_heal___spell___card_aacc1716afff99e7dac2775f2b02c92dd}{Heal\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_shield___card_a9582fb2df07acf597659155c75c3252f}{Shield\+\_\+\+Card}}, and \mbox{\hyperlink{class_weapon___card_a0a1c00305e2ff12d39eb2ca28dce9c39}{Weapon\+\_\+\+Card}}.
+
+\Hypertarget{class_card_a27225a0e526b92785afee861f43853fd}\index{Card@{Card}!print\_key\_info@{print\_key\_info}}
+\index{print\_key\_info@{print\_key\_info}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{print\_key\_info()}{print\_key\_info()}}
+{\footnotesize\ttfamily \label{class_card_a27225a0e526b92785afee861f43853fd} 
+virtual void Card\+::print\+\_\+key\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_artifact___card_a6a39b9fb63a5b50e13a581b6947953aa}{Artifact\+\_\+\+Card}}, \mbox{\hyperlink{class_attack___spell___card_a37c0511dde34db7707746eb1933401c7}{Attack\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{Beast\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___card_a49b75230011bbe41e9d18559b2d2cf5f}{Buff\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___spell___card_a97263d62d15e873e97c045bafa74140d}{Buff\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_creature___card_ae29d0310a32037691a699c67d1cade48}{Creature\+\_\+\+Card}}, \mbox{\hyperlink{class_defence___spell___card_aca9b2fdebfbfeb40492ad46466460d42}{Defence\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_heal___spell___card_abd7f880257409275ae1b0ae553c337ce}{Heal\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_shield___card_a58d007d6401864fdf55d357576901808}{Shield\+\_\+\+Card}}, and \mbox{\hyperlink{class_weapon___card_ada740bce7aa2ab81b822ece8f398b3e0}{Weapon\+\_\+\+Card}}.
+
+\Hypertarget{class_card_a7df878df1ad6073334c8f7332ad5cdd0}\index{Card@{Card}!set\_description@{set\_description}}
+\index{set\_description@{set\_description}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{set\_description()}{set\_description()}}
+{\footnotesize\ttfamily \label{class_card_a7df878df1ad6073334c8f7332ad5cdd0} 
+void Card\+::set\+\_\+description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+desc}{}\end{DoxyParamCaption})}
+
+
+
+Modifies card\textquotesingle{}s effect description. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+desc} & New description text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{class_card_a5519eb130702a7e04ce06834353d9aa2}{get\+\_\+description()} == new\+\_\+desc 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a6ec8620c325a26bec6d230ac30875bfc}\index{Card@{Card}!set\_mana\_cost@{set\_mana\_cost}}
+\index{set\_mana\_cost@{set\_mana\_cost}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{set\_mana\_cost()}{set\_mana\_cost()}}
+{\footnotesize\ttfamily \label{class_card_a6ec8620c325a26bec6d230ac30875bfc} 
+void Card\+::set\+\_\+mana\+\_\+cost (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+cost}{}\end{DoxyParamCaption})}
+
+
+
+Updates mana cost requirement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+cost} & New mana cost value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+cost \texorpdfstring{$>$}{>}= 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{class_card_a8fedebb4917ed6efdabd817f389d7b9a}{get\+\_\+mana\+\_\+cost()} == new\+\_\+cost 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}\index{Card@{Card}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily \label{class_card_ac02cf2194bc6fda38b2ec9567e965c7f} 
+void Card\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Updates card\textquotesingle{}s display name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+name} & New name to assign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{class_card_a39c0e62ffe4979b8d8142b416043ff26}{get\+\_\+name()} == new\+\_\+name 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}\index{Card@{Card}!set\_rarity@{set\_rarity}}
+\index{set\_rarity@{set\_rarity}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{set\_rarity()}{set\_rarity()}}
+{\footnotesize\ttfamily \label{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f} 
+void Card\+::set\+\_\+rarity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{new\+\_\+rarity}{}\end{DoxyParamCaption})}
+
+
+
+Changes card\textquotesingle{}s rarity category. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+rarity} & New rarity to assign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\+\_\+rarity()} == new\+\_\+rarity 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{card_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{card_8cpp_source}{card.\+cpp}}.
+
+\Hypertarget{class_card_a0f53ecf6d310dfb256556bfa70e2609e}\index{Card@{Card}!use@{use}}
+\index{use@{use}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_card_a0f53ecf6d310dfb256556bfa70e2609e} 
+virtual void Card\+::use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{user}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply card effect to target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \doxylink{class_player}{Player} using the card \\
+\hline
+{\em target} & \doxylink{class_player}{Player} affected by the card \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_artifact___card_a128c475e801c9e0aeca3e65ffac0b49f}{Artifact\+\_\+\+Card}}, \mbox{\hyperlink{class_attack___spell___card_a4b2690d2e36bcfddd20dc71182fc980e}{Attack\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{Beast\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___card_a6e7cd8a907cd6952e32c20e69070b003}{Buff\+\_\+\+Card}}, \mbox{\hyperlink{class_buff___spell___card_ac366cae710a189505858400f2b294e45}{Buff\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_creature___card_a19685c4b929f1194938d8d1657ab3154}{Creature\+\_\+\+Card}}, \mbox{\hyperlink{class_defence___spell___card_a920795fab19d38aa00d98d216ccc24e8}{Defence\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_heal___spell___card_a9ba2d68259888b7b9c0907cb05e7e6a0}{Heal\+\_\+\+Spell\+\_\+\+Card}}, \mbox{\hyperlink{class_shield___card_a5e0ec8556d3c34d9fd39f5cfba3a6d8d}{Shield\+\_\+\+Card}}, and \mbox{\hyperlink{class_weapon___card_ab43c64f4b8eb9d53243948214c5b2839}{Weapon\+\_\+\+Card}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_card_aa1c11255159b8ac2243398487a2ac00a}\index{Card@{Card}!description@{description}}
+\index{description@{description}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \label{class_card_aa1c11255159b8ac2243398487a2ac00a} 
+std\+::string Card\+::description\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flavor text and effect description. 
+
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00032}{32}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}\index{Card@{Card}!mana\_cost@{mana\_cost}}
+\index{mana\_cost@{mana\_cost}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{mana\_cost}{mana\_cost}}
+{\footnotesize\ttfamily \label{class_card_a0de38ec8e0109a1c2de5ed174477eb1e} 
+int Card\+::mana\+\_\+cost\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Required mana to play. 
+
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00034}{34}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{class_card_a1f5013054990456125c82d805744062f}\index{Card@{Card}!name@{name}}
+\index{name@{name}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_card_a1f5013054990456125c82d805744062f} 
+std\+::string Card\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Display name of the card. 
+
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00031}{31}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{class_card_a99e9ad9d7adc84d9637c768d6ee43905}\index{Card@{Card}!rarity@{rarity}}
+\index{rarity@{rarity}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{rarity}{rarity}}
+{\footnotesize\ttfamily \label{class_card_a99e9ad9d7adc84d9637c768d6ee43905} 
+\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} Card\+::rarity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} category from enum. 
+
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00033}{33}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/cards/\mbox{\hyperlink{card_8h}{card.\+h}}\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/src/cards/\mbox{\hyperlink{card_8cpp}{card.\+cpp}}\end{DoxyCompactItemize}

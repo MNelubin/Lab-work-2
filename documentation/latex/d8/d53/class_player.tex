@@ -1,0 +1,1233 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+Base class representing a game player.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/d53/class_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_af9c22c6310c86cf7ff76ba1ab5e8278c}{Player}} (int \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}, int \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}, int \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}, const std\+::string \&\mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}}, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}=nullptr, int \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\+\_\+amount}}=0)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_player}{Player} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player_a11017c0ed8a639f3b1308ab167fbeca2}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_player_a0aba47a3eeba44a427f27887e1c3f35f}{is\+\_\+human}} () const =0
+\begin{DoxyCompactList}\small\item\em Check if the player is human. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a3e07bc1ac222648212f8edaf621cfd0c}{set\+\_\+character}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \&\&new\+\_\+character)
+\begin{DoxyCompactList}\small\item\em Set the associated \doxylink{class_character}{Character}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_character}{Character}} \& \mbox{\hyperlink{class_player_a5600b83d4c5b11756cacd30c25955089}{get\+\_\+character}} () const
+\begin{DoxyCompactList}\small\item\em Get the associated \doxylink{class_character}{Character}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a3fecd7cf3f2125ffb5fdd103644f261a}{perform\+\_\+special\+\_\+action}} ()
+\begin{DoxyCompactList}\small\item\em Perform the special action of the associated \doxylink{class_character}{Character}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a32a29e87e109099c521453c64b21696d}{get\+\_\+special\+\_\+action\+\_\+info}} ()
+\item 
+void \mbox{\hyperlink{class_player_a888eabd56fb4f223ebcb78ae11aa5521}{show\+\_\+hand}} ()
+\begin{DoxyCompactList}\small\item\em Displays the player\textquotesingle{}s hand with detailed information and special ability status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a13d9bdfa1eff068eca64494ac8ea6ded}{eat\+\_\+card}} (int index)
+\begin{DoxyCompactList}\small\item\em Eats a card from the hand, increasing player\textquotesingle{}s HP based on card\textquotesingle{}s rarity and character\textquotesingle{}s HP multiplier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a1b16fa32c965db3bd1c67a61de05dd94}{use\+\_\+card}} (int index, \mbox{\hyperlink{class_player}{Player}} \&target)
+\begin{DoxyCompactList}\small\item\em Uses a card from the player\textquotesingle{}s hand on a target player with mana cost deduction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{take\+\_\+damage}} (int amount)
+\begin{DoxyCompactList}\small\item\em Applies damage to the player, reducing shields, armor, and HP in that order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ac6003e36a7024a9f165dba61dd105e2e}{throw\+\_\+out}} (int index)
+\begin{DoxyCompactList}\small\item\em Throw out a card from the hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ad160329edfeac4cbc165344fc86c5bb2}{get\+\_\+hp}} () const
+\begin{DoxyCompactList}\small\item\em Get current health points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ad56071586a2ec879a5a4a60548f9e8b7}{set\+\_\+hp}} (int value)
+\begin{DoxyCompactList}\small\item\em Set health points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ab39ea4f03f27dfbdc6b7c9f6ef2dfbb7}{get\+\_\+mana}} () const
+\begin{DoxyCompactList}\small\item\em Get current mana points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a7cc2889880443f454608d35040d4286f}{set\+\_\+mana}} (int value)
+\begin{DoxyCompactList}\small\item\em Set mana points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ad16b1d45b9556a90297044599670e382}{get\+\_\+armor}} () const
+\begin{DoxyCompactList}\small\item\em Get current armor points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a8e1d3b12beb3d1f3d81f3377420ce5ce}{set\+\_\+armor}} (int value)
+\begin{DoxyCompactList}\small\item\em Set armor points. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_player_ab2c0d7b0744ff02b218ab8c26f600c39}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Get player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ac1765f268a7921846fae92341c3c0d0e}{set\+\_\+name}} (const std\+::string \&\mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}})
+\begin{DoxyCompactList}\small\item\em Set player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a7bb4ef74aabe4954b3a75533d6aa7b04}{get\+\_\+shield\+\_\+amount}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of shields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ad4e8309edc296ef52d4e8333c972c3ee}{set\+\_\+shield\+\_\+amount}} (int value)
+\begin{DoxyCompactList}\small\item\em Set the number of shields. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_player_a29f1b07b7b4e6a31774ca2e9c9524b33}{get\+\_\+character\+\_\+statistics}} () const
+\begin{DoxyCompactList}\small\item\em Get all character statistics as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a0e9ebe65b4942ecf838e3b069e082fee}{reset\+\_\+turn}} ()
+\begin{DoxyCompactList}\small\item\em Resets the stroke parameters to their initial values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a7fb226d11afd97a0cfa94b64add02783}{apply\+\_\+attack\+\_\+multiplier}} (float effect)
+\begin{DoxyCompactList}\small\item\em Applies multiplier to total attack power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aea5d839608659b86880cb28b2247f728}{apply\+\_\+heal\+\_\+multiplier}} (float effect)
+\begin{DoxyCompactList}\small\item\em Applies a multiplier to treatment effectiveness. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a65f7d8e3809c89ecc4d8a0b087b54cf1}{add\+\_\+weapon\+\_\+bonus}} (int effect)
+\begin{DoxyCompactList}\small\item\em Adds a bonus to weapon damage effectiveness. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{end\+\_\+turn}} ()
+\begin{DoxyCompactList}\small\item\em Completes the current turn and resets the temporary modifiers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{get\+\_\+cumulative\+\_\+attack\+\_\+multiplier}} () const
+\begin{DoxyCompactList}\small\item\em Get the cumulative attack multiplier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa4619a2c2e329de1c2e6c5bbca336a15}{set\+\_\+cumulative\+\_\+attack\+\_\+multiplier}} (float value)
+\begin{DoxyCompactList}\small\item\em Set the cumulative attack multiplier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_ad85fd59e2f2edebb6286820fb5275777}{get\+\_\+cumulative\+\_\+heal\+\_\+multiplier}} () const
+\begin{DoxyCompactList}\small\item\em Get the cumulative heal multiplier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a45e117ad919924abff2018f7b67b1e94}{set\+\_\+cumulative\+\_\+heal\+\_\+multiplier}} (float value)
+\begin{DoxyCompactList}\small\item\em Set the cumulative heal multiplier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_afb57ee79edbb6f534baa876a8c6d09b2}{get\+\_\+cumulative\+\_\+weapon\+\_\+bonus}} () const
+\begin{DoxyCompactList}\small\item\em Get the cumulative weapon bonus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}{set\+\_\+cumulative\+\_\+weapon\+\_\+bonus}} (int value)
+\begin{DoxyCompactList}\small\item\em Set the cumulative weapon bonus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a5c97b1bd6063ea9fbfc035820813f4d3}{is\+\_\+turn\+\_\+active}} () const
+\begin{DoxyCompactList}\small\item\em Check if the turn is active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ad7c5b8e3bb61cae1bf35dc76f84efe51}{set\+\_\+turn\+\_\+active}} (bool value)
+\begin{DoxyCompactList}\small\item\em Set the turn active state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hand}{Hand}} \& \mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\+\_\+hand}} ()
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s hand. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_hand}{Hand}} \& \mbox{\hyperlink{class_player_a605ceaf0702eb402fd4f235c119038b7}{get\+\_\+hand}} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s hand (const version) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a3ba1e75f9dcddaa89f1af4838cb6ee3f}{set\+\_\+hand}} (\mbox{\hyperlink{class_hand}{Hand}} new\+\_\+hand)
+\begin{DoxyCompactList}\small\item\em Set the player\textquotesingle{}s hand. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_af7a87268e11ac0ae593ac18c00d29c97}{has\+\_\+combat\+\_\+cards}} () const
+\begin{DoxyCompactList}\small\item\em Check if the hand contains any Beast, Creature, or Attack\+Spell cards. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_player_a9f93494cb446abe5acc9943e4dee9e7c}{get\+\_\+color\+\_\+code}} (\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} rarity)
+\begin{DoxyCompactList}\small\item\em Get the ANSI color code for a given rarity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}
+\begin{DoxyCompactList}\small\item\em The player\textquotesingle{}s character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}}
+\begin{DoxyCompactList}\small\item\em Health points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}}
+\begin{DoxyCompactList}\small\item\em Mana points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}}
+\begin{DoxyCompactList}\small\item\em Armor value. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player}\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hand}{Hand}} \mbox{\hyperlink{class_player_a2cada0240d99fc95d049d691f926c1dd}{hand}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player}\textquotesingle{}s hand of cards. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\+\_\+amount}}
+\begin{DoxyCompactList}\small\item\em Shield value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a616bbba47da886d9f9112cce29963636}{cumulative\+\_\+attack\+\_\+multiplier}}
+\begin{DoxyCompactList}\small\item\em Cumulative attack multiplier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}{cumulative\+\_\+heal\+\_\+multiplier}}
+\begin{DoxyCompactList}\small\item\em Cumulative heal multiplier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_aaef1a8ac04218d4ca2274fa982b67858}{cumulative\+\_\+weapon\+\_\+adder}}
+\begin{DoxyCompactList}\small\item\em Cumulative weapon bonus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}{turn\+\_\+active}}
+\begin{DoxyCompactList}\small\item\em Indicates if it\textquotesingle{}s the player\textquotesingle{}s turn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class representing a game player. 
+
+Provides common interface and data for all player types 
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00021}{21}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8} 
+Player\+::\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initializes player with default values\+:
+\begin{DoxyItemize}
+\item hp\+: 100
+\item mana\+: 50
+\item armor\+: 0
+\item name\+: "{}\+Player"{}
+\item character\+: nullptr
+\item shield\+\_\+amount\+: 0
+\item cumulative\+\_\+attack\+\_\+multiplier\+: 1.\+0f
+\item cumulative\+\_\+heal\+\_\+multiplier\+: 1.\+0f
+\item cumulative\+\_\+weapon\+\_\+adder\+: 0
+\item turn\+\_\+active\+: true 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_af9c22c6310c86cf7ff76ba1ab5e8278c}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_player_af9c22c6310c86cf7ff76ba1ab5e8278c} 
+Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{hp}{, }\item[{int}]{mana}{, }\item[{int}]{armor}{, }\item[{const std\+::string \&}]{name}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$}]{character}{ = {\ttfamily nullptr}, }\item[{int}]{shield\+\_\+amount}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_player}{Player} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hp} & Initial health points \\
+\hline
+{\em mana} & Initial mana points \\
+\hline
+{\em armor} & Initial armor value \\
+\hline
+{\em name} & \doxylink{class_player}{Player}\textquotesingle{}s name \\
+\hline
+{\em character} & \doxylink{class_player}{Player}\textquotesingle{}s character (optional) \\
+\hline
+{\em shield\+\_\+amount} & Initial shield value (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a11017c0ed8a639f3b1308ab167fbeca2}\index{Player@{Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
+\index{````~Player@{\texorpdfstring{$\sim$}{\string~}Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Player()}{\string~Player()}}
+{\footnotesize\ttfamily \label{class_player_a11017c0ed8a639f3b1308ab167fbeca2} 
+virtual Player\+::\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_a65f7d8e3809c89ecc4d8a0b087b54cf1}\index{Player@{Player}!add\_weapon\_bonus@{add\_weapon\_bonus}}
+\index{add\_weapon\_bonus@{add\_weapon\_bonus}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{add\_weapon\_bonus()}{add\_weapon\_bonus()}}
+{\footnotesize\ttfamily \label{class_player_a65f7d8e3809c89ecc4d8a0b087b54cf1} 
+void Player\+::add\+\_\+weapon\+\_\+bonus (\begin{DoxyParamCaption}\item[{int}]{effect}{}\end{DoxyParamCaption})}
+
+
+
+Adds a bonus to weapon damage effectiveness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effect} & Bonus value to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Bonuses are combined additively with each other 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00314}{314}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a7fb226d11afd97a0cfa94b64add02783}\index{Player@{Player}!apply\_attack\_multiplier@{apply\_attack\_multiplier}}
+\index{apply\_attack\_multiplier@{apply\_attack\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{apply\_attack\_multiplier()}{apply\_attack\_multiplier()}}
+{\footnotesize\ttfamily \label{class_player_a7fb226d11afd97a0cfa94b64add02783} 
+void Player\+::apply\+\_\+attack\+\_\+multiplier (\begin{DoxyParamCaption}\item[{float}]{effect}{}\end{DoxyParamCaption})}
+
+
+
+Applies multiplier to total attack power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effect} & Effect multiplier (must be \texorpdfstring{$>$}{>} 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Multipliers are combined multiplicatively with each other 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Incorrect values (\texorpdfstring{$<$}{<}=0) may lead to unexpected behavior 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00306}{306}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_aea5d839608659b86880cb28b2247f728}\index{Player@{Player}!apply\_heal\_multiplier@{apply\_heal\_multiplier}}
+\index{apply\_heal\_multiplier@{apply\_heal\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{apply\_heal\_multiplier()}{apply\_heal\_multiplier()}}
+{\footnotesize\ttfamily \label{class_player_aea5d839608659b86880cb28b2247f728} 
+void Player\+::apply\+\_\+heal\+\_\+multiplier (\begin{DoxyParamCaption}\item[{float}]{effect}{}\end{DoxyParamCaption})}
+
+
+
+Applies a multiplier to treatment effectiveness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effect} & Effect multiplier (must be \texorpdfstring{$>$}{>} 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Multipliers are combined multiplicatively with each other 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Incorrect values (\texorpdfstring{$<$}{<}=0) may lead to calculation errors 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00310}{310}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a13d9bdfa1eff068eca64494ac8ea6ded}\index{Player@{Player}!eat\_card@{eat\_card}}
+\index{eat\_card@{eat\_card}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{eat\_card()}{eat\_card()}}
+{\footnotesize\ttfamily \label{class_player_a13d9bdfa1eff068eca64494ac8ea6ded} 
+void Player\+::eat\+\_\+card (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Eats a card from the hand, increasing player\textquotesingle{}s HP based on card\textquotesingle{}s rarity and character\textquotesingle{}s HP multiplier. 
+
+This method\+:
+\begin{DoxyEnumerate}
+\item Validates the card index
+\item Gets the card\textquotesingle{}s rarity and converts it to a numerical value (Common=1, Uncommon=2, Rare=3, Epic=4)
+\item Retrieves the character\textquotesingle{}s HP multiplier
+\item Calculates the HP increase as (rarity value \texorpdfstring{$\ast$}{*} 10) multiplied by the HP multiplier
+\item Converts the result to integer and adds it to player\textquotesingle{}s HP
+\item Removes the card from the hand
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the card to eat\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If the card index is invalid \\
+\hline
+{\em std\+::runtime\+\_\+error} & If the character is not set \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}\index{Player@{Player}!end\_turn@{end\_turn}}
+\index{end\_turn@{end\_turn}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{end\_turn()}{end\_turn()}}
+{\footnotesize\ttfamily \label{class_player_a3c9a084e68ea363850c3fe08fdefbc7e} 
+void Player\+::end\+\_\+turn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Completes the current turn and resets the temporary modifiers. 
+
+Performs the same actions as \doxylink{class_player_a0e9ebe65b4942ecf838e3b069e082fee}{reset\+\_\+turn()} \begin{DoxySeeAlso}{See also}
+\doxylink{class_player_a0e9ebe65b4942ecf838e3b069e082fee}{reset\+\_\+turn()} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00318}{318}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ad16b1d45b9556a90297044599670e382}\index{Player@{Player}!get\_armor@{get\_armor}}
+\index{get\_armor@{get\_armor}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_armor()}{get\_armor()}}
+{\footnotesize\ttfamily \label{class_player_ad16b1d45b9556a90297044599670e382} 
+int Player\+::get\+\_\+armor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get current armor points. 
+
+\begin{DoxyReturn}{Returns}
+Current armor value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00249}{249}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a5600b83d4c5b11756cacd30c25955089}\index{Player@{Player}!get\_character@{get\_character}}
+\index{get\_character@{get\_character}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_character()}{get\_character()}}
+{\footnotesize\ttfamily \label{class_player_a5600b83d4c5b11756cacd30c25955089} 
+\mbox{\hyperlink{class_character}{Character}} \& Player\+::get\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the associated \doxylink{class_character}{Character}. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the owned \doxylink{class_character}{Character}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if \doxylink{class_character}{Character} is not set \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a29f1b07b7b4e6a31774ca2e9c9524b33}\index{Player@{Player}!get\_character\_statistics@{get\_character\_statistics}}
+\index{get\_character\_statistics@{get\_character\_statistics}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_character\_statistics()}{get\_character\_statistics()}}
+{\footnotesize\ttfamily \label{class_player_a29f1b07b7b4e6a31774ca2e9c9524b33} 
+std\+::string Player\+::get\+\_\+character\+\_\+statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get all character statistics as a string. 
+
+\begin{DoxyReturn}{Returns}
+String containing all character fields
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if \doxylink{class_character}{Character} is not set \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00282}{282}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a9f93494cb446abe5acc9943e4dee9e7c}\index{Player@{Player}!get\_color\_code@{get\_color\_code}}
+\index{get\_color\_code@{get\_color\_code}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_color\_code()}{get\_color\_code()}}
+{\footnotesize\ttfamily \label{class_player_a9f93494cb446abe5acc9943e4dee9e7c} 
+std\+::string Player\+::get\+\_\+color\+\_\+code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{}\end{DoxyParamCaption})}
+
+
+
+Get the ANSI color code for a given rarity. 
+
+This method returns the ANSI escape code for the color associated with the card\textquotesingle{}s rarity. The color codes are as follows\+:
+\begin{DoxyItemize}
+\item Common\+: White (\textbackslash{}033\mbox{[}37m)
+\item Uncommon\+: Green (\textbackslash{}033\mbox{[}32m)
+\item Rare\+: Blue (\textbackslash{}033\mbox{[}34m)
+\item Epic\+: Magenta (\textbackslash{}033\mbox{[}35m)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rarity} & The rarity of the card \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ANSI color code as a string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00383}{383}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}\index{Player@{Player}!get\_cumulative\_attack\_multiplier@{get\_cumulative\_attack\_multiplier}}
+\index{get\_cumulative\_attack\_multiplier@{get\_cumulative\_attack\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_cumulative\_attack\_multiplier()}{get\_cumulative\_attack\_multiplier()}}
+{\footnotesize\ttfamily \label{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e} 
+float Player\+::get\+\_\+cumulative\+\_\+attack\+\_\+multiplier (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the cumulative attack multiplier. 
+
+\begin{DoxyReturn}{Returns}
+Current attack multiplier value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ad85fd59e2f2edebb6286820fb5275777}\index{Player@{Player}!get\_cumulative\_heal\_multiplier@{get\_cumulative\_heal\_multiplier}}
+\index{get\_cumulative\_heal\_multiplier@{get\_cumulative\_heal\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_cumulative\_heal\_multiplier()}{get\_cumulative\_heal\_multiplier()}}
+{\footnotesize\ttfamily \label{class_player_ad85fd59e2f2edebb6286820fb5275777} 
+float Player\+::get\+\_\+cumulative\+\_\+heal\+\_\+multiplier (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the cumulative heal multiplier. 
+
+\begin{DoxyReturn}{Returns}
+Current heal multiplier value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00333}{333}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_afb57ee79edbb6f534baa876a8c6d09b2}\index{Player@{Player}!get\_cumulative\_weapon\_bonus@{get\_cumulative\_weapon\_bonus}}
+\index{get\_cumulative\_weapon\_bonus@{get\_cumulative\_weapon\_bonus}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_cumulative\_weapon\_bonus()}{get\_cumulative\_weapon\_bonus()}}
+{\footnotesize\ttfamily \label{class_player_afb57ee79edbb6f534baa876a8c6d09b2} 
+int Player\+::get\+\_\+cumulative\+\_\+weapon\+\_\+bonus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the cumulative weapon bonus. 
+
+\begin{DoxyReturn}{Returns}
+Current weapon bonus value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00344}{344}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a932eae2d8351f7e9ea923f22561bfab8}\index{Player@{Player}!get\_hand@{get\_hand}}
+\index{get\_hand@{get\_hand}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_hand()}{get\_hand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_player_a932eae2d8351f7e9ea923f22561bfab8} 
+\mbox{\hyperlink{class_hand}{Hand}} \& Player\+::get\+\_\+hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the player\textquotesingle{}s hand. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the player\textquotesingle{}s hand 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00360}{360}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a605ceaf0702eb402fd4f235c119038b7}\index{Player@{Player}!get\_hand@{get\_hand}}
+\index{get\_hand@{get\_hand}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_hand()}{get\_hand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_player_a605ceaf0702eb402fd4f235c119038b7} 
+const \mbox{\hyperlink{class_hand}{Hand}} \& Player\+::get\+\_\+hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the player\textquotesingle{}s hand (const version) 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the player\textquotesingle{}s hand 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00364}{364}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ad160329edfeac4cbc165344fc86c5bb2}\index{Player@{Player}!get\_hp@{get\_hp}}
+\index{get\_hp@{get\_hp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_hp()}{get\_hp()}}
+{\footnotesize\ttfamily \label{class_player_ad160329edfeac4cbc165344fc86c5bb2} 
+int Player\+::get\+\_\+hp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get current health points. 
+
+\begin{DoxyReturn}{Returns}
+Current hp value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00227}{227}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ab39ea4f03f27dfbdc6b7c9f6ef2dfbb7}\index{Player@{Player}!get\_mana@{get\_mana}}
+\index{get\_mana@{get\_mana}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_mana()}{get\_mana()}}
+{\footnotesize\ttfamily \label{class_player_ab39ea4f03f27dfbdc6b7c9f6ef2dfbb7} 
+int Player\+::get\+\_\+mana (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get current mana points. 
+
+\begin{DoxyReturn}{Returns}
+Current mana value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ab2c0d7b0744ff02b218ab8c26f600c39}\index{Player@{Player}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily \label{class_player_ab2c0d7b0744ff02b218ab8c26f600c39} 
+std\+::string Player\+::get\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get player\textquotesingle{}s name. 
+
+\begin{DoxyReturn}{Returns}
+Current name 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a7bb4ef74aabe4954b3a75533d6aa7b04}\index{Player@{Player}!get\_shield\_amount@{get\_shield\_amount}}
+\index{get\_shield\_amount@{get\_shield\_amount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_shield\_amount()}{get\_shield\_amount()}}
+{\footnotesize\ttfamily \label{class_player_a7bb4ef74aabe4954b3a75533d6aa7b04} 
+int Player\+::get\+\_\+shield\+\_\+amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the number of shields. 
+
+\begin{DoxyReturn}{Returns}
+Current shield amount 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00271}{271}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a32a29e87e109099c521453c64b21696d}\index{Player@{Player}!get\_special\_action\_info@{get\_special\_action\_info}}
+\index{get\_special\_action\_info@{get\_special\_action\_info}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_special\_action\_info()}{get\_special\_action\_info()}}
+{\footnotesize\ttfamily \label{class_player_a32a29e87e109099c521453c64b21696d} 
+void Player\+::get\+\_\+special\+\_\+action\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_af7a87268e11ac0ae593ac18c00d29c97}\index{Player@{Player}!has\_combat\_cards@{has\_combat\_cards}}
+\index{has\_combat\_cards@{has\_combat\_cards}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{has\_combat\_cards()}{has\_combat\_cards()}}
+{\footnotesize\ttfamily \label{class_player_af7a87268e11ac0ae593ac18c00d29c97} 
+bool Player\+::has\+\_\+combat\+\_\+cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the hand contains any Beast, Creature, or Attack\+Spell cards. 
+
+\begin{DoxyReturn}{Returns}
+true if any of the specified card types are found, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a0aba47a3eeba44a427f27887e1c3f35f}\index{Player@{Player}!is\_human@{is\_human}}
+\index{is\_human@{is\_human}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{is\_human()}{is\_human()}}
+{\footnotesize\ttfamily \label{class_player_a0aba47a3eeba44a427f27887e1c3f35f} 
+virtual bool Player\+::is\+\_\+human (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the player is human. 
+
+\begin{DoxyReturn}{Returns}
+true if the player is human, false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_a_i___player_aa3fb6c4ed5f2d248c43040a7f767e217}{AI\+\_\+\+Player}}, and \mbox{\hyperlink{class_human___player_a251a8e6eb531de494b06925f4d2e209a}{Human\+\_\+\+Player}}.
+
+\Hypertarget{class_player_a5c97b1bd6063ea9fbfc035820813f4d3}\index{Player@{Player}!is\_turn\_active@{is\_turn\_active}}
+\index{is\_turn\_active@{is\_turn\_active}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{is\_turn\_active()}{is\_turn\_active()}}
+{\footnotesize\ttfamily \label{class_player_a5c97b1bd6063ea9fbfc035820813f4d3} 
+bool Player\+::is\+\_\+turn\+\_\+active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the turn is active. 
+
+\begin{DoxyReturn}{Returns}
+true if turn is active, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00352}{352}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a3fecd7cf3f2125ffb5fdd103644f261a}\index{Player@{Player}!perform\_special\_action@{perform\_special\_action}}
+\index{perform\_special\_action@{perform\_special\_action}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{perform\_special\_action()}{perform\_special\_action()}}
+{\footnotesize\ttfamily \label{class_player_a3fecd7cf3f2125ffb5fdd103644f261a} 
+void Player\+::perform\+\_\+special\+\_\+action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Perform the special action of the associated \doxylink{class_character}{Character}. 
+
+Calls the Special\+Action method of the associated \doxylink{class_character}{Character}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if \doxylink{class_character}{Character} is not set \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a0e9ebe65b4942ecf838e3b069e082fee}\index{Player@{Player}!reset\_turn@{reset\_turn}}
+\index{reset\_turn@{reset\_turn}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{reset\_turn()}{reset\_turn()}}
+{\footnotesize\ttfamily \label{class_player_a0e9ebe65b4942ecf838e3b069e082fee} 
+void Player\+::reset\+\_\+turn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the stroke parameters to their initial values. 
+
+Initializes attack and healing multipliers, activates the turn. \begin{DoxyPostcond}{Postcondition}
+
+\begin{DoxyItemize}
+\item cumulative\+\_\+attack\+\_\+multiplier = 1.\+0f
+\item cumulative\+\_\+heal\+\_\+multiplier = 1.\+0f
+\item cumulative\+\_\+weapon\+\_\+adder = 0
+\item turn\+\_\+active = true 
+\end{DoxyItemize}
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00299}{299}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a8e1d3b12beb3d1f3d81f3377420ce5ce}\index{Player@{Player}!set\_armor@{set\_armor}}
+\index{set\_armor@{set\_armor}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_armor()}{set\_armor()}}
+{\footnotesize\ttfamily \label{class_player_a8e1d3b12beb3d1f3d81f3377420ce5ce} 
+void Player\+::set\+\_\+armor (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set armor points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New armor value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if value \texorpdfstring{$<$}{<} 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a3e07bc1ac222648212f8edaf621cfd0c}\index{Player@{Player}!set\_character@{set\_character}}
+\index{set\_character@{set\_character}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_character()}{set\_character()}}
+{\footnotesize\ttfamily \label{class_player_a3e07bc1ac222648212f8edaf621cfd0c} 
+void Player\+::set\+\_\+character (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \&\&}]{new\+\_\+character}{}\end{DoxyParamCaption})}
+
+
+
+Set the associated \doxylink{class_character}{Character}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+character} & New \doxylink{class_character}{Character} to associate (can be nullptr)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if new\+\_\+character is invalid \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_aa4619a2c2e329de1c2e6c5bbca336a15}\index{Player@{Player}!set\_cumulative\_attack\_multiplier@{set\_cumulative\_attack\_multiplier}}
+\index{set\_cumulative\_attack\_multiplier@{set\_cumulative\_attack\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_cumulative\_attack\_multiplier()}{set\_cumulative\_attack\_multiplier()}}
+{\footnotesize\ttfamily \label{class_player_aa4619a2c2e329de1c2e6c5bbca336a15} 
+void Player\+::set\+\_\+cumulative\+\_\+attack\+\_\+multiplier (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set the cumulative attack multiplier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New attack multiplier value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if value \texorpdfstring{$<$}{<}= 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00326}{326}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a45e117ad919924abff2018f7b67b1e94}\index{Player@{Player}!set\_cumulative\_heal\_multiplier@{set\_cumulative\_heal\_multiplier}}
+\index{set\_cumulative\_heal\_multiplier@{set\_cumulative\_heal\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_cumulative\_heal\_multiplier()}{set\_cumulative\_heal\_multiplier()}}
+{\footnotesize\ttfamily \label{class_player_a45e117ad919924abff2018f7b67b1e94} 
+void Player\+::set\+\_\+cumulative\+\_\+heal\+\_\+multiplier (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set the cumulative heal multiplier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New heal multiplier value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if value \texorpdfstring{$<$}{<}= 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00337}{337}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}\index{Player@{Player}!set\_cumulative\_weapon\_bonus@{set\_cumulative\_weapon\_bonus}}
+\index{set\_cumulative\_weapon\_bonus@{set\_cumulative\_weapon\_bonus}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_cumulative\_weapon\_bonus()}{set\_cumulative\_weapon\_bonus()}}
+{\footnotesize\ttfamily \label{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d} 
+void Player\+::set\+\_\+cumulative\+\_\+weapon\+\_\+bonus (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set the cumulative weapon bonus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New weapon bonus value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00348}{348}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a3ba1e75f9dcddaa89f1af4838cb6ee3f}\index{Player@{Player}!set\_hand@{set\_hand}}
+\index{set\_hand@{set\_hand}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_hand()}{set\_hand()}}
+{\footnotesize\ttfamily \label{class_player_a3ba1e75f9dcddaa89f1af4838cb6ee3f} 
+void Player\+::set\+\_\+hand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hand}{Hand}}}]{new\+\_\+hand}{}\end{DoxyParamCaption})}
+
+
+
+Set the player\textquotesingle{}s hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+hand} & New hand to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00368}{368}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ad56071586a2ec879a5a4a60548f9e8b7}\index{Player@{Player}!set\_hp@{set\_hp}}
+\index{set\_hp@{set\_hp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_hp()}{set\_hp()}}
+{\footnotesize\ttfamily \label{class_player_ad56071586a2ec879a5a4a60548f9e8b7} 
+void Player\+::set\+\_\+hp (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set health points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New hp value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if value \texorpdfstring{$<$}{<} 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00231}{231}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a7cc2889880443f454608d35040d4286f}\index{Player@{Player}!set\_mana@{set\_mana}}
+\index{set\_mana@{set\_mana}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_mana()}{set\_mana()}}
+{\footnotesize\ttfamily \label{class_player_a7cc2889880443f454608d35040d4286f} 
+void Player\+::set\+\_\+mana (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set mana points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New mana value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if value \texorpdfstring{$<$}{<} 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00242}{242}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ac1765f268a7921846fae92341c3c0d0e}\index{Player@{Player}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily \label{class_player_ac1765f268a7921846fae92341c3c0d0e} 
+void Player\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Set player\textquotesingle{}s name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & New name \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if name is empty \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00264}{264}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ad4e8309edc296ef52d4e8333c972c3ee}\index{Player@{Player}!set\_shield\_amount@{set\_shield\_amount}}
+\index{set\_shield\_amount@{set\_shield\_amount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_shield\_amount()}{set\_shield\_amount()}}
+{\footnotesize\ttfamily \label{class_player_ad4e8309edc296ef52d4e8333c972c3ee} 
+void Player\+::set\+\_\+shield\+\_\+amount (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set the number of shields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New shield amount \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if value \texorpdfstring{$<$}{<} 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00275}{275}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ad7c5b8e3bb61cae1bf35dc76f84efe51}\index{Player@{Player}!set\_turn\_active@{set\_turn\_active}}
+\index{set\_turn\_active@{set\_turn\_active}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_turn\_active()}{set\_turn\_active()}}
+{\footnotesize\ttfamily \label{class_player_ad7c5b8e3bb61cae1bf35dc76f84efe51} 
+void Player\+::set\+\_\+turn\+\_\+active (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set the turn active state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New turn active state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00356}{356}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a888eabd56fb4f223ebcb78ae11aa5521}\index{Player@{Player}!show\_hand@{show\_hand}}
+\index{show\_hand@{show\_hand}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{show\_hand()}{show\_hand()}}
+{\footnotesize\ttfamily \label{class_player_a888eabd56fb4f223ebcb78ae11aa5521} 
+void Player\+::show\+\_\+hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the player\textquotesingle{}s hand with detailed information and special ability status. 
+
+This enhanced method\+:
+\begin{DoxyEnumerate}
+\item Shows a colored header for the hand section
+\item Displays information about the character\textquotesingle{}s special ability including remaining uses
+\item Lists all cards in hand with\+:
+\begin{DoxyItemize}
+\item Index
+\item Colored name based on rarity
+\item Mana cost
+\item Type (colored red for combat cards)
+\item Key card-\/specific information
+\end{DoxyItemize}
+\item Adds a colored footer for visual separation
+\end{DoxyEnumerate}
+
+The display uses ANSI color codes for better visual distinction\+:
+\begin{DoxyItemize}
+\item \doxylink{class_hand}{Hand} header\+: Cyan (\textbackslash{}033\mbox{[}36m)
+\item Ability info\+: Yellow (\textbackslash{}033\mbox{[}33m)
+\item Combat card types\+: Red (\textbackslash{}033\mbox{[}31m)
+\item Normal card types\+: White (\textbackslash{}033\mbox{[}37m)
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_player_a9f93494cb446abe5acc9943e4dee9e7c}{get\+\_\+color\+\_\+code()} 
+
+\doxylink{enums_8h_a3e6f1bbfc27e39b050533212ec4fcdcd}{card\+Type\+To\+String()} 
+
+print\+\_\+key\+\_\+info() 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a012c4a16efd7bf53b2711e160d879d8b}\index{Player@{Player}!take\_damage@{take\_damage}}
+\index{take\_damage@{take\_damage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{take\_damage()}{take\_damage()}}
+{\footnotesize\ttfamily \label{class_player_a012c4a16efd7bf53b2711e160d879d8b} 
+void Player\+::take\+\_\+damage (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Applies damage to the player, reducing shields, armor, and HP in that order. 
+
+This method processes damage in the following order\+:
+\begin{DoxyEnumerate}
+\item Shields absorb damage up to their maximum capacity (each shield can absorb up to 10 damage)
+\item Remaining damage is absorbed by armor (1 damage reduces armor by 1)
+\item Any remaining damage is subtracted from HP
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Amount of damage to apply\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If damage is negative \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_ac6003e36a7024a9f165dba61dd105e2e}\index{Player@{Player}!throw\_out@{throw\_out}}
+\index{throw\_out@{throw\_out}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{throw\_out()}{throw\_out()}}
+{\footnotesize\ttfamily \label{class_player_ac6003e36a7024a9f165dba61dd105e2e} 
+void Player\+::throw\+\_\+out (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Throw out a card from the hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the card to throw out\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if index is invalid \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00220}{220}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+\Hypertarget{class_player_a1b16fa32c965db3bd1c67a61de05dd94}\index{Player@{Player}!use\_card@{use\_card}}
+\index{use\_card@{use\_card}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{use\_card()}{use\_card()}}
+{\footnotesize\ttfamily \label{class_player_a1b16fa32c965db3bd1c67a61de05dd94} 
+void Player\+::use\+\_\+card (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Uses a card from the player\textquotesingle{}s hand on a target player with mana cost deduction. 
+
+This method performs the following actions\+:
+\begin{DoxyEnumerate}
+\item Validates the card index
+\item Checks if the player has sufficient mana
+\item Deducts mana from the player
+\item Retrieves the card\textquotesingle{}s type
+\item Applies the card\textquotesingle{}s effect to the target player
+\item Removes the card from the player\textquotesingle{}s hand
+\item Checks if the card type ends the player\textquotesingle{}s turn (Combat cards)
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & \doxylink{class_player}{Player} to apply the card effect to \\
+\hline
+{\em index} & Index of the card in the player\textquotesingle{}s hand\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If the card index is invalid \\
+\hline
+{\em std\+::runtime\+\_\+error} & If the player doesn\textquotesingle{}t have enough mana \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{player_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{player_8cpp_source}{player.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}\index{Player@{Player}!armor@{armor}}
+\index{armor@{armor}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{armor}{armor}}
+{\footnotesize\ttfamily \label{class_player_a41aea1fc6108ba66cc51c868fc0fafc6} 
+int Player\+::armor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Armor value. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00026}{26}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a103bec8e9b239b92d95dc749f592b2b8}\index{Player@{Player}!character@{character}}
+\index{character@{character}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{character}{character}}
+{\footnotesize\ttfamily \label{class_player_a103bec8e9b239b92d95dc749f592b2b8} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_character}{Character}}$>$ Player\+::character\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The player\textquotesingle{}s character. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00023}{23}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a616bbba47da886d9f9112cce29963636}\index{Player@{Player}!cumulative\_attack\_multiplier@{cumulative\_attack\_multiplier}}
+\index{cumulative\_attack\_multiplier@{cumulative\_attack\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{cumulative\_attack\_multiplier}{cumulative\_attack\_multiplier}}
+{\footnotesize\ttfamily \label{class_player_a616bbba47da886d9f9112cce29963636} 
+float Player\+::cumulative\+\_\+attack\+\_\+multiplier\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cumulative attack multiplier. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00030}{30}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f}\index{Player@{Player}!cumulative\_heal\_multiplier@{cumulative\_heal\_multiplier}}
+\index{cumulative\_heal\_multiplier@{cumulative\_heal\_multiplier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{cumulative\_heal\_multiplier}{cumulative\_heal\_multiplier}}
+{\footnotesize\ttfamily \label{class_player_a71a6ddb2251e81e69dc6f88df9b1d32f} 
+float Player\+::cumulative\+\_\+heal\+\_\+multiplier\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cumulative heal multiplier. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00031}{31}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_aaef1a8ac04218d4ca2274fa982b67858}\index{Player@{Player}!cumulative\_weapon\_adder@{cumulative\_weapon\_adder}}
+\index{cumulative\_weapon\_adder@{cumulative\_weapon\_adder}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{cumulative\_weapon\_adder}{cumulative\_weapon\_adder}}
+{\footnotesize\ttfamily \label{class_player_aaef1a8ac04218d4ca2274fa982b67858} 
+int Player\+::cumulative\+\_\+weapon\+\_\+adder\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cumulative weapon bonus. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00032}{32}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a2cada0240d99fc95d049d691f926c1dd}\index{Player@{Player}!hand@{hand}}
+\index{hand@{hand}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{hand}{hand}}
+{\footnotesize\ttfamily \label{class_player_a2cada0240d99fc95d049d691f926c1dd} 
+\mbox{\hyperlink{class_hand}{Hand}} Player\+::hand\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{class_player}{Player}\textquotesingle{}s hand of cards. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00028}{28}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a2baad6b9a274417a7374baf11d5f723d}\index{Player@{Player}!hp@{hp}}
+\index{hp@{hp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{hp}{hp}}
+{\footnotesize\ttfamily \label{class_player_a2baad6b9a274417a7374baf11d5f723d} 
+int Player\+::hp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Health points. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00024}{24}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a9a64ebab916a7b25ecdec767ba111ca7}\index{Player@{Player}!mana@{mana}}
+\index{mana@{mana}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{mana}{mana}}
+{\footnotesize\ttfamily \label{class_player_a9a64ebab916a7b25ecdec767ba111ca7} 
+int Player\+::mana\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mana points. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00025}{25}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_af9c920fabaafdeb7961a645315b521ff}\index{Player@{Player}!name@{name}}
+\index{name@{name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_player_af9c920fabaafdeb7961a645315b521ff} 
+std\+::string Player\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{class_player}{Player}\textquotesingle{}s name. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00027}{27}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}\index{Player@{Player}!shield\_amount@{shield\_amount}}
+\index{shield\_amount@{shield\_amount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{shield\_amount}{shield\_amount}}
+{\footnotesize\ttfamily \label{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2} 
+int Player\+::shield\+\_\+amount\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Shield value. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00029}{29}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+\Hypertarget{class_player_a0398c65bb2ce0f9560457c9c9521c4b9}\index{Player@{Player}!turn\_active@{turn\_active}}
+\index{turn\_active@{turn\_active}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{turn\_active}{turn\_active}}
+{\footnotesize\ttfamily \label{class_player_a0398c65bb2ce0f9560457c9c9521c4b9} 
+bool Player\+::turn\+\_\+active\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indicates if it\textquotesingle{}s the player\textquotesingle{}s turn. 
+
+
+
+Definition at line \mbox{\hyperlink{player_8h_source_l00033}{33}} of file \mbox{\hyperlink{player_8h_source}{player.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/player/\mbox{\hyperlink{player_8h}{player.\+h}}\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/src/player/\mbox{\hyperlink{player_8cpp}{player.\+cpp}}\end{DoxyCompactItemize}

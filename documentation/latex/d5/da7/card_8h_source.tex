@@ -1,0 +1,223 @@
+\doxysection{card.\+h}
+\hypertarget{card_8h_source}{}\label{card_8h_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/card.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/card.h}}
+\mbox{\hyperlink{card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ CARD\_CLASS}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ CARD\_CLASS}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enums_8h}{enums.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00016}00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00019}00019\ \textcolor{comment}{//\ Seed\ the\ random\ number\ generator}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00020}00020\ \textcolor{keyword}{extern}\ std::mt19937\ \mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00029}\mbox{\hyperlink{class_card}{00029}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00030}00030\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00031}\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{00031}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00032}\mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{00032}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}};\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00033}\mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{00033}}\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00034}\mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{00034}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00036}00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}});}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}}();}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00064}\mbox{\hyperlink{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9}{00064}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_card_a24d9140b69cd7fcc6b4787350fdeb5e9}{\string~Card}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00070}00070\ \ \ \ \ std::string\ \mbox{\hyperlink{class_card_a39c0e62ffe4979b8d8142b416043ff26}{get\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00071}00071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\_name}}(\textcolor{keyword}{const}\ std::string\&\ new\_name);}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00083}00083\ \ \ \ \ std::string\ \mbox{\hyperlink{class_card_a5519eb130702a7e04ce06834353d9aa2}{get\_description}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\_description}}(\textcolor{keyword}{const}\ std::string\&\ new\_desc);}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\_rarity}}(\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ new\_rarity);}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a8fedebb4917ed6efdabd817f389d7b9a}{get\_mana\_cost}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_a6ec8620c325a26bec6d230ac30875bfc}{set\_mana\_cost}}(\textcolor{keywordtype}{int}\ new\_cost);}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00125}\mbox{\hyperlink{class_card_a0f53ecf6d310dfb256556bfa70e2609e}{00125}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_a0f53ecf6d310dfb256556bfa70e2609e}{use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00126}00126\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00131}\mbox{\hyperlink{class_card_af18514eb50324ad8b79064af87f45067}{00131}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_card_af18514eb50324ad8b79064af87f45067}{get\_type}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00136}\mbox{\hyperlink{class_card_ab4c481f82a991bd9b2f992e6ea38ec91}{00136}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_ab4c481f82a991bd9b2f992e6ea38ec91}{generate\_properties}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00142}00142\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\_random\_rarity}}();}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00144}\mbox{\hyperlink{class_card_a27225a0e526b92785afee861f43853fd}{00144}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_a27225a0e526b92785afee861f43853fd}{print\_key\_info}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00145}00145\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00150}00150\ \textcolor{comment}{//\ Arrays\ of\ possible\ names,\ descriptions,\ and\ elements}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00151}\mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{00151}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{spell\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00152}00152\ \ \ \ \ \textcolor{stringliteral}{"{}Arcane\ Bolt"{}},\ \textcolor{stringliteral}{"{}Mystic\ Strike"{}},\ \textcolor{stringliteral}{"{}Enchanted\ Blast"{}},\ \textcolor{stringliteral}{"{}Cosmic\ Beam"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00153}00153\ \ \ \ \ \textcolor{stringliteral}{"{}Ethereal\ Wave"{}},\ \textcolor{stringliteral}{"{}Nether\ Bolt"{}},\ \textcolor{stringliteral}{"{}Celestial\ Arrow"{}},\ \textcolor{stringliteral}{"{}Void\ Shockwave"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00154}00154\ \ \ \ \ \textcolor{stringliteral}{"{}Plasma\ Surge"{}},\ \textcolor{stringliteral}{"{}Thunderclap"{}},\ \textcolor{stringliteral}{"{}Frostbite"{}},\ \textcolor{stringliteral}{"{}Inferno\ Blast"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00155}00155\ \ \ \ \ \textcolor{stringliteral}{"{}Tidal\ Wave"{}},\ \textcolor{stringliteral}{"{}Earthquake"{}},\ \textcolor{stringliteral}{"{}Wind\ Cutter"{}},\ \textcolor{stringliteral}{"{}Lightning\ Fury"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00156}00156\ \ \ \ \ \textcolor{stringliteral}{"{}Solar\ Flare"{}},\ \textcolor{stringliteral}{"{}Lunar\ Beam"{}},\ \textcolor{stringliteral}{"{}Astral\ Projection"{}},\ \textcolor{stringliteral}{"{}Shadow\ Bolt"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00157}00157\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00159}\mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{00159}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{spell\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00160}00160\ \ \ \ \ \textcolor{stringliteral}{"{}Deals\ magical\ damage\ to\ the\ enemy"{}},\ \textcolor{stringliteral}{"{}Unleashes\ arcane\ energy"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00161}00161\ \ \ \ \ \textcolor{stringliteral}{"{}Summons\ a\ powerful\ blast"{}},\ \textcolor{stringliteral}{"{}Releases\ contained\ magical\ energy"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00162}00162\ \ \ \ \ \textcolor{stringliteral}{"{}Calls\ down\ celestial\ power"{}},\ \textcolor{stringliteral}{"{}Harnesses\ elemental\ forces"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00163}00163\ \ \ \ \ \textcolor{stringliteral}{"{}Channels\ raw\ magical\ power"{}},\ \textcolor{stringliteral}{"{}Inflicts\ mystical\ damage"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00164}00164\ \ \ \ \ \textcolor{stringliteral}{"{}Unleashes\ a\ wave\ of\ energy"{}},\ \textcolor{stringliteral}{"{}Summons\ ancient\ magical\ forces"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00165}00165\ \ \ \ \ \textcolor{stringliteral}{"{}Releases\ contained\ magical\ energy"{}},\ \textcolor{stringliteral}{"{}Harnesses\ elemental\ forces"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00166}00166\ \ \ \ \ \textcolor{stringliteral}{"{}Channels\ raw\ magical\ power"{}},\ \textcolor{stringliteral}{"{}Inflicts\ mystical\ damage"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00167}00167\ \ \ \ \ \textcolor{stringliteral}{"{}Unleashes\ a\ wave\ of\ energy"{}},\ \textcolor{stringliteral}{"{}Summons\ ancient\ magical\ forces"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00168}00168\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00171}\mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{00171}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{beast\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00172}00172\ \ \ \ \ \textcolor{stringliteral}{"{}Wild\ Boar"{}},\ \textcolor{stringliteral}{"{}Rabid\ Wolf"{}},\ \textcolor{stringliteral}{"{}Forest\ Troll"{}},\ \textcolor{stringliteral}{"{}Mountain\ Goat"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00173}00173\ \ \ \ \ \textcolor{stringliteral}{"{}Desert\ Scorpion"{}},\ \textcolor{stringliteral}{"{}Venomous\ Snake"{}},\ \textcolor{stringliteral}{"{}Ferocious\ Bear"{}},\ \textcolor{stringliteral}{"{}Golden\ Eagle"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00174}00174\ \ \ \ \ \textcolor{stringliteral}{"{}Shadow\ Panther"{}},\ \textcolor{stringliteral}{"{}Arctic\ Fox"{}},\ \textcolor{stringliteral}{"{}Fire\ Lizard"{}},\ \textcolor{stringliteral}{"{}Water\ Serpent"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00175}00175\ \ \ \ \ \textcolor{stringliteral}{"{}Earth\ Elemental"{}},\ \textcolor{stringliteral}{"{}Air\ Spirit"{}},\ \textcolor{stringliteral}{"{}Crystal\ Golem"{}},\ \textcolor{stringliteral}{"{}Shadow\ Imp"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00176}00176\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00178}\mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{00178}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{beast\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00179}00179\ \ \ \ \ \textcolor{stringliteral}{"{}A\ fierce\ beast\ from\ the\ wild"{}},\ \textcolor{stringliteral}{"{}A\ dangerous\ creature\ seeking\ prey"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00180}00180\ \ \ \ \ \textcolor{stringliteral}{"{}A\ mystical\ creature\ from\ ancient\ times"{}},\ \textcolor{stringliteral}{"{}A\ powerful\ beast\ with\ special\ abilities"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00181}00181\ \ \ \ \ \textcolor{stringliteral}{"{}A\ creature\ from\ another\ dimension"{}},\ \textcolor{stringliteral}{"{}A\ beast\ with\ magical\ properties"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00182}00182\ \ \ \ \ \textcolor{stringliteral}{"{}A\ dangerous\ predator"{}},\ \textcolor{stringliteral}{"{}A\ mythical\ creature\ with\ unique\ powers"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00183}00183\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00185}\mbox{\hyperlink{card_8h_a5c4f707f55d7b894bb9372d1813250b9}{00185}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a5c4f707f55d7b894bb9372d1813250b9}{buff\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00186}00186\ \ \ \ \ \textcolor{stringliteral}{"{}Power\ Surge"{}},\ \textcolor{stringliteral}{"{}Mighty\ Blessing"{}},\ \textcolor{stringliteral}{"{}Strength\ Infusion"{}},\ \textcolor{stringliteral}{"{}Battle\ Fury"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00187}00187\ \ \ \ \ \textcolor{stringliteral}{"{}Warrior's\ Rage"{}},\ \textcolor{stringliteral}{"{}Heroic\ Strength"{}},\ \textcolor{stringliteral}{"{}Titan's\ Power"{}},\ \textcolor{stringliteral}{"{}Dragon's\ Might"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00188}00188\ \ \ \ \ \textcolor{stringliteral}{"{}Phoenix's\ Blessing"{}},\ \textcolor{stringliteral}{"{}Demon's\ Fury"{}},\ \textcolor{stringliteral}{"{}Angel's\ Grace"{}},\ \textcolor{stringliteral}{"{}God's\ Power"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00189}00189\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00191}\mbox{\hyperlink{card_8h_a6a777fdf2ba5663856c11315b9562eeb}{00191}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a6a777fdf2ba5663856c11315b9562eeb}{buff\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00192}00192\ \ \ \ \ \textcolor{stringliteral}{"{}Increases\ attack\ power\ significantly"{}},\ \textcolor{stringliteral}{"{}Boosts\ your\ combat\ abilities"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00193}00193\ \ \ \ \ \textcolor{stringliteral}{"{}Enhances\ your\ offensive\ capabilities"{}},\ \textcolor{stringliteral}{"{}Gives\ you\ superhuman\ strength"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00194}00194\ \ \ \ \ \textcolor{stringliteral}{"{}Channels\ ancient\ warrior\ spirits"{}},\ \textcolor{stringliteral}{"{}Summons\ inner\ rage\ for\ battle"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00195}00195\ \ \ \ \ \textcolor{stringliteral}{"{}Infuses\ you\ with\ mythical\ power"{}},\ \textcolor{stringliteral}{"{}Grants\ you\ divine\ strength"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00196}00196\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00198}\mbox{\hyperlink{card_8h_a823cc152dac7d829250f2ad5723b6789}{00198}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a823cc152dac7d829250f2ad5723b6789}{creature\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00199}00199\ \ \ \ \ \textcolor{stringliteral}{"{}Goblin\ Warrior"{}},\ \textcolor{stringliteral}{"{}Orc\ Marauder"{}},\ \textcolor{stringliteral}{"{}Phoenix\ Hatchling"{}},\ \textcolor{stringliteral}{"{}Ancient\ Beast"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00200}00200\ \ \ \ \ \textcolor{stringliteral}{"{}Dragonspawn"{}},\ \textcolor{stringliteral}{"{}Demon\ Spawn"{}},\ \textcolor{stringliteral}{"{}Celestial\ Guardian"{}},\ \textcolor{stringliteral}{"{}Void\ Walker"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00201}00201\ \ \ \ \ \textcolor{stringliteral}{"{}Elemental\ Lord"{}},\ \textcolor{stringliteral}{"{}Arcane\ Golem"{}},\ \textcolor{stringliteral}{"{}Crystal\ Defender"{}},\ \textcolor{stringliteral}{"{}Shadow\ Stalker"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00202}00202\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00204}\mbox{\hyperlink{card_8h_af30cb1249468c980e3edd603b80c1fd9}{00204}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_af30cb1249468c980e3edd603b80c1fd9}{creature\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00205}00205\ \ \ \ \ \textcolor{stringliteral}{"{}A\ fierce\ warrior\ from\ the\ goblin\ tribe"{}},\ \textcolor{stringliteral}{"{}A\ brutal\ raider\ from\ the\ orc\ clans"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00206}00206\ \ \ \ \ \textcolor{stringliteral}{"{}A\ young\ phoenix\ with\ fire\ abilities"{}},\ \textcolor{stringliteral}{"{}An\ ancient\ beast\ with\ immense\ power"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00207}00207\ \ \ \ \ \textcolor{stringliteral}{"{}A\ creature\ born\ from\ dragon\ essence"{}},\ \textcolor{stringliteral}{"{}A\ demonic\ entity\ seeking\ destruction"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00208}00208\ \ \ \ \ \textcolor{stringliteral}{"{}A\ guardian\ from\ the\ celestial\ realm"{}},\ \textcolor{stringliteral}{"{}A\ being\ from\ the\ void\ between\ worlds"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00209}00209\ \ \ \ \ \textcolor{stringliteral}{"{}A\ lord\ of\ elemental\ forces"{}},\ \textcolor{stringliteral}{"{}A\ golem\ infused\ with\ arcane\ magic"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00210}00210\ \ \ \ \ \textcolor{stringliteral}{"{}A\ defender\ made\ of\ crystal"{}},\ \textcolor{stringliteral}{"{}A\ stalker\ from\ the\ shadow\ realm"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00211}00211\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00213}\mbox{\hyperlink{card_8h_aa131940db3e9f9a53337d9d8dd876c8e}{00213}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_aa131940db3e9f9a53337d9d8dd876c8e}{shield\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00214}00214\ \ \ \ \ \textcolor{stringliteral}{"{}Basic\ Shield"{}},\ \textcolor{stringliteral}{"{}Advanced\ Shield"{}},\ \textcolor{stringliteral}{"{}Iron\ Barrier"{}},\ \textcolor{stringliteral}{"{}Royal\ Guard\ Shield"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00215}00215\ \ \ \ \ \textcolor{stringliteral}{"{}Legendary\ Shield"{}},\ \textcolor{stringliteral}{"{}Diamond\ Protection"{}},\ \textcolor{stringliteral}{"{}Cosmic\ Ward"{}},\ \textcolor{stringliteral}{"{}Ancient\ Shield"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00216}00216\ \ \ \ \ \textcolor{stringliteral}{"{}Divine\ Barrier"{}},\ \textcolor{stringliteral}{"{}Mythical\ Guard"{}},\ \textcolor{stringliteral}{"{}Eternal\ Shield"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Protection"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00217}00217\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00219}\mbox{\hyperlink{card_8h_a6492c7874c5be10487af34b49e79d84f}{00219}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a6492c7874c5be10487af34b49e79d84f}{shield\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00220}00220\ \ \ \ \ \textcolor{stringliteral}{"{}Provides\ basic\ protection"{}},\ \textcolor{stringliteral}{"{}Strong\ protection"{}},\ \textcolor{stringliteral}{"{}Metallic\ shield"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00221}00221\ \ \ \ \ \textcolor{stringliteral}{"{}Decorative\ but\ effective"{}},\ \textcolor{stringliteral}{"{}Best\ protection"{}},\ \textcolor{stringliteral}{"{}Hardened\ defense"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00222}00222\ \ \ \ \ \textcolor{stringliteral}{"{}Cosmic\ protection"{}},\ \textcolor{stringliteral}{"{}Ancient\ protection"{}},\ \textcolor{stringliteral}{"{}Divine\ protection"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00223}00223\ \ \ \ \ \textcolor{stringliteral}{"{}Mythical\ protection"{}},\ \textcolor{stringliteral}{"{}Eternal\ protection"{}},\ \textcolor{stringliteral}{"{}Ultimate\ protection"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00224}00224\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00226}\mbox{\hyperlink{card_8h_a177a9fa41d9ed28b3c4305831724efae}{00226}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a177a9fa41d9ed28b3c4305831724efae}{weapon\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00227}00227\ \ \ \ \ \textcolor{stringliteral}{"{}Bronze\ Sword"{}},\ \textcolor{stringliteral}{"{}Steel\ Longsword"{}},\ \textcolor{stringliteral}{"{}Mythril\ Axe"{}},\ \textcolor{stringliteral}{"{}Arcane\ Blade"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00228}00228\ \ \ \ \ \textcolor{stringliteral}{"{}Oblivion\ Edge"{}},\ \textcolor{stringliteral}{"{}Dragonfang\ Sword"{}},\ \textcolor{stringliteral}{"{}Phoenix\ Blade"{}},\ \textcolor{stringliteral}{"{}Thunder\ Hammer"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00229}00229\ \ \ \ \ \textcolor{stringliteral}{"{}Frostbite\ Axe"{}},\ \textcolor{stringliteral}{"{}Shadow\ Dagger"{}},\ \textcolor{stringliteral}{"{}Celestial\ Blade"{}},\ \textcolor{stringliteral}{"{}Divine\ Weapon"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00230}00230\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00232}\mbox{\hyperlink{card_8h_a986fff6e65fbd2ce662b683366dcfe0a}{00232}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a986fff6e65fbd2ce662b683366dcfe0a}{weapon\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00233}00233\ \ \ \ \ \textcolor{stringliteral}{"{}Simple\ weapon"{}},\ \textcolor{stringliteral}{"{}Balanced\ weapon"{}},\ \textcolor{stringliteral}{"{}Advanced\ weapon"{}},\ \textcolor{stringliteral}{"{}Elemental\ weapon"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00234}00234\ \ \ \ \ \textcolor{stringliteral}{"{}Legendary\ weapon"{}},\ \textcolor{stringliteral}{"{}Dragon-\/killing\ weapon"{}},\ \textcolor{stringliteral}{"{}Fire-\/based\ weapon"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00235}00235\ \ \ \ \ \textcolor{stringliteral}{"{}Electric\ weapon"{}},\ \textcolor{stringliteral}{"{}Ice\ weapon"{}},\ \textcolor{stringliteral}{"{}Stealth\ weapon"{}},\ \textcolor{stringliteral}{"{}Heavenly\ weapon"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00236}00236\ \ \ \ \ \textcolor{stringliteral}{"{}Divine\ weapon"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00237}00237\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00239}\mbox{\hyperlink{card_8h_a02f699ec4ca0fddf4f4d3a6ca0252105}{00239}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a02f699ec4ca0fddf4f4d3a6ca0252105}{artifact\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00240}00240\ \ \ \ \ \textcolor{stringliteral}{"{}Amulet\ of\ Majesty"{}},\ \textcolor{stringliteral}{"{}Ring\ of\ Power"{}},\ \textcolor{stringliteral}{"{}Crown\ of\ Elements"{}},\ \textcolor{stringliteral}{"{}Scepter\ of\ Dominion"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00241}00241\ \ \ \ \ \textcolor{stringliteral}{"{}Talisman\ of\ Protection"{}},\ \textcolor{stringliteral}{"{}Orb\ of\ Power"{}},\ \textcolor{stringliteral}{"{}Staff\ of\ Elements"{}},\ \textcolor{stringliteral}{"{}Amulet\ of\ the\ Gods"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00242}00242\ \ \ \ \ \textcolor{stringliteral}{"{}Ring\ of\ the\ Elements"{}},\ \textcolor{stringliteral}{"{}Crown\ of\ the\ Ancients"{}},\ \textcolor{stringliteral}{"{}Scepter\ of\ the\ Titans"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00243}00243\ \ \ \ \ \textcolor{stringliteral}{"{}Talisman\ of\ the\ Phoenix"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00244}00244\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00246}\mbox{\hyperlink{card_8h_a7cd4b633fc04db8745c88ed3cb52d122}{00246}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a7cd4b633fc04db8745c88ed3cb52d122}{artifact\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00247}00247\ \ \ \ \ \textcolor{stringliteral}{"{}Enhances\ all\ attributes"{}},\ \textcolor{stringliteral}{"{}Concentrates\ magical\ energy"{}},\ \textcolor{stringliteral}{"{}Controls\ elemental\ forces"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00248}00248\ \ \ \ \ \textcolor{stringliteral}{"{}Grants\ dominion\ over\ magical\ energies"{}},\ \textcolor{stringliteral}{"{}Provides\ powerful\ protection"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00249}00249\ \ \ \ \ \textcolor{stringliteral}{"{}Stores\ immense\ power"{}},\ \textcolor{stringliteral}{"{}Channels\ elemental\ magic"{}},\ \textcolor{stringliteral}{"{}Blessed\ by\ the\ gods"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00250}00250\ \ \ \ \ \textcolor{stringliteral}{"{}Master\ of\ the\ elements"{}},\ \textcolor{stringliteral}{"{}Worn\ by\ ancient\ rulers"{}},\ \textcolor{stringliteral}{"{}Wielded\ by\ titans"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00251}00251\ \ \ \ \ \textcolor{stringliteral}{"{}Forged\ in\ the\ heart\ of\ a\ phoenix"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00252}00252\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00254}\mbox{\hyperlink{card_8h_a7332584ccb8490d12429f3b2be530fd8}{00254}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a7332584ccb8490d12429f3b2be530fd8}{heal\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00255}00255\ \ \ \ \ \textcolor{stringliteral}{"{}Small\ Heal"{}},\ \textcolor{stringliteral}{"{}Moderate\ Heal"{}},\ \textcolor{stringliteral}{"{}Great\ Heal"{}},\ \textcolor{stringliteral}{"{}Eternal\ Life"{}},\ \textcolor{stringliteral}{"{}Sacred\ Blessing"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00256}00256\ \ \ \ \ \textcolor{stringliteral}{"{}Heavenly\ Restoration"{}},\ \textcolor{stringliteral}{"{}Divine\ Cure"{}},\ \textcolor{stringliteral}{"{}Phoenix\ Renewal"{}},\ \textcolor{stringliteral}{"{}Angel's\ Mercy"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00257}00257\ \ \ \ \ \textcolor{stringliteral}{"{}Life\ Infusion"{}},\ \textcolor{stringliteral}{"{}Soul\ Healing"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Restoration"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00258}00258\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00260}\mbox{\hyperlink{card_8h_a183439cb457394bfdea3bacd343ab398}{00260}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a183439cb457394bfdea3bacd343ab398}{heal\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00261}00261\ \ \ \ \ \textcolor{stringliteral}{"{}Restores\ minor\ HP"{}},\ \textcolor{stringliteral}{"{}Restores\ moderate\ HP"{}},\ \textcolor{stringliteral}{"{}Restores\ significant\ HP"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00262}00262\ \ \ \ \ \textcolor{stringliteral}{"{}Restores\ full\ HP"{}},\ \textcolor{stringliteral}{"{}Holy\ healing"{}},\ \textcolor{stringliteral}{"{}Divine\ restoration"{}},\ \textcolor{stringliteral}{"{}Mystical\ cure"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00263}00263\ \ \ \ \ \textcolor{stringliteral}{"{}Rebirth\ through\ fire"{}},\ \textcolor{stringliteral}{"{}Blessing\ from\ above"{}},\ \textcolor{stringliteral}{"{}Infuses\ life\ energy"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00264}00264\ \ \ \ \ \textcolor{stringliteral}{"{}Heals\ the\ soul"{}},\ \textcolor{stringliteral}{"{}Complete\ restoration"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00265}00265\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00267}\mbox{\hyperlink{card_8h_ad4ed6eb012e46252b61fa53c035eb1fb}{00267}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_ad4ed6eb012e46252b61fa53c035eb1fb}{buff\_spell\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00268}00268\ \ \ \ \ \textcolor{stringliteral}{"{}Battle\ Cry"{}},\ \textcolor{stringliteral}{"{}Strength\ Surge"{}},\ \textcolor{stringliteral}{"{}Divine\ Grace"{}},\ \textcolor{stringliteral}{"{}Heroic\ Might"{}},\ \textcolor{stringliteral}{"{}Blessing\ of\ the\ Gods"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00269}00269\ \ \ \ \ \textcolor{stringliteral}{"{}Titan's\ Fury"{}},\ \textcolor{stringliteral}{"{}Phoenix's\ Wrath"{}},\ \textcolor{stringliteral}{"{}Angel's\ Power"{}},\ \textcolor{stringliteral}{"{}Demon's\ Blessing"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00270}00270\ \ \ \ \ \textcolor{stringliteral}{"{}Warrior's\ Spirit"{}},\ \textcolor{stringliteral}{"{}Battle\ Fury"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Power"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00271}00271\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00273}\mbox{\hyperlink{card_8h_a13ac9a0a649a7f3268894033b7417941}{00273}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a13ac9a0a649a7f3268894033b7417941}{buff\_spell\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00274}00274\ \ \ \ \ \textcolor{stringliteral}{"{}Temporary\ attack\ boost"{}},\ \textcolor{stringliteral}{"{}Sudden\ increase\ in\ strength"{}},\ \textcolor{stringliteral}{"{}Divine\ enhancement"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00275}00275\ \ \ \ \ \textcolor{stringliteral}{"{}Heroic\ power\ surge"{}},\ \textcolor{stringliteral}{"{}Blessing\ from\ the\ gods"{}},\ \textcolor{stringliteral}{"{}Titanic\ power\ infusion"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00276}00276\ \ \ \ \ \textcolor{stringliteral}{"{}Wrath\ of\ the\ phoenix"{}},\ \textcolor{stringliteral}{"{}Angelic\ power\ boost"{}},\ \textcolor{stringliteral}{"{}Demoniacal\ enhancement"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00277}00277\ \ \ \ \ \textcolor{stringliteral}{"{}Ancient\ warrior\ spirit"{}},\ \textcolor{stringliteral}{"{}Frenzy\ attack\ mode"{}},\ \textcolor{stringliteral}{"{}Maximum\ power\ release"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00278}00278\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00280}\mbox{\hyperlink{card_8h_a83f9eaa54ecf22f38fa799539eab3f87}{00280}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a83f9eaa54ecf22f38fa799539eab3f87}{defence\_spell\_names}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00281}00281\ \ \ \ \ \textcolor{stringliteral}{"{}Iron\ Skin"{}},\ \textcolor{stringliteral}{"{}Diamond\ Defense"{}},\ \textcolor{stringliteral}{"{}Cosmic\ Barrier"{}},\ \textcolor{stringliteral}{"{}Divine\ Shield"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00282}00282\ \ \ \ \ \textcolor{stringliteral}{"{}Ancient\ Protection"{}},\ \textcolor{stringliteral}{"{}Eternal\ Ward"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Defense"{}},\ \textcolor{stringliteral}{"{}Void\ Protection"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00283}00283\ \ \ \ \ \textcolor{stringliteral}{"{}Elemental\ Ward"{}},\ \textcolor{stringliteral}{"{}Celestial\ Shield"{}},\ \textcolor{stringliteral}{"{}Mythical\ Barrier"{}},\ \textcolor{stringliteral}{"{}God's\ Protection"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00284}00284\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00286}\mbox{\hyperlink{card_8h_a148a8f2590ee423762bdf125d5a98940}{00286}}\ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{card_8h_a148a8f2590ee423762bdf125d5a98940}{defence\_spell\_descriptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00287}00287\ \ \ \ \ \textcolor{stringliteral}{"{}Hardened\ defense"{}},\ \textcolor{stringliteral}{"{}Cosmic\ protection"{}},\ \textcolor{stringliteral}{"{}Divine\ protection"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00288}00288\ \ \ \ \ \textcolor{stringliteral}{"{}Ancient\ protection"{}},\ \textcolor{stringliteral}{"{}Eternal\ protection"{}},\ \textcolor{stringliteral}{"{}Ultimate\ protection"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00289}00289\ \ \ \ \ \textcolor{stringliteral}{"{}Protection\ from\ the\ void"{}},\ \textcolor{stringliteral}{"{}Elemental\ protection"{}},\ \textcolor{stringliteral}{"{}Heavenly\ shield"{}},}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00290}00290\ \ \ \ \ \textcolor{stringliteral}{"{}Mythical\ protection"{}},\ \textcolor{stringliteral}{"{}Supreme\ protection"{}},\ \textcolor{stringliteral}{"{}Divine\ safeguard"{}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00291}00291\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00293}\mbox{\hyperlink{card_8h_a71bf3ed1fbe6f721ab90c892c11820bf}{00293}}\ \textcolor{keyword}{const}\ std::vector<Element>\ \mbox{\hyperlink{card_8h_a71bf3ed1fbe6f721ab90c892c11820bf}{spell\_elements}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00294}00294\ \ \ \ \ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}{Element::Water}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a71c546fa61f3964d72bdf25223b78669}{Element::Air}}}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00295}00295\ \};}
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{card_8h_source_l00297}00297\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

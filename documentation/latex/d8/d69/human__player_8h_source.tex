@@ -1,0 +1,48 @@
+\doxysection{human\+\_\+player.\+h}
+\hypertarget{human__player_8h_source}{}\label{human__player_8h_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/player/human\_player.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/player/human\_player.h}}
+\mbox{\hyperlink{human__player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ HUMAN\_PLAYER\_H}}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ HUMAN\_PLAYER\_H}}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{player.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00014}\mbox{\hyperlink{class_human___player}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_human___player_a42979f18ee5e689d9f142f116d2a0555}{Human\_Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}\ \{}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00015}\mbox{\hyperlink{class_human___player_ab8b229c9c1264f8433b7b3fb53dea632}{00015}}\ \ \ \ \ std::vector<std::unique\_ptr<Character>>\ \mbox{\hyperlink{class_human___player_ab8b229c9c1264f8433b7b3fb53dea632}{characters}};\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_human___player_a42979f18ee5e689d9f142f116d2a0555}{Human\_Player}}();}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_human___player_a42979f18ee5e689d9f142f116d2a0555}{Human\_Player}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a2baad6b9a274417a7374baf11d5f723d}{hp}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a9a64ebab916a7b25ecdec767ba111ca7}{mana}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a41aea1fc6108ba66cc51c868fc0fafc6}{armor}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_player_af9c920fabaafdeb7961a645315b521ff}{name}},}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<Character>\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}}\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a7e13c15c8d27469ad7cdddbbc7171bc2}{shield\_amount}}\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00054}\mbox{\hyperlink{class_human___player_a251a8e6eb531de494b06925f4d2e209a}{00054}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_human___player_a251a8e6eb531de494b06925f4d2e209a}{is\_human}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::unique\_ptr<Character>\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}});}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_human___player_a6adc9b452837c686ff9e8d136707e874}{save\_characters}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_human___player_a2d6230c94ac86b02f430820968a4a455}{load\_characters}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_human___player_a680ee19686c0025f8c25e8bb0832d2f0}{customize\_character}}(\mbox{\hyperlink{class_character}{Character}}\&\ \mbox{\hyperlink{class_player_a103bec8e9b239b92d95dc749f592b2b8}{character}});}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00090}00090\ \ \ \ \ std::vector<std::unique\_ptr<Character>>\&\ \mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}();}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00093}00093\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_human___player_a420a46c43a728cc631dfc3795117ca49}{show\_characters}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00096}00096\ \ \ \ \ std::unique\_ptr<Character>\ \mbox{\hyperlink{class_human___player_a47948b22b198832510241998ae602933}{release\_character}}();}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00097}00097\ \};}
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{human__player_8h_source_l00099}00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HUMAN\_PLAYER\_H}}
+
+\end{DoxyCode}

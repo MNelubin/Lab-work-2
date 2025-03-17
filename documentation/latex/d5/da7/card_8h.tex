@@ -1,0 +1,488 @@
+\doxysection{D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/cards/card.h File Reference}
+\hypertarget{card_8h}{}\label{card_8h}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/card.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/card.h}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}enums.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_card}{Card}}
+\begin{DoxyCompactList}\small\item\em Base class representing a game card. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{spell\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{spell\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{beast\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{beast\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a5c4f707f55d7b894bb9372d1813250b9}{buff\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a6a777fdf2ba5663856c11315b9562eeb}{buff\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a823cc152dac7d829250f2ad5723b6789}{creature\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_af30cb1249468c980e3edd603b80c1fd9}{creature\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_aa131940db3e9f9a53337d9d8dd876c8e}{shield\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a6492c7874c5be10487af34b49e79d84f}{shield\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a177a9fa41d9ed28b3c4305831724efae}{weapon\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a986fff6e65fbd2ce662b683366dcfe0a}{weapon\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a02f699ec4ca0fddf4f4d3a6ca0252105}{artifact\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a7cd4b633fc04db8745c88ed3cb52d122}{artifact\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a7332584ccb8490d12429f3b2be530fd8}{heal\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a183439cb457394bfdea3bacd343ab398}{heal\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_ad4ed6eb012e46252b61fa53c035eb1fb}{buff\+\_\+spell\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a13ac9a0a649a7f3268894033b7417941}{buff\+\_\+spell\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a83f9eaa54ecf22f38fa799539eab3f87}{defence\+\_\+spell\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{card_8h_a148a8f2590ee423762bdf125d5a98940}{defence\+\_\+spell\+\_\+descriptions}}
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}} $>$ \mbox{\hyperlink{card_8h_a71bf3ed1fbe6f721ab90c892c11820bf}{spell\+\_\+elements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{card_8h_a7cd4b633fc04db8745c88ed3cb52d122}\index{card.h@{card.h}!artifact\_descriptions@{artifact\_descriptions}}
+\index{artifact\_descriptions@{artifact\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{artifact\_descriptions}{artifact\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a7cd4b633fc04db8745c88ed3cb52d122} 
+const std\+::vector$<$std\+::string$>$ artifact\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Enhances\ all\ attributes"{}},\ \textcolor{stringliteral}{"{}Concentrates\ magical\ energy"{}},\ \textcolor{stringliteral}{"{}Controls\ elemental\ forces"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Grants\ dominion\ over\ magical\ energies"{}},\ \textcolor{stringliteral}{"{}Provides\ powerful\ protection"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Stores\ immense\ power"{}},\ \textcolor{stringliteral}{"{}Channels\ elemental\ magic"{}},\ \textcolor{stringliteral}{"{}Blessed\ by\ the\ gods"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Master\ of\ the\ elements"{}},\ \textcolor{stringliteral}{"{}Worn\ by\ ancient\ rulers"{}},\ \textcolor{stringliteral}{"{}Wielded\ by\ titans"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Forged\ in\ the\ heart\ of\ a\ phoenix"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00246}{246}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a02f699ec4ca0fddf4f4d3a6ca0252105}\index{card.h@{card.h}!artifact\_names@{artifact\_names}}
+\index{artifact\_names@{artifact\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{artifact\_names}{artifact\_names}}
+{\footnotesize\ttfamily \label{card_8h_a02f699ec4ca0fddf4f4d3a6ca0252105} 
+const std\+::vector$<$std\+::string$>$ artifact\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Amulet\ of\ Majesty"{}},\ \textcolor{stringliteral}{"{}Ring\ of\ Power"{}},\ \textcolor{stringliteral}{"{}Crown\ of\ Elements"{}},\ \textcolor{stringliteral}{"{}Scepter\ of\ Dominion"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Talisman\ of\ Protection"{}},\ \textcolor{stringliteral}{"{}Orb\ of\ Power"{}},\ \textcolor{stringliteral}{"{}Staff\ of\ Elements"{}},\ \textcolor{stringliteral}{"{}Amulet\ of\ the\ Gods"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Ring\ of\ the\ Elements"{}},\ \textcolor{stringliteral}{"{}Crown\ of\ the\ Ancients"{}},\ \textcolor{stringliteral}{"{}Scepter\ of\ the\ Titans"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Talisman\ of\ the\ Phoenix"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00239}{239}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_ae6bcf68473dce55315e95bc62c931002}\index{card.h@{card.h}!beast\_descriptions@{beast\_descriptions}}
+\index{beast\_descriptions@{beast\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{beast\_descriptions}{beast\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_ae6bcf68473dce55315e95bc62c931002} 
+const std\+::vector$<$std\+::string$>$ beast\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ fierce\ beast\ from\ the\ wild"{}},\ \textcolor{stringliteral}{"{}A\ dangerous\ creature\ seeking\ prey"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ mystical\ creature\ from\ ancient\ times"{}},\ \textcolor{stringliteral}{"{}A\ powerful\ beast\ with\ special\ abilities"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ creature\ from\ another\ dimension"{}},\ \textcolor{stringliteral}{"{}A\ beast\ with\ magical\ properties"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ dangerous\ predator"{}},\ \textcolor{stringliteral}{"{}A\ mythical\ creature\ with\ unique\ powers"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00178}{178}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a00403321e494b13993fe26d74e86dc68}\index{card.h@{card.h}!beast\_names@{beast\_names}}
+\index{beast\_names@{beast\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{beast\_names}{beast\_names}}
+{\footnotesize\ttfamily \label{card_8h_a00403321e494b13993fe26d74e86dc68} 
+const std\+::vector$<$std\+::string$>$ beast\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Wild\ Boar"{}},\ \textcolor{stringliteral}{"{}Rabid\ Wolf"{}},\ \textcolor{stringliteral}{"{}Forest\ Troll"{}},\ \textcolor{stringliteral}{"{}Mountain\ Goat"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Desert\ Scorpion"{}},\ \textcolor{stringliteral}{"{}Venomous\ Snake"{}},\ \textcolor{stringliteral}{"{}Ferocious\ Bear"{}},\ \textcolor{stringliteral}{"{}Golden\ Eagle"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Shadow\ Panther"{}},\ \textcolor{stringliteral}{"{}Arctic\ Fox"{}},\ \textcolor{stringliteral}{"{}Fire\ Lizard"{}},\ \textcolor{stringliteral}{"{}Water\ Serpent"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Earth\ Elemental"{}},\ \textcolor{stringliteral}{"{}Air\ Spirit"{}},\ \textcolor{stringliteral}{"{}Crystal\ Golem"{}},\ \textcolor{stringliteral}{"{}Shadow\ Imp"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00171}{171}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a6a777fdf2ba5663856c11315b9562eeb}\index{card.h@{card.h}!buff\_descriptions@{buff\_descriptions}}
+\index{buff\_descriptions@{buff\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{buff\_descriptions}{buff\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a6a777fdf2ba5663856c11315b9562eeb} 
+const std\+::vector$<$std\+::string$>$ buff\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Increases\ attack\ power\ significantly"{}},\ \textcolor{stringliteral}{"{}Boosts\ your\ combat\ abilities"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Enhances\ your\ offensive\ capabilities"{}},\ \textcolor{stringliteral}{"{}Gives\ you\ superhuman\ strength"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Channels\ ancient\ warrior\ spirits"{}},\ \textcolor{stringliteral}{"{}Summons\ inner\ rage\ for\ battle"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Infuses\ you\ with\ mythical\ power"{}},\ \textcolor{stringliteral}{"{}Grants\ you\ divine\ strength"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00191}{191}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a5c4f707f55d7b894bb9372d1813250b9}\index{card.h@{card.h}!buff\_names@{buff\_names}}
+\index{buff\_names@{buff\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{buff\_names}{buff\_names}}
+{\footnotesize\ttfamily \label{card_8h_a5c4f707f55d7b894bb9372d1813250b9} 
+const std\+::vector$<$std\+::string$>$ buff\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Power\ Surge"{}},\ \textcolor{stringliteral}{"{}Mighty\ Blessing"{}},\ \textcolor{stringliteral}{"{}Strength\ Infusion"{}},\ \textcolor{stringliteral}{"{}Battle\ Fury"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Warrior's\ Rage"{}},\ \textcolor{stringliteral}{"{}Heroic\ Strength"{}},\ \textcolor{stringliteral}{"{}Titan's\ Power"{}},\ \textcolor{stringliteral}{"{}Dragon's\ Might"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Phoenix's\ Blessing"{}},\ \textcolor{stringliteral}{"{}Demon's\ Fury"{}},\ \textcolor{stringliteral}{"{}Angel's\ Grace"{}},\ \textcolor{stringliteral}{"{}God's\ Power"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00185}{185}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a13ac9a0a649a7f3268894033b7417941}\index{card.h@{card.h}!buff\_spell\_descriptions@{buff\_spell\_descriptions}}
+\index{buff\_spell\_descriptions@{buff\_spell\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{buff\_spell\_descriptions}{buff\_spell\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a13ac9a0a649a7f3268894033b7417941} 
+const std\+::vector$<$std\+::string$>$ buff\+\_\+spell\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Temporary\ attack\ boost"{}},\ \textcolor{stringliteral}{"{}Sudden\ increase\ in\ strength"{}},\ \textcolor{stringliteral}{"{}Divine\ enhancement"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Heroic\ power\ surge"{}},\ \textcolor{stringliteral}{"{}Blessing\ from\ the\ gods"{}},\ \textcolor{stringliteral}{"{}Titanic\ power\ infusion"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Wrath\ of\ the\ phoenix"{}},\ \textcolor{stringliteral}{"{}Angelic\ power\ boost"{}},\ \textcolor{stringliteral}{"{}Demoniacal\ enhancement"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Ancient\ warrior\ spirit"{}},\ \textcolor{stringliteral}{"{}Frenzy\ attack\ mode"{}},\ \textcolor{stringliteral}{"{}Maximum\ power\ release"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00273}{273}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_ad4ed6eb012e46252b61fa53c035eb1fb}\index{card.h@{card.h}!buff\_spell\_names@{buff\_spell\_names}}
+\index{buff\_spell\_names@{buff\_spell\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{buff\_spell\_names}{buff\_spell\_names}}
+{\footnotesize\ttfamily \label{card_8h_ad4ed6eb012e46252b61fa53c035eb1fb} 
+const std\+::vector$<$std\+::string$>$ buff\+\_\+spell\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Battle\ Cry"{}},\ \textcolor{stringliteral}{"{}Strength\ Surge"{}},\ \textcolor{stringliteral}{"{}Divine\ Grace"{}},\ \textcolor{stringliteral}{"{}Heroic\ Might"{}},\ \textcolor{stringliteral}{"{}Blessing\ of\ the\ Gods"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Titan's\ Fury"{}},\ \textcolor{stringliteral}{"{}Phoenix's\ Wrath"{}},\ \textcolor{stringliteral}{"{}Angel's\ Power"{}},\ \textcolor{stringliteral}{"{}Demon's\ Blessing"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Warrior's\ Spirit"{}},\ \textcolor{stringliteral}{"{}Battle\ Fury"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Power"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00267}{267}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_af30cb1249468c980e3edd603b80c1fd9}\index{card.h@{card.h}!creature\_descriptions@{creature\_descriptions}}
+\index{creature\_descriptions@{creature\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{creature\_descriptions}{creature\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_af30cb1249468c980e3edd603b80c1fd9} 
+const std\+::vector$<$std\+::string$>$ creature\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ fierce\ warrior\ from\ the\ goblin\ tribe"{}},\ \textcolor{stringliteral}{"{}A\ brutal\ raider\ from\ the\ orc\ clans"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ young\ phoenix\ with\ fire\ abilities"{}},\ \textcolor{stringliteral}{"{}An\ ancient\ beast\ with\ immense\ power"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ creature\ born\ from\ dragon\ essence"{}},\ \textcolor{stringliteral}{"{}A\ demonic\ entity\ seeking\ destruction"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ guardian\ from\ the\ celestial\ realm"{}},\ \textcolor{stringliteral}{"{}A\ being\ from\ the\ void\ between\ worlds"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ lord\ of\ elemental\ forces"{}},\ \textcolor{stringliteral}{"{}A\ golem\ infused\ with\ arcane\ magic"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}A\ defender\ made\ of\ crystal"{}},\ \textcolor{stringliteral}{"{}A\ stalker\ from\ the\ shadow\ realm"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00204}{204}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a823cc152dac7d829250f2ad5723b6789}\index{card.h@{card.h}!creature\_names@{creature\_names}}
+\index{creature\_names@{creature\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{creature\_names}{creature\_names}}
+{\footnotesize\ttfamily \label{card_8h_a823cc152dac7d829250f2ad5723b6789} 
+const std\+::vector$<$std\+::string$>$ creature\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Goblin\ Warrior"{}},\ \textcolor{stringliteral}{"{}Orc\ Marauder"{}},\ \textcolor{stringliteral}{"{}Phoenix\ Hatchling"{}},\ \textcolor{stringliteral}{"{}Ancient\ Beast"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Dragonspawn"{}},\ \textcolor{stringliteral}{"{}Demon\ Spawn"{}},\ \textcolor{stringliteral}{"{}Celestial\ Guardian"{}},\ \textcolor{stringliteral}{"{}Void\ Walker"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Elemental\ Lord"{}},\ \textcolor{stringliteral}{"{}Arcane\ Golem"{}},\ \textcolor{stringliteral}{"{}Crystal\ Defender"{}},\ \textcolor{stringliteral}{"{}Shadow\ Stalker"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00198}{198}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a148a8f2590ee423762bdf125d5a98940}\index{card.h@{card.h}!defence\_spell\_descriptions@{defence\_spell\_descriptions}}
+\index{defence\_spell\_descriptions@{defence\_spell\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{defence\_spell\_descriptions}{defence\_spell\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a148a8f2590ee423762bdf125d5a98940} 
+const std\+::vector$<$std\+::string$>$ defence\+\_\+spell\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Hardened\ defense"{}},\ \textcolor{stringliteral}{"{}Cosmic\ protection"{}},\ \textcolor{stringliteral}{"{}Divine\ protection"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Ancient\ protection"{}},\ \textcolor{stringliteral}{"{}Eternal\ protection"{}},\ \textcolor{stringliteral}{"{}Ultimate\ protection"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Protection\ from\ the\ void"{}},\ \textcolor{stringliteral}{"{}Elemental\ protection"{}},\ \textcolor{stringliteral}{"{}Heavenly\ shield"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Mythical\ protection"{}},\ \textcolor{stringliteral}{"{}Supreme\ protection"{}},\ \textcolor{stringliteral}{"{}Divine\ safeguard"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00286}{286}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a83f9eaa54ecf22f38fa799539eab3f87}\index{card.h@{card.h}!defence\_spell\_names@{defence\_spell\_names}}
+\index{defence\_spell\_names@{defence\_spell\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{defence\_spell\_names}{defence\_spell\_names}}
+{\footnotesize\ttfamily \label{card_8h_a83f9eaa54ecf22f38fa799539eab3f87} 
+const std\+::vector$<$std\+::string$>$ defence\+\_\+spell\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Iron\ Skin"{}},\ \textcolor{stringliteral}{"{}Diamond\ Defense"{}},\ \textcolor{stringliteral}{"{}Cosmic\ Barrier"{}},\ \textcolor{stringliteral}{"{}Divine\ Shield"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Ancient\ Protection"{}},\ \textcolor{stringliteral}{"{}Eternal\ Ward"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Defense"{}},\ \textcolor{stringliteral}{"{}Void\ Protection"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Elemental\ Ward"{}},\ \textcolor{stringliteral}{"{}Celestial\ Shield"{}},\ \textcolor{stringliteral}{"{}Mythical\ Barrier"{}},\ \textcolor{stringliteral}{"{}God's\ Protection"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00280}{280}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a183439cb457394bfdea3bacd343ab398}\index{card.h@{card.h}!heal\_descriptions@{heal\_descriptions}}
+\index{heal\_descriptions@{heal\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{heal\_descriptions}{heal\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a183439cb457394bfdea3bacd343ab398} 
+const std\+::vector$<$std\+::string$>$ heal\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Restores\ minor\ HP"{}},\ \textcolor{stringliteral}{"{}Restores\ moderate\ HP"{}},\ \textcolor{stringliteral}{"{}Restores\ significant\ HP"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Restores\ full\ HP"{}},\ \textcolor{stringliteral}{"{}Holy\ healing"{}},\ \textcolor{stringliteral}{"{}Divine\ restoration"{}},\ \textcolor{stringliteral}{"{}Mystical\ cure"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Rebirth\ through\ fire"{}},\ \textcolor{stringliteral}{"{}Blessing\ from\ above"{}},\ \textcolor{stringliteral}{"{}Infuses\ life\ energy"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Heals\ the\ soul"{}},\ \textcolor{stringliteral}{"{}Complete\ restoration"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00260}{260}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a7332584ccb8490d12429f3b2be530fd8}\index{card.h@{card.h}!heal\_names@{heal\_names}}
+\index{heal\_names@{heal\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{heal\_names}{heal\_names}}
+{\footnotesize\ttfamily \label{card_8h_a7332584ccb8490d12429f3b2be530fd8} 
+const std\+::vector$<$std\+::string$>$ heal\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Small\ Heal"{}},\ \textcolor{stringliteral}{"{}Moderate\ Heal"{}},\ \textcolor{stringliteral}{"{}Great\ Heal"{}},\ \textcolor{stringliteral}{"{}Eternal\ Life"{}},\ \textcolor{stringliteral}{"{}Sacred\ Blessing"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Heavenly\ Restoration"{}},\ \textcolor{stringliteral}{"{}Divine\ Cure"{}},\ \textcolor{stringliteral}{"{}Phoenix\ Renewal"{}},\ \textcolor{stringliteral}{"{}Angel's\ Mercy"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Life\ Infusion"{}},\ \textcolor{stringliteral}{"{}Soul\ Healing"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Restoration"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00254}{254}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_adbe79e918414b2480135e3a7871b44ac}\index{card.h@{card.h}!rng@{rng}}
+\index{rng@{rng}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{rng}{rng}}
+{\footnotesize\ttfamily \label{card_8h_adbe79e918414b2480135e3a7871b44ac} 
+std\+::mt19937 rng\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{card_8h_a6492c7874c5be10487af34b49e79d84f}\index{card.h@{card.h}!shield\_descriptions@{shield\_descriptions}}
+\index{shield\_descriptions@{shield\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{shield\_descriptions}{shield\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a6492c7874c5be10487af34b49e79d84f} 
+const std\+::vector$<$std\+::string$>$ shield\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Provides\ basic\ protection"{}},\ \textcolor{stringliteral}{"{}Strong\ protection"{}},\ \textcolor{stringliteral}{"{}Metallic\ shield"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Decorative\ but\ effective"{}},\ \textcolor{stringliteral}{"{}Best\ protection"{}},\ \textcolor{stringliteral}{"{}Hardened\ defense"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Cosmic\ protection"{}},\ \textcolor{stringliteral}{"{}Ancient\ protection"{}},\ \textcolor{stringliteral}{"{}Divine\ protection"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Mythical\ protection"{}},\ \textcolor{stringliteral}{"{}Eternal\ protection"{}},\ \textcolor{stringliteral}{"{}Ultimate\ protection"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00219}{219}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_aa131940db3e9f9a53337d9d8dd876c8e}\index{card.h@{card.h}!shield\_names@{shield\_names}}
+\index{shield\_names@{shield\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{shield\_names}{shield\_names}}
+{\footnotesize\ttfamily \label{card_8h_aa131940db3e9f9a53337d9d8dd876c8e} 
+const std\+::vector$<$std\+::string$>$ shield\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Basic\ Shield"{}},\ \textcolor{stringliteral}{"{}Advanced\ Shield"{}},\ \textcolor{stringliteral}{"{}Iron\ Barrier"{}},\ \textcolor{stringliteral}{"{}Royal\ Guard\ Shield"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Legendary\ Shield"{}},\ \textcolor{stringliteral}{"{}Diamond\ Protection"{}},\ \textcolor{stringliteral}{"{}Cosmic\ Ward"{}},\ \textcolor{stringliteral}{"{}Ancient\ Shield"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Divine\ Barrier"{}},\ \textcolor{stringliteral}{"{}Mythical\ Guard"{}},\ \textcolor{stringliteral}{"{}Eternal\ Shield"{}},\ \textcolor{stringliteral}{"{}Ultimate\ Protection"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00213}{213}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}\index{card.h@{card.h}!spell\_descriptions@{spell\_descriptions}}
+\index{spell\_descriptions@{spell\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{spell\_descriptions}{spell\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4} 
+const std\+::vector$<$std\+::string$>$ spell\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Deals\ magical\ damage\ to\ the\ enemy"{}},\ \textcolor{stringliteral}{"{}Unleashes\ arcane\ energy"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Summons\ a\ powerful\ blast"{}},\ \textcolor{stringliteral}{"{}Releases\ contained\ magical\ energy"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Calls\ down\ celestial\ power"{}},\ \textcolor{stringliteral}{"{}Harnesses\ elemental\ forces"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Channels\ raw\ magical\ power"{}},\ \textcolor{stringliteral}{"{}Inflicts\ mystical\ damage"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Unleashes\ a\ wave\ of\ energy"{}},\ \textcolor{stringliteral}{"{}Summons\ ancient\ magical\ forces"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Releases\ contained\ magical\ energy"{}},\ \textcolor{stringliteral}{"{}Harnesses\ elemental\ forces"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Channels\ raw\ magical\ power"{}},\ \textcolor{stringliteral}{"{}Inflicts\ mystical\ damage"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Unleashes\ a\ wave\ of\ energy"{}},\ \textcolor{stringliteral}{"{}Summons\ ancient\ magical\ forces"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00159}{159}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a71bf3ed1fbe6f721ab90c892c11820bf}\index{card.h@{card.h}!spell\_elements@{spell\_elements}}
+\index{spell\_elements@{spell\_elements}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{spell\_elements}{spell\_elements}}
+{\footnotesize\ttfamily \label{card_8h_a71bf3ed1fbe6f721ab90c892c11820bf} 
+const std\+::vector$<$\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}$>$ spell\+\_\+elements}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}{Element::Water}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a71c546fa61f3964d72bdf25223b78669}{Element::Air}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00293}{293}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}\index{card.h@{card.h}!spell\_names@{spell\_names}}
+\index{spell\_names@{spell\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{spell\_names}{spell\_names}}
+{\footnotesize\ttfamily \label{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb} 
+const std\+::vector$<$std\+::string$>$ spell\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Arcane\ Bolt"{}},\ \textcolor{stringliteral}{"{}Mystic\ Strike"{}},\ \textcolor{stringliteral}{"{}Enchanted\ Blast"{}},\ \textcolor{stringliteral}{"{}Cosmic\ Beam"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Ethereal\ Wave"{}},\ \textcolor{stringliteral}{"{}Nether\ Bolt"{}},\ \textcolor{stringliteral}{"{}Celestial\ Arrow"{}},\ \textcolor{stringliteral}{"{}Void\ Shockwave"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Plasma\ Surge"{}},\ \textcolor{stringliteral}{"{}Thunderclap"{}},\ \textcolor{stringliteral}{"{}Frostbite"{}},\ \textcolor{stringliteral}{"{}Inferno\ Blast"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Tidal\ Wave"{}},\ \textcolor{stringliteral}{"{}Earthquake"{}},\ \textcolor{stringliteral}{"{}Wind\ Cutter"{}},\ \textcolor{stringliteral}{"{}Lightning\ Fury"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Solar\ Flare"{}},\ \textcolor{stringliteral}{"{}Lunar\ Beam"{}},\ \textcolor{stringliteral}{"{}Astral\ Projection"{}},\ \textcolor{stringliteral}{"{}Shadow\ Bolt"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00151}{151}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a986fff6e65fbd2ce662b683366dcfe0a}\index{card.h@{card.h}!weapon\_descriptions@{weapon\_descriptions}}
+\index{weapon\_descriptions@{weapon\_descriptions}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{weapon\_descriptions}{weapon\_descriptions}}
+{\footnotesize\ttfamily \label{card_8h_a986fff6e65fbd2ce662b683366dcfe0a} 
+const std\+::vector$<$std\+::string$>$ weapon\+\_\+descriptions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Simple\ weapon"{}},\ \textcolor{stringliteral}{"{}Balanced\ weapon"{}},\ \textcolor{stringliteral}{"{}Advanced\ weapon"{}},\ \textcolor{stringliteral}{"{}Elemental\ weapon"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Legendary\ weapon"{}},\ \textcolor{stringliteral}{"{}Dragon-\/killing\ weapon"{}},\ \textcolor{stringliteral}{"{}Fire-\/based\ weapon"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Electric\ weapon"{}},\ \textcolor{stringliteral}{"{}Ice\ weapon"{}},\ \textcolor{stringliteral}{"{}Stealth\ weapon"{}},\ \textcolor{stringliteral}{"{}Heavenly\ weapon"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Divine\ weapon"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00232}{232}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+
+\Hypertarget{card_8h_a177a9fa41d9ed28b3c4305831724efae}\index{card.h@{card.h}!weapon\_names@{weapon\_names}}
+\index{weapon\_names@{weapon\_names}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{weapon\_names}{weapon\_names}}
+{\footnotesize\ttfamily \label{card_8h_a177a9fa41d9ed28b3c4305831724efae} 
+const std\+::vector$<$std\+::string$>$ weapon\+\_\+names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Bronze\ Sword"{}},\ \textcolor{stringliteral}{"{}Steel\ Longsword"{}},\ \textcolor{stringliteral}{"{}Mythril\ Axe"{}},\ \textcolor{stringliteral}{"{}Arcane\ Blade"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Oblivion\ Edge"{}},\ \textcolor{stringliteral}{"{}Dragonfang\ Sword"{}},\ \textcolor{stringliteral}{"{}Phoenix\ Blade"{}},\ \textcolor{stringliteral}{"{}Thunder\ Hammer"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Frostbite\ Axe"{}},\ \textcolor{stringliteral}{"{}Shadow\ Dagger"{}},\ \textcolor{stringliteral}{"{}Celestial\ Blade"{}},\ \textcolor{stringliteral}{"{}Divine\ Weapon"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{card_8h_source_l00226}{226}} of file \mbox{\hyperlink{card_8h_source}{card.\+h}}.
+

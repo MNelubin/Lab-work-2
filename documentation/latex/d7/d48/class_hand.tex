@@ -1,0 +1,338 @@
+\doxysection{Hand Class Reference}
+\hypertarget{class_hand}{}\label{class_hand}\index{Hand@{Hand}}
+
+
+Represents a player\textquotesingle{}s hand containing various types of cards.  
+
+
+
+
+{\ttfamily \#include $<$hand.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hand_aa733faf150351c640fc7d1bf460b07e9}{Hand}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_hand}{Hand} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\+\_\+card}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_card}{Card}} $>$ card)
+\begin{DoxyCompactList}\small\item\em Add a card to the hand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hand_a0658ee144ba8c58cae6a61950eb154dd}{remove\+\_\+card}} (int index)
+\begin{DoxyCompactList}\small\item\em Remove a card from the hand by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card}{Card}} \& \mbox{\hyperlink{class_hand_aef66bfc3507501b01647eea97f5247ef}{get\+\_\+card}} (int index) const
+\begin{DoxyCompactList}\small\item\em Get a reference to a card by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hand_ac5494271768be40a87efd694557812a1}{sort\+\_\+by\+\_\+mana}} ()
+\begin{DoxyCompactList}\small\item\em Sort cards in hand by mana cost (un ascending) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hand_a9e6aac43dba379bda6bc67cf01793081}{generate}} (int id)
+\begin{DoxyCompactList}\small\item\em Generate a predefined standard hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_hand_a297b1bef3dae532600ae359b4e522b6b}{get\+\_\+amount}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of cards in hand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_hand_a3d4d59725b6c613c462245dd440ab1db}{get\+\_\+unique\+\_\+card\+\_\+types}} () const
+\begin{DoxyCompactList}\small\item\em Get all unique card types present in hand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_card}{Card}} $>$ $>$ \mbox{\hyperlink{class_hand_adad976dd2d139ea61247121b66c73114}{get\+\_\+cards\+\_\+by\+\_\+type}} (const std\+::string \&type\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Get all cards of a specific type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hand_a863d1d5ef89eecbce11384f0439a44f0}{generate\+\_\+random\+\_\+card}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random card and adds it to the hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_hand_a684cd7084f515cb390d0cef919c94771}{create\+\_\+standard\+\_\+hand\+\_\+1}} ()
+\item 
+void \mbox{\hyperlink{class_hand_afa789a9799dac03edad0bf7c35e9cb40}{create\+\_\+standard\+\_\+hand\+\_\+2}} ()
+\item 
+void \mbox{\hyperlink{class_hand_adbfeef36736421dcb1ebc61c45697347}{create\+\_\+standard\+\_\+hand\+\_\+3}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_card}{Card}} $>$ $>$ \mbox{\hyperlink{class_hand_a78269011e285938e0b6f30887991ab2a}{cards}}
+\begin{DoxyCompactList}\small\item\em Collection of cards in hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_hand_a9bfe3490c884cc1418913725da69f9c6}{amount}}
+\begin{DoxyCompactList}\small\item\em Current number of cards in hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a player\textquotesingle{}s hand containing various types of cards. 
+
+The \doxylink{class_hand}{Hand} class manages a collection of polymorphic \doxylink{class_card}{Card} objects, allowing for various operations like adding, removing, and sorting cards. 
+
+Definition at line \mbox{\hyperlink{hand_8h_source_l00028}{28}} of file \mbox{\hyperlink{hand_8h_source}{hand.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_hand_aa733faf150351c640fc7d1bf460b07e9}\index{Hand@{Hand}!Hand@{Hand}}
+\index{Hand@{Hand}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{Hand()}{Hand()}}
+{\footnotesize\ttfamily \label{class_hand_aa733faf150351c640fc7d1bf460b07e9} 
+Hand\+::\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_hand}{Hand} object. 
+
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hand_a8ec06916f40f510847c8aa5c90526758}\index{Hand@{Hand}!add\_card@{add\_card}}
+\index{add\_card@{add\_card}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{add\_card()}{add\_card()}}
+{\footnotesize\ttfamily \label{class_hand_a8ec06916f40f510847c8aa5c90526758} 
+void Hand\+::add\+\_\+card (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_card}{Card}} $>$}]{card}{}\end{DoxyParamCaption})}
+
+
+
+Add a card to the hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card} & Unique pointer to the card to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_a684cd7084f515cb390d0cef919c94771}\index{Hand@{Hand}!create\_standard\_hand\_1@{create\_standard\_hand\_1}}
+\index{create\_standard\_hand\_1@{create\_standard\_hand\_1}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{create\_standard\_hand\_1()}{create\_standard\_hand\_1()}}
+{\footnotesize\ttfamily \label{class_hand_a684cd7084f515cb390d0cef919c94771} 
+void Hand\+::create\+\_\+standard\+\_\+hand\+\_\+1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_afa789a9799dac03edad0bf7c35e9cb40}\index{Hand@{Hand}!create\_standard\_hand\_2@{create\_standard\_hand\_2}}
+\index{create\_standard\_hand\_2@{create\_standard\_hand\_2}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{create\_standard\_hand\_2()}{create\_standard\_hand\_2()}}
+{\footnotesize\ttfamily \label{class_hand_afa789a9799dac03edad0bf7c35e9cb40} 
+void Hand\+::create\+\_\+standard\+\_\+hand\+\_\+2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_adbfeef36736421dcb1ebc61c45697347}\index{Hand@{Hand}!create\_standard\_hand\_3@{create\_standard\_hand\_3}}
+\index{create\_standard\_hand\_3@{create\_standard\_hand\_3}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{create\_standard\_hand\_3()}{create\_standard\_hand\_3()}}
+{\footnotesize\ttfamily \label{class_hand_adbfeef36736421dcb1ebc61c45697347} 
+void Hand\+::create\+\_\+standard\+\_\+hand\+\_\+3 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_a9e6aac43dba379bda6bc67cf01793081}\index{Hand@{Hand}!generate@{generate}}
+\index{generate@{generate}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{class_hand_a9e6aac43dba379bda6bc67cf01793081} 
+void Hand\+::generate (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Generate a predefined standard hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifier of the standard hand (1-\/3) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if id is invalid \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_a863d1d5ef89eecbce11384f0439a44f0}\index{Hand@{Hand}!generate\_random\_card@{generate\_random\_card}}
+\index{generate\_random\_card@{generate\_random\_card}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{generate\_random\_card()}{generate\_random\_card()}}
+{\footnotesize\ttfamily \label{class_hand_a863d1d5ef89eecbce11384f0439a44f0} 
+void Hand\+::generate\+\_\+random\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random card and adds it to the hand. 
+
+This method randomly selects a card type and creates a card of that type with randomly generated properties. The card is then added to the hand.
+
+The probability distribution for card types is as follows\+:
+\begin{DoxyItemize}
+\item Beast \doxylink{class_card}{Card}\+: 10\%
+\item Buff \doxylink{class_card}{Card}\+: 10\%
+\item Creature \doxylink{class_card}{Card}\+: 10\%
+\item Shield \doxylink{class_card}{Card}\+: 10\%
+\item Weapon \doxylink{class_card}{Card}\+: 10\%
+\item Artifact \doxylink{class_card}{Card}\+: 10\%
+\item Attack Spell \doxylink{class_card}{Card}\+: 10\%
+\item Heal Spell \doxylink{class_card}{Card}\+: 10\%
+\item Buff Spell \doxylink{class_card}{Card}\+: 10\%
+\item Defence Spell \doxylink{class_card}{Card}\+: 10\% 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_a297b1bef3dae532600ae359b4e522b6b}\index{Hand@{Hand}!get\_amount@{get\_amount}}
+\index{get\_amount@{get\_amount}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{get\_amount()}{get\_amount()}}
+{\footnotesize\ttfamily \label{class_hand_a297b1bef3dae532600ae359b4e522b6b} 
+int Hand\+::get\+\_\+amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the number of cards in hand. 
+
+\begin{DoxyReturn}{Returns}
+Current card count 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_aef66bfc3507501b01647eea97f5247ef}\index{Hand@{Hand}!get\_card@{get\_card}}
+\index{get\_card@{get\_card}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{get\_card()}{get\_card()}}
+{\footnotesize\ttfamily \label{class_hand_aef66bfc3507501b01647eea97f5247ef} 
+\mbox{\hyperlink{class_card}{Card}} \& Hand\+::get\+\_\+card (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const}
+
+
+
+Get a reference to a card by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the card to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the card 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if index is invalid \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_adad976dd2d139ea61247121b66c73114}\index{Hand@{Hand}!get\_cards\_by\_type@{get\_cards\_by\_type}}
+\index{get\_cards\_by\_type@{get\_cards\_by\_type}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{get\_cards\_by\_type()}{get\_cards\_by\_type()}}
+{\footnotesize\ttfamily \label{class_hand_adad976dd2d139ea61247121b66c73114} 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_card}{Card}} $>$ $>$ Hand\+::get\+\_\+cards\+\_\+by\+\_\+type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Get all cards of a specific type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+name} & Name of the card type to filter by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of references to matching cards 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_a3d4d59725b6c613c462245dd440ab1db}\index{Hand@{Hand}!get\_unique\_card\_types@{get\_unique\_card\_types}}
+\index{get\_unique\_card\_types@{get\_unique\_card\_types}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{get\_unique\_card\_types()}{get\_unique\_card\_types()}}
+{\footnotesize\ttfamily \label{class_hand_a3d4d59725b6c613c462245dd440ab1db} 
+std\+::vector$<$ std\+::string $>$ Hand\+::get\+\_\+unique\+\_\+card\+\_\+types (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get all unique card types present in hand. 
+
+\begin{DoxyReturn}{Returns}
+Vector of unique card type names 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_a0658ee144ba8c58cae6a61950eb154dd}\index{Hand@{Hand}!remove\_card@{remove\_card}}
+\index{remove\_card@{remove\_card}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{remove\_card()}{remove\_card()}}
+{\footnotesize\ttfamily \label{class_hand_a0658ee144ba8c58cae6a61950eb154dd} 
+void Hand\+::remove\+\_\+card (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Remove a card from the hand by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the card to remove \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if index is invalid \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+\Hypertarget{class_hand_ac5494271768be40a87efd694557812a1}\index{Hand@{Hand}!sort\_by\_mana@{sort\_by\_mana}}
+\index{sort\_by\_mana@{sort\_by\_mana}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{sort\_by\_mana()}{sort\_by\_mana()}}
+{\footnotesize\ttfamily \label{class_hand_ac5494271768be40a87efd694557812a1} 
+void Hand\+::sort\+\_\+by\+\_\+mana (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sort cards in hand by mana cost (un ascending) 
+
+
+
+Definition at line \mbox{\hyperlink{hand_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{hand_8cpp_source}{hand.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_hand_a9bfe3490c884cc1418913725da69f9c6}\index{Hand@{Hand}!amount@{amount}}
+\index{amount@{amount}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily \label{class_hand_a9bfe3490c884cc1418913725da69f9c6} 
+int Hand\+::amount\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current number of cards in hand. 
+
+
+
+Definition at line \mbox{\hyperlink{hand_8h_source_l00031}{31}} of file \mbox{\hyperlink{hand_8h_source}{hand.\+h}}.
+
+\Hypertarget{class_hand_a78269011e285938e0b6f30887991ab2a}\index{Hand@{Hand}!cards@{cards}}
+\index{cards@{cards}!Hand@{Hand}}
+\doxysubsubsection{\texorpdfstring{cards}{cards}}
+{\footnotesize\ttfamily \label{class_hand_a78269011e285938e0b6f30887991ab2a} 
+std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_card}{Card}}$>$ $>$ Hand\+::cards\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Collection of cards in hand. 
+
+
+
+Definition at line \mbox{\hyperlink{hand_8h_source_l00030}{30}} of file \mbox{\hyperlink{hand_8h_source}{hand.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/include/player/\mbox{\hyperlink{hand_8h}{hand.\+h}}\item 
+D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/src/player/\mbox{\hyperlink{hand_8cpp}{hand.\+cpp}}\end{DoxyCompactItemize}
