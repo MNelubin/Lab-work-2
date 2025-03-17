@@ -40,7 +40,7 @@ void Attack_Spell_Card::use(Player& user, Player& target) {
     /**
      * @brief Deal spell damage
      */
-    target.take_damage(get_base_damage() * user.get_cumulative_attack_multiplier());
+    target.take_damage(static_cast<int>(get_base_damage() * user.get_cumulative_attack_multiplier()));
     user.end_turn();
 }
 

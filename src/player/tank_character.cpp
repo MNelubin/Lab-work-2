@@ -45,17 +45,44 @@ void Tank_Character::special_action_info(){
 }
 
 void Tank_Character::serialize(std::ostream& os) const {
+    if (!os.good()) {
+        throw std::ios_base::failure("Stream state invalid before serialization");
+    }
+    
     Character::serialize(os);
-    int calculated_shield = get_level() + 5; // lvl +5
-    bool reset_ability_flag = false; 
+    
+    const int calculated_shield = get_level() + 5;
+    const bool reset_ability_flag = false;
+    
     os.write(reinterpret_cast<const char*>(&calculated_shield), sizeof(calculated_shield));
     os.write(reinterpret_cast<const char*>(&reset_ability_flag), sizeof(reset_ability_flag));
+    
+    if (!os) {
+        throw std::ios_base::failure("Failed to write tank data");
+    }
 }
 
 void Tank_Character::deserialize(std::istream& is) {
+    if (!is.good()) {
+        throw std::ios_base::failure("Stream state invalid before deserialization");
+    }
+    
     Character::deserialize(is);
-    is.read(reinterpret_cast<char*>(&shield_add), sizeof(shield_add));
-    is.read(reinterpret_cast<char*>(&was_ability_used), sizeof(was_ability_used));
+    
+    int stored_shield;
+    bool stored_flag;
+    
+    is.read(reinterpret_cast<char*>(&stored_shield), sizeof(stored_shield));
+    is.read(reinterpret_cast<char*>(&stored_flag), sizeof(stored_flag));
+    
+    if (!is) {
+        throw std::ios_base::failure("Failed to read tank data");
+    }
+    
     shield_add = get_level() + 5;
-    was_ability_used = false; 
+    was_ability_used = false;
+}
+
+bool Tank_Character::get_was_ability_used() const {
+    return was_ability_used;
 }

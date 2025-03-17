@@ -102,6 +102,12 @@ public:
      * @return std::string The name of the character's class ("Tank")
      */
     std::string get_class_name() const override { return "Tank"; }
+
+    /**
+     * @brief Check if the ability was used
+     * @return true if the ability was used, false otherwise
+     */
+    bool get_was_ability_used() const;
 };
 
 #endif // TANK_CHARACTER_H

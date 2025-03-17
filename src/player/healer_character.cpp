@@ -56,14 +56,25 @@ void Healer_Character::special_action_info(){
 
 
 void Healer_Character::serialize(std::ostream& os) const {
+    if (!os.good()) {
+        throw std::ios_base::failure("Stream state is invalid before serialization");
+    }
+    
     Character::serialize(os);
     int calculated_heal = get_level() * 10; // lvl * 10
     os.write(reinterpret_cast<const char*>(&calculated_heal), sizeof(calculated_heal));
+    if (!os) {
+        throw std::ios_base::failure("Failed to write heal_amount to stream");
+    }
 }
 
 void Healer_Character::deserialize(std::istream& is) {
     Character::deserialize(is);
-
     is.read(reinterpret_cast<char*>(&heal_amount), sizeof(heal_amount));
+    
+    if (!is) {
+        throw std::ios_base::failure("Stream read error");
+    }
+    
     heal_amount = get_level() * 10;
 }

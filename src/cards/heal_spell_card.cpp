@@ -4,6 +4,7 @@
 #include "../../include/cards/heal_spell_card.h"
 #include "../../include/player/player.h"
 #include "../../include/player/character.h"
+#include <iomanip>
 
 #include <stdexcept> 
 
@@ -114,5 +115,5 @@ void Heal_Spell_Card::generate_properties() {
 }
 
 void Heal_Spell_Card::print_key_info() const {
-    std::cout << "Base Heal: " << base_heal << ", Efficiency: " << efficiency_deg;
+    std::cout << "Base Heal: " << base_heal << ", Efficiency: " << std::fixed << std::setprecision(1) << efficiency_deg;
 }

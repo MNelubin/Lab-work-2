@@ -158,46 +158,84 @@ void Character::set_ability_uses(int value) {
 }
 
 void Character::serialize(std::ostream& os) const {
+    // Check stream state
+    if (!os.good()) {
+        throw std::ios_base::failure("Stream state invalid before serialization");
+    }
+
+    // Write base fields
     os.write(reinterpret_cast<const char*>(&xp_to_next_lvl), sizeof(xp_to_next_lvl));
     os.write(reinterpret_cast<const char*>(&lvl), sizeof(lvl));
     os.write(reinterpret_cast<const char*>(&xp), sizeof(xp));
-    
+
+    // Write name
     size_t name_len = name.size();
     os.write(reinterpret_cast<const char*>(&name_len), sizeof(name_len));
     os.write(name.c_str(), name_len);
-    
+
+    // Write multipliers
     os.write(reinterpret_cast<const char*>(&heal_mltpl), sizeof(heal_mltpl));
     os.write(reinterpret_cast<const char*>(&dmg_mltpl), sizeof(dmg_mltpl));
     os.write(reinterpret_cast<const char*>(&armor_mltpl), sizeof(armor_mltpl));
-    
+
+    // Write description
     size_t desc_len = description.size();
     os.write(reinterpret_cast<const char*>(&desc_len), sizeof(desc_len));
     os.write(description.c_str(), desc_len);
-    
-    //ability_uses==lvl;
-    os.write(reinterpret_cast<const char*>(&lvl), sizeof(lvl));
+
+    // Explicit write of ability_uses
+    int ability_to_write = ability_uses; // Use intermediate variable
+    os.write(reinterpret_cast<const char*>(&ability_to_write), sizeof(ability_to_write));
+
+    // Check write success
+    if (!os) {
+        throw std::ios_base::failure("Failed to write character data");
+    }
 }
 
 void Character::deserialize(std::istream& is) {
+    // Check stream state
+    if (!is.good()) {
+        throw std::ios_base::failure("Stream state invalid before deserialization");
+    }
+
+    // Read base fields
     is.read(reinterpret_cast<char*>(&xp_to_next_lvl), sizeof(xp_to_next_lvl));
     is.read(reinterpret_cast<char*>(&lvl), sizeof(lvl));
     is.read(reinterpret_cast<char*>(&xp), sizeof(xp));
-    
+
+    // Read name
     size_t name_len;
     is.read(reinterpret_cast<char*>(&name_len), sizeof(name_len));
+    if (name_len > 50) {
+        throw std::ios_base::failure("Corrupted name length (max 50)");
+    }
     name.resize(name_len);
     is.read(&name[0], name_len);
-    
+
+    // Read multipliers
     is.read(reinterpret_cast<char*>(&heal_mltpl), sizeof(heal_mltpl));
     is.read(reinterpret_cast<char*>(&dmg_mltpl), sizeof(dmg_mltpl));
     is.read(reinterpret_cast<char*>(&armor_mltpl), sizeof(armor_mltpl));
-    
+
+    // Read description
     size_t desc_len;
     is.read(reinterpret_cast<char*>(&desc_len), sizeof(desc_len));
+    if (desc_len > 200) {
+        throw std::ios_base::failure("Corrupted description length (max 200)");
+    }
     description.resize(desc_len);
     is.read(&description[0], desc_len);
-    
-    is.read(reinterpret_cast<char*>(&ability_uses), sizeof(ability_uses));
+
+    // Explicit read of ability_uses
+    int ability_read;
+    is.read(reinterpret_cast<char*>(&ability_read), sizeof(ability_read));
+    ability_uses = ability_read; // Assign through intermediate variable
+
+    // Final stream check
+    if (is.fail()) {
+        throw std::ios_base::failure("Corrupted character data");
+    }
 }
 
 std::string Character::get_character_statistics() const {

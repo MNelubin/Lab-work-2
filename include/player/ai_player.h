@@ -35,7 +35,6 @@ public:
      */
     std::pair<int, int> find_best_combination() const;
 
-private:
     /**
      * @brief Structure for storing card information
      */
@@ -53,6 +52,9 @@ private:
      * @return int The calculated value
      */
     int calculate_card_value(const Card& card) const;
+
+private:
+    
 
     
 };

@@ -61,17 +61,48 @@ void Knight_Character::special_action_info(){
 
 
 void Knight_Character::serialize(std::ostream& os) const {
+    if (!os.good()) {
+        throw std::ios_base::failure("Stream state is invalid before serialization");
+    }
+    
     Character::serialize(os);
-    int calculated_armor = get_level() * 5 + 20; // lvl *5 +20
-    int reset_armored = 0; 
+    
+    const int calculated_armor = get_level() * 5 + 20;
+    const int reset_armored = 0;
+    
     os.write(reinterpret_cast<const char*>(&calculated_armor), sizeof(calculated_armor));
     os.write(reinterpret_cast<const char*>(&reset_armored), sizeof(reset_armored));
+    
+    if (!os) {
+        throw std::ios_base::failure("Failed to write knight data");
+    }
 }
 
 void Knight_Character::deserialize(std::istream& is) {
+
+    if (!is.good()) {
+        throw std::ios_base::failure("Stream error before deserialization");
+    }
+
+
     Character::deserialize(is);
-    is.read(reinterpret_cast<char*>(&armor_up), sizeof(armor_up));
-    is.read(reinterpret_cast<char*>(&armored_amount), sizeof(armored_amount));
+
+
+    int temp_armor_up;
+    int temp_armored_amount;
+
+
+    is.read(reinterpret_cast<char*>(&temp_armor_up), sizeof(temp_armor_up));
+    if (is.fail() || is.eof()) {
+        throw std::ios_base::failure("Corrupted armor_up data");
+    }
+
+    is.read(reinterpret_cast<char*>(&temp_armored_amount), sizeof(temp_armored_amount));
+    if (is.fail() || is.eof()) {
+        throw std::ios_base::failure("Corrupted armored_amount data");
+    }
+
+
     armor_up = get_level() * 5 + 20;
-    armored_amount = 0; 
+    armored_amount = 0;
 }
