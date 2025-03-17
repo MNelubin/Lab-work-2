@@ -26,5 +26,5 @@ var searchData=
   ['buffcard_23',['BuffCard',['../d1/d30/group___buff_card.html',1,'']]],
   ['buffspell_24',['BuffSpell',['../d0/d0b/enums_8h.html#a76b9e96d86b331202dcc0fba38b758cda2fa5923f445f61cb4b187adb32b99459',1,'BuffSpell:&#160;enums.h'],['../d6/d8f/group___buff_spell.html',1,'BuffSpell']]],
   ['build_25',['Build',['../D:/education/C++/second semestr/Lab_2/code/Lab-work-2/README.md#autotoc_md31',1,'']]],
-  ['build_20tools_26',['Build Tools',['../d2/d50/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_requirements.html#autotoc_md10',1,'']]]
+  ['build_20tools_26',['Build Tools',['../dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md10',1,'']]]
 ];

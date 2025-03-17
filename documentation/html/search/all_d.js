@@ -18,7 +18,7 @@ var searchData=
   ['healercharacter_15',['HealerCharacter',['../d3/d68/group___healer_character.html',1,'']]],
   ['healspell_16',['HealSpell',['../d0/d0b/enums_8h.html#a76b9e96d86b331202dcc0fba38b758cdac19ac8260650e45ea31997ca314611ac',1,'HealSpell:&#160;enums.h'],['../d9/dce/group___heal_spell.html',1,'HealSpell']]],
   ['hp_17',['hp',['../d8/d53/class_player.html#a2baad6b9a274417a7374baf11d5f723d',1,'Player']]],
-  ['human_20player_20features_18',['3.6 Human Player Features',['../db/ddb/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_test__plan.html#autotoc_md23',1,'']]],
+  ['human_20player_20features_18',['3.6 Human Player Features',['../df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md23',1,'']]],
   ['human_5fplayer_19',['Human_Player',['../de/d3e/class_human___player.html',1,'Human_Player'],['../de/d3e/class_human___player.html#a42979f18ee5e689d9f142f116d2a0555',1,'Human_Player::Human_Player()'],['../de/d3e/class_human___player.html#aeb0595fbcad9d7194e0ab09a7f74c146',1,'Human_Player::Human_Player(int hp, int mana, int armor, const std::string &amp;name, std::unique_ptr&lt; Character &gt; character=nullptr, int shield_amount=0)']]],
   ['human_5fplayer_2ecpp_20',['human_player.cpp',['../d2/d00/human__player_8cpp.html',1,'']]],
   ['human_5fplayer_2eh_21',['human_player.h',['../d8/d69/human__player_8h.html',1,'']]],

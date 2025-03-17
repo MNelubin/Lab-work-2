@@ -1,133 +1,146 @@
-\chapter{Core Test Plan}
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan}{}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan}\index{Core Test Plan@{Core Test Plan}}
-\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md14}%
-\Hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md14}%
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md15}{}\doxysection{\texorpdfstring{1. Types of tests}{1. Types of tests}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md15}
-{\bfseries{Unit tests}} (90\% coverage)\+:
+\chapter{1. Types of Tests}
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan}{}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan}\index{1. Types of Tests@{1. Types of Tests}}
+\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md15}%
+\Hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md15}%
+
+
+{\bfseries{Unit Tests}} (90\% coverage)\+:
 \begin{DoxyItemize}
-\item Validation of card attributes (mana, damage, rarity)
-\item Checking ability limits (Shielding(), Armoring())
-\item Calculating damage/healing formulas
-\item Save/load game progress
+\item \doxylink{class_card}{Card} class functionality (constructors, getters/setters)
+\item Spell cards (Attack, Heal, Buff, Defence)
+\item Creature cards (Beast, Creature)
+\item Weapon and Shield cards
+\item \doxylink{class_character}{Character} class and derived classes (Healer, Tank, Knight)
+\item \doxylink{class_hand}{Hand} class operations
+\item \doxylink{class_player}{Player} class interactions
 \end{DoxyItemize}
 
-{\bfseries{Integration tests}} (10\% coverage)\+:
+{\bfseries{Integration Tests}} (10\% coverage)\+:
 \begin{DoxyItemize}
-\item AI\textquotesingle{}s work with different types of cards
-\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md16}{}\doxysection{\texorpdfstring{2. Tools and environment}{2. Tools and environment}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md16}
+\item AI player decision making
+\item Human player interactions
+\item \doxylink{class_card}{Card} usage in game context
+\item \doxylink{class_character}{Character} abilities integration
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md16}{}\doxysection{\texorpdfstring{2. Tools and Environment}{2. Tools and Environment}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md16}
 
 \begin{DoxyItemize}
 \item {\bfseries{Framework}}\+: Google Test (gtest)
 \item {\bfseries{OS}}\+: Ubuntu 22.\+04 LTS
 \item {\bfseries{Compiler}}\+: GCC 11+
-\item {\bfseries{CI}}\+: Existing system with preinstalled\+: 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{-\/\ name:\ Setup\ environment}
-\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ update}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ install\ -\/y\ g++-\/11\ make\ libgtest-\/dev}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ ln\ -\/sf\ /usr/bin/g++-\/11\ /usr/bin/g++}
-
-\end{DoxyCode}
-
-\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md17}{}\doxysection{\texorpdfstring{3. Critical components}{3. Critical components}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md17}
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md18}{}\doxysubsection{\texorpdfstring{3.\+1 Card Validation}{3.\+1 Card Validation}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md18}
-{\bfseries{Test cases\+:}} 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(CardTest,\ InvalidMana)\ \{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_card}{Card}}\ card;}
-\DoxyCodeLine{\ \ \ \ ASSERT\_THROW(card.Set\_Mana\_Cost(11),\ InvalidCardException);}
-\DoxyCodeLine{\}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(CardTest,\ MinimumDamage)\ \{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_attack___spell___card}{Attack\_Spell\_Card}}\ card;}
-\DoxyCodeLine{\ \ \ \ ASSERT\_THROW(card.Set\_Base\_DMG(0),\ InvalidDamageValue);}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md19}{}\doxysubsection{\texorpdfstring{3.\+2 Combat Mechanics}{3.\+2 Combat Mechanics}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md19}
-{\bfseries{Sample data\+:}} 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{vector<Card>\ test\_deck\ =\ \{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_attack___spell___card}{Attack\_Spell\_Card}}(\textcolor{stringliteral}{"{}Fireball"{}},\ 3,\ 5),}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_shield___card}{Shield\_Card}}(\textcolor{stringliteral}{"{}Iron\ Shield"{}},\ 2,\ 3)}
-\DoxyCodeLine{\};}
-
-\end{DoxyCode}
-
-
-{\bfseries{Test cases\+:}}
-\begin{DoxyEnumerate}
-\item Damage 5 vs Armor 3 → 2 damage
-\item Double shield (3+3) → armor 6
-\item Attempt to re-\/\+Shielding() → error
-\end{DoxyEnumerate}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md20}{}\doxysubsection{\texorpdfstring{3.\+3 The AI System}{3.\+3 The AI System}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md20}
-{\bfseries{Logic of choice\+:}} 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AITest,\ BestCardSelection)\ \{}
-\DoxyCodeLine{\ \ \ \ }
-\DoxyCodeLine{\ \ \ \ vector<Card>\ hand\ =\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \{mana:\ 3,\ dmg:\ 5\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \{mana:\ 2,\ dmg:\ 3\}}
-\DoxyCodeLine{\ \ \ \ \};}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ ai(hand);}
-\DoxyCodeLine{\ \ \ \ ASSERT\_EQ(ai.count\_best(),\ 0);\ \textcolor{comment}{//\ Selecting\ the\ first\ card}}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md21}{}\doxysubsection{\texorpdfstring{3.\+4 Saving Progress}{3.\+4 Saving Progress}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md21}
-{\bfseries{File format\+:}} 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ "{}player\_name"{}:\ "{}Vova"{},}
-\DoxyCodeLine{\ \ "{}characters"{}:\ \{}
-\DoxyCodeLine{\ \ \ \ "{}tank"{}:\ \{"{}xp"{}:\ 300,\ "{}level"{}:\ 1\}}
-\DoxyCodeLine{\ \ \}}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md22}{}\doxysection{\texorpdfstring{4. Integration with CI}{4. Integration with CI}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md22}
+\item {\bfseries{CI/\+CD}}\+: Git\+Hub Actions
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md17}{}\doxysection{\texorpdfstring{3. Critical Components}{3. Critical Components}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md17}
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md18}{}\doxysubsection{\texorpdfstring{3.\+1 Card Class Validation}{3.\+1 Card Class Validation}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md18}
+{\bfseries{Test Cases\+:}}
+\begin{DoxyItemize}
+\item Constructor validation for all card types
+\item Getter and setter functionality
+\item \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity} distribution verification
+\item Type detection through polymorphism
+\item Pure virtual method implementation
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md19}{}\doxysubsection{\texorpdfstring{3.\+2 Spell Cards Functionality}{3.\+2 Spell Cards Functionality}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md19}
+{\bfseries{Test Cases\+:}}
+\begin{DoxyItemize}
+\item Attack spell damage calculation
+\item Heal spell recovery validation
+\item Buff spell multiplier application
+\item Defence spell shield application
+\item Mana cost validation
+\item Special abilities implementation
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md20}{}\doxysubsection{\texorpdfstring{3.\+3 Character Class Functionality}{3.\+3 Character Class Functionality}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md20}
+{\bfseries{Test Cases\+:}}
+\begin{DoxyItemize}
+\item Level-\/up mechanics
+\item Experience management
+\item Ability uses tracking
+\item Special actions implementation
+\item \doxylink{class_character}{Character} statistics formatting
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md21}{}\doxysubsection{\texorpdfstring{3.\+4 Player Class Interactions}{3.\+4 Player Class Interactions}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md21}
+{\bfseries{Test Cases\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_hand}{Hand} management
+\item \doxylink{class_card}{Card} usage and effects
+\item Damage and healing calculations
+\item Turn management
+\item Special action execution
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md22}{}\doxysubsection{\texorpdfstring{3.\+5 AI Player Decision Making}{3.\+5 AI Player Decision Making}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md22}
+{\bfseries{Test Cases\+:}}
+\begin{DoxyItemize}
+\item Best card combination selection
+\item Combat card prioritization
+\item Mana management
+\item Strategy implementation
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md23}{}\doxysubsection{\texorpdfstring{3.\+6 Human Player Features}{3.\+6 Human Player Features}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md23}
+{\bfseries{Test Cases\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_character}{Character} management
+\item Save/load functionality
+\item Customization interface
+\item Input validation
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md24}{}\doxysection{\texorpdfstring{4. Integration with CI/\+CD}{4. Integration with CI/\+CD}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md24}
 {\bfseries{Configuration\+:}} 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{name:\ C++\ CI}
+\DoxyCodeLine{}
+\DoxyCodeLine{on:\ [push,\ pull\_request]}
+\DoxyCodeLine{}
 \DoxyCodeLine{jobs:}
-\DoxyCodeLine{\ \ build-\/and-\/test:}
-\DoxyCodeLine{\ \ \ \ runs-\/on:\ ubuntu-\/latest}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ steps:}
-\DoxyCodeLine{\ \ \ \ -\/\ name:\ Checkout\ code}
-\DoxyCodeLine{\ \ \ \ \ \ uses:\ actions/checkout@v4}
+\DoxyCodeLine{ \ build-\/and-\/test:}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ -\/\ name:\ Setup\ environment}
-\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ update}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ install\ -\/y\ g++-\/11\ make\ libgtest-\/dev}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ ln\ -\/sf\ /usr/bin/g++-\/11\ /usr/bin/g++}
+\DoxyCodeLine{ \  \ runs-\/on:\ ubuntu-\/latest}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ -\/\ name:\ Build\ tests}
-\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ make\ test}
+\DoxyCodeLine{ \  \ steps:}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ -\/\ name:\ Execute\ tests}
-\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ ./test-\/card\_app}
+\DoxyCodeLine{ \  \ -\/\ name:\ Checkout\ code}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ -\/\ name:\ Build\ release}
-\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ make\ clean}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ make}
+\DoxyCodeLine{ \  \  \ uses:\ actions/checkout@v4}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ -\/\ name:\ Cleanup}
-\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ make\ cleanall\ }
+\DoxyCodeLine{ \  \ -\/\ name:\ Setup\ environment}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \ run:\ |}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ sudo\ apt-\/get\ update}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ sudo\ apt-\/get\ install\ -\/y\ g++-\/11\ make\ libgtest-\/dev}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ sudo\ ln\ -\/sf\ /usr/bin/g++-\/11\ /usr/bin/g++}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ -\/\ name:\ Build\ tests}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \ run:\ |}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ make\ test}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ -\/\ name:\ Execute\ tests}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \ run:\ |}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ ./test-\/card\_app}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ -\/\ name:\ Build\ release}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \ run:\ |}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ make\ clean}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ make}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ -\/\ name:\ Cleanup}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \ run:\ |}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ make\ cleanall}
 
 \end{DoxyCode}
-\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md23}{}\doxysection{\texorpdfstring{5. Success criteria}{5. Success criteria}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md23}
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md25}{}\doxysection{\texorpdfstring{5. Success Criteria}{5. Success Criteria}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md25}
 
 \begin{DoxyItemize}
-\item All tests are error-\/free
-\item 100\% coverage of critical scenarios
-\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md24}{}\doxysection{\texorpdfstring{6. Reporting}{6. Reporting}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md24}
+\item All unit tests pass
+\item Integration tests demonstrate correct system behavior
+\item Test coverage meets requirements
+\item No crashes
+\end{DoxyItemize}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md26}{}\doxysection{\texorpdfstring{6. Reporting}{6. Reporting}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan_autotoc_md26}
 
 \begin{DoxyItemize}
-\item Notifications about test crashes in CI 
+\item Detailed test results in CI/\+CD pipeline 
 \end{DoxyItemize}

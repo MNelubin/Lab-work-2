@@ -2,7 +2,7 @@ var searchData=
 [
   ['game_5fmenu_0',['game_menu',['../df/d0a/main_8cpp.html#a116f5db451cfe52a4f8ae0bdf32e3bbc',1,'main.cpp']]],
   ['gci_1',['GCI',['../d4/d2e/group___g_c_i.html',1,'']]],
-  ['general_2',['GENERAL',['../d2/d50/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_requirements.html',1,'']]],
+  ['general_2',['GENERAL',['../dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html',1,'']]],
   ['general_20description_20of_20the_20system_3',['General description of the system',['../d9/d5f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture.html',1,'']]],
   ['general_5farchitecture_2emd_4',['General_architecture.md',['../dd/dc6/_general__architecture_8md.html',1,'']]],
   ['generate_5',['generate',['../d7/d48/class_hand.html#a9e6aac43dba379bda6bc67cf01793081',1,'Hand']]],
@@ -56,5 +56,5 @@ var searchData=
   ['get_5fweapon_5fmultiplier_53',['get_weapon_multiplier',['../df/db1/class_creature___card.html#ae8aadee98a59de6d8b2e4397e228c5ed',1,'Creature_Card']]],
   ['get_5fxp_54',['get_xp',['../d7/da7/class_character.html#a33057af0e1f2ad232153787a2e9a05fd',1,'Character']]],
   ['get_5fxp_5fto_5fnext_5flvl_55',['get_xp_to_next_lvl',['../d7/da7/class_character.html#a5a54256b920176d22bfc9d618088baf3',1,'Character']]],
-  ['graphics_56',['Graphics',['../d2/d50/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_requirements.html#autotoc_md7',1,'']]]
+  ['graphics_56',['Graphics',['../dd/d89/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements.html#autotoc_md7',1,'']]]
 ];

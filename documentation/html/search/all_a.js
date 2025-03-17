@@ -8,7 +8,7 @@ var searchData=
   ['element_5',['element',['../d3/dde/class_spell___card.html#a66aca7764f7ee1f25d6ac9c6f92e60fe',1,'Spell_Card']]],
   ['end_5fturn_6',['end_turn',['../d8/d53/class_player.html#a3c9a084e68ea363850c3fe08fdefbc7e',1,'Player']]],
   ['enums_2eh_7',['enums.h',['../d0/d0b/enums_8h.html',1,'']]],
-  ['environment_8',['2. Tools and Environment',['../db/ddb/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_test__plan.html#autotoc_md16',1,'']]],
+  ['environment_8',['2. Tools and Environment',['../df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md16',1,'']]],
   ['epic_9',['Epic',['../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756',1,'enums.h']]],
   ['errorhandling_10',['ErrorHandling',['../d1/dc6/group___error_handling.html',1,'']]]
 ];

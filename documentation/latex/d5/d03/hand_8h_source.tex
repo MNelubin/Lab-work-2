@@ -23,38 +23,39 @@
 \DoxyCodeLine{\Hypertarget{hand_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buff__spell__card_8h}{../cards/buff\_spell\_card.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{hand_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{defence__spell__card_8h}{../cards/defence\_spell\_card.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{hand_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00028}\mbox{\hyperlink{class_hand}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hand_aa733faf150351c640fc7d1bf460b07e9}{Hand}}\ \{}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00029}00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00030}\mbox{\hyperlink{class_hand_a78269011e285938e0b6f30887991ab2a}{00030}}\ \ \ \ \ std::vector<std::unique\_ptr<Card>>\ \mbox{\hyperlink{class_hand_a78269011e285938e0b6f30887991ab2a}{cards}};\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00031}\mbox{\hyperlink{class_hand_a9bfe3490c884cc1418913725da69f9c6}{00031}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hand_a9bfe3490c884cc1418913725da69f9c6}{amount}};\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Predefined\ standard\ hands}}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a684cd7084f515cb390d0cef919c94771}{create\_standard\_hand\_1}}();}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_afa789a9799dac03edad0bf7c35e9cb40}{create\_standard\_hand\_2}}();}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_adbfeef36736421dcb1ebc61c45697347}{create\_standard\_hand\_3}}();}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00038}00038\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_hand_aa733faf150351c640fc7d1bf460b07e9}{Hand}}();}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::unique\_ptr<Card>\ card);}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a0658ee144ba8c58cae6a61950eb154dd}{remove\_card}}(\textcolor{keywordtype}{int}\ index);}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_hand_aef66bfc3507501b01647eea97f5247ef}{get\_card}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_ac5494271768be40a87efd694557812a1}{sort\_by\_mana}}();}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a9e6aac43dba379bda6bc67cf01793081}{generate}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hand_a297b1bef3dae532600ae359b4e522b6b}{get\_amount}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00087}00087\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_hand_a3d4d59725b6c613c462245dd440ab1db}{get\_unique\_card\_types}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00094}00094\ \ \ \ \ std::vector<std::reference\_wrapper<Card>>\ \mbox{\hyperlink{class_hand_adad976dd2d139ea61247121b66c73114}{get\_cards\_by\_type}}(\textcolor{keyword}{const}\ std::string\&\ type\_name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a863d1d5ef89eecbce11384f0439a44f0}{generate\_random\_card}}();}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00115}00115\ \};}
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{hand_8h_source_l00117}00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00028}\mbox{\hyperlink{class_hand}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hand_aa733faf150351c640fc7d1bf460b07e9}{Hand}}}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00030}00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00031}\mbox{\hyperlink{class_hand_a78269011e285938e0b6f30887991ab2a}{00031}}\ \ \ \ \ std::vector<std::unique\_ptr<Card>>\ \mbox{\hyperlink{class_hand_a78269011e285938e0b6f30887991ab2a}{cards}};\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00032}\mbox{\hyperlink{class_hand_a9bfe3490c884cc1418913725da69f9c6}{00032}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hand_a9bfe3490c884cc1418913725da69f9c6}{amount}};\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Predefined\ standard\ hands}}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a684cd7084f515cb390d0cef919c94771}{create\_standard\_hand\_1}}();}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_afa789a9799dac03edad0bf7c35e9cb40}{create\_standard\_hand\_2}}();}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_adbfeef36736421dcb1ebc61c45697347}{create\_standard\_hand\_3}}();}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_hand_aa733faf150351c640fc7d1bf460b07e9}{Hand}}();}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::unique\_ptr<Card>\ card);}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a0658ee144ba8c58cae6a61950eb154dd}{remove\_card}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_hand_aef66bfc3507501b01647eea97f5247ef}{get\_card}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_ac5494271768be40a87efd694557812a1}{sort\_by\_mana}}();}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a9e6aac43dba379bda6bc67cf01793081}{generate}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hand_a297b1bef3dae532600ae359b4e522b6b}{get\_amount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00088}00088\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_hand_a3d4d59725b6c613c462245dd440ab1db}{get\_unique\_card\_types}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00095}00095\ \ \ \ \ std::vector<std::reference\_wrapper<Card>>\ \mbox{\hyperlink{class_hand_adad976dd2d139ea61247121b66c73114}{get\_cards\_by\_type}}(\textcolor{keyword}{const}\ std::string\&\ type\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hand_a863d1d5ef89eecbce11384f0439a44f0}{generate\_random\_card}}();}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00116}00116\ \};}
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{hand_8h_source_l00118}00118\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -8,17 +8,18 @@
 
 /**
  * @brief Base class for spell cards
- * 
+ *
  * Inherits from Card and adds elemental magic properties.
  */
-class Spell_Card : public Card {
+class Spell_Card : public Card
+{
 protected:
     Element element; ///< Magical element type from enum
 
 public:
     /**
      * @brief Construct a new Spell Card object
-     * 
+     *
      * @param name Card display name
      * @param description Effect description
      * @param rarity Rarity classification
@@ -27,7 +28,7 @@ public:
      */
     Spell_Card(const std::string& name, const std::string& description,
                Rarity rarity, int mana_cost, Element element);
-    
+
     virtual ~Spell_Card() = default;
 
     /**
@@ -44,4 +45,4 @@ public:
     void set_element(Element new_element);
 };
 
-#endif 
+#endif

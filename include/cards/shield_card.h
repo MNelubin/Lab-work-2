@@ -8,17 +8,18 @@
 
 /**
  * @brief Specialized card for shields
- * 
+ *
  * Inherits from Card and adds shield-specific properties.
  */
-class Shield_Card : public Card {
+class Shield_Card : public Card
+{
 private:
     int usage; ///< Number of uses for the shield
 
 public:
     /**
      * @brief Construct a new Shield Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -30,7 +31,7 @@ public:
 
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes card with default values:
      * - name: "Unnamed Shield"
      * - description: "No description"
@@ -45,7 +46,7 @@ public:
      * @return Current number of uses
      */
     int get_usage() const;
-    
+
     /**
      * @brief Update number of uses
      * @param new_usage Must be positive
@@ -60,7 +61,7 @@ public:
     CardType get_type() const override;
 
     void generate_properties() override;
-    
+
     void print_key_info() const override;
 };
 

@@ -2,39 +2,47 @@
 \hypertarget{ai__player_8h_source}{}\label{ai__player_8h_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/player/ai\_player.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/player/ai\_player.h}}
 \mbox{\hyperlink{ai__player_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ AI\_PLAYER\_H}}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ AI\_PLAYER\_H}}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00003}00003\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{player.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <utility>}\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ AI\_PLAYER\_H}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ AI\_PLAYER\_H}}
 \DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00013}\mbox{\hyperlink{class_a_i___player}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_a_i___player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}\ \{}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player::Player}};}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Player\ interface}}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00027}\mbox{\hyperlink{class_a_i___player_aa3fb6c4ed5f2d248c43040a7f767e217}{00027}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_a_i___player_aa3fb6c4ed5f2d248c43040a7f767e217}{is\_human}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00036}00036\ \ \ \ \ std::pair<int,\ int>\ \mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{player.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00016}\mbox{\hyperlink{class_a_i___player}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_a_i___player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player::Player}};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Player\ interface}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00031}\mbox{\hyperlink{class_a_i___player_aa3fb6c4ed5f2d248c43040a7f767e217}{00031}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_a_i___player_aa3fb6c4ed5f2d248c43040a7f767e217}{is\_human}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00032}00032\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00041}\mbox{\hyperlink{struct_a_i___player_1_1_card_score}{00041}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_a_i___player_1_1_card_score}{CardScore}}\ \{}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00042}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a97be695c114b7fdadd737d36aec44b28}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a97be695c114b7fdadd737d36aec44b28}{index}};\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00043}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a812a19b58a7c946937cbc15acc03a155}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a812a19b58a7c946937cbc15acc03a155}{value}};\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00044}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a843aaeba2cf4ee7e2999158d30a6227d}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a843aaeba2cf4ee7e2999158d30a6227d}{mana\_cost}};\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00045}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a69d479aa93ef9ea91e933d68176ab725}{00045}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a69d479aa93ef9ea91e933d68176ab725}{type}};\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00046}00046\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_card}{Card}}\&\ card)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00043}00043\ \ \ \ \ std::pair<int,\ int>\ \mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00048}\mbox{\hyperlink{struct_a_i___player_1_1_card_score}{00048}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_a_i___player_1_1_card_score}{CardScore}}}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00050}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a97be695c114b7fdadd737d36aec44b28}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a97be695c114b7fdadd737d36aec44b28}{index}};\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00051}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a812a19b58a7c946937cbc15acc03a155}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a812a19b58a7c946937cbc15acc03a155}{value}};\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00052}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a843aaeba2cf4ee7e2999158d30a6227d}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a843aaeba2cf4ee7e2999158d30a6227d}{mana\_cost}};\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00053}\mbox{\hyperlink{struct_a_i___player_1_1_card_score_a69d479aa93ef9ea91e933d68176ab725}{00053}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{struct_a_i___player_1_1_card_score_a69d479aa93ef9ea91e933d68176ab725}{type}};\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00054}00054\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00056}00056\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00057}00057\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00059}00059\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00060}00060\ \};}
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00062}00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AI\_PLAYER\_H\ }}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_card}{Card}}\&\ card)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00064}00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{ai__player_8h_source_l00070}00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AI\_PLAYER\_H\ }}
 
 \end{DoxyCode}

@@ -10,32 +10,33 @@
 \DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00014}\mbox{\hyperlink{class_creature___card}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_creature___card_aea47b7b6cb4c10e4aeba9bedcfcd02b6}{Creature\_Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}\ \{}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00015}00015\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00016}\mbox{\hyperlink{class_creature___card_a199ca727c9853f2c8e6c14a2e42fad69}{00016}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_creature___card_a199ca727c9853f2c8e6c14a2e42fad69}{base\_dmg}};\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00017}\mbox{\hyperlink{class_creature___card_a55a0c05db3b073dbb9311d4722868211}{00017}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_creature___card_a55a0c05db3b073dbb9311d4722868211}{weapon\_multiplier}};\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_creature___card_aea47b7b6cb4c10e4aeba9bedcfcd02b6}{Creature\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_creature___card_a199ca727c9853f2c8e6c14a2e42fad69}{base\_dmg}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_creature___card_a55a0c05db3b073dbb9311d4722868211}{weapon\_multiplier}});}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_creature___card_aadd6905b60a8cfd291e2ee23a6d5a76d}{get\_base\_dmg}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00038}00038\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a223112e35222eb05096bb750842b58eb}{set\_base\_dmg}}(\textcolor{keywordtype}{int}\ new\_dmg);}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_creature___card_ae8aadee98a59de6d8b2e4397e228c5ed}{get\_weapon\_multiplier}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00053}00053\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a53b4620ab65e655e564bbaa6afc22ce5}{set\_weapon\_multiplier}}(\textcolor{keywordtype}{float}\ new\_multiplier);}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a19685c4b929f1194938d8d1657ab3154}{use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_creature___card_a9cf1273cdea7670349ba0f5a89cb634c}{get\_type}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a705f500ec460d4576bd1e9e7031523dc}{generate\_properties}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00068}00068\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_ae29d0310a32037691a699c67d1cade48}{print\_key\_info}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00070}00070\ \};}
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00072}00072\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00014}\mbox{\hyperlink{class_creature___card}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_creature___card_aea47b7b6cb4c10e4aeba9bedcfcd02b6}{Creature\_Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00016}00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00017}\mbox{\hyperlink{class_creature___card_a199ca727c9853f2c8e6c14a2e42fad69}{00017}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_creature___card_a199ca727c9853f2c8e6c14a2e42fad69}{base\_dmg}};\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00018}\mbox{\hyperlink{class_creature___card_a55a0c05db3b073dbb9311d4722868211}{00018}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_creature___card_a55a0c05db3b073dbb9311d4722868211}{weapon\_multiplier}};\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_creature___card_aea47b7b6cb4c10e4aeba9bedcfcd02b6}{Creature\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_creature___card_a199ca727c9853f2c8e6c14a2e42fad69}{base\_dmg}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_creature___card_a55a0c05db3b073dbb9311d4722868211}{weapon\_multiplier}});}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_creature___card_aadd6905b60a8cfd291e2ee23a6d5a76d}{get\_base\_dmg}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a223112e35222eb05096bb750842b58eb}{set\_base\_dmg}}(\textcolor{keywordtype}{int}\ new\_dmg);}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_creature___card_ae8aadee98a59de6d8b2e4397e228c5ed}{get\_weapon\_multiplier}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a53b4620ab65e655e564bbaa6afc22ce5}{set\_weapon\_multiplier}}(\textcolor{keywordtype}{float}\ new\_multiplier);}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a19685c4b929f1194938d8d1657ab3154}{use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_creature___card_a9cf1273cdea7670349ba0f5a89cb634c}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_a705f500ec460d4576bd1e9e7031523dc}{generate\_properties}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_creature___card_ae29d0310a32037691a699c67d1cade48}{print\_key\_info}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00071}00071\ \};}
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{creature__card_8h_source_l00073}00073\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

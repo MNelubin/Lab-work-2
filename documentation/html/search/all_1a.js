@@ -11,5 +11,5 @@ var searchData=
   ['weapon_5fnames_8',['weapon_names',['../d5/da7/card_8h.html#a177a9fa41d9ed28b3c4305831724efae',1,'card.h']]],
   ['weaponcard_9',['WeaponCard',['../da/db6/group___weapon_card.html',1,'']]],
   ['west_10',['West',['../d0/d0b/enums_8h.html#af831c68e3c232459dad13935143716ffabf495fc048d8d44b7f32536df5cf3930',1,'enums.h']]],
-  ['with_20ci_20cd_11',['4. Integration with CI/CD',['../db/ddb/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_test__plan.html#autotoc_md24',1,'']]]
+  ['with_20ci_20cd_11',['4. Integration with CI/CD',['../df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2test__plan.html#autotoc_md24',1,'']]]
 ];

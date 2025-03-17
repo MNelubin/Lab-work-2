@@ -9,78 +9,92 @@
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../../include/player/player.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00008}\mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{00008}}\ \mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character::Healer\_Character}}()\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00009}00009\ \ \ \ \ :\ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}()\ ,\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(10)\ \{\}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00008}\mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{00008}}\ \mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character::Healer\_Character}}()}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00009}00009\ \ \ \ \ :\ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(),\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(10)\ \{\}}
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00010}00010\ }
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00011}\mbox{\hyperlink{class_healer___character_aacba4c98f745f5e7e2331a9940c9f192}{00011}}\ \mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character::Healer\_Character}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}}):}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(\mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}}),\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(10)\{\}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(\mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}}),\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(10)\ \{\}}
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00014}\mbox{\hyperlink{class_healer___character_a8d04654f32e1c15ca52f14a019ce69d5}{00014}}\ \mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character::Healer\_Character}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ):}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(\mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},\ \ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}),\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(10)\{\}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ):}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(\mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},\ \ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}),\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(10)\ \{\}}
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00020}\mbox{\hyperlink{class_healer___character_a99c062576ca5e0262e813ecabd0697a8}{00020}}\ \mbox{\hyperlink{class_healer___character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character::Healer\_Character}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
 \DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00023}00023\ \ \ \ \ :\ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(\mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},\ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ ,\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}})\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heal\ amount\ must\ be\ positive"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00028}00028\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()\ <\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Ability\ uses\ cannot\ be\ negative"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00031}00031\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00032}00032\ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00034}\mbox{\hyperlink{class_healer___character_add61abf9efb2428ea4ed6dfe452d8bed}{00034}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_healer___character_add61abf9efb2428ea4ed6dfe452d8bed}{Healer\_Character::get\_heal\_amount}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}};}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00036}00036\ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00038}\mbox{\hyperlink{class_healer___character_a68c318107e7ed9359dfda33cdeecd44b}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_a68c318107e7ed9359dfda33cdeecd44b}{Healer\_Character::set\_heal\_amount}}(\textcolor{keywordtype}{int}\ value)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heal\ amount\ must\ be\ positive"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00041}00041\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}\ =\ value;}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00043}00043\ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00045}\mbox{\hyperlink{class_healer___character_aaf98e4dc9dbb479ba8b4f70c1e84a999}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_aaf98e4dc9dbb479ba8b4f70c1e84a999}{Healer\_Character::special\_action}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()\ ==\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}No\ ability\ uses\ remaining"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00048}00048\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00049}00049\ \ \ \ \ player.\mbox{\hyperlink{class_player_ad56071586a2ec879a5a4a60548f9e8b7}{set\_hp}}(player.\mbox{\hyperlink{class_player_ad160329edfeac4cbc165344fc86c5bb2}{get\_hp}}()\ +\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}*this-\/>get\_heal\_multiplier());}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00050}00050\ \ \ \ \ this-\/>\mbox{\hyperlink{class_character_a02baf33e925fe009e8da62cb9349eb0b}{set\_ability\_uses}}(this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()-\/1);}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00051}00051\ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00053}\mbox{\hyperlink{class_healer___character_a44ca7175ca3696c3aba5a1b95642e828}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_a44ca7175ca3696c3aba5a1b95642e828}{Healer\_Character::special\_action\_info}}()\{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00054}00054\ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Heal\ amount:\ "{}}<<\mbox{\hyperlink{class_healer___character_add61abf9efb2428ea4ed6dfe452d8bed}{get\_heal\_amount}}();}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00055}00055\ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00058}\mbox{\hyperlink{class_healer___character_a367208c6fd772ebf5f74439ff1b66d2e}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_a367208c6fd772ebf5f74439ff1b66d2e}{Healer\_Character::serialize}}(std::ostream\&\ os)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (!os.good())\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Stream\ state\ is\ invalid\ before\ serialization"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00061}00061\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00062}00062\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{class_character_aeae42f9d5144fbb7bbd3a4757fd6a921}{Character::serialize}}(os);}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ calculated\_heal\ =\ \mbox{\hyperlink{class_character_a2181e0c2dc42af3cd7041fc03d41ca5c}{get\_level}}()\ *\ 10;\ \textcolor{comment}{//\ lvl\ *\ 10}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00065}00065\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&calculated\_heal),\ \textcolor{keyword}{sizeof}(calculated\_heal));}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (!os)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Failed\ to\ write\ heal\_amount\ to\ stream"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00069}00069\ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00071}\mbox{\hyperlink{class_healer___character_ae73dd929ef95d67d43791adff4c911fc}{00071}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_ae73dd929ef95d67d43791adff4c911fc}{Healer\_Character::deserialize}}(std::istream\&\ is)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{class_character_a36b206da8689941720aef92d0c29c3d2}{Character::deserialize}}(is);}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00073}00073\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}),\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}));}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00074}00074\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is)\ \{}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Stream\ read\ error"{}});}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00077}00077\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00078}00078\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}\ =\ \mbox{\hyperlink{class_character_a2181e0c2dc42af3cd7041fc03d41ca5c}{get\_level}}()\ *\ 10;}
-\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}(\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}})}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heal\ amount\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Ability\ uses\ cannot\ be\ negative"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00037}\mbox{\hyperlink{class_healer___character_add61abf9efb2428ea4ed6dfe452d8bed}{00037}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_healer___character_add61abf9efb2428ea4ed6dfe452d8bed}{Healer\_Character::get\_heal\_amount}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00038}00038\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}};}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00042}\mbox{\hyperlink{class_healer___character_a68c318107e7ed9359dfda33cdeecd44b}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_a68c318107e7ed9359dfda33cdeecd44b}{Healer\_Character::set\_heal\_amount}}(\textcolor{keywordtype}{int}\ value)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heal\ amount\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00051}\mbox{\hyperlink{class_healer___character_aaf98e4dc9dbb479ba8b4f70c1e84a999}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_aaf98e4dc9dbb479ba8b4f70c1e84a999}{Healer\_Character::special\_action}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}No\ ability\ uses\ remaining"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00057}00057\ \ \ \ \ player.\mbox{\hyperlink{class_player_ad56071586a2ec879a5a4a60548f9e8b7}{set\_hp}}(player.\mbox{\hyperlink{class_player_ad160329edfeac4cbc165344fc86c5bb2}{get\_hp}}()\ +\ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}*this-\/>get\_heal\_multiplier());}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00058}00058\ \ \ \ \ this-\/>\mbox{\hyperlink{class_character_a02baf33e925fe009e8da62cb9349eb0b}{set\_ability\_uses}}(this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()-\/1);}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00061}\mbox{\hyperlink{class_healer___character_a44ca7175ca3696c3aba5a1b95642e828}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_a44ca7175ca3696c3aba5a1b95642e828}{Healer\_Character::special\_action\_info}}()}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00063}00063\ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Heal\ amount:\ "{}}<<\mbox{\hyperlink{class_healer___character_add61abf9efb2428ea4ed6dfe452d8bed}{get\_heal\_amount}}();}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00067}\mbox{\hyperlink{class_healer___character_a367208c6fd772ebf5f74439ff1b66d2e}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_a367208c6fd772ebf5f74439ff1b66d2e}{Healer\_Character::serialize}}(std::ostream\&\ os)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00068}00068\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (!os.good())}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Stream\ state\ is\ invalid\ before\ serialization"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{class_character_aeae42f9d5144fbb7bbd3a4757fd6a921}{Character::serialize}}(os);}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{int}\ calculated\_heal\ =\ \mbox{\hyperlink{class_character_a2181e0c2dc42af3cd7041fc03d41ca5c}{get\_level}}()\ *\ 10;\ \textcolor{comment}{//\ lvl\ *\ 10}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00076}00076\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&calculated\_heal),\ \textcolor{keyword}{sizeof}(calculated\_heal));}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (!os)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Failed\ to\ write\ heal\_amount\ to\ stream"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00083}\mbox{\hyperlink{class_healer___character_ae73dd929ef95d67d43791adff4c911fc}{00083}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_healer___character_ae73dd929ef95d67d43791adff4c911fc}{Healer\_Character::deserialize}}(std::istream\&\ is)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00084}00084\ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{class_character_a36b206da8689941720aef92d0c29c3d2}{Character::deserialize}}(is);}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00086}00086\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}),\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}));}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is)}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Stream\ read\ error"{}});}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{class_healer___character_a63598d828413e82615608fb53676c649}{heal\_amount}}\ =\ \mbox{\hyperlink{class_character_a2181e0c2dc42af3cd7041fc03d41ca5c}{get\_level}}()\ *\ 10;}
+\DoxyCodeLine{\Hypertarget{healer__character_8cpp_source_l00094}00094\ \}}
 
 \end{DoxyCode}

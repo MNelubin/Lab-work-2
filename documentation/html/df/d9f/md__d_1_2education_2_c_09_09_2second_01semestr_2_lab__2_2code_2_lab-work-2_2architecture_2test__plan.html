@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Card game: Core Test Plan</title>
+<title>Card game: 1. Types of Tests</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -102,124 +102,153 @@ $(function(){initNavTree('df/d9f/md__d_1_2education_2_c_09_09_2second_01semestr_
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Core Test Plan</div></div>
+  <div class="headertitle"><div class="title">1. Types of Tests</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md14"></a></p>
-<h1><a class="anchor" id="autotoc_md15"></a>
-1. Types of tests</h1>
-<p><b>Unit tests</b> (90% coverage):</p><ul>
-<li>Validation of card attributes (mana, damage, rarity)</li>
-<li>Checking ability limits (Shielding(), Armoring())</li>
-<li>Calculating damage/healing formulas</li>
-<li>Save/load game progress</li>
+<div class="textblock"><p><a class="anchor" id="autotoc_md15"></a></p>
+<p><b>Unit Tests</b> (90% coverage):</p><ul>
+<li><a class="el" href="../../d5/d6a/class_card.html" title="Base class representing a game card.">Card</a> class functionality (constructors, getters/setters)</li>
+<li>Spell cards (Attack, Heal, Buff, Defence)</li>
+<li>Creature cards (Beast, Creature)</li>
+<li>Weapon and Shield cards</li>
+<li><a class="el" href="../../d7/da7/class_character.html" title="Represents a game character with progression system.">Character</a> class and derived classes (Healer, Tank, Knight)</li>
+<li><a class="el" href="../../d7/d48/class_hand.html" title="Represents a player&#39;s hand containing various types of cards.">Hand</a> class operations</li>
+<li><a class="el" href="../../d8/d53/class_player.html" title="Base class representing a game player.">Player</a> class interactions</li>
 </ul>
-<p><b>Integration tests</b> (10% coverage):</p><ul>
-<li>AI's work with different types of cards</li>
+<p><b>Integration Tests</b> (10% coverage):</p><ul>
+<li>AI player decision making</li>
+<li>Human player interactions</li>
+<li><a class="el" href="../../d5/d6a/class_card.html" title="Base class representing a game card.">Card</a> usage in game context</li>
+<li><a class="el" href="../../d7/da7/class_character.html" title="Represents a game character with progression system.">Character</a> abilities integration</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md16"></a>
-2. Tools and environment</h1>
+2. Tools and Environment</h1>
 <ul>
 <li><b>Framework</b>: Google Test (gtest)</li>
 <li><b>OS</b>: Ubuntu 22.04 LTS</li>
 <li><b>Compiler</b>: GCC 11+</li>
-<li><b>CI</b>: Existing system with preinstalled: <div class="fragment"><div class="line">- name: Setup environment</div>
-<div class="line">      run: |</div>
-<div class="line">        sudo apt-get update</div>
-<div class="line">        sudo apt-get install -y g++-11 make libgtest-dev</div>
-<div class="line">        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++</div>
-</div><!-- fragment --></li>
+<li><b>CI/CD</b>: GitHub Actions</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md17"></a>
-3. Critical components</h1>
+3. Critical Components</h1>
 <h2><a class="anchor" id="autotoc_md18"></a>
-3.1 Card Validation</h2>
-<p><b>Test cases:</b> </p><div class="fragment"><div class="line"><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(CardTest, InvalidMana) {</div>
-<div class="line">    <a class="code hl_class" href="../../d5/d6a/class_card.html">Card</a> card;</div>
-<div class="line">    ASSERT_THROW(card.Set_Mana_Cost(11), InvalidCardException);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(CardTest, MinimumDamage) {</div>
-<div class="line">    <a class="code hl_class" href="../../d0/d4e/class_attack___spell___card.html">Attack_Spell_Card</a> card;</div>
-<div class="line">    ASSERT_THROW(card.Set_Base_DMG(0), InvalidDamageValue);</div>
-<div class="line">}</div>
-<div class="ttc" id="aclass_attack___spell___card_html"><div class="ttname"><a href="../../d0/d4e/class_attack___spell___card.html">Attack_Spell_Card</a></div><div class="ttdoc">Specialized spell for direct damage.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/db8/attack__spell__card_8h_source.html#l00014">attack_spell_card.h:14</a></div></div>
-<div class="ttc" id="aclass_card_html"><div class="ttname"><a href="../../d5/d6a/class_card.html">Card</a></div><div class="ttdoc">Base class representing a game card.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/da7/card_8h_source.html#l00029">card.h:29</a></div></div>
-<div class="ttc" id="atest-card_8cpp_html_afeb6d4047a9b58aca40a22b0e710266a"><div class="ttname"><a href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a></div><div class="ttdeci">TEST(CardBasicTest, ConstructorAndGetters)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d9c/test-card_8cpp_source.html#l00035">test-card.cpp:35</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
-3.2 Combat Mechanics</h2>
-<p><b>Sample data:</b> </p><div class="fragment"><div class="line">vector&lt;Card&gt; test_deck = {</div>
-<div class="line">    <a class="code hl_class" href="../../d0/d4e/class_attack___spell___card.html">Attack_Spell_Card</a>(<span class="stringliteral">&quot;Fireball&quot;</span>, 3, 5),</div>
-<div class="line">    <a class="code hl_class" href="../../d8/d5d/class_shield___card.html">Shield_Card</a>(<span class="stringliteral">&quot;Iron Shield&quot;</span>, 2, 3)</div>
-<div class="line">};</div>
-<div class="ttc" id="aclass_shield___card_html"><div class="ttname"><a href="../../d8/d5d/class_shield___card.html">Shield_Card</a></div><div class="ttdoc">Specialized card for shields.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/dc5/shield__card_8h_source.html#l00014">shield_card.h:14</a></div></div>
-</div><!-- fragment --><p><b>Test cases:</b></p><ol type="1">
-<li>Damage 5 vs Armor 3 → 2 damage</li>
-<li>Double shield (3+3) → armor 6</li>
-<li>Attempt to re-Shielding() → error</li>
-</ol>
+3.1 Card Class Validation</h2>
+<p><b>Test Cases:</b></p><ul>
+<li>Constructor validation for all card types</li>
+<li>Getter and setter functionality</li>
+<li><a class="el" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600" title="Defines card rarity classifications.">Rarity</a> distribution verification</li>
+<li>Type detection through polymorphism</li>
+<li>Pure virtual method implementation</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md19"></a>
+3.2 Spell Cards Functionality</h2>
+<p><b>Test Cases:</b></p><ul>
+<li>Attack spell damage calculation</li>
+<li>Heal spell recovery validation</li>
+<li>Buff spell multiplier application</li>
+<li>Defence spell shield application</li>
+<li>Mana cost validation</li>
+<li>Special abilities implementation</li>
+</ul>
 <h2><a class="anchor" id="autotoc_md20"></a>
-3.3 The AI System</h2>
-<p><b>Logic of choice:</b> </p><div class="fragment"><div class="line"><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AITest, BestCardSelection) {</div>
-<div class="line">    </div>
-<div class="line">    vector&lt;Card&gt; hand = {</div>
-<div class="line">        {mana: 3, dmg: 5},</div>
-<div class="line">        {mana: 2, dmg: 3}</div>
-<div class="line">    };</div>
-<div class="line">    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> ai(hand);</div>
-<div class="line">    ASSERT_EQ(ai.count_best(), 0); <span class="comment">// Selecting the first card</span></div>
-<div class="line">}</div>
-<div class="ttc" id="aclass_a_i___player_html"><div class="ttname"><a href="../../dc/de6/class_a_i___player.html">AI_Player</a></div><div class="ttdoc">AI-controlled player with decision logic.</div><div class="ttdef"><b>Definition</b> <a href="../../da/df7/ai__player_8h_source.html#l00013">ai_player.h:13</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
-3.4 Saving Progress</h2>
-<p><b>File format:</b> </p><div class="fragment"><div class="line">{</div>
-<div class="line">  &quot;player_name&quot;: &quot;Vova&quot;,</div>
-<div class="line">  &quot;characters&quot;: {</div>
-<div class="line">    &quot;tank&quot;: {&quot;xp&quot;: 300, &quot;level&quot;: 1}</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
-4. Integration with CI</h1>
-<p><b>Configuration:</b> </p><div class="fragment"><div class="line">jobs:</div>
-<div class="line">  build-and-test:</div>
-<div class="line">    runs-on: ubuntu-latest</div>
-<div class="line"> </div>
-<div class="line">    steps:</div>
-<div class="line">    - name: Checkout code</div>
-<div class="line">      uses: actions/checkout@v4</div>
-<div class="line"> </div>
-<div class="line">    - name: Setup environment</div>
-<div class="line">      run: |</div>
-<div class="line">        sudo apt-get update</div>
-<div class="line">        sudo apt-get install -y g++-11 make libgtest-dev</div>
-<div class="line">        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++</div>
-<div class="line"> </div>
-<div class="line">    - name: Build tests</div>
-<div class="line">      run: |</div>
-<div class="line">        make test</div>
-<div class="line"> </div>
-<div class="line">    - name: Execute tests</div>
-<div class="line">      run: |</div>
-<div class="line">        ./test-card_app</div>
-<div class="line"> </div>
-<div class="line">    - name: Build release</div>
-<div class="line">      run: |</div>
-<div class="line">        make clean</div>
-<div class="line">        make</div>
-<div class="line"> </div>
-<div class="line">    - name: Cleanup</div>
-<div class="line">      run: |</div>
-<div class="line">        make cleanall </div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md23"></a>
-5. Success criteria</h1>
-<ul>
-<li>All tests are error-free</li>
-<li>100% coverage of critical scenarios</li>
+3.3 Character Class Functionality</h2>
+<p><b>Test Cases:</b></p><ul>
+<li>Level-up mechanics</li>
+<li>Experience management</li>
+<li>Ability uses tracking</li>
+<li>Special actions implementation</li>
+<li><a class="el" href="../../d7/da7/class_character.html" title="Represents a game character with progression system.">Character</a> statistics formatting</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md21"></a>
+3.4 Player Class Interactions</h2>
+<p><b>Test Cases:</b></p><ul>
+<li><a class="el" href="../../d7/d48/class_hand.html" title="Represents a player&#39;s hand containing various types of cards.">Hand</a> management</li>
+<li><a class="el" href="../../d5/d6a/class_card.html" title="Base class representing a game card.">Card</a> usage and effects</li>
+<li>Damage and healing calculations</li>
+<li>Turn management</li>
+<li>Special action execution</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md22"></a>
+3.5 AI Player Decision Making</h2>
+<p><b>Test Cases:</b></p><ul>
+<li>Best card combination selection</li>
+<li>Combat card prioritization</li>
+<li>Mana management</li>
+<li>Strategy implementation</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md23"></a>
+3.6 Human Player Features</h2>
+<p><b>Test Cases:</b></p><ul>
+<li><a class="el" href="../../d7/da7/class_character.html" title="Represents a game character with progression system.">Character</a> management</li>
+<li>Save/load functionality</li>
+<li>Customization interface</li>
+<li>Input validation</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md24"></a>
+4. Integration with CI/CD</h1>
+<p><b>Configuration:</b> </p><div class="fragment"><div class="line">name: C++ CI</div>
+<div class="line"> </div>
+<div class="line">on: [push, pull_request]</div>
+<div class="line"> </div>
+<div class="line">jobs:</div>
+<div class="line"> </div>
+<div class="line">  build-and-test:</div>
+<div class="line"> </div>
+<div class="line">    runs-on: ubuntu-latest</div>
+<div class="line"> </div>
+<div class="line">    steps:</div>
+<div class="line"> </div>
+<div class="line">    - name: Checkout code</div>
+<div class="line"> </div>
+<div class="line">      uses: actions/checkout@v4</div>
+<div class="line"> </div>
+<div class="line">    - name: Setup environment</div>
+<div class="line"> </div>
+<div class="line">      run: |</div>
+<div class="line"> </div>
+<div class="line">        sudo apt-get update</div>
+<div class="line"> </div>
+<div class="line">        sudo apt-get install -y g++-11 make libgtest-dev</div>
+<div class="line"> </div>
+<div class="line">        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++</div>
+<div class="line"> </div>
+<div class="line">    - name: Build tests</div>
+<div class="line"> </div>
+<div class="line">      run: |</div>
+<div class="line"> </div>
+<div class="line">        make test</div>
+<div class="line"> </div>
+<div class="line">    - name: Execute tests</div>
+<div class="line"> </div>
+<div class="line">      run: |</div>
+<div class="line"> </div>
+<div class="line">        ./test-card_app</div>
+<div class="line"> </div>
+<div class="line">    - name: Build release</div>
+<div class="line"> </div>
+<div class="line">      run: |</div>
+<div class="line"> </div>
+<div class="line">        make clean</div>
+<div class="line"> </div>
+<div class="line">        make</div>
+<div class="line"> </div>
+<div class="line">    - name: Cleanup</div>
+<div class="line"> </div>
+<div class="line">      run: |</div>
+<div class="line"> </div>
+<div class="line">        make cleanall</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md25"></a>
+5. Success Criteria</h1>
+<ul>
+<li>All unit tests pass</li>
+<li>Integration tests demonstrate correct system behavior</li>
+<li>Test coverage meets requirements</li>
+<li>No crashes</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md26"></a>
 6. Reporting</h1>
 <ul>
-<li>Notifications about test crashes in CI </li>
+<li>Detailed test results in CI/CD pipeline </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

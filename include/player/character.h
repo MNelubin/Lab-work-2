@@ -11,12 +11,13 @@ class Player;
 
 /**
  * @brief Represents a game character with progression system
- * 
- * The Character class encapsulates all attributes and behaviors related to 
- * character progression, including experience points, leveling, and 
+ *
+ * The Character class encapsulates all attributes and behaviors related to
+ * character progression, including experience points, leveling, and
  * combat multipliers.
  */
-class Character {
+class Character
+{
 private:
     int xp_to_next_lvl;   ///< Experience needed for next level. Must be > 0
     int lvl;              ///< Current character level. Must be > 0
@@ -32,7 +33,7 @@ private:
 public:
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes character with default values:
      * - xp_to_next_lvl: 100
      * - lvl: 1
@@ -70,11 +71,11 @@ public:
      */
     Character(int xp_to_next_lvl, int lvl,int xp, const std::string& name, float heal_mltpl, float dmg_mltpl,
               float armor_mltpl, const std::string& description, int ability_uses
-              );
+             );
 
     /**
      * @brief Levels up the character
-     * 
+     *
      * Increases level by 1, reduces xp by xp_to_next_lvl, increases all multipliers
      * by 0.05, and multiplies xp_to_next_lvl by 1.2. If xp >= new xp_to_next_lvl,
      * recursively calls itself again.
@@ -226,17 +227,17 @@ public:
 
     /**
      * @brief Get a formatted string with the character's statistics
-     * 
+     *
      * This method returns a string containing all relevant character statistics,
      * including level, experience, multipliers, and other attributes.
-     * 
+     *
      * @return std::string Formatted string with character statistics
      */
     std::string get_character_statistics() const;
 
     /**
      * @brief Display information about the character's special action
-     * 
+     *
      * This method is intended to provide details about the character's special
      * ability, such as its effects, costs, or other relevant information.
      * It is implemented by derived classes to provide class-specific details.
@@ -247,7 +248,7 @@ public:
      * @brief Get the class name of the character
      * @return std::string The name of the character's class
      */
-    virtual std::string get_class_name() const = 0; 
+    virtual std::string get_class_name() const = 0;
 
 };
 

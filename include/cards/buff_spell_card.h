@@ -8,17 +8,18 @@
 
 /**
  * @brief Specialized spell for buffing characters
- * 
+ *
  * Inherits from Spell_Card and adds a multiplier mechanic.
  */
-class Buff_Spell_Card : public Spell_Card {
+class Buff_Spell_Card : public Spell_Card
+{
 private:
     float multiplier; ///< Multiplier value for the buff
 
 public:
     /**
      * @brief Construct a new Buff Spell Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -27,19 +28,19 @@ public:
      * @param multiplier Buff multiplier value
      */
     Buff_Spell_Card(const std::string& name, const std::string& description,
-                 Rarity rarity, int mana_cost, Element elem, 
-                 float multiplier);
+                    Rarity rarity, int mana_cost, Element elem,
+                    float multiplier);
 
     /**
      * @brief Get buff multiplier value
      * @return Current buff multiplier
      */
     float get_multiplier() const;
-    
+
     /**
      * @brief Update buff multiplier value
      * @param new_multiplier Must be positive
-     * @pre new_multiplier>0 
+     * @pre new_multiplier>0
      * @throws std::invalid_argument if multiplier <= 0
      * @post new_multipier==get_multiplier()
      */

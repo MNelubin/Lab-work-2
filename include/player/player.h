@@ -15,10 +15,11 @@ class Character;
 
 /**
  * @brief Base class representing a game player
- * 
+ *
  * Provides common interface and data for all player types
  */
-class Player {
+class Player
+{
 protected:
     std::unique_ptr<Character> character; ///< The player's character
     int hp; ///< Health points
@@ -34,27 +35,27 @@ protected:
 
 public:
 
-     /**
-     * @brief Default constructor
-     * 
-     * Initializes player with default values:
-     * - hp: 100
-     * - mana: 50
-     * - armor: 0
-     * - name: "Player"
-     * - character: nullptr
-     * - shield_amount: 0
-     * - cumulative_attack_multiplier: 1.0f
-     * - cumulative_heal_multiplier: 1.0f
-     * - cumulative_weapon_adder: 0
-     * - turn_active: true
-     */
+    /**
+    * @brief Default constructor
+    *
+    * Initializes player with default values:
+    * - hp: 100
+    * - mana: 50
+    * - armor: 0
+    * - name: "Player"
+    * - character: nullptr
+    * - shield_amount: 0
+    * - cumulative_attack_multiplier: 1.0f
+    * - cumulative_heal_multiplier: 1.0f
+    * - cumulative_weapon_adder: 0
+    * - turn_active: true
+    */
     Player();
 
 
     /**
      * @brief Construct a new Player object
-     * 
+     *
      * @param hp Initial health points
      * @param mana Initial mana points
      * @param armor Initial armor value
@@ -63,9 +64,9 @@ public:
      * @param shield_amount Initial shield value (optional)
      */
     Player(int hp, int mana, int armor, const std::string& name,
-          std::unique_ptr<Character> character = nullptr,
-          int shield_amount = 0);
-    
+           std::unique_ptr<Character> character = nullptr,
+           int shield_amount = 0);
+
     /**
      * @brief Virtual destructor
      */
@@ -74,18 +75,18 @@ public:
 
     /**
      * @brief Check if the player is human
-     * 
+     *
      * @return true if the player is human, false otherwise
      */
     virtual bool is_human() const = 0;
 
 
-   
+
 
     /**
      * @brief Set the associated Character
      * @param new_character New Character to associate (can be nullptr)
-     * 
+     *
      * @throws std::invalid_argument if new_character is invalid
      */
     void set_character(std::unique_ptr<Character>&& new_character);
@@ -93,16 +94,16 @@ public:
     /**
      * @brief Get the associated Character
      * @return Reference to the owned Character
-     * 
+     *
      * @throws std::runtime_error if Character is not set
      */
     Character& get_character() const;
 
     /**
      * @brief Perform the special action of the associated Character
-     * 
+     *
      * Calls the SpecialAction method of the associated Character
-     * 
+     *
      * @throws std::runtime_error if Character is not set
      */
     void perform_special_action();
@@ -113,7 +114,7 @@ public:
 
     /**
      * @brief Displays the player's hand with detailed information and special ability status
-     * 
+     *
      * This enhanced method:
      * 1. Shows a colored header for the hand section
      * 2. Displays information about the character's special ability including remaining uses
@@ -124,7 +125,7 @@ public:
      *    - Type (colored red for combat cards)
      *    - Key card-specific information
      * 4. Adds a colored footer for visual separation
-     * 
+     *
      * The display uses ANSI color codes for better visual distinction:
      * - Hand header: Cyan (\033[36m)
      * - Ability info: Yellow (\033[33m)
@@ -139,7 +140,7 @@ public:
 
     /**
      * @brief Eats a card from the hand, increasing player's HP based on card's rarity and character's HP multiplier.
-     * 
+     *
      * This method:
      * 1. Validates the card index
      * 2. Gets the card's rarity and converts it to a numerical value (Common=1, Uncommon=2, Rare=3, Epic=4)
@@ -147,9 +148,9 @@ public:
      * 4. Calculates the HP increase as (rarity value * 10) multiplied by the HP multiplier
      * 5. Converts the result to integer and adds it to player's HP
      * 6. Removes the card from the hand
-     * 
+     *
      * @param index Position of the card to eat
-     * 
+     *
      * @throws std::out_of_range If the card index is invalid
      * @throws std::runtime_error If the character is not set
      */
@@ -157,7 +158,7 @@ public:
 
     /**
      * @brief Uses a card from the player's hand on a target player with mana cost deduction.
-     * 
+     *
      * This method performs the following actions:
      * 1. Validates the card index
      * 2. Checks if the player has sufficient mana
@@ -166,10 +167,10 @@ public:
      * 5. Applies the card's effect to the target player
      * 6. Removes the card from the player's hand
      * 7. Checks if the card type ends the player's turn (Combat cards)
-     * 
+     *
      * @param target Player to apply the card effect to
      * @param index Index of the card in the player's hand
-     * 
+     *
      * @throws std::out_of_range If the card index is invalid
      * @throws std::runtime_error If the player doesn't have enough mana
      */
@@ -177,14 +178,14 @@ public:
 
     /**
      * @brief Applies damage to the player, reducing shields, armor, and HP in that order.
-     * 
+     *
      * This method processes damage in the following order:
      * 1. Shields absorb damage up to their maximum capacity (each shield can absorb up to 10 damage)
      * 2. Remaining damage is absorbed by armor (1 damage reduces armor by 1)
      * 3. Any remaining damage is subtracted from HP
-     * 
+     *
      * @param damage Amount of damage to apply
-     * 
+     *
      * @throws std::invalid_argument If damage is negative
      */
     void take_damage(int amount);
@@ -192,7 +193,7 @@ public:
     /**
      * @brief Throw out a card from the hand
      * @param index Position of the card to throw out
-     * 
+     *
      * @throws std::out_of_range if index is invalid
      */
     void throw_out(int index);
@@ -265,7 +266,7 @@ public:
     /**
      * @brief Get all character statistics as a string
      * @return String containing all character fields
-     * 
+     *
      * @throws std::runtime_error if Character is not set
      */
     std::string get_character_statistics() const;
@@ -273,7 +274,7 @@ public:
     /**
      * @brief Resets the stroke parameters to their initial values
      * @details Initializes attack and healing multipliers, activates the turn.
-     * @post 
+     * @post
      * - cumulative_attack_multiplier = 1.0f
      * - cumulative_heal_multiplier = 1.0f
      * - cumulative_weapon_adder = 0
@@ -387,14 +388,14 @@ public:
 
     /**
      * @brief Get the ANSI color code for a given rarity
-     * 
+     *
      * This method returns the ANSI escape code for the color associated with the card's rarity.
      * The color codes are as follows:
      * - Common: White (\033[37m)
      * - Uncommon: Green (\033[32m)
      * - Rare: Blue (\033[34m)
      * - Epic: Magenta (\033[35m)
-     * 
+     *
      * @param rarity The rarity of the card
      * @return ANSI color code as a string
      */

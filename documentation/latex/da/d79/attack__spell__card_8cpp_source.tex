@@ -12,81 +12,90 @@
 \DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00010}\mbox{\hyperlink{class_attack___spell___card_a2aa9ee679efbc32f1386a7565c99a677}{00010}}\ \mbox{\hyperlink{class_attack___spell___card_ac9304a3dfa6fb0af71a11bbb238fb8b8}{Attack\_Spell\_Card::Attack\_Spell\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}\ elem,\ \textcolor{keywordtype}{int}\ dmg)}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{class_spell___card_a410e68985095603e4e6d2d5946ba3cca}{Spell\_Card}}(\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ elem),\ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}(dmg)\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}\ elem,\ \textcolor{keywordtype}{int}\ dmg)}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{class_spell___card_a410e68985095603e4e6d2d5946ba3cca}{Spell\_Card}}(\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ elem),\ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}(dmg)}
 \DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00013}00013\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}(dmg\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ must\ be\ positive"{}});}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00016}00016\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00017}00017\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00019}00019\ \textcolor{comment}{//\ Default\ constructor\ implementation}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00020}\mbox{\hyperlink{class_attack___spell___card_ac9304a3dfa6fb0af71a11bbb238fb8b8}{00020}}\ \mbox{\hyperlink{class_attack___spell___card_ac9304a3dfa6fb0af71a11bbb238fb8b8}{Attack\_Spell\_Card::Attack\_Spell\_Card}}()}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00021}00021\ \ \ \ \ :\ \mbox{\hyperlink{class_spell___card_a410e68985095603e4e6d2d5946ba3cca}{Spell\_Card}}(\textcolor{stringliteral}{"{}Unnamed\ Attack\ Spell"{}},\ \textcolor{stringliteral}{"{}No\ description"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}::\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Common}},\ 0,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}::\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Fire}}),\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00022}00022\ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}(3)\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00023}00023\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00024}00024\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}(dmg\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00020}00020\ \textcolor{comment}{//\ Default\ constructor\ implementation}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00021}\mbox{\hyperlink{class_attack___spell___card_ac9304a3dfa6fb0af71a11bbb238fb8b8}{00021}}\ \mbox{\hyperlink{class_attack___spell___card_ac9304a3dfa6fb0af71a11bbb238fb8b8}{Attack\_Spell\_Card::Attack\_Spell\_Card}}()}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00022}00022\ \ \ \ \ :\ \mbox{\hyperlink{class_spell___card_a410e68985095603e4e6d2d5946ba3cca}{Spell\_Card}}(\textcolor{stringliteral}{"{}Unnamed\ Attack\ Spell"{}},\ \textcolor{stringliteral}{"{}No\ description"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}::\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Common}},\ 0,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}::\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Fire}}),}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00023}00023\ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}(3)}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00025}00025\ \}}
 \DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00028}\mbox{\hyperlink{class_attack___spell___card_a83e31c36a9151341b9a375b9eca4d084}{00028}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_attack___spell___card_a83e31c36a9151341b9a375b9eca4d084}{Attack\_Spell\_Card::get\_base\_damage}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00030}00030\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00032}\mbox{\hyperlink{class_attack___spell___card_ac1a600a06a634cf0df13eacc1ccfcfdc}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_ac1a600a06a634cf0df13eacc1ccfcfdc}{Attack\_Spell\_Card::set\_base\_damage}}(\textcolor{keywordtype}{int}\ new\_damage)\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}(new\_damage\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ value\ must\ be\ positive"{}});}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00035}00035\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ new\_damage;}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00037}00037\ \}\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00039}\mbox{\hyperlink{class_attack___spell___card_a4b2690d2e36bcfddd20dc71182fc980e}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_a4b2690d2e36bcfddd20dc71182fc980e}{Attack\_Spell\_Card::use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00043}00043\ \ \ \ \ target.\mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{take\_damage}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_attack___spell___card_a83e31c36a9151341b9a375b9eca4d084}{get\_base\_damage}}()\ *\ user.\mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{get\_cumulative\_attack\_multiplier}}()));}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00044}00044\ \ \ \ \ user.\mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{end\_turn}}();}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00045}00045\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00047}\mbox{\hyperlink{class_attack___spell___card_a6d0cd22f7f35a4a66c66c8db9639488b}{00047}}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_attack___spell___card_a6d0cd22f7f35a4a66c66c8db9639488b}{Attack\_Spell\_Card::get\_type}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}{CardType::AttackSpell}};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00049}00049\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00054}\mbox{\hyperlink{class_attack___spell___card_accc5d93444a87a4e48c751464dc67cdd}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_accc5d93444a87a4e48c751464dc67cdd}{Attack\_Spell\_Card::generate\_properties}}()\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ rarity\ first}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ random\_rarity\ =\ \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\_random\_rarity}}();}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\_rarity}}(random\_rarity);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ Randomly\ select\ name,\ description,\ and\ element}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00060}00060\ \ \ \ \ std::uniform\_int\_distribution<int>\ name\_dist(0,\ \mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{spell\_names}}.size()\ -\/\ 1);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00061}00061\ \ \ \ \ std::uniform\_int\_distribution<int>\ desc\_dist(0,\ \mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{spell\_descriptions}}.size()\ -\/\ 1);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00062}00062\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\_name}}(\mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{spell\_names}}[name\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\_description}}(\mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{spell\_descriptions}}[desc\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{class_spell___card_a6835e1758f2b40ef22191f8ccc222dcd}{set\_element}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4));}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00066}00066\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ Generate\ damage\ based\ on\ rarity}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}())\ \{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}}:}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 3\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 2);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Rarity::Uncommon}}:}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 5\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 6);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}}:}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 8\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 8);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}}:}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 12\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 12);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00085}00085\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00086}00086\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00088}\mbox{\hyperlink{class_attack___spell___card_a37c0511dde34db7707746eb1933401c7}{00088}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_a37c0511dde34db7707746eb1933401c7}{Attack\_Spell\_Card::print\_key\_info}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00089}00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Base\ Damage:\ "{}}\ <<\ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}};}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00090}00090\ \}}
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00029}\mbox{\hyperlink{class_attack___spell___card_a83e31c36a9151341b9a375b9eca4d084}{00029}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_attack___spell___card_a83e31c36a9151341b9a375b9eca4d084}{Attack\_Spell\_Card::get\_base\_damage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00030}00030\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00034}\mbox{\hyperlink{class_attack___spell___card_ac1a600a06a634cf0df13eacc1ccfcfdc}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_ac1a600a06a634cf0df13eacc1ccfcfdc}{Attack\_Spell\_Card::set\_base\_damage}}(\textcolor{keywordtype}{int}\ new\_damage)}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}(new\_damage\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ value\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ new\_damage;}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00043}\mbox{\hyperlink{class_attack___spell___card_a4b2690d2e36bcfddd20dc71182fc980e}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_a4b2690d2e36bcfddd20dc71182fc980e}{Attack\_Spell\_Card::use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00048}00048\ \ \ \ \ target.\mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{take\_damage}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_attack___spell___card_a83e31c36a9151341b9a375b9eca4d084}{get\_base\_damage}}()\ *\ user.\mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{get\_cumulative\_attack\_multiplier}}()));}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00049}00049\ \ \ \ \ user.\mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{end\_turn}}();}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00052}\mbox{\hyperlink{class_attack___spell___card_a6d0cd22f7f35a4a66c66c8db9639488b}{00052}}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_attack___spell___card_a6d0cd22f7f35a4a66c66c8db9639488b}{Attack\_Spell\_Card::get\_type}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00053}00053\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cdab61ebfbeb2e953fde1044fd98b41c012}{CardType::AttackSpell}};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00060}\mbox{\hyperlink{class_attack___spell___card_accc5d93444a87a4e48c751464dc67cdd}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_accc5d93444a87a4e48c751464dc67cdd}{Attack\_Spell\_Card::generate\_properties}}()}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ rarity\ first}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ random\_rarity\ =\ \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\_random\_rarity}}();}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\_rarity}}(random\_rarity);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ Randomly\ select\ name,\ description,\ and\ element}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00067}00067\ \ \ \ \ std::uniform\_int\_distribution<int>\ name\_dist(0,\ \mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{spell\_names}}.size()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00068}00068\ \ \ \ \ std::uniform\_int\_distribution<int>\ desc\_dist(0,\ \mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{spell\_descriptions}}.size()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\_name}}(\mbox{\hyperlink{card_8h_a087424ce22e7dad0b4e5eb8a0a9d19bb}{spell\_names}}[name\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\_description}}(\mbox{\hyperlink{card_8h_a6cd64ca45cccb8e771b8e9e6238501c4}{spell\_descriptions}}[desc\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{class_spell___card_a6835e1758f2b40ef22191f8ccc222dcd}{set\_element}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4));}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ Generate\ damage\ based\ on\ rarity}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}())}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}}:}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 3\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 2);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Rarity::Uncommon}}:}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 5\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 6);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}}:}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 8\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 8);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}}:}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}}\ =\ 12\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 12);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00096}\mbox{\hyperlink{class_attack___spell___card_a37c0511dde34db7707746eb1933401c7}{00096}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attack___spell___card_a37c0511dde34db7707746eb1933401c7}{Attack\_Spell\_Card::print\_key\_info}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00097}00097\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00098}00098\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Base\ Damage:\ "{}}\ <<\ \mbox{\hyperlink{class_attack___spell___card_a372080b6dab00a2e0181a384861203b8}{base\_damage}};}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{attack__spell__card_8cpp_source_l00101}00101\ }
 
 \end{DoxyCode}

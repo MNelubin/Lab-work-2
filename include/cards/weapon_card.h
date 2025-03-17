@@ -8,28 +8,29 @@
 
 /**
  * @brief Specialized card for weapons
- * 
+ *
  * Inherits from Card and adds weapon-specific properties.
  */
-class Weapon_Card : public Card {
+class Weapon_Card : public Card
+{
 private:
     int dmg_up; ///< Damage increase value
 
 public:
     /**
      * @brief Construct a new Weapon Card object
-     * 
+     *
      * @param name Display name of the card
      * @param description Flavor text and effect description
      * @param rarity Rarity category from enum
      * @param mana_cost Required mana to play
      */
     Weapon_Card(const std::string& name, const std::string& description,
-                         Rarity rarity, int mana_cost);
+                Rarity rarity, int mana_cost);
 
     /**
      * @brief Construct a new Weapon Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -41,7 +42,7 @@ public:
 
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes card with default values:
      * - name: "Unnamed Weapon"
      * - description: "No description"
@@ -56,7 +57,7 @@ public:
      * @return Current damage increase
      */
     int get_dmg_up() const;
-    
+
     /**
      * @brief Update damage increase value
      * @param new_dmg_up Must be positive
@@ -75,4 +76,4 @@ public:
     void print_key_info() const override;
 };
 
-#endif 
+#endif

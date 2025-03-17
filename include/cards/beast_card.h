@@ -9,10 +9,11 @@
 
 /**
  * @brief Specialized card for beast creatures
- * 
+ *
  * Inherits from Card and adds beast-specific properties.
  */
-class Beast_Card : public Card {
+class Beast_Card : public Card
+{
 private:
     int base_dmg; ///< Base damage value
     Tribe tribe; ///< Tribe type of the beast
@@ -20,7 +21,7 @@ private:
 public:
     /**
      * @brief Construct a new Beast Card object
-     * 
+     *
      * @param name Initial display name for the card
      * @param description Initial effect description text
      * @param rarity Starting rarity classification
@@ -33,7 +34,7 @@ public:
 
     /**
      * @brief Default constructor
-     * 
+     *
      * Initializes card with default values:
      * - name: "Unnamed Beast"
      * - description: "No description"
@@ -49,7 +50,7 @@ public:
      * @return Current base damage
      */
     int get_base_dmg() const;
-    
+
     /**
      * @brief Update base damage value
      * @param new_dmg Must be positive
@@ -73,7 +74,7 @@ public:
     void set_tribe(Tribe new_tribe);
 
     void use(Player& user, Player& target) override;
-    
+
     CardType get_type() const override;
 
     void generate_properties() override;
@@ -81,4 +82,4 @@ public:
     void print_key_info() const override;
 };
 
-#endif 
+#endif

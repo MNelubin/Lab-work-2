@@ -13,82 +13,93 @@
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00010}\mbox{\hyperlink{class_beast___card_a614883a58b47826a4c18274b9aad6295}{00010}}\ \mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{Beast\_Card::Beast\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}},\ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}})}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}),\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}(\mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}),\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}(\mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}})\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}),\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}(\mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}),\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}(\mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}})}
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00013}00013\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Base\ damage\ must\ be\ positive"{}});}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00016}00016\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00017}00017\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00019}00019\ \textcolor{comment}{//\ Default\ constructor\ implementation}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00020}\mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{00020}}\ \mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{Beast\_Card::Beast\_Card}}()}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00021}00021\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\textcolor{stringliteral}{"{}Unnamed\ Beast"{}},\ \textcolor{stringliteral}{"{}No\ description"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}::\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Common}},\ 0),\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00022}00022\ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}(3),\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}(\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}::\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4}{North}})\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00023}00023\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00024}00024\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00026}\mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{00026}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{Beast\_Card::get\_base\_dmg}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}};}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00028}00028\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00030}\mbox{\hyperlink{class_beast___card_a23e648986998cabf69fe217fab8619b6}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a23e648986998cabf69fe217fab8619b6}{Beast\_Card::set\_base\_dmg}}(\textcolor{keywordtype}{int}\ new\_dmg)\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_dmg\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Base\ damage\ must\ be\ positive"{}});}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00033}00033\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ new\_dmg;}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00035}00035\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00037}\mbox{\hyperlink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{00037}}\ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ \mbox{\hyperlink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{Beast\_Card::get\_tribe}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Base\ damage\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00020}00020\ \textcolor{comment}{//\ Default\ constructor\ implementation}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00021}\mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{00021}}\ \mbox{\hyperlink{class_beast___card_a86089dc1f97db197feb39a7d2e6ee5af}{Beast\_Card::Beast\_Card}}()}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00022}00022\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\textcolor{stringliteral}{"{}Unnamed\ Beast"{}},\ \textcolor{stringliteral}{"{}No\ description"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}::\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Common}},\ 0),}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00023}00023\ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}(3),\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}(\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}::\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4}{North}})}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00027}\mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{00027}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{Beast\_Card::get\_base\_dmg}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00028}00028\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00032}\mbox{\hyperlink{class_beast___card_a23e648986998cabf69fe217fab8619b6}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a23e648986998cabf69fe217fab8619b6}{Beast\_Card::set\_base\_dmg}}(\textcolor{keywordtype}{int}\ new\_dmg)}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_dmg\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Base\ damage\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ new\_dmg;}
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00039}00039\ \}}
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00041}\mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{Beast\_Card::set\_tribe}}(\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ new\_tribe)\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}\ =\ new\_tribe;}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00043}00043\ \}\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00045}\mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{Beast\_Card::use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00050}00050\ \ \ \ \ target.\mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{take\_damage}}(\mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{get\_base\_dmg}}()*user.\mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{get\_cumulative\_attack\_multiplier}}());}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00051}00051\ \ \ \ \ user.\mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{end\_turn}}();}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00052}00052\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00054}\mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{00054}}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{Beast\_Card::get\_type}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}{CardType::Beast}};}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00056}00056\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00061}\mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{Beast\_Card::generate\_properties}}()\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ rarity\ first}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ random\_rarity\ =\ \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\_random\_rarity}}();}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\_rarity}}(random\_rarity);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00041}\mbox{\hyperlink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{00041}}\ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ \mbox{\hyperlink{class_beast___card_a916e85ce5f8f65abedbeb7b76d641764}{Beast\_Card::get\_tribe}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00042}00042\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00046}\mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{Beast\_Card::set\_tribe}}(\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\ new\_tribe)}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}}\ =\ new\_tribe;}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00051}\mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a5daa8862d3775dd7678abf2277ab62d6}{Beast\_Card::use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00057}00057\ \ \ \ \ target.\mbox{\hyperlink{class_player_a012c4a16efd7bf53b2711e160d879d8b}{take\_damage}}(\mbox{\hyperlink{class_beast___card_ab2f5ee344c3d3a49d2749e76c9edd453}{get\_base\_dmg}}()*user.\mbox{\hyperlink{class_player_a90b58ef3f3e4b609f8f8f22b2f1fde3e}{get\_cumulative\_attack\_multiplier}}());}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00058}00058\ \ \ \ \ user.\mbox{\hyperlink{class_player_a3c9a084e68ea363850c3fe08fdefbc7e}{end\_turn}}();}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00061}\mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{00061}}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_beast___card_aa52840c0c464905d92ae10146ac5d784}{Beast\_Card::get\_type}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00062}00062\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda8023727f8bbdfc6efb4944197420bf7e}{CardType::Beast}};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00064}00064\ \}}
 \DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00066}00066\ \ \ \ \ std::uniform\_int\_distribution<int>\ name\_dist(0,\ \mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{beast\_names}}.size()\ -\/\ 1);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00067}00067\ \ \ \ \ std::uniform\_int\_distribution<int>\ desc\_dist(0,\ \mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{beast\_descriptions}}.size()\ -\/\ 1);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00068}00068\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\_name}}(\mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{beast\_names}}[name\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\_description}}(\mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{beast\_descriptions}}[desc\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{set\_tribe}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4));}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00072}00072\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}())\ \{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}}:}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 2);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Rarity::Uncommon}}:}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 3\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}}:}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 5\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}}:}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 8\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 6);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00090}00090\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00091}00091\ \}}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00093}\mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{00093}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{Beast\_Card::print\_key\_info}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00094}00094\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Base\ Damage:\ "{}}\ <<\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ <<\ \textcolor{stringliteral}{"{},\ Tribe:\ "{}}\ <<\ \mbox{\hyperlink{enums_8h_aef8b5d590605db73cdcd8bc7e8ffa651}{tribeToString}}(\mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}});}
-\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00069}\mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{00069}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a5f00510cd1347a3f0297a147c4a715e5}{Beast\_Card::generate\_properties}}()}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00070}00070\ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ rarity\ first}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ random\_rarity\ =\ \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\_random\_rarity}}();}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\_rarity}}(random\_rarity);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00075}00075\ \ \ \ \ std::uniform\_int\_distribution<int>\ name\_dist(0,\ \mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{beast\_names}}.size()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00076}00076\ \ \ \ \ std::uniform\_int\_distribution<int>\ desc\_dist(0,\ \mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{beast\_descriptions}}.size()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\_name}}(\mbox{\hyperlink{card_8h_a00403321e494b13993fe26d74e86dc68}{beast\_names}}[name\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\_description}}(\mbox{\hyperlink{card_8h_ae6bcf68473dce55315e95bc62c931002}{beast\_descriptions}}[desc\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{class_beast___card_a24431e4371ea2c8127263578f6a0df96}{set\_tribe}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ff}{Tribe}}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4));}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}())}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}}:}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 2);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Rarity::Uncommon}}:}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 3\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}}:}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 5\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}}:}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ =\ 8\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 6);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00103}\mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{00103}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_beast___card_a18ab19d889d12baee6311bc9ab4d4938}{Beast\_Card::print\_key\_info}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00104}00104\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00105}00105\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Base\ Damage:\ "{}}\ <<\ \mbox{\hyperlink{class_beast___card_a7a5ca4b9f4abf65acee75750e3946807}{base\_dmg}}\ <<\ \textcolor{stringliteral}{"{},\ Tribe:\ "{}}\ <<\ \mbox{\hyperlink{enums_8h_aef8b5d590605db73cdcd8bc7e8ffa651}{tribeToString}}(\mbox{\hyperlink{class_beast___card_a2deb19e297f4b94755b6870325ed19e2}{tribe}});}
+\DoxyCodeLine{\Hypertarget{beast__card_8cpp_source_l00106}00106\ \}}
 
 \end{DoxyCode}
