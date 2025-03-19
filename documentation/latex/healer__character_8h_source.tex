@@ -1,0 +1,44 @@
+\doxysection{healer\+\_\+character.\+h}
+\hypertarget{healer__character_8h_source}{}\label{healer__character_8h_source}\index{/home/debil/Lab-\/work-\/2/include/player/healer\_character.h@{/home/debil/Lab-\/work-\/2/include/player/healer\_character.h}}
+\mbox{\hyperlink{healer__character_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ HEALER\_CHARACTER\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ HEALER\_CHARACTER\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{character_8h}{character.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHealer__Character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCharacter_adc27bdd255876169bad2ed0bae0cffb5}{Character}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ heal\_amount;\ }
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classHealer__Character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classHealer__Character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ description);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classHealer__Character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character}}(\textcolor{keywordtype}{int}\ heal\_amount,\textcolor{keywordtype}{int}\ xp\_to\_next\_lvl,\ \textcolor{keywordtype}{int}\ lvl,\ \textcolor{keywordtype}{int}\ xp,\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ heal\_mltpl,\ \textcolor{keywordtype}{float}\ dmg\_mltpl,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ armor\_mltpl,\ \textcolor{keyword}{const}\ std::string\&\ description,\ \textcolor{keywordtype}{int}\ ability\_uses}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classHealer__Character_a65261a1e5ef2a3faab0bc30529282f1f}{Healer\_Character}}(\textcolor{keywordtype}{int}\ xp\_to\_next\_lvl,\ \textcolor{keywordtype}{int}\ lvl,\ \textcolor{keywordtype}{int}\ xp,\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ heal\_mltpl,\ \textcolor{keywordtype}{float}\ dmg\_mltpl,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ armor\_mltpl,\ \textcolor{keyword}{const}\ std::string\&\ description,\ \textcolor{keywordtype}{int}\ ability\_uses}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHealer__Character_add61abf9efb2428ea4ed6dfe452d8bed}{get\_heal\_amount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHealer__Character_a68c318107e7ed9359dfda33cdeecd44b}{set\_heal\_amount}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHealer__Character_aaf98e4dc9dbb479ba8b4f70c1e84a999}{special\_action}}(\mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HEALER\_CHARACTER\_H}}
+
+\end{DoxyCode}

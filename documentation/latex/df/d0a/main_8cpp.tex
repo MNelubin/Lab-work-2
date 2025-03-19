@@ -1,0 +1,209 @@
+\doxysection{D\+:/education/\+C++/second semestr/\+Lab\+\_\+2/code/\+Lab-\/work-\/2/src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/main.cpp@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/main.cpp}}
+{\ttfamily \#include "{}../include/cards/card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/enums.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/attack\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/heal\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/buff\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/defence\+\_\+spell\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/beast\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/creature\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/weapon\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/artifact\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/shield\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/cards/buff\+\_\+card.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/player.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/healer\+\_\+character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/tank\+\_\+character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/knight\+\_\+character.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/hand.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/human\+\_\+player.\+h"{}}\newline
+{\ttfamily \#include "{}../include/player/ai\+\_\+player.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_ad593bc6accc813e0ba99391d052637f2}{start\+\_\+1v1\+\_\+match}} ()
+\begin{DoxyCompactList}\small\item\em Runs a 1v1 match between two players with predefined characters and hands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a116f5db451cfe52a4f8ae0bdf32e3bbc}{game\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Main game menu with options to start a new game or exit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4953d1edcbbfc7e420c423ded1d5621a}{clear\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em Function for clearing terminal. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \mbox{\hyperlink{main_8cpp_a4cd362624950beb777f81ef925812780}{create\+\_\+predefined\+\_\+character}} (int choice)
+\begin{DoxyCompactList}\small\item\em Creates a predefined character based on the choice. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \mbox{\hyperlink{main_8cpp_a0ac17a11fcae6e24a280a83880b76106}{create\+\_\+predefined\+\_\+character\+\_\+ai}} (int choice)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ \mbox{\hyperlink{main_8cpp_a81bb81b5e8257a9c0d26582ce5aacbf4}{create\+\_\+ai\+\_\+character}} ()
+\begin{DoxyCompactList}\small\item\em Creates a random AI character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to run the game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_af415476d308ba4b6ee6d7d2058dd5ad8}{rarity\+\_\+to\+\_\+value}} (\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}} rarity)
+\item 
+void \mbox{\hyperlink{main_8cpp_a1389a4ce330d4c1521ffe35755a63320}{player\+\_\+turn}} (\mbox{\hyperlink{class_human___player}{Human\+\_\+\+Player}} \&player, \mbox{\hyperlink{class_player}{Player}} \&enemy)
+\begin{DoxyCompactList}\small\item\em Handles a player\textquotesingle{}s turn with a menu-\/driven interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a4953d1edcbbfc7e420c423ded1d5621a}\index{main.cpp@{main.cpp}!clear\_screen@{clear\_screen}}
+\index{clear\_screen@{clear\_screen}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{clear\_screen()}{clear\_screen()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4953d1edcbbfc7e420c423ded1d5621a} 
+void clear\+\_\+screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function for clearing terminal. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a81bb81b5e8257a9c0d26582ce5aacbf4}\index{main.cpp@{main.cpp}!create\_ai\_character@{create\_ai\_character}}
+\index{create\_ai\_character@{create\_ai\_character}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_ai\_character()}{create\_ai\_character()}}
+{\footnotesize\ttfamily \label{main_8cpp_a81bb81b5e8257a9c0d26582ce5aacbf4} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ create\+\_\+ai\+\_\+character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates a random AI character. 
+
+\begin{DoxyReturn}{Returns}
+Unique pointer to the created character 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a4cd362624950beb777f81ef925812780}\index{main.cpp@{main.cpp}!create\_predefined\_character@{create\_predefined\_character}}
+\index{create\_predefined\_character@{create\_predefined\_character}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_predefined\_character()}{create\_predefined\_character()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4cd362624950beb777f81ef925812780} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ create\+\_\+predefined\+\_\+character (\begin{DoxyParamCaption}\item[{int}]{choice}{}\end{DoxyParamCaption})}
+
+
+
+Creates a predefined character based on the choice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em choice} & 1 for healer, 2 for tank, 3 for knight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unique pointer to the created character 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a0ac17a11fcae6e24a280a83880b76106}\index{main.cpp@{main.cpp}!create\_predefined\_character\_ai@{create\_predefined\_character\_ai}}
+\index{create\_predefined\_character\_ai@{create\_predefined\_character\_ai}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_predefined\_character\_ai()}{create\_predefined\_character\_ai()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ac17a11fcae6e24a280a83880b76106} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_character}{Character}} $>$ create\+\_\+predefined\+\_\+character\+\_\+ai (\begin{DoxyParamCaption}\item[{int}]{choice}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a116f5db451cfe52a4f8ae0bdf32e3bbc}\index{main.cpp@{main.cpp}!game\_menu@{game\_menu}}
+\index{game\_menu@{game\_menu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{game\_menu()}{game\_menu()}}
+{\footnotesize\ttfamily \label{main_8cpp_a116f5db451cfe52a4f8ae0bdf32e3bbc} 
+void game\+\_\+menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main game menu with options to start a new game or exit. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main function to run the game. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a1389a4ce330d4c1521ffe35755a63320}\index{main.cpp@{main.cpp}!player\_turn@{player\_turn}}
+\index{player\_turn@{player\_turn}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{player\_turn()}{player\_turn()}}
+{\footnotesize\ttfamily \label{main_8cpp_a1389a4ce330d4c1521ffe35755a63320} 
+void player\+\_\+turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_human___player}{Human\+\_\+\+Player}} \&}]{player}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{enemy}{}\end{DoxyParamCaption})}
+
+
+
+Handles a player\textquotesingle{}s turn with a menu-\/driven interface. 
+
+This function provides a menu with the following options\+:
+\begin{DoxyEnumerate}
+\item Use a card from hand
+\item Use special ability
+\item Eat card
+\item Throw out card
+\item Show character characteristic
+\item End turn
+\end{DoxyEnumerate}
+
+The turn automatically ends when\+:
+\begin{DoxyItemize}
+\item \doxylink{class_player}{Player} has no mana left
+\item \doxylink{class_player}{Player} has no cards left
+\item \doxylink{class_player}{Player} chooses to end turn
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The human player taking the turn \\
+\hline
+{\em enemy} & The opponent player \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00200}{200}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_af415476d308ba4b6ee6d7d2058dd5ad8}\index{main.cpp@{main.cpp}!rarity\_to\_value@{rarity\_to\_value}}
+\index{rarity\_to\_value@{rarity\_to\_value}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rarity\_to\_value()}{rarity\_to\_value()}}
+{\footnotesize\ttfamily \label{main_8cpp_af415476d308ba4b6ee6d7d2058dd5ad8} 
+int rarity\+\_\+to\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}}]{rarity}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ad593bc6accc813e0ba99391d052637f2}\index{main.cpp@{main.cpp}!start\_1v1\_match@{start\_1v1\_match}}
+\index{start\_1v1\_match@{start\_1v1\_match}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{start\_1v1\_match()}{start\_1v1\_match()}}
+{\footnotesize\ttfamily \label{main_8cpp_ad593bc6accc813e0ba99391d052637f2} 
+void start\+\_\+1v1\+\_\+match (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Runs a 1v1 match between two players with predefined characters and hands. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00360}{360}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

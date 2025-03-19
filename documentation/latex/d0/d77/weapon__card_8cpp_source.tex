@@ -1,0 +1,97 @@
+\doxysection{weapon\+\_\+card.\+cpp}
+\hypertarget{weapon__card_8cpp_source}{}\label{weapon__card_8cpp_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/cards/weapon\_card.cpp@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/cards/weapon\_card.cpp}}
+\mbox{\hyperlink{weapon__card_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{weapon__card_8h}{../../include/cards/weapon\_card.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../../include/player/player.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00009}\mbox{\hyperlink{class_weapon___card_a0032754f9786adfd9eedf468f8623be3}{00009}}\ \mbox{\hyperlink{class_weapon___card_a741882f7522058ac4ceb07f2d5dc912a}{Weapon\_Card::Weapon\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}})}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00011}00011\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}),\ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}(\mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}})}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ increase\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00019}\mbox{\hyperlink{class_weapon___card_a3a26b4ed423ba6876b4c1478722cfac9}{00019}}\ \mbox{\hyperlink{class_weapon___card_a741882f7522058ac4ceb07f2d5dc912a}{Weapon\_Card::Weapon\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}})}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00021}00021\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}),\ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00023}00023\ \textcolor{comment}{//\ Default\ constructor\ implementation}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00024}\mbox{\hyperlink{class_weapon___card_a741882f7522058ac4ceb07f2d5dc912a}{00024}}\ \mbox{\hyperlink{class_weapon___card_a741882f7522058ac4ceb07f2d5dc912a}{Weapon\_Card::Weapon\_Card}}()}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00025}00025\ \ \ \ \ :\ \mbox{\hyperlink{class_card_a4445adcdb4e04fae03789796345e402f}{Card}}(\textcolor{stringliteral}{"{}Unnamed\ Weapon"{}},\ \textcolor{stringliteral}{"{}No\ description"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}::\mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Common}},\ 0),}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00026}00026\ \ \ \ \ \ \ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}(2)}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00030}\mbox{\hyperlink{class_weapon___card_aa0975ca7990bbe9fcefc9f6886d93326}{00030}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_weapon___card_aa0975ca7990bbe9fcefc9f6886d93326}{Weapon\_Card::get\_dmg\_up}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00031}00031\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00035}\mbox{\hyperlink{class_weapon___card_ae69ee912f429f44ac16f9ac694b6ca3b}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weapon___card_ae69ee912f429f44ac16f9ac694b6ca3b}{Weapon\_Card::set\_dmg\_up}}(\textcolor{keywordtype}{int}\ new\_dmg\_up)}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_dmg\_up\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Damage\ increase\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}\ =\ new\_dmg\_up;}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00044}\mbox{\hyperlink{class_weapon___card_ab43c64f4b8eb9d53243948214c5b2839}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weapon___card_ab43c64f4b8eb9d53243948214c5b2839}{Weapon\_Card::use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00049}00049\ \ \ \ \ user.\mbox{\hyperlink{class_player_a65f7d8e3809c89ecc4d8a0b087b54cf1}{add\_weapon\_bonus}}(\mbox{\hyperlink{class_weapon___card_aa0975ca7990bbe9fcefc9f6886d93326}{get\_dmg\_up}}());}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00052}\mbox{\hyperlink{class_weapon___card_a0a1c00305e2ff12d39eb2ca28dce9c39}{00052}}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_weapon___card_a0a1c00305e2ff12d39eb2ca28dce9c39}{Weapon\_Card::get\_type}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00053}00053\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cda18c83669920215a818638ad0e5421e4b}{CardType::Weapon}};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00061}\mbox{\hyperlink{class_weapon___card_ab0de7a0f130264bca4ed94662bd50809}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weapon___card_ab0de7a0f130264bca4ed94662bd50809}{Weapon\_Card::generate\_properties}}()}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ rarity\ first}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ random\_rarity\ =\ \mbox{\hyperlink{class_card_aca8967a90a7a4d189235176d89259714}{generate\_random\_rarity}}();}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{class_card_aeb3584b001b5bb4f06ae6632cfdecd8f}{set\_rarity}}(random\_rarity);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00067}00067\ \ \ \ \ std::uniform\_int\_distribution<int>\ name\_dist(0,\ \mbox{\hyperlink{card_8h_a177a9fa41d9ed28b3c4305831724efae}{weapon\_names}}.size()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00068}00068\ \ \ \ \ std::uniform\_int\_distribution<int>\ desc\_dist(0,\ \mbox{\hyperlink{card_8h_a986fff6e65fbd2ce662b683366dcfe0a}{weapon\_descriptions}}.size()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_card_ac02cf2194bc6fda38b2ec9567e965c7f}{set\_name}}(\mbox{\hyperlink{card_8h_a177a9fa41d9ed28b3c4305831724efae}{weapon\_names}}[name\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{class_card_a7df878df1ad6073334c8f7332ad5cdd0}{set\_description}}(\mbox{\hyperlink{card_8h_a986fff6e65fbd2ce662b683366dcfe0a}{weapon\_descriptions}}[desc\_dist(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}})]);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_card_a7dc04f8244d247431df9894755c8f4bf}{get\_rarity}}())}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}}:}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 2);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa4fd1ff3ab1075fe7f3fb30ec3829a00}{Rarity::Uncommon}}:}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}\ =\ 3\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 4);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}}:}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}\ =\ 5\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 3);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}}:}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}}\ =\ 8\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 6);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}}\ =\ 2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{card_8h_adbe79e918414b2480135e3a7871b44ac}{rng}}()\ \%\ 5);}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00094}\mbox{\hyperlink{class_weapon___card_ada740bce7aa2ab81b822ece8f398b3e0}{00094}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weapon___card_ada740bce7aa2ab81b822ece8f398b3e0}{Weapon\_Card::print\_key\_info}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00095}00095\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00096}00096\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Damage\ Increase:\ "{}}\ <<\ \mbox{\hyperlink{class_weapon___card_a394e26f3855f36bcf00b29d02442acbf}{dmg\_up}};}
+\DoxyCodeLine{\Hypertarget{weapon__card_8cpp_source_l00097}00097\ \}}
+
+\end{DoxyCode}

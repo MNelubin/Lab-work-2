@@ -1,0 +1,48 @@
+\doxysection{hand.\+h}
+\hypertarget{hand_8h_source}{}\label{hand_8h_source}\index{/home/debil/Lab-\/work-\/2/include/player/hand.h@{/home/debil/Lab-\/work-\/2/include/player/hand.h}}
+\mbox{\hyperlink{hand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ HAND\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ HAND\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{../cards/card.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHand_aa733faf150351c640fc7d1bf460b07e9}{Hand}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<std::unique\_ptr<Card>>\ cards;\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ amount;\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Predefined\ standard\ hands}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ create\_standard\_hand\_1();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ create\_standard\_hand\_2();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ create\_standard\_hand\_3();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classHand_aa733faf150351c640fc7d1bf460b07e9}{Hand}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::unique\_ptr<Card>\ card);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHand_a0658ee144ba8c58cae6a61950eb154dd}{remove\_card}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classCard}{Card}}\&\ \mbox{\hyperlink{classHand_aef66bfc3507501b01647eea97f5247ef}{get\_card}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHand_ac5494271768be40a87efd694557812a1}{sort\_by\_mana}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHand_a9e6aac43dba379bda6bc67cf01793081}{generate}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHand_a297b1bef3dae532600ae359b4e522b6b}{get\_amount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classHand_a3d4d59725b6c613c462245dd440ab1db}{get\_unique\_card\_types}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ std::vector<std::reference\_wrapper<Card>>\ \mbox{\hyperlink{classHand_adad976dd2d139ea61247121b66c73114}{get\_cards\_by\_type}}(\textcolor{keyword}{const}\ std::string\&\ type\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

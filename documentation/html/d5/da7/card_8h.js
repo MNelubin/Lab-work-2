@@ -1,0 +1,26 @@
+var card_8h =
+[
+    [ "Card", "d5/d6a/class_card.html", "d5/d6a/class_card" ],
+    [ "artifact_descriptions", "d5/da7/card_8h.html#a7cd4b633fc04db8745c88ed3cb52d122", null ],
+    [ "artifact_names", "d5/da7/card_8h.html#a02f699ec4ca0fddf4f4d3a6ca0252105", null ],
+    [ "beast_descriptions", "d5/da7/card_8h.html#ae6bcf68473dce55315e95bc62c931002", null ],
+    [ "beast_names", "d5/da7/card_8h.html#a00403321e494b13993fe26d74e86dc68", null ],
+    [ "buff_descriptions", "d5/da7/card_8h.html#a6a777fdf2ba5663856c11315b9562eeb", null ],
+    [ "buff_names", "d5/da7/card_8h.html#a5c4f707f55d7b894bb9372d1813250b9", null ],
+    [ "buff_spell_descriptions", "d5/da7/card_8h.html#a13ac9a0a649a7f3268894033b7417941", null ],
+    [ "buff_spell_names", "d5/da7/card_8h.html#ad4ed6eb012e46252b61fa53c035eb1fb", null ],
+    [ "creature_descriptions", "d5/da7/card_8h.html#af30cb1249468c980e3edd603b80c1fd9", null ],
+    [ "creature_names", "d5/da7/card_8h.html#a823cc152dac7d829250f2ad5723b6789", null ],
+    [ "defence_spell_descriptions", "d5/da7/card_8h.html#a148a8f2590ee423762bdf125d5a98940", null ],
+    [ "defence_spell_names", "d5/da7/card_8h.html#a83f9eaa54ecf22f38fa799539eab3f87", null ],
+    [ "heal_descriptions", "d5/da7/card_8h.html#a183439cb457394bfdea3bacd343ab398", null ],
+    [ "heal_names", "d5/da7/card_8h.html#a7332584ccb8490d12429f3b2be530fd8", null ],
+    [ "rng", "d5/da7/card_8h.html#adbe79e918414b2480135e3a7871b44ac", null ],
+    [ "shield_descriptions", "d5/da7/card_8h.html#a6492c7874c5be10487af34b49e79d84f", null ],
+    [ "shield_names", "d5/da7/card_8h.html#aa131940db3e9f9a53337d9d8dd876c8e", null ],
+    [ "spell_descriptions", "d5/da7/card_8h.html#a6cd64ca45cccb8e771b8e9e6238501c4", null ],
+    [ "spell_elements", "d5/da7/card_8h.html#a71bf3ed1fbe6f721ab90c892c11820bf", null ],
+    [ "spell_names", "d5/da7/card_8h.html#a087424ce22e7dad0b4e5eb8a0a9d19bb", null ],
+    [ "weapon_descriptions", "d5/da7/card_8h.html#a986fff6e65fbd2ce662b683366dcfe0a", null ],
+    [ "weapon_names", "d5/da7/card_8h.html#a177a9fa41d9ed28b3c4305831724efae", null ]
+];

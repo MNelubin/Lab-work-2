@@ -1,0 +1,133 @@
+\chapter{Core Test Plan}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan}{}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan}\index{Core Test Plan@{Core Test Plan}}
+\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md14}%
+\Hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md14}%
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md15}{}\doxysection{\texorpdfstring{1. Types of tests}{1. Types of tests}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md15}
+{\bfseries{Unit tests}} (90\% coverage)\+:
+\begin{DoxyItemize}
+\item Validation of card attributes (mana, damage, rarity)
+\item Checking ability limits (Shielding(), Armoring())
+\item Calculating damage/healing formulas
+\item Save/load game progress
+\end{DoxyItemize}
+
+{\bfseries{Integration tests}} (10\% coverage)\+:
+\begin{DoxyItemize}
+\item AI\textquotesingle{}s work with different types of cards
+\end{DoxyItemize}\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md16}{}\doxysection{\texorpdfstring{2. Tools and environment}{2. Tools and environment}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\bfseries{Framework}}\+: Google Test (gtest)
+\item {\bfseries{OS}}\+: Ubuntu 22.\+04 LTS
+\item {\bfseries{Compiler}}\+: GCC 11+
+\item {\bfseries{CI}}\+: Existing system with preinstalled\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/\ name:\ Setup\ environment}
+\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ update}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ install\ -\/y\ g++-\/11\ make\ libgtest-\/dev}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ ln\ -\/sf\ /usr/bin/g++-\/11\ /usr/bin/g++}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md17}{}\doxysection{\texorpdfstring{3. Critical components}{3. Critical components}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md17}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md18}{}\doxysubsection{\texorpdfstring{3.\+1 Card Validation}{3.\+1 Card Validation}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md18}
+{\bfseries{Test cases\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(CardTest,\ InvalidMana)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCard}{Card}}\ card;}
+\DoxyCodeLine{\ \ \ \ ASSERT\_THROW(card.Set\_Mana\_Cost(11),\ InvalidCardException);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(CardTest,\ MinimumDamage)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classAttack__Spell__Card}{Attack\_Spell\_Card}}\ card;}
+\DoxyCodeLine{\ \ \ \ ASSERT\_THROW(card.Set\_Base\_DMG(0),\ InvalidDamageValue);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md19}{}\doxysubsection{\texorpdfstring{3.\+2 Combat Mechanics}{3.\+2 Combat Mechanics}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md19}
+{\bfseries{Sample data\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Card>\ test\_deck\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classAttack__Spell__Card}{Attack\_Spell\_Card}}(\textcolor{stringliteral}{"{}Fireball"{}},\ 3,\ 5),}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classShield__Card}{Shield\_Card}}(\textcolor{stringliteral}{"{}Iron\ Shield"{}},\ 2,\ 3)}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+{\bfseries{Test cases\+:}}
+\begin{DoxyEnumerate}
+\item Damage 5 vs Armor 3 → 2 damage
+\item Double shield (3+3) → armor 6
+\item Attempt to re-\/\+Shielding() → error
+\end{DoxyEnumerate}\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md20}{}\doxysubsection{\texorpdfstring{3.\+3 The AI System}{3.\+3 The AI System}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md20}
+{\bfseries{Logic of choice\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AITest,\ BestCardSelection)\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ vector<Card>\ hand\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{mana:\ 3,\ dmg:\ 5\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{mana:\ 2,\ dmg:\ 3\}}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ AI\_Player\ ai(hand);}
+\DoxyCodeLine{\ \ \ \ ASSERT\_EQ(ai.count\_best(),\ 0);\ \textcolor{comment}{//\ Selecting\ the\ first\ card}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md21}{}\doxysubsection{\texorpdfstring{3.\+4 Saving Progress}{3.\+4 Saving Progress}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md21}
+{\bfseries{File format\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ "{}player\_name"{}:\ "{}Vova"{},}
+\DoxyCodeLine{\ \ "{}characters"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ "{}tank"{}:\ \{"{}xp"{}:\ 300,\ "{}level"{}:\ 1\}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md22}{}\doxysection{\texorpdfstring{4. Integration with CI}{4. Integration with CI}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md22}
+{\bfseries{Configuration\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{jobs:}
+\DoxyCodeLine{\ \ build-\/and-\/test:}
+\DoxyCodeLine{\ \ \ \ runs-\/on:\ ubuntu-\/latest}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ steps:}
+\DoxyCodeLine{\ \ \ \ -\/\ name:\ Checkout\ code}
+\DoxyCodeLine{\ \ \ \ \ \ uses:\ actions/checkout@v4}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ -\/\ name:\ Setup\ environment}
+\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ update}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ apt-\/get\ install\ -\/y\ g++-\/11\ make\ libgtest-\/dev}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sudo\ ln\ -\/sf\ /usr/bin/g++-\/11\ /usr/bin/g++}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ -\/\ name:\ Build\ tests}
+\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ make\ test}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ -\/\ name:\ Execute\ tests}
+\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ./test-\/card\_app}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ -\/\ name:\ Build\ release}
+\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ make\ clean}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ make}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ -\/\ name:\ Cleanup}
+\DoxyCodeLine{\ \ \ \ \ \ run:\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ make\ cleanall\ }
+
+\end{DoxyCode}
+\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md23}{}\doxysection{\texorpdfstring{5. Success criteria}{5. Success criteria}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md23}
+
+\begin{DoxyItemize}
+\item All tests are error-\/free
+\item 100\% coverage of critical scenarios
+\end{DoxyItemize}\hypertarget{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md24}{}\doxysection{\texorpdfstring{6. Reporting}{6. Reporting}}\label{md__2home_2debil_2Lab-work-2_2architecture_2test__plan_autotoc_md24}
+
+\begin{DoxyItemize}
+\item Notifications about test crashes in CI 
+\end{DoxyItemize}

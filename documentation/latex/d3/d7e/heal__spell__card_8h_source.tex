@@ -1,0 +1,46 @@
+\doxysection{heal\+\_\+spell\+\_\+card.\+h}
+\hypertarget{heal__spell__card_8h_source}{}\label{heal__spell__card_8h_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/heal\_spell\_card.h@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/include/cards/heal\_spell\_card.h}}
+\mbox{\hyperlink{heal__spell__card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ HEAL\_SPELL\_CARD\_H}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ HEAL\_SPELL\_CARD\_H}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{spell__card_8h}{spell\_card.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00015}\mbox{\hyperlink{class_heal___spell___card}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_heal___spell___card_ae45471508a6c21c428e5f80b44ed95e9}{Heal\_Spell\_Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_spell___card_a410e68985095603e4e6d2d5946ba3cca}{Spell\_Card}}}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00018}\mbox{\hyperlink{class_heal___spell___card_acab822a3ccc24961c697145ce8efb4ac}{00018}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_heal___spell___card_acab822a3ccc24961c697145ce8efb4ac}{base\_heal}};\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00019}\mbox{\hyperlink{class_heal___spell___card_a05ae2c877188700b9ccf1988b02d7745}{00019}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_heal___spell___card_a05ae2c877188700b9ccf1988b02d7745}{efficiency\_deg}};\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_heal___spell___card_aea51b2e1a4ba4fc02251e6cbd2952f3e}{Heal\_Spell\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{class_card_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_card_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062}{Element}}\ elem,\ \textcolor{keywordtype}{int}\ heal,\ \textcolor{keywordtype}{float}\ eff);}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_heal___spell___card_aea51b2e1a4ba4fc02251e6cbd2952f3e}{Heal\_Spell\_Card}}();}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_heal___spell___card_aab8105089297d0a5e93b1e5918bcdee4}{get\_base\_heal}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heal___spell___card_a906d642ad0a7d4149ba3e3cb1d8fba42}{set\_base\_heal}}(\textcolor{keywordtype}{int}\ new\_heal);}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_heal___spell___card_a13e85c526601fd84fe88ff4cd95b0129}{get\_eff}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heal___spell___card_a23e654648903ca6447793e44b8d85111}{set\_eff}}(\textcolor{keywordtype}{float}\ new\_eff);}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heal___spell___card_a9ba2d68259888b7b9c0907cb05e7e6a0}{use}}(\mbox{\hyperlink{class_player}{Player}}\&\ user,\ \mbox{\hyperlink{class_player}{Player}}\&\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{class_heal___spell___card_aacc1716afff99e7dac2775f2b02c92dd}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heal___spell___card_a1abb0c1904ecd009d8387a246000a958}{generate\_properties}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heal___spell___card_abd7f880257409275ae1b0ae553c337ce}{print\_key\_info}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00088}00088\ \};}
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{heal__spell__card_8h_source_l00090}00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

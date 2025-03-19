@@ -1,0 +1,43 @@
+\chapter{Brief system requirements}
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short}{}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short}\index{Brief system requirements@{Brief system requirements}}
+\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short_autotoc_md11}%
+\Hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short_autotoc_md11}%
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short_autotoc_md12}{}\doxysection{\texorpdfstring{Functional requirements}{Functional requirements}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short_autotoc_md12}
+
+\begin{DoxyEnumerate}
+\item Cards\+:
+\begin{DoxyItemize}
+\item Mana\+: 0-\/10, an integer
+\item Damage\+: ≥1, integer
+\item \doxylink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}\+: Common/\+Uncommon/\+Rare/\+Epic
+\end{DoxyItemize}
+\item Characters\+:
+\begin{DoxyItemize}
+\item Tank\+: 1 shield per battle (Shielding())
+\item Knight\+: Armoring() adds armor
+\item Healer\+: limited number of healings
+\end{DoxyItemize}
+\item Combat mechanics\+:
+\begin{DoxyItemize}
+\item Damage is calculated as Base\+\_\+\+DMG \texorpdfstring{$\ast$}{*} multipliers
+\item Shields are added together
+\end{DoxyItemize}
+\item AI\+:
+\begin{DoxyItemize}
+\item Selects the card with maximum damage
+\item Takes into account the current mana
+\end{DoxyItemize}
+\item Save\+:
+\begin{DoxyItemize}
+\item \doxylink{class_character}{Character} levels
+\item Leveling progress
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short_autotoc_md13}{}\doxysection{\texorpdfstring{Usage Scenarios}{Usage Scenarios}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2requirements__short_autotoc_md13}
+
+\begin{DoxyEnumerate}
+\item The player uses an attacking spell
+\item The AI selects the optimal card
+\item Tank activates the shield
+\item The healer treats himself
+\item Saving progress between sessions 
+\end{DoxyEnumerate}
