@@ -1926,11 +1926,11 @@
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02382}\mbox{\hyperlink{test-card_8cpp_ad864d5aa1d0484071a8eff80c3b11aec}{02382}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateBeastValue)}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02383}02383\ \{}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02384}02384\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02385}02385\ \ \ \ \ player.\mbox{\hyperlink{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}{set\_cumulative\_weapon\_bonus}}(5);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02385}02385\ \ \ \ \ player.\mbox{\hyperlink{class_player_aa4619a2c2e329de1c2e6c5bbca336a15}{set\_cumulative\_attack\_multiplier}}(2);}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02386}02386\ \ \ \ \ \mbox{\hyperlink{class_beast___card}{Beast\_Card}}\ card(\textcolor{stringliteral}{"{}Wolf"{}},\ \textcolor{stringliteral}{"{}Fierce"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ 8,\ \mbox{\hyperlink{enums_8h_af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4}{Tribe::North}});}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02387}02387\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02388}02388\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 13)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02389}02389\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Beast\ value\ should\ be\ base\ damage\ +\ weapon\ bonus"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02388}02388\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 16)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02389}02389\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Beast\ value\ should\ be\ base\ damage\ *\ attack\ multiplier"{}};}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02390}02390\ \}}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02391}02391\ }
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02396}\mbox{\hyperlink{test-card_8cpp_a1fe45278ea7c682f9046cf6f3e7b0a99}{02396}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateHealSpellValue)}
@@ -1952,158 +1952,215 @@
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02416}02416\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Buff\ spell\ value\ should\ be\ multiplier\ *\ 10"{}};}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02417}02417\ \}}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02418}02418\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02419}02419\ \textcolor{comment}{//\ ====================\ find\_best\_combination\ Tests\ ====================}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02420}02420\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02425}\mbox{\hyperlink{test-card_8cpp_a57ad8788077a7303a3e5a5cefea15b6e}{02425}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ SelectBestAttackBuffCombo)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02426}02426\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02427}02427\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 7,\ \textcolor{stringliteral}{"{}TestAI"{}});\ \textcolor{comment}{//\ Total\ mana\ =\ 7}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02428}02428\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02429}02429\ \ \ \ \ \textcolor{comment}{//\ Setup\ hand\ with\ various\ cards}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02430}02430\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02431}02431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 10));\ \textcolor{comment}{//\ Value:\ 10}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02432}02432\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Buff\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02433}02433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Boost"{}},\ \textcolor{stringliteral}{"{}Buff"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 2,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ 1.5f));\ \textcolor{comment}{//\ Value:\ 15}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02434}02434\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Shield\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02435}02435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Shield"{}},\ \textcolor{stringliteral}{"{}Def"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 4,\ 3));\ \textcolor{comment}{//\ Value:\ 0}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02436}02436\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02437}02437\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02438}02438\ \ \ \ \ EXPECT\_EQ(result.first,\ 0)\ <<\ \textcolor{stringliteral}{"{}Should\ select\ Attack\ spell\ (cost\ 3)"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02439}02439\ \ \ \ \ EXPECT\_EQ(result.second,\ 1)\ <<\ \textcolor{stringliteral}{"{}Should\ select\ Buff\ spell\ (cost\ 2)"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02440}02440\ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02441}02441\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02446}\mbox{\hyperlink{test-card_8cpp_afa1bb42d768daad0980aea466ffffd5b}{02446}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ SelectSingleCardWhenManaLimited)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02447}02447\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02448}02448\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 4,\ \textcolor{stringliteral}{"{}TestAI"{}});}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02449}02449\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02450}02450\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02451}02451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 5,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 10));\ \textcolor{comment}{//\ Too\ expensive}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02452}02452\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Heal\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02453}02453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Cure"{}},\ \textcolor{stringliteral}{"{}Heal"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}{Element::Water}},\ 15,\ 1.0f));\ \textcolor{comment}{//\ Cost\ 3}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02423}\mbox{\hyperlink{test-card_8cpp_adf53f2d98266f6736c184499f67cde36}{02423}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateArtifactValue)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02424}02424\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02425}02425\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02426}02426\ \ \ \ \ \mbox{\hyperlink{class_artifact___card}{Artifact\_Card}}\ card(\textcolor{stringliteral}{"{}Amulet"{}},\ \textcolor{stringliteral}{"{}Empowers"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}},\ 4,\ 2.0);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02427}02427\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02428}02428\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 40)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02429}02429\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Artifact\ value\ should\ be\ multiplier\ *\ multiplier\ *\ 10"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02430}02430\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02431}02431\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02436}\mbox{\hyperlink{test-card_8cpp_ad34251bf8ead53f89296ae1dd8c3eb33}{02436}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateBuffValue)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02437}02437\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02438}02438\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02439}02439\ \ \ \ \ \mbox{\hyperlink{class_buff___card}{Buff\_Card}}\ card(\textcolor{stringliteral}{"{}Strength"{}},\ \textcolor{stringliteral}{"{}Increases"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 2,\ 3);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02440}02440\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02441}02441\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 30)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02442}02442\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Buff\ value\ should\ be\ buff\ amount\ *\ 10"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02443}02443\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02444}02444\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02449}\mbox{\hyperlink{test-card_8cpp_ab33d8cb00555fea6b7719f6940135a4a}{02449}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateWeaponValue)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02450}02450\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02451}02451\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02452}02452\ \ \ \ \ player.\mbox{\hyperlink{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}{set\_cumulative\_weapon\_bonus}}(1);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02453}02453\ \ \ \ \ \mbox{\hyperlink{class_weapon___card}{Weapon\_Card}}\ card(\textcolor{stringliteral}{"{}Sword"{}},\ \textcolor{stringliteral}{"{}Sharp"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a}{Rarity::Rare}},\ 3,\ 2);}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02454}02454\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02455}02455\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02456}02456\ \ \ \ \ EXPECT\_EQ(result.first,\ 1)\ <<\ \textcolor{stringliteral}{"{}Should\ select\ Heal\ spell\ as\ only\ affordable\ option"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02457}02457\ \ \ \ \ EXPECT\_EQ(result.second,\ -\/1)\ <<\ \textcolor{stringliteral}{"{}Should\ not\ select\ second\ card"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02458}02458\ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02459}02459\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02464}\mbox{\hyperlink{test-card_8cpp_a337b817171bb411dd8fdc820c0cd39dc}{02464}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ PreferCombatCardsFirst)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02465}02465\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02466}02466\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 10,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02455}02455\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 15)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02456}02456\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Weapon\ value\ should\ be\ (dmg\_up\ +\ weapon\ bonus)\ *\ 5"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02457}02457\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02458}02458\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02463}\mbox{\hyperlink{test-card_8cpp_aebedc95aeb36b002dfd7d9375e42fafe}{02463}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateDefenceSpellValue)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02464}02464\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02465}02465\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02466}02466\ \ \ \ \ \mbox{\hyperlink{class_defence___spell___card}{Defence\_Spell\_Card}}\ card(\textcolor{stringliteral}{"{}Shield"{}},\ \textcolor{stringliteral}{"{}Protects"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 2,\mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ 3);}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02467}02467\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02468}02468\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Buff\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02469}02469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Boost"{}},\ \textcolor{stringliteral}{"{}Buff"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 2,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ 1.5f));}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02470}02470\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02471}02471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 5,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 20));}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02472}02472\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02473}02473\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02474}02474\ \ \ \ \ EXPECT\_EQ(result.first,\ 1)\ <<\ \textcolor{stringliteral}{"{}Should\ prioritize\ Attack\ spell\ over\ Buff"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02475}02475\ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02476}02476\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02481}\mbox{\hyperlink{test-card_8cpp_aab906a1c791c00204f58bed49fbb396e}{02481}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ NoValidCardsReturnsInvalid)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02482}02482\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02483}02483\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 2,\ 0,\ \textcolor{stringliteral}{"{}TestAI"{}});\ \textcolor{comment}{//\ Fixed:\ mana=2,\ armor=0}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02468}02468\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 21)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02469}02469\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Defence\ spell\ value\ should\ be\ base\ def\ *\ 7"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02470}02470\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02471}02471\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02476}\mbox{\hyperlink{test-card_8cpp_ac9154aae8ed667d0964c037230561581}{02476}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateShieldValue)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02477}02477\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02478}02478\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02479}02479\ \ \ \ \ \mbox{\hyperlink{class_shield___card}{Shield\_Card}}\ card(\textcolor{stringliteral}{"{}Tower\ Shield"{}},\ \textcolor{stringliteral}{"{}Strong"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}},\ 4,\ 2);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02480}02480\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02481}02481\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 140)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02482}02482\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Shield\ value\ should\ be\ usage\ *\ 70"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02483}02483\ \}}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02484}02484\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02485}02485\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02486}02486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 10));\ \textcolor{comment}{//\ Cost\ 3\ >\ 2}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02487}02487\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02488}02488\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02489}02489\ \ \ \ \ EXPECT\_EQ(result.first,\ -\/1)\ <<\ \textcolor{stringliteral}{"{}Should\ return\ -\/1\ when\ no\ cards\ are\ affordable"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02490}02490\ \ \ \ \ EXPECT\_EQ(result.second,\ -\/1)\ <<\ \textcolor{stringliteral}{"{}Should\ return\ -\/1\ when\ no\ second\ card\ is\ possible"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02491}02491\ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02492}02492\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02493}02493\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02494}02494\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02489}\mbox{\hyperlink{test-card_8cpp_a8c4cf6d06bb7f70d943de9e892ac2413}{02489}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ CalculateCreatureValue)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02490}02490\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02491}02491\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 50,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02492}02492\ \ \ \ \ player.\mbox{\hyperlink{class_player_a30d532f2c937c57c5b7cfe598e2b2e1d}{set\_cumulative\_weapon\_bonus}}(2);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02493}02493\ \ \ \ \ player.\mbox{\hyperlink{class_player_aa4619a2c2e329de1c2e6c5bbca336a15}{set\_cumulative\_attack\_multiplier}}(2);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02494}02494\ \ \ \ \ \mbox{\hyperlink{class_creature___card}{Creature\_Card}}\ card(\textcolor{stringliteral}{"{}Knight"{}},\ \textcolor{stringliteral}{"{}Brave"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756}{Rarity::Epic}},\ 4,\ 6,1.5f);}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02495}02495\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02496}02496\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02497}02497\ \textcolor{comment}{//\ ====================\ Human\_Player\ Tests\ ====================}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02498}02498\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02503}\mbox{\hyperlink{test-card_8cpp_a2b1d0b9fac2f4c733ffde1cf06a69349}{02503}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(HumanPlayerTest,\ AddCharacter)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02504}02504\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02505}02505\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ player;}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02506}02506\ \ \ \ \ \textcolor{keyword}{auto}\ healer\ =\ std::make\_unique<Healer\_Character>();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02507}02507\ \ \ \ \ \textcolor{keyword}{auto}\ knight\ =\ std::make\_unique<Knight\_Character>();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02508}02508\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02509}02509\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 0);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02510}02510\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02511}02511\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::move(healer));}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02512}02512\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 1);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02513}02513\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02514}02514\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::move(knight));}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02515}02515\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 2);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02516}02516\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02496}02496\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_a_i___player_a36372a56e09742469f97a1a99ef140f2}{calculate\_card\_value}}(card),\ 16)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02497}02497\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Creature\ value\ should\ be\ (base\ damage\ +\ weapon\ bonus)\ *\ attack\ multiplier"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02498}02498\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02499}02499\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02500}02500\ \textcolor{comment}{//\ ====================\ find\_best\_combination\ Tests\ ====================}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02501}02501\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02506}\mbox{\hyperlink{test-card_8cpp_a57ad8788077a7303a3e5a5cefea15b6e}{02506}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ SelectBestAttackBuffCombo)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02507}02507\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02508}02508\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 7,\ \textcolor{stringliteral}{"{}TestAI"{}});\ \textcolor{comment}{//\ Total\ mana\ =\ 7}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02509}02509\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02510}02510\ \ \ \ \ \textcolor{comment}{//\ Setup\ hand\ with\ various\ cards}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02511}02511\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02512}02512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 10));\ \textcolor{comment}{//\ Value:\ 10}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02513}02513\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Buff\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02514}02514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Boost"{}},\ \textcolor{stringliteral}{"{}Buff"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 2,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ 1.5f));\ \textcolor{comment}{//\ Value:\ 15}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02515}02515\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Shield\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02516}02516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Shield"{}},\ \textcolor{stringliteral}{"{}Def"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 4,\ 3));\ \textcolor{comment}{//\ Value:\ 0}}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02517}02517\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02522}\mbox{\hyperlink{test-card_8cpp_a0ca1ff48cfe269e8e4def5e86febbb1e}{02522}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(HumanPlayerTest,\ SaveAndLoadCharacters)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02523}02523\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02524}02524\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ filename\ =\ \textcolor{stringliteral}{"{}test\_save.bin"{}};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02525}02525\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02526}02526\ \ \ \ \ \textcolor{comment}{//\ Create\ player\ and\ add\ characters}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02527}02527\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ player;}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02528}02528\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Healer\_Character>());}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02529}02529\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Knight\_Character>());}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02530}02530\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Tank\_Character>());}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02531}02531\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02532}02532\ \ \ \ \ \textcolor{comment}{//\ Save\ characters}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02533}02533\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a6adc9b452837c686ff9e8d136707e874}{save\_characters}}(filename);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02534}02534\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02535}02535\ \ \ \ \ \textcolor{comment}{//\ Load\ characters\ into\ a\ new\ player}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02536}02536\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ loaded\_player;}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02537}02537\ \ \ \ \ loaded\_player.\mbox{\hyperlink{class_human___player_a2d6230c94ac86b02f430820968a4a455}{load\_characters}}(filename);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02538}02538\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02539}02539\ \ \ \ \ \textcolor{comment}{//\ Verify\ loaded\ characters}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02540}02540\ \ \ \ \ EXPECT\_EQ(loaded\_player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 3);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02541}02541\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02542}02542\ \ \ \ \ \textcolor{comment}{//\ Check\ types\ of\ loaded\ characters}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02543}02543\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_healer\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02544}02544\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_knight\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02545}02545\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_tank\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02546}02546\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02547}02547\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ char\_ptr\ :\ loaded\_player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}())}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02548}02548\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02549}02549\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_healer___character}{Healer\_Character}}*\textcolor{keyword}{>}(char\_ptr.get()))}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02550}02550\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02551}02551\ \ \ \ \ \ \ \ \ \ \ \ \ found\_healer\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02552}02552\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02553}02553\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_knight___character}{Knight\_Character}}*\textcolor{keyword}{>}(char\_ptr.get()))}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02554}02554\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02555}02555\ \ \ \ \ \ \ \ \ \ \ \ \ found\_knight\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02556}02556\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02557}02557\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_tank___character}{Tank\_Character}}*\textcolor{keyword}{>}(char\_ptr.get()))}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02558}02558\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02559}02559\ \ \ \ \ \ \ \ \ \ \ \ \ found\_tank\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02560}02560\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02561}02561\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02562}02562\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02563}02563\ \ \ \ \ EXPECT\_TRUE(found\_healer);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02564}02564\ \ \ \ \ EXPECT\_TRUE(found\_knight);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02565}02565\ \ \ \ \ EXPECT\_TRUE(found\_tank);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02566}02566\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02567}02567\ \ \ \ \ \textcolor{comment}{//\ Clean\ up\ test\ file}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02568}02568\ \ \ \ \ std::remove(filename.c\_str());}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02569}02569\ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02570}02570\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02571}02571\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02576}\mbox{\hyperlink{test-card_8cpp_ac3502e2a8ebaf2555848da0e3e503884}{02576}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(HumanPlayerTest,\ ShowCharacters)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02577}02577\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02578}02578\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ player;}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02579}02579\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Healer\_Character>());}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02580}02580\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Knight\_Character>());}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02581}02581\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02582}02582\ \ \ \ \ testing::internal::CaptureStdout();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02583}02583\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a420a46c43a728cc631dfc3795117ca49}{show\_characters}}();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02584}02584\ \ \ \ \ std::string\ output\ =\ testing::internal::GetCapturedStdout();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02585}02585\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02586}02586\ \ \ \ \ EXPECT\_TRUE(output.find(\textcolor{stringliteral}{"{}Available\ characters"{}})\ !=\ std::string::npos);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02587}02587\ \ \ \ \ EXPECT\_TRUE(output.find(\textcolor{stringliteral}{"{}Healer"{}})\ !=\ std::string::npos);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02588}02588\ \ \ \ \ EXPECT\_TRUE(output.find(\textcolor{stringliteral}{"{}Knight"{}})\ !=\ std::string::npos);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02589}02589\ \}}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02590}02590\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02518}02518\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02519}02519\ \ \ \ \ EXPECT\_EQ(result.first,\ 0)\ <<\ \textcolor{stringliteral}{"{}Should\ select\ Attack\ spell\ (cost\ 3)"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02520}02520\ \ \ \ \ EXPECT\_EQ(result.second,\ 1)\ <<\ \textcolor{stringliteral}{"{}Should\ select\ Buff\ spell\ (cost\ 2)"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02521}02521\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02522}02522\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02527}\mbox{\hyperlink{test-card_8cpp_afa1bb42d768daad0980aea466ffffd5b}{02527}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ SelectSingleCardWhenManaLimited)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02528}02528\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02529}02529\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 4,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02530}02530\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02531}02531\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02532}02532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 5,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 10));\ \textcolor{comment}{//\ Too\ expensive}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02533}02533\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Heal\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02534}02534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Cure"{}},\ \textcolor{stringliteral}{"{}Heal"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18}{Element::Water}},\ 15,\ 1.0f));\ \textcolor{comment}{//\ Cost\ 3}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02535}02535\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02536}02536\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02537}02537\ \ \ \ \ EXPECT\_EQ(result.first,\ 1)\ <<\ \textcolor{stringliteral}{"{}Should\ select\ Heal\ spell\ as\ only\ affordable\ option"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02538}02538\ \ \ \ \ EXPECT\_EQ(result.second,\ -\/1)\ <<\ \textcolor{stringliteral}{"{}Should\ not\ select\ second\ card"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02539}02539\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02540}02540\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02545}\mbox{\hyperlink{test-card_8cpp_a337b817171bb411dd8fdc820c0cd39dc}{02545}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ PreferCombatCardsFirst)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02546}02546\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02547}02547\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 10,\ 10,\ \textcolor{stringliteral}{"{}TestAI"{}});}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02548}02548\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02549}02549\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Buff\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02550}02550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Boost"{}},\ \textcolor{stringliteral}{"{}Buff"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 2,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523}{Element::Earth}},\ 1.5f));}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02551}02551\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02552}02552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 5,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 20));}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02553}02553\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02554}02554\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02555}02555\ \ \ \ \ EXPECT\_EQ(result.first,\ 1)\ <<\ \textcolor{stringliteral}{"{}Should\ prioritize\ Attack\ spell\ over\ Buff"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02556}02556\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02557}02557\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02562}\mbox{\hyperlink{test-card_8cpp_aab906a1c791c00204f58bed49fbb396e}{02562}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(AIPlayerTest,\ NoValidCardsReturnsInvalid)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02563}02563\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02564}02564\ \ \ \ \ \mbox{\hyperlink{class_a_i___player}{AI\_Player}}\ player(100,\ 2,\ 0,\ \textcolor{stringliteral}{"{}TestAI"{}});\ \textcolor{comment}{//\ Fixed:\ mana=2,\ armor=0}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02565}02565\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02566}02566\ \ \ \ \ player.\mbox{\hyperlink{class_player_a932eae2d8351f7e9ea923f22561bfab8}{get\_hand}}().\mbox{\hyperlink{class_hand_a8ec06916f40f510847c8aa5c90526758}{add\_card}}(std::make\_unique<Attack\_Spell\_Card>(}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02567}02567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Fire"{}},\ \textcolor{stringliteral}{"{}Dmg"{}},\ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563}{Rarity::Common}},\ 3,\ \mbox{\hyperlink{enums_8h_a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb}{Element::Fire}},\ 10));\ \textcolor{comment}{//\ Cost\ 3\ >\ 2}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02568}02568\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02569}02569\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ player.\mbox{\hyperlink{class_a_i___player_a7d07888ad272bba0f60ddbe5f978505b}{find\_best\_combination}}();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02570}02570\ \ \ \ \ EXPECT\_EQ(result.first,\ -\/1)\ <<\ \textcolor{stringliteral}{"{}Should\ return\ -\/1\ when\ no\ cards\ are\ affordable"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02571}02571\ \ \ \ \ EXPECT\_EQ(result.second,\ -\/1)\ <<\ \textcolor{stringliteral}{"{}Should\ return\ -\/1\ when\ no\ second\ card\ is\ possible"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02572}02572\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02573}02573\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02574}02574\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02575}02575\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02576}02576\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02577}02577\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02578}02578\ \textcolor{comment}{//\ ====================\ Human\_Player\ Tests\ ====================}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02579}02579\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02584}\mbox{\hyperlink{test-card_8cpp_a2b1d0b9fac2f4c733ffde1cf06a69349}{02584}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(HumanPlayerTest,\ AddCharacter)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02585}02585\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02586}02586\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02587}02587\ \ \ \ \ \textcolor{keyword}{auto}\ healer\ =\ std::make\_unique<Healer\_Character>();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02588}02588\ \ \ \ \ \textcolor{keyword}{auto}\ knight\ =\ std::make\_unique<Knight\_Character>();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02589}02589\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02590}02590\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 0);}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02591}02591\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02592}02592\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02593}02593\ \textcolor{comment}{//\ ====================\ Test\ Runner\ ====================}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02592}02592\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::move(healer));}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02593}02593\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 1);}
 \DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02594}02594\ }
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02598}\mbox{\hyperlink{test-card_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{02598}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02599}02599\ \{}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02600}02600\ \ \ \ \ testing::InitGoogleTest(\&argc,\ argv);}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02601}02601\ \ \ \ \ \textcolor{keywordflow}{return}\ RUN\_ALL\_TESTS();}
-\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02602}02602\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02595}02595\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::move(knight));}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02596}02596\ \ \ \ \ EXPECT\_EQ(player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 2);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02597}02597\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02598}02598\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02603}\mbox{\hyperlink{test-card_8cpp_a0ca1ff48cfe269e8e4def5e86febbb1e}{02603}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(HumanPlayerTest,\ SaveAndLoadCharacters)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02604}02604\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02605}02605\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ filename\ =\ \textcolor{stringliteral}{"{}test\_save.bin"{}};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02606}02606\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02607}02607\ \ \ \ \ \textcolor{comment}{//\ Create\ player\ and\ add\ characters}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02608}02608\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02609}02609\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Healer\_Character>());}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02610}02610\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Knight\_Character>());}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02611}02611\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Tank\_Character>());}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02612}02612\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02613}02613\ \ \ \ \ \textcolor{comment}{//\ Save\ characters}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02614}02614\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a6adc9b452837c686ff9e8d136707e874}{save\_characters}}(filename);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02615}02615\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02616}02616\ \ \ \ \ \textcolor{comment}{//\ Load\ characters\ into\ a\ new\ player}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02617}02617\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ loaded\_player;}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02618}02618\ \ \ \ \ loaded\_player.\mbox{\hyperlink{class_human___player_a2d6230c94ac86b02f430820968a4a455}{load\_characters}}(filename);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02619}02619\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02620}02620\ \ \ \ \ \textcolor{comment}{//\ Verify\ loaded\ characters}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02621}02621\ \ \ \ \ EXPECT\_EQ(loaded\_player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}().size(),\ 3);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02622}02622\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02623}02623\ \ \ \ \ \textcolor{comment}{//\ Check\ types\ of\ loaded\ characters}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02624}02624\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_healer\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02625}02625\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_knight\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02626}02626\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_tank\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02627}02627\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02628}02628\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ char\_ptr\ :\ loaded\_player.\mbox{\hyperlink{class_human___player_ae397a581710554e8cfae83d83e8d711d}{get\_characters}}())}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02629}02629\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02630}02630\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_healer___character}{Healer\_Character}}*\textcolor{keyword}{>}(char\_ptr.get()))}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02631}02631\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02632}02632\ \ \ \ \ \ \ \ \ \ \ \ \ found\_healer\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02633}02633\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02634}02634\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_knight___character}{Knight\_Character}}*\textcolor{keyword}{>}(char\_ptr.get()))}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02635}02635\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02636}02636\ \ \ \ \ \ \ \ \ \ \ \ \ found\_knight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02637}02637\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02638}02638\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_tank___character}{Tank\_Character}}*\textcolor{keyword}{>}(char\_ptr.get()))}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02639}02639\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02640}02640\ \ \ \ \ \ \ \ \ \ \ \ \ found\_tank\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02641}02641\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02642}02642\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02643}02643\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02644}02644\ \ \ \ \ EXPECT\_TRUE(found\_healer);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02645}02645\ \ \ \ \ EXPECT\_TRUE(found\_knight);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02646}02646\ \ \ \ \ EXPECT\_TRUE(found\_tank);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02647}02647\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02648}02648\ \ \ \ \ \textcolor{comment}{//\ Clean\ up\ test\ file}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02649}02649\ \ \ \ \ std::remove(filename.c\_str());}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02650}02650\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02651}02651\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02652}02652\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02657}\mbox{\hyperlink{test-card_8cpp_ac3502e2a8ebaf2555848da0e3e503884}{02657}}\ \mbox{\hyperlink{test-card_8cpp_afeb6d4047a9b58aca40a22b0e710266a}{TEST}}(HumanPlayerTest,\ ShowCharacters)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02658}02658\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02659}02659\ \ \ \ \ \mbox{\hyperlink{class_human___player}{Human\_Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02660}02660\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Healer\_Character>());}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02661}02661\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a2cc8e380af5ba6ff239834b34528f2cc}{add\_character}}(std::make\_unique<Knight\_Character>());}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02662}02662\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02663}02663\ \ \ \ \ testing::internal::CaptureStdout();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02664}02664\ \ \ \ \ player.\mbox{\hyperlink{class_human___player_a420a46c43a728cc631dfc3795117ca49}{show\_characters}}();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02665}02665\ \ \ \ \ std::string\ output\ =\ testing::internal::GetCapturedStdout();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02666}02666\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02667}02667\ \ \ \ \ EXPECT\_TRUE(output.find(\textcolor{stringliteral}{"{}Available\ characters"{}})\ !=\ std::string::npos);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02668}02668\ \ \ \ \ EXPECT\_TRUE(output.find(\textcolor{stringliteral}{"{}Healer"{}})\ !=\ std::string::npos);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02669}02669\ \ \ \ \ EXPECT\_TRUE(output.find(\textcolor{stringliteral}{"{}Knight"{}})\ !=\ std::string::npos);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02670}02670\ \}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02671}02671\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02672}02672\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02673}02673\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02674}02674\ \textcolor{comment}{//\ ====================\ Test\ Runner\ ====================}}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02675}02675\ }
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02679}\mbox{\hyperlink{test-card_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{02679}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02680}02680\ \{}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02681}02681\ \ \ \ \ testing::InitGoogleTest(\&argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02682}02682\ \ \ \ \ \textcolor{keywordflow}{return}\ RUN\_ALL\_TESTS();}
+\DoxyCodeLine{\Hypertarget{test-card_8cpp_source_l02683}02683\ \}}
 
 \end{DoxyCode}

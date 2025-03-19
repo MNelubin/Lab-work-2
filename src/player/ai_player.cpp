@@ -14,7 +14,11 @@ int AI_Player::calculate_card_value(const Card& card) const
     }
     if (auto beast = dynamic_cast<const Beast_Card*>(&card))
     {
-        return beast->get_base_dmg() + get_cumulative_weapon_bonus();
+        return beast->get_base_dmg() * get_cumulative_attack_multiplier();
+    }
+    if (auto creature = dynamic_cast<const Creature_Card*>(&card))
+    {
+        return (creature->get_base_dmg() + get_cumulative_weapon_bonus()) * get_cumulative_attack_multiplier();
     }
 
     // For medical cards
@@ -24,9 +28,29 @@ int AI_Player::calculate_card_value(const Card& card) const
     }
 
     // For buff cards
-    if (auto buff = dynamic_cast<const Buff_Spell_Card*>(&card))
+    if (auto buff_spell = dynamic_cast<const Buff_Spell_Card*>(&card))
     {
-        return buff->get_multiplier() * 10; // Примерная оценка
+        return buff_spell->get_multiplier() * 10;
+    }
+    if (auto artifact = dynamic_cast<const Artifact_Card*>(&card))
+    {
+        return artifact->get_multiplier() * artifact->get_multiplier() * 10;
+    }
+    if (auto buff = dynamic_cast<const Buff_Card*>(&card))
+    {
+        return buff->get_buff_amount() * 10;
+    }
+    if (auto weapon = dynamic_cast<const Weapon_Card*>(&card))
+    {
+        return (weapon->get_dmg_up() + get_cumulative_weapon_bonus())*5;
+    }
+    if (auto defence_spell = dynamic_cast<const Defence_Spell_Card*>(&card))
+    {
+        return defence_spell->get_base_def() * 7;
+    }
+    if (auto shield = dynamic_cast<const Shield_Card*>(&card))
+    {
+        return shield->get_usage() * 70;
     }
 
     return 0;

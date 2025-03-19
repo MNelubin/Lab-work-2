@@ -2260,11 +2260,11 @@ $(function(){initNavTree('db/d9c/test-card_8cpp_source.html','../../'); initResi
 <div class="line"><a id="l02382" name="l02382"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#ad864d5aa1d0484071a8eff80c3b11aec"> 2382</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateBeastValue)</div>
 <div class="line"><a id="l02383" name="l02383"></a><span class="lineno"> 2383</span>{</div>
 <div class="line"><a id="l02384" name="l02384"></a><span class="lineno"> 2384</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
-<div class="line"><a id="l02385" name="l02385"></a><span class="lineno"> 2385</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a30d532f2c937c57c5b7cfe598e2b2e1d">set_cumulative_weapon_bonus</a>(5);</div>
+<div class="line"><a id="l02385" name="l02385"></a><span class="lineno"> 2385</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#aa4619a2c2e329de1c2e6c5bbca336a15">set_cumulative_attack_multiplier</a>(2);</div>
 <div class="line"><a id="l02386" name="l02386"></a><span class="lineno"> 2386</span>    <a class="code hl_class" href="../../db/d0d/class_beast___card.html">Beast_Card</a> card(<span class="stringliteral">&quot;Wolf&quot;</span>, <span class="stringliteral">&quot;Fierce&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, 8, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#af831c68e3c232459dad13935143716ffa601560b94fbb188919dd1d36c8ab70a4">Tribe::North</a>);</div>
 <div class="line"><a id="l02387" name="l02387"></a><span class="lineno"> 2387</span> </div>
-<div class="line"><a id="l02388" name="l02388"></a><span class="lineno"> 2388</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 13)</div>
-<div class="line"><a id="l02389" name="l02389"></a><span class="lineno"> 2389</span>            &lt;&lt; <span class="stringliteral">&quot;Beast value should be base damage + weapon bonus&quot;</span>;</div>
+<div class="line"><a id="l02388" name="l02388"></a><span class="lineno"> 2388</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 16)</div>
+<div class="line"><a id="l02389" name="l02389"></a><span class="lineno"> 2389</span>            &lt;&lt; <span class="stringliteral">&quot;Beast value should be base damage * attack multiplier&quot;</span>;</div>
 <div class="line"><a id="l02390" name="l02390"></a><span class="lineno"> 2390</span>}</div>
 </div>
 <div class="line"><a id="l02391" name="l02391"></a><span class="lineno"> 2391</span></div>
@@ -2290,175 +2290,244 @@ $(function(){initNavTree('db/d9c/test-card_8cpp_source.html','../../'); initResi
 <div class="line"><a id="l02416" name="l02416"></a><span class="lineno"> 2416</span>            &lt;&lt; <span class="stringliteral">&quot;Buff spell value should be multiplier * 10&quot;</span>;</div>
 <div class="line"><a id="l02417" name="l02417"></a><span class="lineno"> 2417</span>}</div>
 </div>
-<div class="line"><a id="l02418" name="l02418"></a><span class="lineno"> 2418</span> </div>
-<div class="line"><a id="l02419" name="l02419"></a><span class="lineno"> 2419</span><span class="comment">// ==================== find_best_combination Tests ====================</span></div>
-<div class="line"><a id="l02420" name="l02420"></a><span class="lineno"> 2420</span></div>
-<div class="foldopen" id="foldopen02425" data-start="{" data-end="}">
-<div class="line"><a id="l02425" name="l02425"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a57ad8788077a7303a3e5a5cefea15b6e"> 2425</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, SelectBestAttackBuffCombo)</div>
-<div class="line"><a id="l02426" name="l02426"></a><span class="lineno"> 2426</span>{</div>
-<div class="line"><a id="l02427" name="l02427"></a><span class="lineno"> 2427</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 7, <span class="stringliteral">&quot;TestAI&quot;</span>); <span class="comment">// Total mana = 7</span></div>
-<div class="line"><a id="l02428" name="l02428"></a><span class="lineno"> 2428</span> </div>
-<div class="line"><a id="l02429" name="l02429"></a><span class="lineno"> 2429</span>    <span class="comment">// Setup hand with various cards</span></div>
-<div class="line"><a id="l02430" name="l02430"></a><span class="lineno"> 2430</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
-<div class="line"><a id="l02431" name="l02431"></a><span class="lineno"> 2431</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 10)); <span class="comment">// Value: 10</span></div>
-<div class="line"><a id="l02432" name="l02432"></a><span class="lineno"> 2432</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Buff_Spell_Card&gt;(</div>
-<div class="line"><a id="l02433" name="l02433"></a><span class="lineno"> 2433</span>                                   <span class="stringliteral">&quot;Boost&quot;</span>, <span class="stringliteral">&quot;Buff&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 2, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523">Element::Earth</a>, 1.5f)); <span class="comment">// Value: 15</span></div>
-<div class="line"><a id="l02434" name="l02434"></a><span class="lineno"> 2434</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Shield_Card&gt;(</div>
-<div class="line"><a id="l02435" name="l02435"></a><span class="lineno"> 2435</span>                                   <span class="stringliteral">&quot;Shield&quot;</span>, <span class="stringliteral">&quot;Def&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 4, 3)); <span class="comment">// Value: 0</span></div>
-<div class="line"><a id="l02436" name="l02436"></a><span class="lineno"> 2436</span> </div>
-<div class="line"><a id="l02437" name="l02437"></a><span class="lineno"> 2437</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
-<div class="line"><a id="l02438" name="l02438"></a><span class="lineno"> 2438</span>    EXPECT_EQ(result.first, 0) &lt;&lt; <span class="stringliteral">&quot;Should select Attack spell (cost 3)&quot;</span>;</div>
-<div class="line"><a id="l02439" name="l02439"></a><span class="lineno"> 2439</span>    EXPECT_EQ(result.second, 1) &lt;&lt; <span class="stringliteral">&quot;Should select Buff spell (cost 2)&quot;</span>;</div>
-<div class="line"><a id="l02440" name="l02440"></a><span class="lineno"> 2440</span>}</div>
+<div class="line"><a id="l02418" name="l02418"></a><span class="lineno"> 2418</span></div>
+<div class="foldopen" id="foldopen02423" data-start="{" data-end="}">
+<div class="line"><a id="l02423" name="l02423"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#adf53f2d98266f6736c184499f67cde36"> 2423</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateArtifactValue)</div>
+<div class="line"><a id="l02424" name="l02424"></a><span class="lineno"> 2424</span>{</div>
+<div class="line"><a id="l02425" name="l02425"></a><span class="lineno"> 2425</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02426" name="l02426"></a><span class="lineno"> 2426</span>    <a class="code hl_class" href="../../d2/d39/class_artifact___card.html">Artifact_Card</a> card(<span class="stringliteral">&quot;Amulet&quot;</span>, <span class="stringliteral">&quot;Empowers&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756">Rarity::Epic</a>, 4, 2.0);</div>
+<div class="line"><a id="l02427" name="l02427"></a><span class="lineno"> 2427</span> </div>
+<div class="line"><a id="l02428" name="l02428"></a><span class="lineno"> 2428</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 40)</div>
+<div class="line"><a id="l02429" name="l02429"></a><span class="lineno"> 2429</span>            &lt;&lt; <span class="stringliteral">&quot;Artifact value should be multiplier * multiplier * 10&quot;</span>;</div>
+<div class="line"><a id="l02430" name="l02430"></a><span class="lineno"> 2430</span>}</div>
 </div>
-<div class="line"><a id="l02441" name="l02441"></a><span class="lineno"> 2441</span></div>
-<div class="foldopen" id="foldopen02446" data-start="{" data-end="}">
-<div class="line"><a id="l02446" name="l02446"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#afa1bb42d768daad0980aea466ffffd5b"> 2446</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, SelectSingleCardWhenManaLimited)</div>
-<div class="line"><a id="l02447" name="l02447"></a><span class="lineno"> 2447</span>{</div>
-<div class="line"><a id="l02448" name="l02448"></a><span class="lineno"> 2448</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 4, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
-<div class="line"><a id="l02449" name="l02449"></a><span class="lineno"> 2449</span> </div>
-<div class="line"><a id="l02450" name="l02450"></a><span class="lineno"> 2450</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
-<div class="line"><a id="l02451" name="l02451"></a><span class="lineno"> 2451</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 5, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 10)); <span class="comment">// Too expensive</span></div>
-<div class="line"><a id="l02452" name="l02452"></a><span class="lineno"> 2452</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Heal_Spell_Card&gt;(</div>
-<div class="line"><a id="l02453" name="l02453"></a><span class="lineno"> 2453</span>                                   <span class="stringliteral">&quot;Cure&quot;</span>, <span class="stringliteral">&quot;Heal&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18">Element::Water</a>, 15, 1.0f)); <span class="comment">// Cost 3</span></div>
+<div class="line"><a id="l02431" name="l02431"></a><span class="lineno"> 2431</span></div>
+<div class="foldopen" id="foldopen02436" data-start="{" data-end="}">
+<div class="line"><a id="l02436" name="l02436"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#ad34251bf8ead53f89296ae1dd8c3eb33"> 2436</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateBuffValue)</div>
+<div class="line"><a id="l02437" name="l02437"></a><span class="lineno"> 2437</span>{</div>
+<div class="line"><a id="l02438" name="l02438"></a><span class="lineno"> 2438</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02439" name="l02439"></a><span class="lineno"> 2439</span>    <a class="code hl_class" href="../../da/db9/class_buff___card.html">Buff_Card</a> card(<span class="stringliteral">&quot;Strength&quot;</span>, <span class="stringliteral">&quot;Increases&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 2, 3);</div>
+<div class="line"><a id="l02440" name="l02440"></a><span class="lineno"> 2440</span> </div>
+<div class="line"><a id="l02441" name="l02441"></a><span class="lineno"> 2441</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 30)</div>
+<div class="line"><a id="l02442" name="l02442"></a><span class="lineno"> 2442</span>            &lt;&lt; <span class="stringliteral">&quot;Buff value should be buff amount * 10&quot;</span>;</div>
+<div class="line"><a id="l02443" name="l02443"></a><span class="lineno"> 2443</span>}</div>
+</div>
+<div class="line"><a id="l02444" name="l02444"></a><span class="lineno"> 2444</span></div>
+<div class="foldopen" id="foldopen02449" data-start="{" data-end="}">
+<div class="line"><a id="l02449" name="l02449"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#ab33d8cb00555fea6b7719f6940135a4a"> 2449</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateWeaponValue)</div>
+<div class="line"><a id="l02450" name="l02450"></a><span class="lineno"> 2450</span>{</div>
+<div class="line"><a id="l02451" name="l02451"></a><span class="lineno"> 2451</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02452" name="l02452"></a><span class="lineno"> 2452</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a30d532f2c937c57c5b7cfe598e2b2e1d">set_cumulative_weapon_bonus</a>(1);</div>
+<div class="line"><a id="l02453" name="l02453"></a><span class="lineno"> 2453</span>    <a class="code hl_class" href="../../d0/d35/class_weapon___card.html">Weapon_Card</a> card(<span class="stringliteral">&quot;Sword&quot;</span>, <span class="stringliteral">&quot;Sharp&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600aa2cc588f2ab07ad61b05400f593eeb0a">Rarity::Rare</a>, 3, 2);</div>
 <div class="line"><a id="l02454" name="l02454"></a><span class="lineno"> 2454</span> </div>
-<div class="line"><a id="l02455" name="l02455"></a><span class="lineno"> 2455</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
-<div class="line"><a id="l02456" name="l02456"></a><span class="lineno"> 2456</span>    EXPECT_EQ(result.first, 1) &lt;&lt; <span class="stringliteral">&quot;Should select Heal spell as only affordable option&quot;</span>;</div>
-<div class="line"><a id="l02457" name="l02457"></a><span class="lineno"> 2457</span>    EXPECT_EQ(result.second, -1) &lt;&lt; <span class="stringliteral">&quot;Should not select second card&quot;</span>;</div>
-<div class="line"><a id="l02458" name="l02458"></a><span class="lineno"> 2458</span>}</div>
+<div class="line"><a id="l02455" name="l02455"></a><span class="lineno"> 2455</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 15)</div>
+<div class="line"><a id="l02456" name="l02456"></a><span class="lineno"> 2456</span>            &lt;&lt; <span class="stringliteral">&quot;Weapon value should be (dmg_up + weapon bonus) * 5&quot;</span>;</div>
+<div class="line"><a id="l02457" name="l02457"></a><span class="lineno"> 2457</span>}</div>
 </div>
-<div class="line"><a id="l02459" name="l02459"></a><span class="lineno"> 2459</span></div>
-<div class="foldopen" id="foldopen02464" data-start="{" data-end="}">
-<div class="line"><a id="l02464" name="l02464"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a337b817171bb411dd8fdc820c0cd39dc"> 2464</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, PreferCombatCardsFirst)</div>
-<div class="line"><a id="l02465" name="l02465"></a><span class="lineno"> 2465</span>{</div>
-<div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 10, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02458" name="l02458"></a><span class="lineno"> 2458</span></div>
+<div class="foldopen" id="foldopen02463" data-start="{" data-end="}">
+<div class="line"><a id="l02463" name="l02463"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#aebedc95aeb36b002dfd7d9375e42fafe"> 2463</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateDefenceSpellValue)</div>
+<div class="line"><a id="l02464" name="l02464"></a><span class="lineno"> 2464</span>{</div>
+<div class="line"><a id="l02465" name="l02465"></a><span class="lineno"> 2465</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02466" name="l02466"></a><span class="lineno"> 2466</span>    <a class="code hl_class" href="../../d8/d3d/class_defence___spell___card.html">Defence_Spell_Card</a> card(<span class="stringliteral">&quot;Shield&quot;</span>, <span class="stringliteral">&quot;Protects&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 2,<a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523">Element::Earth</a>, 3);</div>
 <div class="line"><a id="l02467" name="l02467"></a><span class="lineno"> 2467</span> </div>
-<div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Buff_Spell_Card&gt;(</div>
-<div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span>                                   <span class="stringliteral">&quot;Boost&quot;</span>, <span class="stringliteral">&quot;Buff&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 2, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523">Element::Earth</a>, 1.5f));</div>
-<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
-<div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 5, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 20));</div>
-<div class="line"><a id="l02472" name="l02472"></a><span class="lineno"> 2472</span> </div>
-<div class="line"><a id="l02473" name="l02473"></a><span class="lineno"> 2473</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
-<div class="line"><a id="l02474" name="l02474"></a><span class="lineno"> 2474</span>    EXPECT_EQ(result.first, 1) &lt;&lt; <span class="stringliteral">&quot;Should prioritize Attack spell over Buff&quot;</span>;</div>
-<div class="line"><a id="l02475" name="l02475"></a><span class="lineno"> 2475</span>}</div>
+<div class="line"><a id="l02468" name="l02468"></a><span class="lineno"> 2468</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 21)</div>
+<div class="line"><a id="l02469" name="l02469"></a><span class="lineno"> 2469</span>            &lt;&lt; <span class="stringliteral">&quot;Defence spell value should be base def * 7&quot;</span>;</div>
+<div class="line"><a id="l02470" name="l02470"></a><span class="lineno"> 2470</span>}</div>
 </div>
-<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"> 2476</span></div>
-<div class="foldopen" id="foldopen02481" data-start="{" data-end="}">
-<div class="line"><a id="l02481" name="l02481"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#aab906a1c791c00204f58bed49fbb396e"> 2481</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, NoValidCardsReturnsInvalid)</div>
-<div class="line"><a id="l02482" name="l02482"></a><span class="lineno"> 2482</span>{</div>
-<div class="line"><a id="l02483" name="l02483"></a><span class="lineno"> 2483</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 2, 0, <span class="stringliteral">&quot;TestAI&quot;</span>); <span class="comment">// Fixed: mana=2, armor=0</span></div>
-<div class="line"><a id="l02484" name="l02484"></a><span class="lineno"> 2484</span> </div>
-<div class="line"><a id="l02485" name="l02485"></a><span class="lineno"> 2485</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
-<div class="line"><a id="l02486" name="l02486"></a><span class="lineno"> 2486</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 10)); <span class="comment">// Cost 3 &gt; 2</span></div>
-<div class="line"><a id="l02487" name="l02487"></a><span class="lineno"> 2487</span> </div>
-<div class="line"><a id="l02488" name="l02488"></a><span class="lineno"> 2488</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
-<div class="line"><a id="l02489" name="l02489"></a><span class="lineno"> 2489</span>    EXPECT_EQ(result.first, -1) &lt;&lt; <span class="stringliteral">&quot;Should return -1 when no cards are affordable&quot;</span>;</div>
-<div class="line"><a id="l02490" name="l02490"></a><span class="lineno"> 2490</span>    EXPECT_EQ(result.second, -1) &lt;&lt; <span class="stringliteral">&quot;Should return -1 when no second card is possible&quot;</span>;</div>
-<div class="line"><a id="l02491" name="l02491"></a><span class="lineno"> 2491</span>}</div>
+<div class="line"><a id="l02471" name="l02471"></a><span class="lineno"> 2471</span></div>
+<div class="foldopen" id="foldopen02476" data-start="{" data-end="}">
+<div class="line"><a id="l02476" name="l02476"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#ac9154aae8ed667d0964c037230561581"> 2476</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateShieldValue)</div>
+<div class="line"><a id="l02477" name="l02477"></a><span class="lineno"> 2477</span>{</div>
+<div class="line"><a id="l02478" name="l02478"></a><span class="lineno"> 2478</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02479" name="l02479"></a><span class="lineno"> 2479</span>    <a class="code hl_class" href="../../d8/d5d/class_shield___card.html">Shield_Card</a> card(<span class="stringliteral">&quot;Tower Shield&quot;</span>, <span class="stringliteral">&quot;Strong&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756">Rarity::Epic</a>, 4, 2);</div>
+<div class="line"><a id="l02480" name="l02480"></a><span class="lineno"> 2480</span> </div>
+<div class="line"><a id="l02481" name="l02481"></a><span class="lineno"> 2481</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 140)</div>
+<div class="line"><a id="l02482" name="l02482"></a><span class="lineno"> 2482</span>            &lt;&lt; <span class="stringliteral">&quot;Shield value should be usage * 70&quot;</span>;</div>
+<div class="line"><a id="l02483" name="l02483"></a><span class="lineno"> 2483</span>}</div>
 </div>
-<div class="line"><a id="l02492" name="l02492"></a><span class="lineno"> 2492</span> </div>
-<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span> </div>
-<div class="line"><a id="l02494" name="l02494"></a><span class="lineno"> 2494</span> </div>
+<div class="line"><a id="l02484" name="l02484"></a><span class="lineno"> 2484</span></div>
+<div class="foldopen" id="foldopen02489" data-start="{" data-end="}">
+<div class="line"><a id="l02489" name="l02489"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a8c4cf6d06bb7f70d943de9e892ac2413"> 2489</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, CalculateCreatureValue)</div>
+<div class="line"><a id="l02490" name="l02490"></a><span class="lineno"> 2490</span>{</div>
+<div class="line"><a id="l02491" name="l02491"></a><span class="lineno"> 2491</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 50, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02492" name="l02492"></a><span class="lineno"> 2492</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a30d532f2c937c57c5b7cfe598e2b2e1d">set_cumulative_weapon_bonus</a>(2);</div>
+<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#aa4619a2c2e329de1c2e6c5bbca336a15">set_cumulative_attack_multiplier</a>(2);</div>
+<div class="line"><a id="l02494" name="l02494"></a><span class="lineno"> 2494</span>    <a class="code hl_class" href="../../df/db1/class_creature___card.html">Creature_Card</a> card(<span class="stringliteral">&quot;Knight&quot;</span>, <span class="stringliteral">&quot;Brave&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ae3f530e977d74053c6d70eb84886e756">Rarity::Epic</a>, 4, 6,1.5f);</div>
 <div class="line"><a id="l02495" name="l02495"></a><span class="lineno"> 2495</span> </div>
-<div class="line"><a id="l02496" name="l02496"></a><span class="lineno"> 2496</span> </div>
-<div class="line"><a id="l02497" name="l02497"></a><span class="lineno"> 2497</span><span class="comment">// ==================== Human_Player Tests ====================</span></div>
-<div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span></div>
-<div class="foldopen" id="foldopen02503" data-start="{" data-end="}">
-<div class="line"><a id="l02503" name="l02503"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a2b1d0b9fac2f4c733ffde1cf06a69349"> 2503</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(HumanPlayerTest, AddCharacter)</div>
-<div class="line"><a id="l02504" name="l02504"></a><span class="lineno"> 2504</span>{</div>
-<div class="line"><a id="l02505" name="l02505"></a><span class="lineno"> 2505</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> player;</div>
-<div class="line"><a id="l02506" name="l02506"></a><span class="lineno"> 2506</span>    <span class="keyword">auto</span> healer = std::make_unique&lt;Healer_Character&gt;();</div>
-<div class="line"><a id="l02507" name="l02507"></a><span class="lineno"> 2507</span>    <span class="keyword">auto</span> knight = std::make_unique&lt;Knight_Character&gt;();</div>
-<div class="line"><a id="l02508" name="l02508"></a><span class="lineno"> 2508</span> </div>
-<div class="line"><a id="l02509" name="l02509"></a><span class="lineno"> 2509</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 0);</div>
-<div class="line"><a id="l02510" name="l02510"></a><span class="lineno"> 2510</span> </div>
-<div class="line"><a id="l02511" name="l02511"></a><span class="lineno"> 2511</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::move(healer));</div>
-<div class="line"><a id="l02512" name="l02512"></a><span class="lineno"> 2512</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 1);</div>
-<div class="line"><a id="l02513" name="l02513"></a><span class="lineno"> 2513</span> </div>
-<div class="line"><a id="l02514" name="l02514"></a><span class="lineno"> 2514</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::move(knight));</div>
-<div class="line"><a id="l02515" name="l02515"></a><span class="lineno"> 2515</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 2);</div>
-<div class="line"><a id="l02516" name="l02516"></a><span class="lineno"> 2516</span>}</div>
+<div class="line"><a id="l02496" name="l02496"></a><span class="lineno"> 2496</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">calculate_card_value</a>(card), 16)</div>
+<div class="line"><a id="l02497" name="l02497"></a><span class="lineno"> 2497</span>            &lt;&lt; <span class="stringliteral">&quot;Creature value should be (base damage + weapon bonus) * attack multiplier&quot;</span>;</div>
+<div class="line"><a id="l02498" name="l02498"></a><span class="lineno"> 2498</span>}</div>
 </div>
-<div class="line"><a id="l02517" name="l02517"></a><span class="lineno"> 2517</span></div>
-<div class="foldopen" id="foldopen02522" data-start="{" data-end="}">
-<div class="line"><a id="l02522" name="l02522"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a0ca1ff48cfe269e8e4def5e86febbb1e"> 2522</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(HumanPlayerTest, SaveAndLoadCharacters)</div>
-<div class="line"><a id="l02523" name="l02523"></a><span class="lineno"> 2523</span>{</div>
-<div class="line"><a id="l02524" name="l02524"></a><span class="lineno"> 2524</span>    <span class="keyword">const</span> std::string filename = <span class="stringliteral">&quot;test_save.bin&quot;</span>;</div>
-<div class="line"><a id="l02525" name="l02525"></a><span class="lineno"> 2525</span> </div>
-<div class="line"><a id="l02526" name="l02526"></a><span class="lineno"> 2526</span>    <span class="comment">// Create player and add characters</span></div>
-<div class="line"><a id="l02527" name="l02527"></a><span class="lineno"> 2527</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> player;</div>
-<div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Healer_Character&gt;());</div>
-<div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Knight_Character&gt;());</div>
-<div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Tank_Character&gt;());</div>
-<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span> </div>
-<div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span>    <span class="comment">// Save characters</span></div>
-<div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a6adc9b452837c686ff9e8d136707e874">save_characters</a>(filename);</div>
-<div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span> </div>
-<div class="line"><a id="l02535" name="l02535"></a><span class="lineno"> 2535</span>    <span class="comment">// Load characters into a new player</span></div>
-<div class="line"><a id="l02536" name="l02536"></a><span class="lineno"> 2536</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> loaded_player;</div>
-<div class="line"><a id="l02537" name="l02537"></a><span class="lineno"> 2537</span>    loaded_player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2d6230c94ac86b02f430820968a4a455">load_characters</a>(filename);</div>
-<div class="line"><a id="l02538" name="l02538"></a><span class="lineno"> 2538</span> </div>
-<div class="line"><a id="l02539" name="l02539"></a><span class="lineno"> 2539</span>    <span class="comment">// Verify loaded characters</span></div>
-<div class="line"><a id="l02540" name="l02540"></a><span class="lineno"> 2540</span>    EXPECT_EQ(loaded_player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 3);</div>
-<div class="line"><a id="l02541" name="l02541"></a><span class="lineno"> 2541</span> </div>
-<div class="line"><a id="l02542" name="l02542"></a><span class="lineno"> 2542</span>    <span class="comment">// Check types of loaded characters</span></div>
-<div class="line"><a id="l02543" name="l02543"></a><span class="lineno"> 2543</span>    <span class="keywordtype">bool</span> found_healer = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l02544" name="l02544"></a><span class="lineno"> 2544</span>    <span class="keywordtype">bool</span> found_knight = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l02545" name="l02545"></a><span class="lineno"> 2545</span>    <span class="keywordtype">bool</span> found_tank = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l02546" name="l02546"></a><span class="lineno"> 2546</span> </div>
-<div class="line"><a id="l02547" name="l02547"></a><span class="lineno"> 2547</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; char_ptr : loaded_player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>())</div>
-<div class="line"><a id="l02548" name="l02548"></a><span class="lineno"> 2548</span>    {</div>
-<div class="line"><a id="l02549" name="l02549"></a><span class="lineno"> 2549</span>        <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../d6/dc2/class_healer___character.html">Healer_Character</a>*<span class="keyword">&gt;</span>(char_ptr.get()))</div>
-<div class="line"><a id="l02550" name="l02550"></a><span class="lineno"> 2550</span>        {</div>
-<div class="line"><a id="l02551" name="l02551"></a><span class="lineno"> 2551</span>            found_healer = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l02552" name="l02552"></a><span class="lineno"> 2552</span>        }</div>
-<div class="line"><a id="l02553" name="l02553"></a><span class="lineno"> 2553</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../dc/de5/class_knight___character.html">Knight_Character</a>*<span class="keyword">&gt;</span>(char_ptr.get()))</div>
-<div class="line"><a id="l02554" name="l02554"></a><span class="lineno"> 2554</span>        {</div>
-<div class="line"><a id="l02555" name="l02555"></a><span class="lineno"> 2555</span>            found_knight = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l02556" name="l02556"></a><span class="lineno"> 2556</span>        }</div>
-<div class="line"><a id="l02557" name="l02557"></a><span class="lineno"> 2557</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../d4/d38/class_tank___character.html">Tank_Character</a>*<span class="keyword">&gt;</span>(char_ptr.get()))</div>
-<div class="line"><a id="l02558" name="l02558"></a><span class="lineno"> 2558</span>        {</div>
-<div class="line"><a id="l02559" name="l02559"></a><span class="lineno"> 2559</span>            found_tank = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l02560" name="l02560"></a><span class="lineno"> 2560</span>        }</div>
-<div class="line"><a id="l02561" name="l02561"></a><span class="lineno"> 2561</span>    }</div>
-<div class="line"><a id="l02562" name="l02562"></a><span class="lineno"> 2562</span> </div>
-<div class="line"><a id="l02563" name="l02563"></a><span class="lineno"> 2563</span>    EXPECT_TRUE(found_healer);</div>
-<div class="line"><a id="l02564" name="l02564"></a><span class="lineno"> 2564</span>    EXPECT_TRUE(found_knight);</div>
-<div class="line"><a id="l02565" name="l02565"></a><span class="lineno"> 2565</span>    EXPECT_TRUE(found_tank);</div>
-<div class="line"><a id="l02566" name="l02566"></a><span class="lineno"> 2566</span> </div>
-<div class="line"><a id="l02567" name="l02567"></a><span class="lineno"> 2567</span>    <span class="comment">// Clean up test file</span></div>
-<div class="line"><a id="l02568" name="l02568"></a><span class="lineno"> 2568</span>    std::remove(filename.c_str());</div>
-<div class="line"><a id="l02569" name="l02569"></a><span class="lineno"> 2569</span>}</div>
+<div class="line"><a id="l02499" name="l02499"></a><span class="lineno"> 2499</span> </div>
+<div class="line"><a id="l02500" name="l02500"></a><span class="lineno"> 2500</span><span class="comment">// ==================== find_best_combination Tests ====================</span></div>
+<div class="line"><a id="l02501" name="l02501"></a><span class="lineno"> 2501</span></div>
+<div class="foldopen" id="foldopen02506" data-start="{" data-end="}">
+<div class="line"><a id="l02506" name="l02506"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a57ad8788077a7303a3e5a5cefea15b6e"> 2506</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, SelectBestAttackBuffCombo)</div>
+<div class="line"><a id="l02507" name="l02507"></a><span class="lineno"> 2507</span>{</div>
+<div class="line"><a id="l02508" name="l02508"></a><span class="lineno"> 2508</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 7, <span class="stringliteral">&quot;TestAI&quot;</span>); <span class="comment">// Total mana = 7</span></div>
+<div class="line"><a id="l02509" name="l02509"></a><span class="lineno"> 2509</span> </div>
+<div class="line"><a id="l02510" name="l02510"></a><span class="lineno"> 2510</span>    <span class="comment">// Setup hand with various cards</span></div>
+<div class="line"><a id="l02511" name="l02511"></a><span class="lineno"> 2511</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
+<div class="line"><a id="l02512" name="l02512"></a><span class="lineno"> 2512</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 10)); <span class="comment">// Value: 10</span></div>
+<div class="line"><a id="l02513" name="l02513"></a><span class="lineno"> 2513</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Buff_Spell_Card&gt;(</div>
+<div class="line"><a id="l02514" name="l02514"></a><span class="lineno"> 2514</span>                                   <span class="stringliteral">&quot;Boost&quot;</span>, <span class="stringliteral">&quot;Buff&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 2, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523">Element::Earth</a>, 1.5f)); <span class="comment">// Value: 15</span></div>
+<div class="line"><a id="l02515" name="l02515"></a><span class="lineno"> 2515</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Shield_Card&gt;(</div>
+<div class="line"><a id="l02516" name="l02516"></a><span class="lineno"> 2516</span>                                   <span class="stringliteral">&quot;Shield&quot;</span>, <span class="stringliteral">&quot;Def&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 4, 3)); <span class="comment">// Value: 0</span></div>
+<div class="line"><a id="l02517" name="l02517"></a><span class="lineno"> 2517</span> </div>
+<div class="line"><a id="l02518" name="l02518"></a><span class="lineno"> 2518</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
+<div class="line"><a id="l02519" name="l02519"></a><span class="lineno"> 2519</span>    EXPECT_EQ(result.first, 0) &lt;&lt; <span class="stringliteral">&quot;Should select Attack spell (cost 3)&quot;</span>;</div>
+<div class="line"><a id="l02520" name="l02520"></a><span class="lineno"> 2520</span>    EXPECT_EQ(result.second, 1) &lt;&lt; <span class="stringliteral">&quot;Should select Buff spell (cost 2)&quot;</span>;</div>
+<div class="line"><a id="l02521" name="l02521"></a><span class="lineno"> 2521</span>}</div>
 </div>
-<div class="line"><a id="l02570" name="l02570"></a><span class="lineno"> 2570</span> </div>
-<div class="line"><a id="l02571" name="l02571"></a><span class="lineno"> 2571</span></div>
-<div class="foldopen" id="foldopen02576" data-start="{" data-end="}">
-<div class="line"><a id="l02576" name="l02576"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#ac3502e2a8ebaf2555848da0e3e503884"> 2576</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(HumanPlayerTest, ShowCharacters)</div>
-<div class="line"><a id="l02577" name="l02577"></a><span class="lineno"> 2577</span>{</div>
-<div class="line"><a id="l02578" name="l02578"></a><span class="lineno"> 2578</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> player;</div>
-<div class="line"><a id="l02579" name="l02579"></a><span class="lineno"> 2579</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Healer_Character&gt;());</div>
-<div class="line"><a id="l02580" name="l02580"></a><span class="lineno"> 2580</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Knight_Character&gt;());</div>
-<div class="line"><a id="l02581" name="l02581"></a><span class="lineno"> 2581</span> </div>
-<div class="line"><a id="l02582" name="l02582"></a><span class="lineno"> 2582</span>    testing::internal::CaptureStdout();</div>
-<div class="line"><a id="l02583" name="l02583"></a><span class="lineno"> 2583</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a420a46c43a728cc631dfc3795117ca49">show_characters</a>();</div>
-<div class="line"><a id="l02584" name="l02584"></a><span class="lineno"> 2584</span>    std::string output = testing::internal::GetCapturedStdout();</div>
-<div class="line"><a id="l02585" name="l02585"></a><span class="lineno"> 2585</span> </div>
-<div class="line"><a id="l02586" name="l02586"></a><span class="lineno"> 2586</span>    EXPECT_TRUE(output.find(<span class="stringliteral">&quot;Available characters&quot;</span>) != std::string::npos);</div>
-<div class="line"><a id="l02587" name="l02587"></a><span class="lineno"> 2587</span>    EXPECT_TRUE(output.find(<span class="stringliteral">&quot;Healer&quot;</span>) != std::string::npos);</div>
-<div class="line"><a id="l02588" name="l02588"></a><span class="lineno"> 2588</span>    EXPECT_TRUE(output.find(<span class="stringliteral">&quot;Knight&quot;</span>) != std::string::npos);</div>
-<div class="line"><a id="l02589" name="l02589"></a><span class="lineno"> 2589</span>}</div>
+<div class="line"><a id="l02522" name="l02522"></a><span class="lineno"> 2522</span></div>
+<div class="foldopen" id="foldopen02527" data-start="{" data-end="}">
+<div class="line"><a id="l02527" name="l02527"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#afa1bb42d768daad0980aea466ffffd5b"> 2527</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, SelectSingleCardWhenManaLimited)</div>
+<div class="line"><a id="l02528" name="l02528"></a><span class="lineno"> 2528</span>{</div>
+<div class="line"><a id="l02529" name="l02529"></a><span class="lineno"> 2529</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 4, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02530" name="l02530"></a><span class="lineno"> 2530</span> </div>
+<div class="line"><a id="l02531" name="l02531"></a><span class="lineno"> 2531</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
+<div class="line"><a id="l02532" name="l02532"></a><span class="lineno"> 2532</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 5, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 10)); <span class="comment">// Too expensive</span></div>
+<div class="line"><a id="l02533" name="l02533"></a><span class="lineno"> 2533</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Heal_Spell_Card&gt;(</div>
+<div class="line"><a id="l02534" name="l02534"></a><span class="lineno"> 2534</span>                                   <span class="stringliteral">&quot;Cure&quot;</span>, <span class="stringliteral">&quot;Heal&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a27634ff8002b12e75d98e07ccd005d18">Element::Water</a>, 15, 1.0f)); <span class="comment">// Cost 3</span></div>
+<div class="line"><a id="l02535" name="l02535"></a><span class="lineno"> 2535</span> </div>
+<div class="line"><a id="l02536" name="l02536"></a><span class="lineno"> 2536</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
+<div class="line"><a id="l02537" name="l02537"></a><span class="lineno"> 2537</span>    EXPECT_EQ(result.first, 1) &lt;&lt; <span class="stringliteral">&quot;Should select Heal spell as only affordable option&quot;</span>;</div>
+<div class="line"><a id="l02538" name="l02538"></a><span class="lineno"> 2538</span>    EXPECT_EQ(result.second, -1) &lt;&lt; <span class="stringliteral">&quot;Should not select second card&quot;</span>;</div>
+<div class="line"><a id="l02539" name="l02539"></a><span class="lineno"> 2539</span>}</div>
 </div>
-<div class="line"><a id="l02590" name="l02590"></a><span class="lineno"> 2590</span> </div>
+<div class="line"><a id="l02540" name="l02540"></a><span class="lineno"> 2540</span></div>
+<div class="foldopen" id="foldopen02545" data-start="{" data-end="}">
+<div class="line"><a id="l02545" name="l02545"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a337b817171bb411dd8fdc820c0cd39dc"> 2545</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, PreferCombatCardsFirst)</div>
+<div class="line"><a id="l02546" name="l02546"></a><span class="lineno"> 2546</span>{</div>
+<div class="line"><a id="l02547" name="l02547"></a><span class="lineno"> 2547</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 10, 10, <span class="stringliteral">&quot;TestAI&quot;</span>);</div>
+<div class="line"><a id="l02548" name="l02548"></a><span class="lineno"> 2548</span> </div>
+<div class="line"><a id="l02549" name="l02549"></a><span class="lineno"> 2549</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Buff_Spell_Card&gt;(</div>
+<div class="line"><a id="l02550" name="l02550"></a><span class="lineno"> 2550</span>                                   <span class="stringliteral">&quot;Boost&quot;</span>, <span class="stringliteral">&quot;Buff&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 2, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062a5cdd21c97f86686cc505e02fd32a7523">Element::Earth</a>, 1.5f));</div>
+<div class="line"><a id="l02551" name="l02551"></a><span class="lineno"> 2551</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
+<div class="line"><a id="l02552" name="l02552"></a><span class="lineno"> 2552</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 5, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 20));</div>
+<div class="line"><a id="l02553" name="l02553"></a><span class="lineno"> 2553</span> </div>
+<div class="line"><a id="l02554" name="l02554"></a><span class="lineno"> 2554</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
+<div class="line"><a id="l02555" name="l02555"></a><span class="lineno"> 2555</span>    EXPECT_EQ(result.first, 1) &lt;&lt; <span class="stringliteral">&quot;Should prioritize Attack spell over Buff&quot;</span>;</div>
+<div class="line"><a id="l02556" name="l02556"></a><span class="lineno"> 2556</span>}</div>
+</div>
+<div class="line"><a id="l02557" name="l02557"></a><span class="lineno"> 2557</span></div>
+<div class="foldopen" id="foldopen02562" data-start="{" data-end="}">
+<div class="line"><a id="l02562" name="l02562"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#aab906a1c791c00204f58bed49fbb396e"> 2562</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(AIPlayerTest, NoValidCardsReturnsInvalid)</div>
+<div class="line"><a id="l02563" name="l02563"></a><span class="lineno"> 2563</span>{</div>
+<div class="line"><a id="l02564" name="l02564"></a><span class="lineno"> 2564</span>    <a class="code hl_class" href="../../dc/de6/class_a_i___player.html">AI_Player</a> player(100, 2, 0, <span class="stringliteral">&quot;TestAI&quot;</span>); <span class="comment">// Fixed: mana=2, armor=0</span></div>
+<div class="line"><a id="l02565" name="l02565"></a><span class="lineno"> 2565</span> </div>
+<div class="line"><a id="l02566" name="l02566"></a><span class="lineno"> 2566</span>    player.<a class="code hl_function" href="../../d8/d53/class_player.html#a932eae2d8351f7e9ea923f22561bfab8">get_hand</a>().<a class="code hl_function" href="../../d7/d48/class_hand.html#a8ec06916f40f510847c8aa5c90526758">add_card</a>(std::make_unique&lt;Attack_Spell_Card&gt;(</div>
+<div class="line"><a id="l02567" name="l02567"></a><span class="lineno"> 2567</span>                                   <span class="stringliteral">&quot;Fire&quot;</span>, <span class="stringliteral">&quot;Dmg&quot;</span>, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a6c4fc244cdc975f7fd572fa614617600ad13bc5b68b2bd9e18f29777db17cc563">Rarity::Common</a>, 3, <a class="code hl_enumvalue" href="../../d0/d0b/enums_8h.html#a8b9bbfde536d6e2a415388fa10347062abd2b7e5f85a6ea65065c4ebc6d7c95bb">Element::Fire</a>, 10)); <span class="comment">// Cost 3 &gt; 2</span></div>
+<div class="line"><a id="l02568" name="l02568"></a><span class="lineno"> 2568</span> </div>
+<div class="line"><a id="l02569" name="l02569"></a><span class="lineno"> 2569</span>    <span class="keyword">auto</span> result = player.<a class="code hl_function" href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">find_best_combination</a>();</div>
+<div class="line"><a id="l02570" name="l02570"></a><span class="lineno"> 2570</span>    EXPECT_EQ(result.first, -1) &lt;&lt; <span class="stringliteral">&quot;Should return -1 when no cards are affordable&quot;</span>;</div>
+<div class="line"><a id="l02571" name="l02571"></a><span class="lineno"> 2571</span>    EXPECT_EQ(result.second, -1) &lt;&lt; <span class="stringliteral">&quot;Should return -1 when no second card is possible&quot;</span>;</div>
+<div class="line"><a id="l02572" name="l02572"></a><span class="lineno"> 2572</span>}</div>
+</div>
+<div class="line"><a id="l02573" name="l02573"></a><span class="lineno"> 2573</span> </div>
+<div class="line"><a id="l02574" name="l02574"></a><span class="lineno"> 2574</span> </div>
+<div class="line"><a id="l02575" name="l02575"></a><span class="lineno"> 2575</span> </div>
+<div class="line"><a id="l02576" name="l02576"></a><span class="lineno"> 2576</span> </div>
+<div class="line"><a id="l02577" name="l02577"></a><span class="lineno"> 2577</span> </div>
+<div class="line"><a id="l02578" name="l02578"></a><span class="lineno"> 2578</span><span class="comment">// ==================== Human_Player Tests ====================</span></div>
+<div class="line"><a id="l02579" name="l02579"></a><span class="lineno"> 2579</span></div>
+<div class="foldopen" id="foldopen02584" data-start="{" data-end="}">
+<div class="line"><a id="l02584" name="l02584"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a2b1d0b9fac2f4c733ffde1cf06a69349"> 2584</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(HumanPlayerTest, AddCharacter)</div>
+<div class="line"><a id="l02585" name="l02585"></a><span class="lineno"> 2585</span>{</div>
+<div class="line"><a id="l02586" name="l02586"></a><span class="lineno"> 2586</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> player;</div>
+<div class="line"><a id="l02587" name="l02587"></a><span class="lineno"> 2587</span>    <span class="keyword">auto</span> healer = std::make_unique&lt;Healer_Character&gt;();</div>
+<div class="line"><a id="l02588" name="l02588"></a><span class="lineno"> 2588</span>    <span class="keyword">auto</span> knight = std::make_unique&lt;Knight_Character&gt;();</div>
+<div class="line"><a id="l02589" name="l02589"></a><span class="lineno"> 2589</span> </div>
+<div class="line"><a id="l02590" name="l02590"></a><span class="lineno"> 2590</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 0);</div>
 <div class="line"><a id="l02591" name="l02591"></a><span class="lineno"> 2591</span> </div>
-<div class="line"><a id="l02592" name="l02592"></a><span class="lineno"> 2592</span> </div>
-<div class="line"><a id="l02593" name="l02593"></a><span class="lineno"> 2593</span><span class="comment">// ==================== Test Runner ====================</span></div>
-<div class="line"><a id="l02594" name="l02594"></a><span class="lineno"> 2594</span></div>
-<div class="foldopen" id="foldopen02598" data-start="{" data-end="}">
-<div class="line"><a id="l02598" name="l02598"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627"> 2598</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
-<div class="line"><a id="l02599" name="l02599"></a><span class="lineno"> 2599</span>{</div>
-<div class="line"><a id="l02600" name="l02600"></a><span class="lineno"> 2600</span>    testing::InitGoogleTest(&amp;argc, argv);</div>
-<div class="line"><a id="l02601" name="l02601"></a><span class="lineno"> 2601</span>    <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
-<div class="line"><a id="l02602" name="l02602"></a><span class="lineno"> 2602</span>}</div>
+<div class="line"><a id="l02592" name="l02592"></a><span class="lineno"> 2592</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::move(healer));</div>
+<div class="line"><a id="l02593" name="l02593"></a><span class="lineno"> 2593</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 1);</div>
+<div class="line"><a id="l02594" name="l02594"></a><span class="lineno"> 2594</span> </div>
+<div class="line"><a id="l02595" name="l02595"></a><span class="lineno"> 2595</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::move(knight));</div>
+<div class="line"><a id="l02596" name="l02596"></a><span class="lineno"> 2596</span>    EXPECT_EQ(player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 2);</div>
+<div class="line"><a id="l02597" name="l02597"></a><span class="lineno"> 2597</span>}</div>
+</div>
+<div class="line"><a id="l02598" name="l02598"></a><span class="lineno"> 2598</span></div>
+<div class="foldopen" id="foldopen02603" data-start="{" data-end="}">
+<div class="line"><a id="l02603" name="l02603"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a0ca1ff48cfe269e8e4def5e86febbb1e"> 2603</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(HumanPlayerTest, SaveAndLoadCharacters)</div>
+<div class="line"><a id="l02604" name="l02604"></a><span class="lineno"> 2604</span>{</div>
+<div class="line"><a id="l02605" name="l02605"></a><span class="lineno"> 2605</span>    <span class="keyword">const</span> std::string filename = <span class="stringliteral">&quot;test_save.bin&quot;</span>;</div>
+<div class="line"><a id="l02606" name="l02606"></a><span class="lineno"> 2606</span> </div>
+<div class="line"><a id="l02607" name="l02607"></a><span class="lineno"> 2607</span>    <span class="comment">// Create player and add characters</span></div>
+<div class="line"><a id="l02608" name="l02608"></a><span class="lineno"> 2608</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> player;</div>
+<div class="line"><a id="l02609" name="l02609"></a><span class="lineno"> 2609</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Healer_Character&gt;());</div>
+<div class="line"><a id="l02610" name="l02610"></a><span class="lineno"> 2610</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Knight_Character&gt;());</div>
+<div class="line"><a id="l02611" name="l02611"></a><span class="lineno"> 2611</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Tank_Character&gt;());</div>
+<div class="line"><a id="l02612" name="l02612"></a><span class="lineno"> 2612</span> </div>
+<div class="line"><a id="l02613" name="l02613"></a><span class="lineno"> 2613</span>    <span class="comment">// Save characters</span></div>
+<div class="line"><a id="l02614" name="l02614"></a><span class="lineno"> 2614</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a6adc9b452837c686ff9e8d136707e874">save_characters</a>(filename);</div>
+<div class="line"><a id="l02615" name="l02615"></a><span class="lineno"> 2615</span> </div>
+<div class="line"><a id="l02616" name="l02616"></a><span class="lineno"> 2616</span>    <span class="comment">// Load characters into a new player</span></div>
+<div class="line"><a id="l02617" name="l02617"></a><span class="lineno"> 2617</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> loaded_player;</div>
+<div class="line"><a id="l02618" name="l02618"></a><span class="lineno"> 2618</span>    loaded_player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2d6230c94ac86b02f430820968a4a455">load_characters</a>(filename);</div>
+<div class="line"><a id="l02619" name="l02619"></a><span class="lineno"> 2619</span> </div>
+<div class="line"><a id="l02620" name="l02620"></a><span class="lineno"> 2620</span>    <span class="comment">// Verify loaded characters</span></div>
+<div class="line"><a id="l02621" name="l02621"></a><span class="lineno"> 2621</span>    EXPECT_EQ(loaded_player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>().size(), 3);</div>
+<div class="line"><a id="l02622" name="l02622"></a><span class="lineno"> 2622</span> </div>
+<div class="line"><a id="l02623" name="l02623"></a><span class="lineno"> 2623</span>    <span class="comment">// Check types of loaded characters</span></div>
+<div class="line"><a id="l02624" name="l02624"></a><span class="lineno"> 2624</span>    <span class="keywordtype">bool</span> found_healer = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l02625" name="l02625"></a><span class="lineno"> 2625</span>    <span class="keywordtype">bool</span> found_knight = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l02626" name="l02626"></a><span class="lineno"> 2626</span>    <span class="keywordtype">bool</span> found_tank = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l02627" name="l02627"></a><span class="lineno"> 2627</span> </div>
+<div class="line"><a id="l02628" name="l02628"></a><span class="lineno"> 2628</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; char_ptr : loaded_player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#ae397a581710554e8cfae83d83e8d711d">get_characters</a>())</div>
+<div class="line"><a id="l02629" name="l02629"></a><span class="lineno"> 2629</span>    {</div>
+<div class="line"><a id="l02630" name="l02630"></a><span class="lineno"> 2630</span>        <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../d6/dc2/class_healer___character.html">Healer_Character</a>*<span class="keyword">&gt;</span>(char_ptr.get()))</div>
+<div class="line"><a id="l02631" name="l02631"></a><span class="lineno"> 2631</span>        {</div>
+<div class="line"><a id="l02632" name="l02632"></a><span class="lineno"> 2632</span>            found_healer = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l02633" name="l02633"></a><span class="lineno"> 2633</span>        }</div>
+<div class="line"><a id="l02634" name="l02634"></a><span class="lineno"> 2634</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../dc/de5/class_knight___character.html">Knight_Character</a>*<span class="keyword">&gt;</span>(char_ptr.get()))</div>
+<div class="line"><a id="l02635" name="l02635"></a><span class="lineno"> 2635</span>        {</div>
+<div class="line"><a id="l02636" name="l02636"></a><span class="lineno"> 2636</span>            found_knight = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l02637" name="l02637"></a><span class="lineno"> 2637</span>        }</div>
+<div class="line"><a id="l02638" name="l02638"></a><span class="lineno"> 2638</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../d4/d38/class_tank___character.html">Tank_Character</a>*<span class="keyword">&gt;</span>(char_ptr.get()))</div>
+<div class="line"><a id="l02639" name="l02639"></a><span class="lineno"> 2639</span>        {</div>
+<div class="line"><a id="l02640" name="l02640"></a><span class="lineno"> 2640</span>            found_tank = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l02641" name="l02641"></a><span class="lineno"> 2641</span>        }</div>
+<div class="line"><a id="l02642" name="l02642"></a><span class="lineno"> 2642</span>    }</div>
+<div class="line"><a id="l02643" name="l02643"></a><span class="lineno"> 2643</span> </div>
+<div class="line"><a id="l02644" name="l02644"></a><span class="lineno"> 2644</span>    EXPECT_TRUE(found_healer);</div>
+<div class="line"><a id="l02645" name="l02645"></a><span class="lineno"> 2645</span>    EXPECT_TRUE(found_knight);</div>
+<div class="line"><a id="l02646" name="l02646"></a><span class="lineno"> 2646</span>    EXPECT_TRUE(found_tank);</div>
+<div class="line"><a id="l02647" name="l02647"></a><span class="lineno"> 2647</span> </div>
+<div class="line"><a id="l02648" name="l02648"></a><span class="lineno"> 2648</span>    <span class="comment">// Clean up test file</span></div>
+<div class="line"><a id="l02649" name="l02649"></a><span class="lineno"> 2649</span>    std::remove(filename.c_str());</div>
+<div class="line"><a id="l02650" name="l02650"></a><span class="lineno"> 2650</span>}</div>
+</div>
+<div class="line"><a id="l02651" name="l02651"></a><span class="lineno"> 2651</span> </div>
+<div class="line"><a id="l02652" name="l02652"></a><span class="lineno"> 2652</span></div>
+<div class="foldopen" id="foldopen02657" data-start="{" data-end="}">
+<div class="line"><a id="l02657" name="l02657"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#ac3502e2a8ebaf2555848da0e3e503884"> 2657</a></span><a class="code hl_function" href="../../db/d9c/test-card_8cpp.html#afeb6d4047a9b58aca40a22b0e710266a">TEST</a>(HumanPlayerTest, ShowCharacters)</div>
+<div class="line"><a id="l02658" name="l02658"></a><span class="lineno"> 2658</span>{</div>
+<div class="line"><a id="l02659" name="l02659"></a><span class="lineno"> 2659</span>    <a class="code hl_class" href="../../de/d3e/class_human___player.html">Human_Player</a> player;</div>
+<div class="line"><a id="l02660" name="l02660"></a><span class="lineno"> 2660</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Healer_Character&gt;());</div>
+<div class="line"><a id="l02661" name="l02661"></a><span class="lineno"> 2661</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a2cc8e380af5ba6ff239834b34528f2cc">add_character</a>(std::make_unique&lt;Knight_Character&gt;());</div>
+<div class="line"><a id="l02662" name="l02662"></a><span class="lineno"> 2662</span> </div>
+<div class="line"><a id="l02663" name="l02663"></a><span class="lineno"> 2663</span>    testing::internal::CaptureStdout();</div>
+<div class="line"><a id="l02664" name="l02664"></a><span class="lineno"> 2664</span>    player.<a class="code hl_function" href="../../de/d3e/class_human___player.html#a420a46c43a728cc631dfc3795117ca49">show_characters</a>();</div>
+<div class="line"><a id="l02665" name="l02665"></a><span class="lineno"> 2665</span>    std::string output = testing::internal::GetCapturedStdout();</div>
+<div class="line"><a id="l02666" name="l02666"></a><span class="lineno"> 2666</span> </div>
+<div class="line"><a id="l02667" name="l02667"></a><span class="lineno"> 2667</span>    EXPECT_TRUE(output.find(<span class="stringliteral">&quot;Available characters&quot;</span>) != std::string::npos);</div>
+<div class="line"><a id="l02668" name="l02668"></a><span class="lineno"> 2668</span>    EXPECT_TRUE(output.find(<span class="stringliteral">&quot;Healer&quot;</span>) != std::string::npos);</div>
+<div class="line"><a id="l02669" name="l02669"></a><span class="lineno"> 2669</span>    EXPECT_TRUE(output.find(<span class="stringliteral">&quot;Knight&quot;</span>) != std::string::npos);</div>
+<div class="line"><a id="l02670" name="l02670"></a><span class="lineno"> 2670</span>}</div>
+</div>
+<div class="line"><a id="l02671" name="l02671"></a><span class="lineno"> 2671</span> </div>
+<div class="line"><a id="l02672" name="l02672"></a><span class="lineno"> 2672</span> </div>
+<div class="line"><a id="l02673" name="l02673"></a><span class="lineno"> 2673</span> </div>
+<div class="line"><a id="l02674" name="l02674"></a><span class="lineno"> 2674</span><span class="comment">// ==================== Test Runner ====================</span></div>
+<div class="line"><a id="l02675" name="l02675"></a><span class="lineno"> 2675</span></div>
+<div class="foldopen" id="foldopen02679" data-start="{" data-end="}">
+<div class="line"><a id="l02679" name="l02679"></a><span class="lineno"><a class="line" href="../../db/d9c/test-card_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627"> 2679</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
+<div class="line"><a id="l02680" name="l02680"></a><span class="lineno"> 2680</span>{</div>
+<div class="line"><a id="l02681" name="l02681"></a><span class="lineno"> 2681</span>    testing::InitGoogleTest(&amp;argc, argv);</div>
+<div class="line"><a id="l02682" name="l02682"></a><span class="lineno"> 2682</span>    <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
+<div class="line"><a id="l02683" name="l02683"></a><span class="lineno"> 2683</span>}</div>
 </div>
 <div class="ttc" id="aai__player_8h_html"><div class="ttname"><a href="../../da/df7/ai__player_8h.html">ai_player.h</a></div></div>
 <div class="ttc" id="aartifact__card_8h_html"><div class="ttname"><a href="../../d9/da0/artifact__card_8h.html">artifact_card.h</a></div></div>
@@ -2470,7 +2539,7 @@ $(function(){initNavTree('db/d9c/test-card_8cpp_source.html','../../'); initResi
 <div class="ttc" id="acharacter_8h_html"><div class="ttname"><a href="../../dc/d26/character_8h.html">character.h</a></div></div>
 <div class="ttc" id="aclass_a_i___player_html"><div class="ttname"><a href="../../dc/de6/class_a_i___player.html">AI_Player</a></div><div class="ttdoc">AI-controlled player with decision logic.</div><div class="ttdef"><b>Definition</b> <a href="../../da/df7/ai__player_8h_source.html#l00016">ai_player.h:17</a></div></div>
 <div class="ttc" id="aclass_a_i___player_html_a36372a56e09742469f97a1a99ef140f2"><div class="ttname"><a href="../../dc/de6/class_a_i___player.html#a36372a56e09742469f97a1a99ef140f2">AI_Player::calculate_card_value</a></div><div class="ttdeci">int calculate_card_value(const Card &amp;card) const</div><div class="ttdoc">Calculate the value of a card based on its type and effects.</div><div class="ttdef"><b>Definition</b> <a href="../../de/df6/ai__player_8cpp_source.html#l00008">ai_player.cpp:8</a></div></div>
-<div class="ttc" id="aclass_a_i___player_html_a7d07888ad272bba0f60ddbe5f978505b"><div class="ttname"><a href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">AI_Player::find_best_combination</a></div><div class="ttdeci">std::pair&lt; int, int &gt; find_best_combination() const</div><div class="ttdoc">Find the best combination of cards to play.</div><div class="ttdef"><b>Definition</b> <a href="../../de/df6/ai__player_8cpp_source.html#l00035">ai_player.cpp:35</a></div></div>
+<div class="ttc" id="aclass_a_i___player_html_a7d07888ad272bba0f60ddbe5f978505b"><div class="ttname"><a href="../../dc/de6/class_a_i___player.html#a7d07888ad272bba0f60ddbe5f978505b">AI_Player::find_best_combination</a></div><div class="ttdeci">std::pair&lt; int, int &gt; find_best_combination() const</div><div class="ttdoc">Find the best combination of cards to play.</div><div class="ttdef"><b>Definition</b> <a href="../../de/df6/ai__player_8cpp_source.html#l00059">ai_player.cpp:59</a></div></div>
 <div class="ttc" id="aclass_artifact___card_html"><div class="ttname"><a href="../../d2/d39/class_artifact___card.html">Artifact_Card</a></div><div class="ttdoc">Specialized card for artifacts.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/da0/artifact__card_8h_source.html#l00014">artifact_card.h:15</a></div></div>
 <div class="ttc" id="aclass_artifact___card_html_a128c475e801c9e0aeca3e65ffac0b49f"><div class="ttname"><a href="../../d2/d39/class_artifact___card.html#a128c475e801c9e0aeca3e65ffac0b49f">Artifact_Card::use</a></div><div class="ttdeci">void use(Player &amp;user, Player &amp;target) override</div><div class="ttdoc">Apply card effect to target.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d51/artifact__card_8cpp_source.html#l00034">artifact_card.cpp:34</a></div></div>
 <div class="ttc" id="aclass_artifact___card_html_a6a39b9fb63a5b50e13a581b6947953aa"><div class="ttname"><a href="../../d2/d39/class_artifact___card.html#a6a39b9fb63a5b50e13a581b6947953aa">Artifact_Card::print_key_info</a></div><div class="ttdeci">void print_key_info() const override</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d51/artifact__card_8cpp_source.html#l00090">artifact_card.cpp:90</a></div></div>
