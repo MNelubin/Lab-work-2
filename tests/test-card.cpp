@@ -2382,11 +2382,11 @@ TEST(AIPlayerTest, CalculateAttackSpellValue)
 TEST(AIPlayerTest, CalculateBeastValue)
 {
     AI_Player player(100, 10, 50, "TestAI");
-    player.set_cumulative_weapon_bonus(5);
+    player.set_cumulative_attack_multiplier(2);
     Beast_Card card("Wolf", "Fierce", Rarity::Common, 3, 8, Tribe::North);
 
-    EXPECT_EQ(player.calculate_card_value(card), 13)
-            << "Beast value should be base damage + weapon bonus";
+    EXPECT_EQ(player.calculate_card_value(card), 16)
+            << "Beast value should be base damage * attack multiplier";
 }
 
 /**
@@ -2414,6 +2414,87 @@ TEST(AIPlayerTest, CalculateBuffSpellValue)
 
     EXPECT_EQ(player.calculate_card_value(card), 18)
             << "Buff spell value should be multiplier * 10";
+}
+
+/**
+ * @test Verify calculation of card value for Artifact_Card
+ * @addtogroup AI_Player
+ */
+TEST(AIPlayerTest, CalculateArtifactValue)
+{
+    AI_Player player(100, 10, 50, "TestAI");
+    Artifact_Card card("Amulet", "Empowers", Rarity::Epic, 4, 2.0);
+
+    EXPECT_EQ(player.calculate_card_value(card), 40)
+            << "Artifact value should be multiplier * multiplier * 10";
+}
+
+/**
+ * @test Verify calculation of card value for Buff_Card
+ * @addtogroup AI_Player
+ */
+TEST(AIPlayerTest, CalculateBuffValue)
+{
+    AI_Player player(100, 10, 50, "TestAI");
+    Buff_Card card("Strength", "Increases", Rarity::Common, 2, 3);
+
+    EXPECT_EQ(player.calculate_card_value(card), 30)
+            << "Buff value should be buff amount * 10";
+}
+
+/**
+ * @test Verify calculation of card value for Weapon_Card
+ * @addtogroup AI_Player
+ */
+TEST(AIPlayerTest, CalculateWeaponValue)
+{
+    AI_Player player(100, 10, 50, "TestAI");
+    player.set_cumulative_weapon_bonus(1);
+    Weapon_Card card("Sword", "Sharp", Rarity::Rare, 3, 2);
+
+    EXPECT_EQ(player.calculate_card_value(card), 15)
+            << "Weapon value should be (dmg_up + weapon bonus) * 5";
+}
+
+/**
+ * @test Verify calculation of card value for Defence_Spell_Card
+ * @addtogroup AI_Player
+ */
+TEST(AIPlayerTest, CalculateDefenceSpellValue)
+{
+    AI_Player player(100, 10, 50, "TestAI");
+    Defence_Spell_Card card("Shield", "Protects", Rarity::Common, 2,Element::Earth, 3);
+
+    EXPECT_EQ(player.calculate_card_value(card), 21)
+            << "Defence spell value should be base def * 7";
+}
+
+/**
+ * @test Verify calculation of card value for Shield_Card
+ * @addtogroup AI_Player
+ */
+TEST(AIPlayerTest, CalculateShieldValue)
+{
+    AI_Player player(100, 10, 50, "TestAI");
+    Shield_Card card("Tower Shield", "Strong", Rarity::Epic, 4, 2);
+
+    EXPECT_EQ(player.calculate_card_value(card), 140)
+            << "Shield value should be usage * 70";
+}
+
+/**
+ * @test Verify calculation of card value for Creature_Card
+ * @addtogroup AI_Player
+ */
+TEST(AIPlayerTest, CalculateCreatureValue)
+{
+    AI_Player player(100, 10, 50, "TestAI");
+    player.set_cumulative_weapon_bonus(2);
+    player.set_cumulative_attack_multiplier(2);
+    Creature_Card card("Knight", "Brave", Rarity::Epic, 4, 6,1.5f);
+
+    EXPECT_EQ(player.calculate_card_value(card), 16)
+            << "Creature value should be (base damage + weapon bonus) * attack multiplier";
 }
 
 // ==================== find_best_combination Tests ====================
