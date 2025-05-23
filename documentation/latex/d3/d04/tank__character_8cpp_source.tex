@@ -1,0 +1,109 @@
+\doxysection{tank\+\_\+character.\+cpp}
+\hypertarget{tank__character_8cpp_source}{}\label{tank__character_8cpp_source}\index{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/player/tank\_character.cpp@{D:/education/C++/second semestr/Lab\_2/code/Lab-\/work-\/2/src/player/tank\_character.cpp}}
+\mbox{\hyperlink{tank__character_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00002}00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00003}00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tank__character_8h}{../../include/player/tank\_character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../../include/player/player.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00008}\mbox{\hyperlink{class_tank___character_a9a5d55b4a9958b876d0de7c97fc8e867}{00008}}\ \mbox{\hyperlink{class_tank___character_a9a5d55b4a9958b876d0de7c97fc8e867}{Tank\_Character::Tank\_Character}}()}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00009}00009\ \ \ \ \ :\ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(),\ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}}(2),\ \mbox{\hyperlink{class_tank___character_ad25853c155c75cb3b3fe3eb669b25040}{was\_ability\_used}}(false)\ \{\}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00011}\mbox{\hyperlink{class_tank___character_aa25806342ab4069d88bdc238ac92ddaf}{00011}}\ \mbox{\hyperlink{class_tank___character_a9a5d55b4a9958b876d0de7c97fc8e867}{Tank\_Character::Tank\_Character}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}})}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00015}00015\ \ \ \ \ :\ \mbox{\hyperlink{class_character_adc27bdd255876169bad2ed0bae0cffb5}{Character}}(\mbox{\hyperlink{class_character_af0ab9503229c0f748e1eae89ad5db7aa}{xp\_to\_next\_lvl}},\ \mbox{\hyperlink{class_character_a1b89dc79e457bb7b95ee1c41145843af}{lvl}},\ \mbox{\hyperlink{class_character_ac790eb0f81e8e1f379790cb8830dc59a}{xp}},\ \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}},\ \mbox{\hyperlink{class_character_a71aa44d1a800cf70a70ec1df666fbe32}{heal\_mltpl}},\ \mbox{\hyperlink{class_character_adf7920e8c2168406181fa976950d1232}{dmg\_mltpl}},\ \mbox{\hyperlink{class_character_acefd0a34353fe27eb8b8e23c6c281b0d}{armor\_mltpl}},\ \mbox{\hyperlink{class_character_a4527ae7a1fb08e9347bfd3d2d16f74e3}{description}},\ \mbox{\hyperlink{class_character_a685ac2b65d5c2f8465829696dabe44d8}{ability\_uses}}),}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00016}00016\ \ \ \ \ \ \ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}}(\mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}}),\ \mbox{\hyperlink{class_tank___character_ad25853c155c75cb3b3fe3eb669b25040}{was\_ability\_used}}(false)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}}\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Shield\ amount\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00024}\mbox{\hyperlink{class_tank___character_ad2078c7c7aedd6ce63de2f009758088d}{00024}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_tank___character_ad2078c7c7aedd6ce63de2f009758088d}{Tank\_Character::get\_shield\_add}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00025}00025\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}};}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00029}\mbox{\hyperlink{class_tank___character_a5705719717dca964373dbd927dc5be81}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank___character_a5705719717dca964373dbd927dc5be81}{Tank\_Character::set\_shield\_add}}(\textcolor{keywordtype}{int}\ value)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Shield\ amount\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00038}\mbox{\hyperlink{class_tank___character_ac21f534f107d69077d9ed2b4d0640d7e}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank___character_ac21f534f107d69077d9ed2b4d0640d7e}{Tank\_Character::special\_action}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}No\ ability\ uses\ remaining"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00045}00045\ \ \ \ \ player.\mbox{\hyperlink{class_player_ad4e8309edc296ef52d4e8333c972c3ee}{set\_shield\_amount}}(player.\mbox{\hyperlink{class_player_a7bb4ef74aabe4954b3a75533d6aa7b04}{get\_shield\_amount}}()\ +\ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00046}00046\ \ \ \ \ this-\/>\mbox{\hyperlink{class_character_a02baf33e925fe009e8da62cb9349eb0b}{set\_ability\_uses}}(this-\/>\mbox{\hyperlink{class_character_aa3e319f9d3d7d7028040e20468e14b5a}{get\_ability\_uses}}()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{class_tank___character_ad25853c155c75cb3b3fe3eb669b25040}{was\_ability\_used}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00050}\mbox{\hyperlink{class_tank___character_a69507a11171ac7fad1fd70eb63b96a05}{00050}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank___character_a69507a11171ac7fad1fd70eb63b96a05}{Tank\_Character::special\_action\_info}}()}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00052}00052\ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Shield\ amount:\ "{}}<<\mbox{\hyperlink{class_tank___character_ad2078c7c7aedd6ce63de2f009758088d}{get\_shield\_add}}();}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00055}\mbox{\hyperlink{class_tank___character_a4a2701bfdcd79a53d4592c455ee2b872}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank___character_a4a2701bfdcd79a53d4592c455ee2b872}{Tank\_Character::serialize}}(std::ostream\&\ os)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00056}00056\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!os.good())}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Stream\ state\ invalid\ before\ serialization"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{class_character_aeae42f9d5144fbb7bbd3a4757fd6a921}{Character::serialize}}(os);}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ calculated\_shield\ =\ \mbox{\hyperlink{class_character_a2181e0c2dc42af3cd7041fc03d41ca5c}{get\_level}}()\ +\ 5;}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ reset\_ability\_flag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00067}00067\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&calculated\_shield),\ \textcolor{keyword}{sizeof}(calculated\_shield));}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00068}00068\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&reset\_ability\_flag),\ \textcolor{keyword}{sizeof}(reset\_ability\_flag));}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (!os)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Failed\ to\ write\ tank\ data"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00076}\mbox{\hyperlink{class_tank___character_a2ff7aa405f78e05df3bc3b54814caf44}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank___character_a2ff7aa405f78e05df3bc3b54814caf44}{Tank\_Character::deserialize}}(std::istream\&\ is)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is.good())}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Stream\ state\ invalid\ before\ deserialization"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{class_character_a36b206da8689941720aef92d0c29c3d2}{Character::deserialize}}(is);}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{int}\ stored\_shield;}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ stored\_flag;}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00088}00088\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&stored\_shield),\ \textcolor{keyword}{sizeof}(stored\_shield));}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00089}00089\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&stored\_flag),\ \textcolor{keyword}{sizeof}(stored\_flag));}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is)}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::ios\_base::failure(\textcolor{stringliteral}{"{}Failed\ to\ read\ tank\ data"{}});}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{class_tank___character_aa79110679e69a4a7c9150a28aadf4ecb}{shield\_add}}\ =\ \mbox{\hyperlink{class_character_a2181e0c2dc42af3cd7041fc03d41ca5c}{get\_level}}()\ +\ 5;}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{class_tank___character_ad25853c155c75cb3b3fe3eb669b25040}{was\_ability\_used}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00100}\mbox{\hyperlink{class_tank___character_a882821ef800d742bd45100fa646365d8}{00100}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tank___character_a882821ef800d742bd45100fa646365d8}{Tank\_Character::get\_was\_ability\_used}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00101}00101\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_tank___character_ad25853c155c75cb3b3fe3eb669b25040}{was\_ability\_used}};}
+\DoxyCodeLine{\Hypertarget{tank__character_8cpp_source_l00103}00103\ \}}
+
+\end{DoxyCode}

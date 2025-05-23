@@ -1,0 +1,32 @@
+\doxysection{shield\+\_\+card.\+h}
+\hypertarget{shield__card_8h_source}{}\label{shield__card_8h_source}\index{/home/debil/Lab-\/work-\/2/include/cards/shield\_card.h@{/home/debil/Lab-\/work-\/2/include/cards/shield\_card.h}}
+\mbox{\hyperlink{shield__card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ SHIELD\_CARD\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ SHIELD\_CARD\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classShield__Card_a7c19f0e4eb8af2f53d127d3f146d0254}{Shield\_Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCard_a4445adcdb4e04fae03789796345e402f}{Card}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ usage;\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classShield__Card_a7c19f0e4eb8af2f53d127d3f146d0254}{Shield\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ usage);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classShield__Card_a7f84bff1fc3eb028942299b3aca21f3c}{get\_usage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classShield__Card_a3f78ae2ede64ace2d0697ec99477a9c4}{set\_usage}}(\textcolor{keywordtype}{int}\ new\_usage);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classShield__Card_a5e0ec8556d3c34d9fd39f5cfba3a6d8d}{use}}(\mbox{\hyperlink{classPlayer}{Player}}\&\ user,\ \mbox{\hyperlink{classPlayer}{Player}}\&\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{classShield__Card_a9582fb2df07acf597659155c75c3252f}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
