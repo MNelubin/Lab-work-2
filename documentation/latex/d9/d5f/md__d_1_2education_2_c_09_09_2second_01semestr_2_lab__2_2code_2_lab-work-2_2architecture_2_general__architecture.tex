@@ -1,0 +1,31 @@
+\chapter{General description of the system}
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture}{}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture}\index{General description of the system@{General description of the system}}
+\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture_autotoc_md0}%
+\Hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture_autotoc_md0}%
+
+
+The game is a turn—based card RPG where human and AI players use cards to attack, defend, heal, and power up. ~\newline
+\hypertarget{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture_autotoc_md1}{}\doxysubsection{\texorpdfstring{Main components\+:}{Main components\+:}}\label{md__d_1_2education_2_c_09_09_2second_01semestr_2_lab__2_2code_2_lab-work-2_2architecture_2_general__architecture_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\bfseries{Cards}}\+: 12 types combined in an inheritance hierarchy (for example, {\ttfamily \doxylink{class_attack___spell___card}{Attack\+\_\+\+Spell\+\_\+\+Card}}, {\ttfamily \doxylink{class_beast___card}{Beast\+\_\+\+Card}}). ~\newline
+
+\item {\bfseries{Players}}\+:
+\item {\ttfamily \doxylink{class_human___player}{Human\+\_\+\+Player}}\+: User-\/controlled, saves statistics. ~\newline
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{class_a_i___player}{AI\+\_\+\+Player}}\+: Automatically selects optimal moves via {\ttfamily find\+\_\+best\+\_\+combination()}. ~\newline
+
+\end{DoxyItemize}
+\item {\bfseries{Characters}}\+: 3 classes ({\ttfamily \doxylink{class_healer___character}{Healer\+\_\+\+Character}}, {\ttfamily \doxylink{class_tank___character}{Tank\+\_\+\+Character}}, {\ttfamily \doxylink{class_knight___character}{Knight\+\_\+\+Character}}) with unique abilities . ~\newline
+
+\item {\bfseries{Mechanics}}\+: ~\newline
+
+\begin{DoxyItemize}
+\item Mana and player lives. ~\newline
+
+\item \doxylink{class_character}{Character} levels and multipliers ({\ttfamily Dmg\+\_\+\+MLTPL}, {\ttfamily Heal\+\_\+\+MLTPL}). ~\newline
+
+\item \doxylink{class_player}{Player} interaction with cards ({\ttfamily Use\+\_\+card()}, {\ttfamily Eat\+\_\+card()},{\ttfamily Throw\+\_\+card\+\_\+out()}). 
+\end{DoxyItemize}
+\end{DoxyItemize}

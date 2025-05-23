@@ -1,0 +1,40 @@
+\doxysection{knight\+\_\+character.\+h}
+\hypertarget{knight__character_8h_source}{}\label{knight__character_8h_source}\index{/home/debil/Lab-\/work-\/2/include/player/knight\_character.h@{/home/debil/Lab-\/work-\/2/include/player/knight\_character.h}}
+\mbox{\hyperlink{knight__character_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ KNIGHT\_CHARACTER\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ KNIGHT\_CHARACTER\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{character_8h}{character.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classKnight__Character_a07f123dc1da13cb0af8a297dd68058fe}{Knight\_Character}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCharacter_adc27bdd255876169bad2ed0bae0cffb5}{Character}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ armor\_up;\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ armored\_amount;\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classKnight__Character_a07f123dc1da13cb0af8a297dd68058fe}{Knight\_Character}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classKnight__Character_a07f123dc1da13cb0af8a297dd68058fe}{Knight\_Character}}(\textcolor{keywordtype}{int}\ xp\_to\_next\_lvl,\ \textcolor{keywordtype}{int}\ lvl,\ \textcolor{keywordtype}{int}\ xp,\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ heal\_mltpl,\ \textcolor{keywordtype}{float}\ dmg\_mltpl,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ armor\_mltpl,\ \textcolor{keyword}{const}\ std::string\&\ description,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ability\_uses,\ \textcolor{keywordtype}{int}\ armor\_up,\ \textcolor{keywordtype}{int}\ armored\_amount);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classKnight__Character_abb8c9929b0360865e16f83f6e6c55461}{get\_armor\_up}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classKnight__Character_ab6baafe5beca81885ea9cb17857ae7ff}{set\_armor\_up}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classKnight__Character_ae01d599ffb7feb887f6df7186e5ff84e}{get\_armored\_amount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classKnight__Character_adc414b34048df52cc8c913abaeccbc26}{set\_armored\_amount}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classKnight__Character_a589dbe98bdc9ba25376fd1f93bb28058}{special\_action}}(\mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ KNIGHT\_CHARACTER\_H}}
+
+\end{DoxyCode}
