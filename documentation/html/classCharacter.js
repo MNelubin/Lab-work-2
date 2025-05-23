@@ -1,0 +1,28 @@
+var classCharacter =
+[
+    [ "Character", "classCharacter.html#adc27bdd255876169bad2ed0bae0cffb5", null ],
+    [ "Character", "classCharacter.html#ae00c20f266fc2adb04156718313b9472", null ],
+    [ "Character", "classCharacter.html#a744d9fc5f83f7d6c433d7c8127e7649c", null ],
+    [ "~Character", "classCharacter.html#a3333a88ae593c36b229c90371e935d42", null ],
+    [ "add_xp", "classCharacter.html#a0367ad2a1906d98a2dafcdd620337386", null ],
+    [ "get_ability_uses", "classCharacter.html#aa3e319f9d3d7d7028040e20468e14b5a", null ],
+    [ "get_armor_multiplier", "classCharacter.html#ae95ebf1bf01604ae64439c6c2bcb432d", null ],
+    [ "get_description", "classCharacter.html#a795c7b50bc9b863f3ca172ea28c6a8fa", null ],
+    [ "get_dmg_multiplier", "classCharacter.html#a56756c225d2767e09561102b70304a21", null ],
+    [ "get_heal_multiplier", "classCharacter.html#af5e2b75b0ff04a33151796e84859b6d1", null ],
+    [ "get_level", "classCharacter.html#a2181e0c2dc42af3cd7041fc03d41ca5c", null ],
+    [ "get_name", "classCharacter.html#ab72b3bd9366571392ac6789f0f90dbeb", null ],
+    [ "get_xp", "classCharacter.html#a33057af0e1f2ad232153787a2e9a05fd", null ],
+    [ "get_xp_to_next_lvl", "classCharacter.html#a5a54256b920176d22bfc9d618088baf3", null ],
+    [ "lvl_up", "classCharacter.html#aafc1d877e3aa78d3f1639feac733d6e5", null ],
+    [ "set_ability_uses", "classCharacter.html#a02baf33e925fe009e8da62cb9349eb0b", null ],
+    [ "set_armor_multiplier", "classCharacter.html#aff050bf4a0c0a56de6697b6b6e4dea33", null ],
+    [ "set_description", "classCharacter.html#abd4ac858ff2bf83de6da801b9504f9a4", null ],
+    [ "set_dmg_multiplier", "classCharacter.html#a8ed67c3d4443702be60c5b083342fc98", null ],
+    [ "set_heal_multiplier", "classCharacter.html#a317f7591ce152b5710c95f4b8e07e429", null ],
+    [ "set_level", "classCharacter.html#a16549bae4b301400a8bc9a1a5ba15461", null ],
+    [ "set_name", "classCharacter.html#a39f4a4a4cf062cdbe40c1778211c6097", null ],
+    [ "set_xp", "classCharacter.html#acec796d747d1a30e96fed62311410ddf", null ],
+    [ "set_xp_to_next_lvl", "classCharacter.html#a7e3e425d29f69da79bf12e7940c75b46", null ],
+    [ "special_action", "classCharacter.html#a1fc671f0aaecd8c9c9e1c1e5044403f8", null ]
+];
