@@ -421,7 +421,7 @@ void start_1v1_match()
 
     chars.erase(chars.begin() + player_choice);
 
-    Human_Player player1(100, 50, 0, player_name, std::move(player.release_character()));
+    Human_Player player1(100, 50, 0, player_name, player.release_character());
     AI_Player player2(100, 50, 0, "Player 2", create_ai_character());
 
     // Generate initial hands for both players
