@@ -1,0 +1,38 @@
+\doxysection{creature\+\_\+card.\+h}
+\hypertarget{creature__card_8h_source}{}\label{creature__card_8h_source}\index{/home/debil/Lab-\/work-\/2/include/cards/creature\_card.h@{/home/debil/Lab-\/work-\/2/include/cards/creature\_card.h}}
+\mbox{\hyperlink{creature__card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Maxim\ Nelyubin\ st132907@student.spbu.ru}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Lab-\/2}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ CREATURE\_CARD\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ CREATURE\_CARD\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCreature__Card_aea47b7b6cb4c10e4aeba9bedcfcd02b6}{Creature\_Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCard_a4445adcdb4e04fae03789796345e402f}{Card}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ base\_dmg;\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ weapon\_multiplier;\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classCreature__Card_aea47b7b6cb4c10e4aeba9bedcfcd02b6}{Creature\_Card}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCard_a1f5013054990456125c82d805744062f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCard_aa1c11255159b8ac2243398487a2ac00a}{description}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enums_8h_a6c4fc244cdc975f7fd572fa614617600}{Rarity}}\ \mbox{\hyperlink{classCard_a99e9ad9d7adc84d9637c768d6ee43905}{rarity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCard_a0de38ec8e0109a1c2de5ed174477eb1e}{mana\_cost}},\ \textcolor{keywordtype}{int}\ base\_dmg,\ \textcolor{keywordtype}{float}\ weapon\_multiplier);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCreature__Card_aadd6905b60a8cfd291e2ee23a6d5a76d}{get\_base\_dmg}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreature__Card_a223112e35222eb05096bb750842b58eb}{set\_base\_dmg}}(\textcolor{keywordtype}{int}\ new\_dmg);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCreature__Card_ae8aadee98a59de6d8b2e4397e228c5ed}{get\_weapon\_multiplier}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreature__Card_a53b4620ab65e655e564bbaa6afc22ce5}{set\_weapon\_multiplier}}(\textcolor{keywordtype}{float}\ new\_multiplier);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreature__Card_a19685c4b929f1194938d8d1657ab3154}{use}}(\mbox{\hyperlink{classPlayer}{Player}}\&\ user,\ \mbox{\hyperlink{classPlayer}{Player}}\&\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{enums_8h_a76b9e96d86b331202dcc0fba38b758cd}{CardType}}\ \mbox{\hyperlink{classCreature__Card_a9cf1273cdea7670349ba0f5a89cb634c}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ }
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}
